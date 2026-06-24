@@ -9,7 +9,7 @@ The executive assistant (this system) is step 1. The full OS will eventually inc
 
 ## Key Milestones
 - [x] Executive assistant scaffold built (June 2026)
-- [ ] Daily planning skill
+- [x] Daily planning skill
 - [ ] Weekly review skill
 - [ ] Trade journaling skill
 - [ ] Calendar integration
