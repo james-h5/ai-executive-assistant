@@ -1,3 +1,8 @@
+---
+type: context
+description: James's personal background, identity, lifestyle, and financial goals
+---
+
 # About James
 
 **Name:** James Heathcote

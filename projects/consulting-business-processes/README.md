@@ -1,3 +1,10 @@
+---
+type: project
+title: Consulting Business Processes
+status: planning
+target: 2026-12-31
+---
+
 # Consulting Business Processes
 
 Build the operational backbone of James's AI consulting firm — SOPs, client forms, onboarding flows, proposals, and reporting templates.

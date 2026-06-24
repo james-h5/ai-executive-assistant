@@ -1,3 +1,10 @@
+---
+type: project
+title: AI Consulting Portfolio
+status: planning
+target: 2026-12-31
+---
+
 # AI Consulting Portfolio
 
 Build a portfolio that demonstrates James's ability to implement AI systems for small businesses.

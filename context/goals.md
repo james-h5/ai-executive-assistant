@@ -1,3 +1,9 @@
+---
+type: context
+description: Quarterly and long-term goals — update at the start of each quarter
+quarter: Q3 2026
+---
+
 # Goals
 
 *Update this file at the start of each quarter.*

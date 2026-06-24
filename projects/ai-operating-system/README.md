@@ -1,3 +1,10 @@
+---
+type: project
+title: AI Operating System
+status: active
+started: 2026-06
+---
+
 # AI Operating System
 
 An AI-powered personal operating system built in Claude Code to keep James productive, focused, and moving in the right direction.

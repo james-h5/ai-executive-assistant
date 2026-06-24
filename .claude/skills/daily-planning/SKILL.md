@@ -1,3 +1,10 @@
+---
+name: daily-planning
+description: Morning kickoff — generate a structured daily plan based on priorities and commitments
+triggers: [plan my day, what should I do today, morning kickoff, daily planning]
+version: 1.0
+---
+
 # Daily Planning Skill
 
 **Trigger:** Run this skill when James says anything like "plan my day", "what should I do today", "morning kickoff", "daily planning", or similar.

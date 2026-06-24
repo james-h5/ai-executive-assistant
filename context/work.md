@@ -1,3 +1,8 @@
+---
+type: context
+description: Income streams, business status, tools, and professional context
+---
+
 # Work & Business
 
 ## Income Streams

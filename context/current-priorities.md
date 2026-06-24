@@ -1,3 +1,9 @@
+---
+type: context
+description: What James is focused on right now, in priority order — update whenever focus shifts
+last_updated: 2026-06-25
+---
+
 # Current Priorities
 
 *Last updated: 2026-06-25*

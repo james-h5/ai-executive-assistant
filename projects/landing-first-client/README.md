@@ -1,3 +1,10 @@
+---
+type: project
+title: Landing First Client
+status: planning
+target: 2026-12-31
+---
+
 # Landing First Client
 
 Everything needed to go from zero to a signed first AI consulting client.

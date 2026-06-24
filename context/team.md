@@ -1,3 +1,8 @@
+---
+type: context
+description: Current team composition and community connections
+---
+
 # Team
 
 James is currently solo.

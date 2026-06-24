@@ -1,1 +1,16 @@
-{}
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -NoProfile -File \"C:/Users/james/OneDrive/AI/Executive Assistant/.claude/hooks/add-frontmatter.ps1\" 2>/dev/null || true",
+            "statusMessage": "Adding YAML frontmatter..."
+          }
+        ]
+      }
+    ]
+  }
+}
