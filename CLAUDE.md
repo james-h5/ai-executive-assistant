@@ -30,8 +30,8 @@ Skills live in `.claude/skills/`. Each skill is a folder: `.claude/skills/skill-
 Build a skill when you notice you're repeating the same type of request.
 
 **Skills to Build (backlog):**
-- `daily-planning` — Morning kickoff: "What should I do today?"
-- `weekly-review` — End-of-week reflection and reset
+- `daily-planning` — Morning kickoff: "What should I do today?" ✓ built
+- `weekly-review` — End-of-week reflection and reset ✓ built
 - `trade-journal` — Log and review futures trades
 - `client-onboarding` — New AI consulting client intake process
 - `content-workflow` — Instagram/YouTube content creation pipeline
