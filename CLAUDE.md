@@ -24,6 +24,8 @@ Active workstreams live in `projects/`. Each has a `README.md` with status, desc
 - `projects/ai-consulting-portfolio/` — Portfolio to attract first clients
 - `projects/consulting-business-processes/` — SOPs and forms for the consulting firm
 - `projects/landing-first-client/` — Pipeline and strategy for signing first client
+- `projects/language-learning/` — Conversational practice across Italian, Japanese, French, German
+- `projects/communication-excellence/` — Developing clear, confident expression
 
 ## Skills
 Skills live in `.claude/skills/`. Each skill is a folder: `.claude/skills/skill-name/SKILL.md`
@@ -32,6 +34,8 @@ Build a skill when you notice you're repeating the same type of request.
 **Skills to Build (backlog):**
 - `daily-planning` — Morning kickoff: "What should I do today?" ✓ built
 - `weekly-review` — End-of-week reflection and reset ✓ built
+- `learn-language` — Conversational language sessions for travel ✓ built
+- `comm-coach` — Clarify thoughts and review communication for clarity and confidence ✓ built
 - `trade-journal` — Log and review futures trades
 - `client-onboarding` — New AI consulting client intake process
 - `content-workflow` — Instagram/YouTube content creation pipeline
