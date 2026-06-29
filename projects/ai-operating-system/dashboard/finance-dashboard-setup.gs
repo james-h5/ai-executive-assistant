@@ -100,14 +100,14 @@ function processImportedCSV(csvText) {
   expSheet.getRange(insertRow, 1, values.length, 1).setNumberFormat('dd/mm/yyyy');
   expSheet.getRange(insertRow, 4, values.length, 1).setNumberFormat('$#,##0.00');
 
-  // Highlight unrecognised rows amber
+  // Highlight unrecognised rows amber so James can fix the category manually
   const reviewRows = rows
-    .map((r, i) => r.category === '❓ Review' ? `A${insertRow + i}:E${insertRow + i}` : null)
+    .map((r, i) => r.needsReview ? `A${insertRow + i}:E${insertRow + i}` : null)
     .filter(Boolean);
   if (reviewRows.length > 0) expSheet.getRangeList(reviewRows).setBackground('#fff3cd');
 
   const reviewed = reviewRows.length;
-  return `Imported ${rows.length} transactions.\n${rows.length - reviewed} auto-categorised, ${reviewed} need review (highlighted amber on the Expenses tab).`;
+  return `Imported ${rows.length} transactions.\n${rows.length - reviewed} auto-categorised, ${reviewed} set to "Other" and highlighted amber — update the category column for those rows.`;
 }
 
 function parseWestpacCSV(csvText) {
@@ -168,7 +168,8 @@ function parseWestpacCSV(csvText) {
     const date = new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
     if (isNaN(date.getTime())) continue;
 
-    results.push({ date, description: desc, amount: debit, category: categorizeTransaction(desc) });
+      const cat = categorizeTransaction(desc);
+    results.push({ date, description: desc, amount: debit, category: cat === '❓ Review' ? 'Other' : cat, needsReview: cat === '❓ Review' });
   }
 
   return results;
