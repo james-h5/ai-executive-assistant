@@ -158,7 +158,9 @@ function renderFinances(container) {
             </div>
           </div>`;
         });
-      } else if (!hasCats) {
+      } else if (total > 0 && !hasCats) {
+        html += `<div class="text-secondary text-sm" style="text-align:center;padding:8px 0">Category breakdown unavailable — redeploy the Sheets Web App to see the breakdown.</div>`;
+      } else {
         html += `<div class="text-secondary text-sm" style="text-align:center;padding:8px 0">No expenses logged yet this month — import from Westpac to see the breakdown.</div>`;
       }
 
