@@ -77,18 +77,27 @@
 
       var hour = new Date().getHours();
       var timeOfDay = hour < 12 ? 'morning' : hour < 17 ? 'afternoon' : 'evening';
-      var msg = new SpeechSynthesisUtterance('Good ' + timeOfDay + ', sir.');
-      msg.pitch = 1.0;
-      msg.rate  = 0.9;
-      msg.lang  = 'en-AU';
+
+      var lines = [
+        'Suddenly the champion returns, with initiative and vengeance.',
+        'Good ' + timeOfDay + ', sir.',
+        'You can be anything you want to be, if you can see it, and you believe it will happen.',
+      ];
 
       function speak(voices) {
-        var voice  = voices.find(function (v) { return v.name === 'Microsoft James - English (Australia)'; })
-                  || voices.find(function (v) { return v.lang === 'en-GB'; })
-                  || voices.find(function (v) { return v.lang.startsWith('en'); })
-                  || null;
-        if (voice) msg.voice = voice;
-        try { speechSynthesis.speak(msg); } catch {}
+        var voice = voices.find(function (v) { return v.name === 'Microsoft James - English (Australia)'; })
+                 || voices.find(function (v) { return v.lang === 'en-GB'; })
+                 || voices.find(function (v) { return v.lang.startsWith('en'); })
+                 || null;
+
+        lines.forEach(function (text) {
+          var msg = new SpeechSynthesisUtterance(text);
+          msg.pitch = 1.0;
+          msg.rate  = 0.9;
+          msg.lang  = 'en-AU';
+          if (voice) msg.voice = voice;
+          try { speechSynthesis.speak(msg); } catch {}
+        });
       }
 
       var voices = speechSynthesis.getVoices();
