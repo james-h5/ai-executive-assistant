@@ -245,9 +245,16 @@ function buildExportData() {
     });
   }
 
-  // Latest weekly income
+  // Latest weekly income — scan column G from bottom to find last real entry
   const lastLogRow = log.getLastRow();
-  const latestWeekly = lastLogRow >= 4 ? (log.getRange(lastLogRow, 7).getValue() || 0) : 0;
+  let latestWeekly = 0;
+  if (lastLogRow >= 4) {
+    const totals = log.getRange(4, 7, lastLogRow - 3, 1).getValues();
+    for (let i = totals.length - 1; i >= 0; i--) {
+      const v = parseFloat(totals[i][0]);
+      if (v > 0) { latestWeekly = v; break; }
+    }
+  }
 
   // This month's expenses — total + by category
   const today = new Date();
