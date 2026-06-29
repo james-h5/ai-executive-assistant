@@ -78,17 +78,15 @@
       var hour = new Date().getHours();
       var timeOfDay = hour < 12 ? 'morning' : hour < 17 ? 'afternoon' : 'evening';
       var msg = new SpeechSynthesisUtterance('Good ' + timeOfDay + ', sir.');
-      msg.pitch = 0.85;
+      msg.pitch = 1.0;
       msg.rate  = 0.9;
-      msg.lang  = 'en-GB';
+      msg.lang  = 'en-AU';
 
       function speak(voices) {
-        var ukMale = voices.find(function (v) {
-          return v.lang === 'en-GB' && /george|david|richard|male/i.test(v.name);
-        });
-        var ukAny  = voices.find(function (v) { return v.lang === 'en-GB'; });
-        var enAny  = voices.find(function (v) { return v.lang.startsWith('en'); });
-        var voice  = ukMale || ukAny || enAny || null;
+        var voice  = voices.find(function (v) { return v.name === 'Microsoft James - English (Australia)'; })
+                  || voices.find(function (v) { return v.lang === 'en-GB'; })
+                  || voices.find(function (v) { return v.lang.startsWith('en'); })
+                  || null;
         if (voice) msg.voice = voice;
         try { speechSynthesis.speak(msg); } catch {}
       }
