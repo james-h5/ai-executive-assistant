@@ -2,6 +2,12 @@
    FINANCES & BUSINESS TAB
    ============================================================ */
 
+// ── Google Sheets Integration ─────────────────────────────────────────────────
+// After deploying finance-dashboard-setup.gs as a Web App, paste the URL here.
+// Deploy: Apps Script editor → Deploy → New deployment → Web App
+//         Execute as: Me | Who has access: Anyone with the link
+const SHEETS_WEB_APP_URL = '';
+
 function initFinances() {
   renderFinances(document.getElementById('tab-finances'));
 }
@@ -37,6 +43,7 @@ function saveFinData(d) { App.lsSet('jamesOS_finances', d); }
 function renderFinances(container) {
   let showForm = false;
   let editId = null;
+  let sheetsData = null; // cached from Google Sheets Web App
 
   function render() {
     const data = getFinData();
@@ -51,7 +58,10 @@ function renderFinances(container) {
       .filter(p => p.stage !== 'Closed Lost')
       .reduce((s, p) => s + (parseFloat(p.estimatedValue) || 0), 0);
 
-    let html = `<div class="stats-bar">
+    // Net worth panel (populated after Sheets fetch)
+    let html = sheetsData ? buildNetWorthPanel(sheetsData) : (SHEETS_WEB_APP_URL ? '<div id="nw-panel" class="card mb-20" style="opacity:0.5;text-align:center;padding:10px;font-size:13px;color:var(--text-secondary)">Loading from Google Sheets...</div>' : '<div id="nw-panel"></div>');
+
+    html += `<div class="stats-bar">
       <div class="stat-item"><div class="stat-label">Weekly Income</div><div class="stat-value">${App.formatCurrency(weeklyTotal)}</div></div>
       <div class="stat-item"><div class="stat-label">Monthly Rate</div><div class="stat-value">${App.formatCurrency(monthly)}</div></div>
       <div class="stat-item"><div class="stat-label">Target</div><div class="stat-value">${App.formatCurrency(MONTHLY_TARGET)}/mo</div></div>
@@ -221,5 +231,48 @@ function renderFinances(container) {
     });
   }
 
+  function buildNetWorthPanel(d) {
+    const nw  = d.netWorth  || {};
+    const exp = d.expenses  || {};
+    const monthlyRate = d.income ? d.income.monthlyRate : 0;
+    const netSavings  = monthlyRate - (exp.thisMonth || 0);
+    return `<div id="nw-panel" class="card mb-20">
+      <div class="flex items-center justify-between mb-12">
+        <span class="section-title">Net Worth &amp; Expenses</span>
+        <span class="text-sm" style="color:var(--text-muted)">Google Sheets · live</span>
+      </div>
+      <div class="stats-bar" style="margin-bottom:0">
+        <div class="stat-item">
+          <div class="stat-label">Net Worth</div>
+          <div class="stat-value">${App.formatCurrency(nw.netWorth || 0)}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Cash</div>
+          <div class="stat-value">${App.formatCurrency(nw.cash || 0)}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Investments</div>
+          <div class="stat-value">${App.formatCurrency(nw.totalInvestments || 0)}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Expenses (this month)</div>
+          <div class="stat-value ${exp.thisMonth > 0 ? 'negative' : ''}">${App.formatCurrency(exp.thisMonth || 0)}</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Net Savings (this month)</div>
+          <div class="stat-value ${netSavings >= 0 ? 'positive' : 'negative'}">${App.formatCurrency(netSavings)}</div>
+        </div>
+      </div>
+    </div>`;
+  }
+
   render();
+
+  // Fetch live data from Google Sheets (once on load, non-blocking)
+  if (SHEETS_WEB_APP_URL) {
+    fetch(SHEETS_WEB_APP_URL)
+      .then(r => r.json())
+      .then(data => { sheetsData = data; render(); })
+      .catch(() => { sheetsData = {}; render(); });
+  }
 }

@@ -29,6 +29,227 @@ const COLORS = {
 
 const MONTHLY_TARGET = 10000;
 
+// ── MENU ──────────────────────────────────────────────────────────────────────
+
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu('Finance Tools')
+    .addItem('Import Bank Statement (Westpac)', 'importBankStatement')
+    .addSeparator()
+    .addItem('Export to AI OS (JSON)', 'exportToJSON')
+    .addToUi();
+}
+
+// ── BANK IMPORT ───────────────────────────────────────────────────────────────
+
+function importBankStatement() {
+  const html = HtmlService.createHtmlOutput(`
+    <style>
+      body { font-family: Arial, sans-serif; padding: 16px; margin: 0; font-size: 13px; }
+      h3 { margin: 0 0 8px; color: #1e3a5f; }
+      p { color: #555; line-height: 1.5; margin: 0 0 10px; }
+      textarea { width: 100%; height: 260px; font-family: monospace; font-size: 11px; border: 1px solid #ccc; border-radius: 4px; padding: 8px; box-sizing: border-box; }
+      .btn { margin-top: 10px; padding: 10px 20px; background: #1e3a5f; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; }
+      .btn:disabled { opacity: 0.5; cursor: default; }
+      .steps { background: #f0f4f8; border-radius: 4px; padding: 10px 12px; margin-bottom: 10px; }
+    </style>
+    <h3>Import Westpac Transactions</h3>
+    <div class="steps">
+      1. Westpac Online Banking → My Accounts → select account<br>
+      2. Transaction History → Export → CSV → Download<br>
+      3. Open the file, Ctrl+A to select all, Ctrl+C to copy<br>
+      4. Paste below and click Import
+    </div>
+    <textarea id="csv" placeholder="Paste Westpac CSV here..."></textarea>
+    <br>
+    <button class="btn" id="btn" onclick="submit()">Import Transactions</button>
+    <script>
+      function submit() {
+        const csv = document.getElementById('csv').value.trim();
+        if (!csv) { alert('Please paste your CSV data first.'); return; }
+        const btn = document.getElementById('btn');
+        btn.textContent = 'Importing...';
+        btn.disabled = true;
+        google.script.run
+          .withSuccessHandler(function(msg) { alert(msg); google.script.host.close(); })
+          .withFailureHandler(function(err) {
+            alert('Error: ' + err.message);
+            btn.textContent = 'Import Transactions';
+            btn.disabled = false;
+          })
+          .processImportedCSV(csv);
+      }
+    </script>
+  `).setWidth(620).setHeight(460);
+
+  SpreadsheetApp.getUi().showModalDialog(html, 'Import Bank Statement');
+}
+
+function processImportedCSV(csvText) {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const expSheet = ss.getSheetByName('Expenses');
+  if (!expSheet) throw new Error('Expenses tab not found. Run setupFinanceDashboard() first.');
+
+  const rows = parseWestpacCSV(csvText);
+  if (rows.length === 0) return 'No expense transactions found. Make sure you pasted a Westpac CSV with debit (money out) transactions.';
+
+  const insertRow = Math.max(expSheet.getLastRow(), 3) + 1;
+  const values = rows.map(r => [r.date, r.category, r.description, r.amount, 'imported']);
+
+  expSheet.getRange(insertRow, 1, values.length, 5).setValues(values);
+  expSheet.getRange(insertRow, 1, values.length, 1).setNumberFormat('dd/mm/yyyy');
+  expSheet.getRange(insertRow, 4, values.length, 1).setNumberFormat('$#,##0.00');
+
+  // Highlight unrecognised rows amber
+  const reviewRows = rows
+    .map((r, i) => r.category === '❓ Review' ? `A${insertRow + i}:E${insertRow + i}` : null)
+    .filter(Boolean);
+  if (reviewRows.length > 0) expSheet.getRangeList(reviewRows).setBackground('#fff3cd');
+
+  const reviewed = reviewRows.length;
+  return `Imported ${rows.length} transactions.\n${rows.length - reviewed} auto-categorised, ${reviewed} need review (highlighted amber on the Expenses tab).`;
+}
+
+function parseWestpacCSV(csvText) {
+  const lines = csvText.trim().split('\n').map(l => l.trim()).filter(l => l.length > 0);
+  const results = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const cols = splitCSVLine(lines[i]);
+
+    // Skip header row — Westpac headers start with "BSB" or non-numeric first col
+    if (i === 0 && (cols[0].toLowerCase() === 'bsb' || cols[0].toLowerCase() === 'date' || isNaN(cols[0].replace(/[-/]/g, '')))) continue;
+
+    // Westpac standard: BSB(0), Account(1), Date(2), Narration(3), Cheque(4), Debit(5), Credit(6), Balance(7), Type(8)
+    if (cols.length < 7) continue;
+
+    const dateStr  = cols[2].trim();
+    const desc     = cols[3].trim();
+    const debitStr = cols[5].trim();
+
+    // Only import debits (money out = expenses)
+    const debit = parseFloat(debitStr);
+    if (!debitStr || isNaN(debit) || debit <= 0) continue;
+
+    // Parse DD/MM/YYYY
+    const parts = dateStr.split('/');
+    if (parts.length !== 3) continue;
+    const date = new Date(parseInt(parts[2]), parseInt(parts[1]) - 1, parseInt(parts[0]));
+    if (isNaN(date.getTime())) continue;
+
+    results.push({ date, description: desc, amount: debit, category: categorizeTransaction(desc) });
+  }
+
+  return results;
+}
+
+function splitCSVLine(line) {
+  const result = [];
+  let cur = '', inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    if (line[i] === '"') { inQuotes = !inQuotes; }
+    else if (line[i] === ',' && !inQuotes) { result.push(cur); cur = ''; }
+    else { cur += line[i]; }
+  }
+  result.push(cur);
+  return result;
+}
+
+function categorizeTransaction(description) {
+  const d = description.toUpperCase();
+  const rules = [
+    { cat: 'Food & Groceries', kw: ['WOOLWORTHS', 'WW ', 'COLES', 'ALDI', ' IGA ', 'HARRIS FARM', 'GROCERY', 'BUTCHER', 'BAKERY'] },
+    { cat: 'Eating Out',       kw: ['MCDONALD', 'KFC', 'HUNGRY JACK', 'NANDOS', "GRILL'D", 'UBEREATS', 'UBER EATS', 'DELIVEROO', 'MENULOG', 'DOORDASH', 'CAFE', 'COFFEE', 'RESTAURANT', 'SUSHI', 'THAI', 'PIZZA', 'SUBWAY', 'DOMINO', 'KEBAB', 'GUZMAN'] },
+    { cat: 'Transport',        kw: ['UBER', 'OLA ', 'DIDI', 'TAXI', ' BP ', 'CALTEX', 'AMPOL', 'SHELL ', '7-ELEVEN', 'PETROL', 'PARKING', 'TRANSLINK', 'GO CARD', 'GOCARD', 'QUEENSLAND RAIL'] },
+    { cat: 'Gym / Boxing',     kw: ['BOXING', ' GYM ', 'FITNESS', 'PLANET FITNESS', 'ANYTIME FITNESS', 'F45', 'CROSSFIT'] },
+    { cat: 'Subscriptions',    kw: ['NETFLIX', 'SPOTIFY', 'CLAUDE', 'ANTHROPIC', 'APPLE.COM', 'APPLE STORE', 'GOOGLE', 'AMAZON PRIME', 'DISNEY', 'CHATGPT', 'OPENAI', 'MICROSOFT', 'ADOBE'] },
+    { cat: 'Clothing',         kw: ['KMART', 'COTTON ON', 'H&M', 'UNIQLO', 'MYER', 'DAVID JONES', 'TARGET', 'BIG W', 'FACTORIE', 'SUPRE', 'JD SPORT', 'REBEL SPORT', 'FOOT LOCKER'] },
+    { cat: 'Entertainment',    kw: ['EVENT CINEMA', 'HOYTS', 'VILLAGE CINEMA', 'TIMEZONE', 'BOWLING'] },
+    { cat: 'Health',           kw: ['PHARMACY', 'CHEMIST', 'PRICELINE', 'DOCTOR', 'MEDICAL', 'DENTAL', 'HOSPITAL', 'MEDICARE', 'OPTICAL'] },
+    { cat: 'Rent / Board',     kw: ['RENT', 'BOARD PAYMENT', 'REAL ESTATE', 'LEASE'] },
+    { cat: 'Education',        kw: ['QUT', 'GRIFFITH UNI', 'UNIVERSITY', 'TAFE', 'UDEMY', 'COURSERA'] },
+    { cat: 'Business',         kw: ['OFFICEWORKS', 'BUNNINGS', 'HARVEY NORMAN', 'JB HI-FI'] },
+  ];
+
+  for (const rule of rules) {
+    if (rule.kw.some(kw => d.includes(kw))) return rule.cat;
+  }
+  return '❓ Review';
+}
+
+// ── WEB APP ENDPOINT (for AI OS integration) ──────────────────────────────────
+//
+// Deploy this script as a Web App:
+//   Apps Script editor → Deploy → New deployment → Web App
+//   Execute as: Me | Who has access: Anyone
+// Then paste the URL into finances.js SHEETS_WEB_APP_URL.
+
+function doGet(e) {
+  const data = buildExportData();
+  return ContentService.createTextOutput(JSON.stringify(data))
+    .setMimeType(ContentService.MimeType.JSON);
+}
+
+function buildExportData() {
+  const ss  = SpreadsheetApp.getActiveSpreadsheet();
+  const inv  = ss.getSheetByName('Investments');
+  const dash = ss.getSheetByName('Dashboard');
+  const log  = ss.getSheetByName('Income Log');
+  const exp  = ss.getSheetByName('Expenses');
+
+  // Investments rows 4-6
+  const investments = [];
+  for (let r = 4; r <= 6; r++) {
+    const name = inv.getRange(r, 1).getValue();
+    if (!name || name === '') continue;
+    investments.push({
+      asset:     String(name),
+      value:     inv.getRange(r, 5).getValue() || 0,
+      gainLoss:  inv.getRange(r, 6).getValue() || 0,
+      returnPct: inv.getRange(r, 7).getValue() || 0,
+    });
+  }
+
+  // Latest weekly income
+  const lastLogRow = log.getLastRow();
+  const latestWeekly = lastLogRow >= 4 ? (log.getRange(lastLogRow, 7).getValue() || 0) : 0;
+
+  // This month's expenses
+  const today = new Date();
+  const expLastRow = exp.getLastRow();
+  let thisMonthExpenses = 0;
+  if (expLastRow >= 4) {
+    const expData = exp.getRange(4, 1, expLastRow - 3, 4).getValues();
+    thisMonthExpenses = expData.reduce((sum, row) => {
+      const d = row[0];
+      if (d instanceof Date && d.getMonth() === today.getMonth() && d.getFullYear() === today.getFullYear()) {
+        return sum + (parseFloat(row[3]) || 0);
+      }
+      return sum;
+    }, 0);
+  }
+
+  return {
+    timestamp: new Date().toISOString(),
+    netWorth: {
+      cash:             dash.getRange(5, 2).getValue() || 0,
+      totalInvestments: dash.getRange(6, 2).getValue() || 0,
+      liabilities:      dash.getRange(7, 2).getValue() || 0,
+      netWorth:         dash.getRange(8, 2).getValue() || 0,
+    },
+    income: {
+      latestWeekly:  latestWeekly,
+      monthlyRate:   +(latestWeekly * 4.33).toFixed(2),
+      targetMonthly: MONTHLY_TARGET,
+      gapToTarget:   +Math.max(0, MONTHLY_TARGET - latestWeekly * 4.33).toFixed(2),
+    },
+    expenses: {
+      thisMonth: +thisMonthExpenses.toFixed(2),
+    },
+    investments,
+  };
+}
+
 // ── MAIN SETUP ────────────────────────────────────────────────────────────────
 
 function setupFinanceDashboard() {
@@ -178,6 +399,90 @@ function buildDashboard(ss) {
     .setBackground(COLORS.total.bg).setFontColor(COLORS.total.fg).setFontWeight('bold');
   sh.getRange(16, 3, 1, 3).setBackground(COLORS.total.bg);
 
+  // ── EXPENSES THIS MONTH ───────────────────────────────────────────────────────
+  // Rows 17-30 — expense breakdown by category + savings metrics
+
+  // Row 17 spacer
+  sh.getRange(17, 1, 1, 5).setBackground('#ffffff');
+
+  // Row 18 section header
+  sectionHeader(sh, 18, 1, 'EXPENSES — THIS MONTH', 5);
+
+  // Row 19 column sub-headers
+  sh.getRange(19, 1).setValue('Category').setFontWeight('bold').setBackground('#dce8f5').setFontColor('#1a3a5c');
+  sh.getRange(19, 2).setValue('Amount').setFontWeight('bold').setBackground('#dce8f5').setFontColor('#1a3a5c').setHorizontalAlignment('right');
+  sh.getRange(19, 3).setBackground('#dce8f5');
+  sh.getRange(19, 4).setValue('Savings').setFontWeight('bold').setBackground('#dce8f5').setFontColor('#1a3a5c');
+  sh.getRange(19, 5).setValue('Amount').setFontWeight('bold').setBackground('#dce8f5').setFontColor('#1a3a5c').setHorizontalAlignment('right');
+
+  // Expense categories with SUMPRODUCT formulas — rows 20-27
+  const expCategories = [
+    'Food & Groceries',
+    'Eating Out',
+    'Transport',
+    'Gym / Boxing',
+    'Subscriptions',
+    'Rent / Board',
+    'Clothing',
+    'Other',
+  ];
+
+  // Helper: SUMPRODUCT for a category in current month
+  function expFormula(cat) {
+    const base = "(MONTH(Expenses!$A$4:$A$500)=MONTH(TODAY()))*(YEAR(Expenses!$A$4:$A$500)=YEAR(TODAY()))";
+    if (cat === 'Other') {
+      // Other = anything not in the known categories (includes ❓ Review)
+      const known = expCategories.slice(0, -1).map(c => `(Expenses!$B$4:$B$500<>"${c}")`).join('*');
+      return `=SUMPRODUCT(${base}*${known}*Expenses!$D$4:$D$500)`;
+    }
+    return `=SUMPRODUCT(${base}*(Expenses!$B$4:$B$500="${cat}")*Expenses!$D$4:$D$500)`;
+  }
+
+  // Total expenses formula
+  const totalExpFormula = '=SUMPRODUCT((MONTH(Expenses!$A$4:$A$500)=MONTH(TODAY()))*(YEAR(Expenses!$A$4:$A$500)=YEAR(TODAY()))*Expenses!$D$4:$D$500)';
+
+  expCategories.forEach((cat, i) => {
+    const r = 20 + i;
+    const bg = i % 2 === 0 ? COLORS.white.bg : COLORS.neutral.bg;
+    rowLabel(sh, r, 1, cat);
+    sh.getRange(r, 1).setBackground(bg);
+    sh.getRange(r, 2).setFormula(expFormula(cat)).setNumberFormat('$#,##0.00').setBackground(bg).setHorizontalAlignment('right');
+    sh.getRange(r, 3).setBackground(bg);
+
+    // Right column — savings metrics in first 3 rows
+    if (i === 0) {
+      rowLabel(sh, r, 4, 'Total Expenses', true);
+      sh.getRange(r, 5).setFormula(totalExpFormula).setNumberFormat('$#,##0.00').setBackground(COLORS.calc.bg).setFontWeight('bold');
+    } else if (i === 1) {
+      rowLabel(sh, r, 4, 'Net Savings');
+      sh.getRange(r, 5).setFormula(`=E6-E${r-1}`).setNumberFormat('$#,##0.00').setBackground(COLORS.calc.bg);
+    } else if (i === 2) {
+      rowLabel(sh, r, 4, 'Savings Rate');
+      sh.getRange(r, 5).setFormula(`=IFERROR(E${r-1}/E6,0)`).setNumberFormat('0.0%').setBackground(COLORS.calc.bg);
+    } else {
+      sh.getRange(r, 4, 1, 2).setBackground(COLORS.neutral.bg);
+    }
+  });
+
+  // Row 28 — Total
+  const totalExpRow = 20 + expCategories.length;
+  sh.getRange(totalExpRow, 1).setValue('TOTAL').setFontWeight('bold').setBackground(COLORS.total.bg).setFontColor(COLORS.total.fg);
+  sh.getRange(totalExpRow, 2).setFormula(totalExpFormula).setNumberFormat('$#,##0.00')
+    .setBackground(COLORS.total.bg).setFontColor(COLORS.total.fg).setFontWeight('bold').setHorizontalAlignment('right');
+  sh.getRange(totalExpRow, 3, 1, 3).setBackground(COLORS.total.bg);
+
+  // Conditional formatting: Savings Rate red if negative, green if > 20%
+  const savingsRateCell = sh.getRange(22, 5);
+  const srGreenRule = SpreadsheetApp.newConditionalFormatRule()
+    .whenNumberGreaterThanOrEqualTo(0.2)
+    .setBackground('#d4edda').setFontColor('#155724')
+    .setRanges([savingsRateCell]).build();
+  const srRedRule = SpreadsheetApp.newConditionalFormatRule()
+    .whenNumberLessThan(0)
+    .setBackground('#f8d7da').setFontColor('#721c24')
+    .setRanges([savingsRateCell]).build();
+
+  // ── CONDITIONAL FORMATTING (applied all at once) ──────────────────────────
   // Conditional formatting: Net Worth cell green if positive
   const nwRule = SpreadsheetApp.newConditionalFormatRule()
     .whenNumberGreaterThan(0)
@@ -187,7 +492,7 @@ function buildDashboard(ss) {
     .whenNumberGreaterThan(0)
     .setBackground('#fff3cd').setFontColor('#856404')
     .setRanges([sh.getRange(7, 5)]).build();
-  sh.setConditionalFormatRules([nwRule, gapRule]);
+  sh.setConditionalFormatRules([nwRule, gapRule, srGreenRule, srRedRule]);
 }
 
 // ── INVESTMENTS ───────────────────────────────────────────────────────────────
@@ -554,56 +859,15 @@ function buildNetWorthHistory(ss) {
  *      to show live net worth + investments alongside income/pipeline data
  */
 function exportToJSON() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const inv  = ss.getSheetByName('Investments');
-  const dash = ss.getSheetByName('Dashboard');
-  const log  = ss.getSheetByName('Income Log');
-
-  // Investments (rows 4-6)
-  const investments = [];
-  for (let r = 4; r <= 6; r++) {
-    const name = inv.getRange(r, 1).getValue();
-    if (!name || name === '') continue;
-    investments.push({
-      asset:       String(name),
-      value:       inv.getRange(r, 5).getValue() || 0,
-      gainLoss:    inv.getRange(r, 6).getValue() || 0,
-      returnPct:   inv.getRange(r, 7).getValue() || 0,
-    });
-  }
-
-  // Latest weekly income from Income Log
-  const lastRow = log.getLastRow();
-  const latestWeekly = lastRow >= 4 ? (log.getRange(lastRow, 7).getValue() || 0) : 0;
-
-  const snapshot = {
-    timestamp:   new Date().toISOString(),
-    netWorth: {
-      cash:              dash.getRange(5, 2).getValue() || 0,
-      totalInvestments:  dash.getRange(6, 2).getValue() || 0,
-      liabilities:       dash.getRange(7, 2).getValue() || 0,
-      netWorth:          dash.getRange(8, 2).getValue() || 0,
-    },
-    income: {
-      latestWeekly:  latestWeekly,
-      monthlyRate:   +(latestWeekly * 4.33).toFixed(2),
-      targetMonthly: MONTHLY_TARGET,
-      gapToTarget:   +Math.max(0, MONTHLY_TARGET - latestWeekly * 4.33).toFixed(2),
-    },
-    investments,
-  };
-
-  const json = JSON.stringify(snapshot, null, 2);
-
-  // Write output to Dashboard for easy copying
-  const outputRow = 20;
+  const data = buildExportData();
+  const json = JSON.stringify(data, null, 2);
+  const dash = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Dashboard');
+  const outputRow = 35;
   dash.getRange(outputRow, 1).setValue('JSON Export (for AI OS):').setFontWeight('bold');
   dash.getRange(outputRow + 1, 1, 1, 5).merge()
-    .setValue(json)
-    .setFontFamily('Courier New').setFontSize(8)
+    .setValue(json).setFontFamily('Courier New').setFontSize(8)
     .setWrap(true).setVerticalAlignment('top');
-  dash.setRowHeight(outputRow + 1, 200);
-
+  dash.setRowHeight(outputRow + 1, 220);
   SpreadsheetApp.getUi().alert('JSON written to Dashboard row ' + (outputRow + 1) + '.\nCopy it and paste into the AI OS integration when ready.');
 }
 
