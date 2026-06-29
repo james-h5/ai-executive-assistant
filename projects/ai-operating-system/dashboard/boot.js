@@ -81,7 +81,7 @@
       var timeOfDay = hour < 12 ? 'morning' : hour < 17 ? 'afternoon' : 'evening';
 
       var lines = [
-        'Good ' + timeOfDay + ', sir. The mission parameters are up. How can I be of assistance?',
+        'Good ' + timeOfDay + ', sir. The mission parameters have been updated on the system. How can I be of assistance?',
       ];
 
       function speak(voices) {
