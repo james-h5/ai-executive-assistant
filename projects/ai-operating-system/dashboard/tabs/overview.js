@@ -221,6 +221,38 @@ function renderOverview(container) {
     html += `</div>`; // end right col
     html += `</div>`; // end 2col
 
+    // ── This Week's Events ────────────────────────────────────
+    const calData   = App.lsGet('jamesOS_calendar', { events: [] });
+    const weekStart = App.todayKey();
+    const weekEnd   = (() => { const d = new Date(); d.setDate(d.getDate() + 6); return App.formatDateKey(d); })();
+    const weekEvents = calData.events
+      .filter(ev => ev.date >= weekStart && ev.date <= weekEnd)
+      .sort((a, b) => a.date.localeCompare(b.date) || (a.time || '').localeCompare(b.time || ''));
+
+    html += `<div class="section-header mb-8 mt-20"><span class="section-title">This Week's Events</span></div>`;
+    html += `<div class="card">`;
+    if (!weekEvents.length) {
+      html += `<div class="empty-state" style="padding:20px">No events this week.</div>`;
+    } else {
+      weekEvents.forEach(ev => {
+        const evDate   = new Date(ev.date + 'T00:00:00');
+        const todayD   = new Date(); todayD.setHours(0, 0, 0, 0);
+        const diffDays = Math.round((evDate - todayD) / 86400000);
+        const dayLabel = diffDays === 0 ? 'Today'
+          : diffDays === 1 ? 'Tomorrow'
+          : evDate.toLocaleDateString('en-AU', { weekday: 'long' });
+        const colorMap = (typeof CAL_CATEGORY_COLORS !== 'undefined') ? CAL_CATEGORY_COLORS : {};
+        const color    = colorMap[ev.category] || 'muted';
+        const catLabel = ev.category ? ev.category.charAt(0).toUpperCase() + ev.category.slice(1) : '';
+        html += `<div class="task-item">
+          <span class="text-sm text-secondary" style="min-width:90px;flex-shrink:0">${dayLabel}</span>
+          <span class="task-name font-500">${App.esc(ev.title)}</span>
+          <span class="badge badge-${color}">${catLabel}</span>
+        </div>`;
+      });
+    }
+    html += `</div>`;
+
     container.innerHTML = html;
 
     // ── Events ────────────────────────────────────────────────
