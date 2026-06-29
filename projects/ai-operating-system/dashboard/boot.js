@@ -81,9 +81,7 @@
       var timeOfDay = hour < 12 ? 'morning' : hour < 17 ? 'afternoon' : 'evening';
 
       var lines = [
-        'Suddenly the champion returns, with initiative and vengeance.',
-        'Good ' + timeOfDay + ', sir.',
-        'You can be anything you want to be, if you can see it, and you believe it, it will happen.',
+        'Good ' + timeOfDay + ', sir. The mission parameters are up. How can I be of assistance?',
       ];
 
       function speak(voices) {
@@ -94,8 +92,8 @@
 
         lines.forEach(function (text) {
           var msg = new SpeechSynthesisUtterance(text);
-          msg.pitch = 0.95;
-          msg.rate  = 0.75;
+          msg.pitch = 1.0;
+          msg.rate  = 0.85;
           msg.lang  = 'en-AU';
           if (voice) msg.voice = voice;
           try { speechSynthesis.speak(msg); } catch {}
