@@ -30,15 +30,18 @@ function getHabitsData() {
 function saveHabitsData(data) { App.lsSet('jamesOS_habits', data); }
 
 function getStreak(habitId, completions) {
+  const today    = new Date();
+  const todayKey = App.formatDateKey(today);
+  const todayDone = !!(completions[todayKey]?.includes(habitId));
   let streak = 0;
-  const d = new Date();
-  if (!completions[App.formatDateKey(d)]?.includes(habitId)) d.setDate(d.getDate() - 1);
+  const d = new Date(today);
+  d.setDate(d.getDate() - 1);
   for (let i = 0; i < 365; i++) {
     const key = App.formatDateKey(d);
     if (completions[key]?.includes(habitId)) { streak++; d.setDate(d.getDate() - 1); }
     else break;
   }
-  return streak;
+  return streak + (todayDone ? 1 : 0);
 }
 
 function buildDays(n) {
@@ -49,7 +52,8 @@ function buildDays(n) {
 }
 
 function renderHabits(container) {
-  let showForm = false;
+  let showForm    = false;
+  let editHabitId = null;
   let days = buildDays(7);
 
   function render() {
@@ -99,6 +103,19 @@ function renderHabits(container) {
       </tr></thead><tbody>`;
 
     data.habits.forEach(habit => {
+      if (editHabitId === habit.id) {
+        html += `<tr>
+          <td colspan="${days.length + 3}" style="padding:6px 0">
+            <div class="flex gap-8 items-center" style="padding:0 2px">
+              <input class="form-input" id="he-icon" value="${App.esc(habit.icon || '')}" style="width:60px;flex-shrink:0" placeholder="🌟">
+              <input class="form-input" id="he-name" value="${App.esc(habit.name)}" style="flex:1">
+              <button class="btn btn-primary btn-sm" id="he-save" data-habit="${habit.id}">Save</button>
+              <button class="btn btn-ghost btn-sm" id="he-cancel">Cancel</button>
+            </div>
+          </td>
+        </tr>`;
+        return;
+      }
       const streak = getStreak(habit.id, data.completions);
       html += `<tr>
         <td class="habit-row-name">${App.esc(habit.icon || '')} ${App.esc(habit.name)}</td>`;
@@ -110,7 +127,10 @@ function renderHabits(container) {
         html += `<td><button class="habit-dot ${cls}" data-habit="${habit.id}" data-key="${d.key}" ${!isTarget ? 'disabled' : ''}>${done ? '✓' : ''}</button></td>`;
       });
       html += `<td class="mono text-sm" style="white-space:nowrap;padding:0 8px">${streak > 0 ? '🔥 ' + streak : '<span class="text-muted">—</span>'}</td>`;
-      html += `<td><button class="btn-icon hbt-del" data-habit="${habit.id}" title="Delete">✕</button></td>`;
+      html += `<td style="white-space:nowrap">
+        <button class="btn-icon hbt-edit" data-habit="${habit.id}" title="Edit" style="margin-right:2px">✎</button>
+        <button class="btn-icon hbt-del" data-habit="${habit.id}" title="Delete">✕</button>
+      </td>`;
       html += `</tr>`;
     });
 
@@ -149,6 +169,25 @@ function renderHabits(container) {
         saveHabitsData(d);
         render();
       };
+    });
+
+    container.querySelectorAll('.hbt-edit').forEach(btn => {
+      btn.onclick = () => { editHabitId = btn.dataset.habit; render(); setTimeout(() => container.querySelector('#he-name')?.focus(), 0); };
+    });
+
+    container.querySelector('#he-cancel')?.addEventListener('click', () => { editHabitId = null; render(); });
+
+    container.querySelector('#he-save')?.addEventListener('click', () => {
+      const id   = container.querySelector('#he-save').dataset.habit;
+      const name = container.querySelector('#he-name').value.trim();
+      if (!name) return;
+      const icon = container.querySelector('#he-icon').value.trim() || '✓';
+      const d = getHabitsData();
+      const habit = d.habits.find(h => h.id === id);
+      if (habit) { habit.name = name; habit.icon = icon; }
+      saveHabitsData(d);
+      editHabitId = null;
+      render();
     });
 
     container.querySelectorAll('.hbt-del').forEach(btn => {

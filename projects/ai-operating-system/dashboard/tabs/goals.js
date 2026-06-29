@@ -35,11 +35,11 @@ function getGoalProgress() { return App.lsGet('jamesOS_goals', {}); }
 function saveGoalProgress(d) { App.lsSet('jamesOS_goals', d); }
 
 function urgency(days) {
-  if (days < 0) return { color: 'red',   badge: 'Overdue' };
-  if (days === 0) return { color: 'red',  badge: 'Today' };
-  if (days <= 7)  return { color: 'red',  badge: days + 'd' };
-  if (days <= 30) return { color: 'amber',badge: days + 'd' };
-  return               { color: 'blue',  badge: days + 'd' };
+  if (days < 0)   return { color: 'red',   badge: 'Overdue' };
+  if (days === 0) return { color: 'amber', badge: 'Today' };
+  if (days <= 7)  return { color: 'amber', badge: days + 'd' };
+  if (days <= 30) return { color: 'blue',  badge: days + 'd' };
+  return                 { color: 'muted', badge: days + 'd' };
 }
 
 function renderGoals(container) {

@@ -153,10 +153,14 @@ function renderTrading(container) {
     </div>`;
 
     // Chart + log button
+    const doneCount = data.trades.filter(t => t.exitPrice && t.date).length;
+    const chartInner = doneCount < 2
+      ? `<div class="empty-state" style="height:160px"><div class="empty-state-icon">📈</div>Log at least 2 completed trades to see your equity curve</div>`
+      : `<svg viewBox="0 0 600 140" preserveAspectRatio="none">${equitySVG(data.trades)}</svg>`;
     html += `<div class="flex gap-16 mb-16 items-start">
       <div class="chart-container" style="flex:1">
         <div class="section-header mb-8"><span class="section-title">Equity Curve</span></div>
-        <svg viewBox="0 0 600 140" preserveAspectRatio="none">${equitySVG(data.trades)}</svg>
+        ${chartInner}
       </div>
       <div class="flex flex-col gap-8 mt-20">
         <button class="btn btn-primary" id="tr-log">+ Log Trade</button>

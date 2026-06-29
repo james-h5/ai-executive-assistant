@@ -118,8 +118,8 @@ const App = (() => {
     checkConfig();
     initClock();
     initRouter();
-    tabInited['daily'] = true;
-    if (typeof initDaily === 'function') initDaily();
+    tabInited['overview'] = true;
+    if (typeof initOverview === 'function') initOverview();
   });
 
   return { apiFetch, lsGet, lsSet, formatDateKey, todayKey, daysUntil, startOfDay, endOfDay, formatCurrency, formatCurrencyDecimals, uuid, esc, CLICKUP_BASE };

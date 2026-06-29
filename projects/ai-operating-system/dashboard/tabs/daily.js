@@ -6,13 +6,16 @@ function initDaily() {
   renderDaily(document.getElementById('tab-daily'));
 }
 
-const CURRENT_PRIORITIES = [
+const DEFAULT_PRIORITIES = [
   { n: 1, text: 'Master Claude Code',                        cat: 'learning'  },
   { n: 2, text: 'Build AI OS / Executive Assistant',         cat: 'business'  },
   { n: 3, text: 'Build AI consulting foundations',           cat: 'business'  },
   { n: 4, text: 'Boxing — possible fight end of July',       cat: 'health'    },
   { n: 5, text: 'Futures trading — consistent practice',     cat: 'trading'   },
 ];
+
+function getPriorities() { return App.lsGet('jamesOS_priorities', DEFAULT_PRIORITIES); }
+function savePriorities(arr) { App.lsSet('jamesOS_priorities', arr); }
 
 const CAT_COLOR = { learning: 'blue', business: 'purple', health: 'green', trading: 'amber' };
 
@@ -21,11 +24,12 @@ const LS_TEAMEXP = 'cu_team_expires';
 const LS_CACHE   = 'cu_tasks_cache';
 
 function renderDaily(container) {
-  let loading = false;
-  let tasks = null;
-  let overdue = null;
-  let error = null;
-  let lastFetched = null;
+  let loading            = false;
+  let tasks              = null;
+  let overdue            = null;
+  let error              = null;
+  let lastFetched        = null;
+  let editingPriorities  = false;
 
   async function getTeamId() {
     const cached = App.lsGet(LS_TEAM, null);
@@ -167,16 +171,31 @@ function renderDaily(container) {
       html += `</div>`;
 
       // Current priorities
-      html += `<div class="section-header mb-8"><span class="section-title">Current Focus</span></div>
-      <div class="card">`;
-      CURRENT_PRIORITIES.forEach(p => {
-        html += `<div class="task-item">
-          <span class="mono text-sm text-muted" style="min-width:18px;flex-shrink:0">${p.n}.</span>
-          <span class="task-name">${App.esc(p.text)}</span>
-          <span class="badge badge-${CAT_COLOR[p.cat]}" style="flex-shrink:0;font-size:10px">${p.cat}</span>
+      const priorities = getPriorities();
+      if (editingPriorities) {
+        html += `<div class="section-header mb-8">
+          <span class="section-title">Current Focus</span>
+          <button class="btn btn-primary btn-sm" id="prio-done">Done</button>
+        </div>
+        <div class="card">
+          <textarea class="form-input" id="prio-textarea" rows="${priorities.length}" style="width:100%;resize:vertical;font-size:13px">${priorities.map(p => App.esc(p.text)).join('\n')}</textarea>
+          <div class="text-xs text-muted mt-6">One priority per line · Order = rank · Changes saved when you click Done</div>
         </div>`;
-      });
-      html += `</div>`;
+      } else {
+        html += `<div class="section-header mb-8">
+          <span class="section-title">Current Focus</span>
+          <button class="btn btn-ghost btn-sm" id="prio-edit">Edit</button>
+        </div>
+        <div class="card">`;
+        priorities.forEach((p, i) => {
+          html += `<div class="task-item">
+            <span class="mono text-sm text-muted" style="min-width:18px;flex-shrink:0">${i + 1}.</span>
+            <span class="task-name">${App.esc(p.text)}</span>
+            <span class="badge badge-${CAT_COLOR[p.cat] || 'muted'}" style="flex-shrink:0;font-size:10px">${p.cat}</span>
+          </div>`;
+        });
+        html += `</div>`;
+      }
 
       html += `</div>`; // right col
       html += `</div>`; // grid
@@ -185,6 +204,26 @@ function renderDaily(container) {
     container.innerHTML = html;
 
     container.querySelector('#daily-refresh').onclick = load;
+
+    container.querySelector('#prio-edit')?.addEventListener('click', () => {
+      editingPriorities = true;
+      render();
+      setTimeout(() => container.querySelector('#prio-textarea')?.focus(), 0);
+    });
+
+    container.querySelector('#prio-done')?.addEventListener('click', () => {
+      const raw = container.querySelector('#prio-textarea').value;
+      const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+      const current = getPriorities();
+      const updated = lines.map((text, i) => ({
+        n:   i + 1,
+        text,
+        cat: current[i]?.cat || 'business',
+      }));
+      savePriorities(updated);
+      editingPriorities = false;
+      render();
+    });
 
     container.querySelectorAll('.task-checkbox').forEach(cb => {
       cb.onchange = async () => {

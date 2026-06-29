@@ -669,10 +669,31 @@ input[type="range"].form-input {
 .font-600 { font-weight: 600; }
 .font-700 { font-weight: 700; }
 
+/* ── Overview Tab ───────────────────────────────────────────── */
+
+.overview-2col {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 20px;
+}
+
+.habit-check-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.habit-check-item:last-child { border-bottom: none; }
+.habit-check-item.done .task-name { color: var(--text-secondary); }
+
 /* ── Responsive ─────────────────────────────────────────────── */
 
 @media (max-width: 900px) {
   .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .overview-2col { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
