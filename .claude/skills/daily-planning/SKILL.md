@@ -46,6 +46,10 @@ Output the plan in this exact format:
 
 **Rollover from yesterday:** [Incomplete tasks from the previous daily log — skip this section if no prior log exists]
 
+**Daily Skills:**
+- Language practice — `/learn-language`
+- Communication coaching — `/comm-coach`
+
 *Today builds toward: [one sentence connecting this day to the bigger vision — location-independent income, travel, financial freedom]*
 
 ---
