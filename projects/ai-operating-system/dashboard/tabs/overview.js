@@ -44,8 +44,8 @@ function renderOverview(container) {
   function render() {
     const habitsData  = getHabitsData();
     const goalProg    = getGoalProgress();
-    const finData     = getFinData();
     const tradeData   = App.lsGet('jamesOS_trades', { trades: [] });
+    const sheetsCache = App.lsGet('jamesOS_sheets_cache', null);
 
     // ── Stats ─────────────────────────────────────────────────
     const bestStreak = habitsData.habits.length
@@ -64,9 +64,8 @@ function renderOverview(container) {
       .reduce((sum, t) => sum + (ovPnl(t) ?? 0), 0);
     const hasTrades   = tradeData.trades.some(t => t.exitPrice);
 
-    const weeklyTotal = INCOME_STREAMS.reduce((sum, s) =>
-      sum + (finData.actuals[s.id] !== undefined ? parseFloat(finData.actuals[s.id]) : s.defaultActual), 0);
-    const incomePct = Math.round(weeklyTotal * 4.33 / 100); // (monthly / 10000) * 100
+    const monthlyRate = sheetsCache?.income?.monthlyRate || 0;
+    const incomePct   = monthlyRate > 0 ? Math.round((monthlyRate / MONTHLY_TARGET) * 100) : null;
 
     // ── Today's habits ────────────────────────────────────────
     const todayKey     = App.todayKey();
@@ -80,6 +79,11 @@ function renderOverview(container) {
       .sort((a, b) => b.date.localeCompare(a.date) || (b.entryTime || '').localeCompare(a.entryTime || ''))
       .slice(0, 3);
 
+    // ── Greeting ──────────────────────────────────────────────
+    const hour     = now.getHours();
+    const greeting = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+    const dateStr  = now.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long' });
+
     // ── Render ────────────────────────────────────────────────
     const taskCount    = tasks ? tasks.filter(t => t.status?.type !== 'closed').length : null;
     const pnlColor     = monthPnL >= 0 ? 'positive' : 'negative';
@@ -88,7 +92,13 @@ function renderOverview(container) {
       : '—';
     const eventColor   = nextEvent && nextEvent.days <= 14 ? 'negative' : 'neutral';
 
-    let html = `<div class="stats-bar mb-20">
+    let html = `<div class="flex items-center justify-between mb-16">
+      <div>
+        <div style="font-size:20px;font-weight:700">${greeting}, James</div>
+        <div class="text-sm text-secondary mt-4">${dateStr}</div>
+      </div>
+    </div>
+    <div class="stats-bar mb-20">
       <div class="stat-item">
         <div class="stat-label">Tasks Remaining</div>
         <div class="stat-value neutral">${taskCount !== null ? taskCount : (tasksLoading ? '…' : '—')}</div>
@@ -107,7 +117,7 @@ function renderOverview(container) {
       </div>
       <div class="stat-item">
         <div class="stat-label">Income vs $10k</div>
-        <div class="stat-value ${incomePct >= 100 ? 'positive' : 'neutral'}">${incomePct}%</div>
+        <div class="stat-value ${incomePct !== null && incomePct >= 100 ? 'positive' : 'neutral'}">${incomePct !== null ? incomePct + '%' : '—'}</div>
       </div>
     </div>`;
 

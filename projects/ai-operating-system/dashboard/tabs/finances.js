@@ -310,7 +310,7 @@ function renderFinances(container) {
   if (SHEETS_WEB_APP_URL) {
     fetch(SHEETS_WEB_APP_URL)
       .then(r => r.json())
-      .then(data => { sheetsData = data; render(); })
+      .then(data => { sheetsData = data; App.lsSet('jamesOS_sheets_cache', data); render(); })
       .catch(() => { sheetsData = {}; render(); });
   }
 }
