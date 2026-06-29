@@ -13,6 +13,40 @@ const OV_EVENTS = [
   { label: 'Golden Gloves', date: '2026-08-31' },
 ];
 
+function miniEquitySVG(trades) {
+  const done = [...trades]
+    .filter(t => t.exitPrice && t.entryPrice && t.date)
+    .sort((a, b) => a.date.localeCompare(b.date) || (a.entryTime || '').localeCompare(b.entryTime || ''));
+  if (done.length < 2) return '<p class="text-muted text-xs" style="text-align:center;padding:16px 8px">Not enough trades to plot</p>';
+  let cum = 0;
+  const pts = [0, ...done.map(t => {
+    const tv  = OV_TICK_VALUES[t.instrument] || 1;
+    const dir = t.direction === 'long' ? 1 : -1;
+    const gross = dir * (parseFloat(t.exitPrice) - parseFloat(t.entryPrice)) * parseFloat(t.size || 1) * tv;
+    cum += gross - parseFloat(t.fees || 0);
+    return cum;
+  })];
+  const W = 400, H = 100, pad = 8;
+  const minY = Math.min(...pts), maxY = Math.max(...pts);
+  const rng  = maxY - minY || 1;
+  const toX  = i => pad + (i / (pts.length - 1)) * (W - pad * 2);
+  const toY  = v => pad + (H - pad * 2) * (1 - (v - minY) / rng);
+  const pathD = pts.map((v, i) => `${i ? 'L' : 'M'}${toX(i).toFixed(1)},${toY(v).toFixed(1)}`).join(' ');
+  const fillD = pathD + ` L${toX(pts.length - 1).toFixed(1)},${(H - pad).toFixed(1)} L${pad},${(H - pad).toFixed(1)} Z`;
+  const color    = cum >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+  const showZero = minY < 0 && maxY > 0;
+  const zeroY    = toY(0).toFixed(1);
+  return `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="width:100%;height:100%;display:block">
+    <defs><linearGradient id="mini-eq" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${color}" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="${color}" stop-opacity="0.02"/>
+    </linearGradient></defs>
+    ${showZero ? `<line x1="${pad}" y1="${zeroY}" x2="${W - pad}" y2="${zeroY}" stroke="var(--border)" stroke-dasharray="4,3" stroke-width="1"/>` : ''}
+    <path d="${fillD}" fill="url(#mini-eq)"/>
+    <path d="${pathD}" fill="none" stroke="${color}" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+  </svg>`;
+}
+
 function renderOverview(container) {
   let tasks        = null;
   let tasksLoading = false;
@@ -52,11 +86,6 @@ function renderOverview(container) {
       ? Math.max(0, ...habitsData.habits.map(h => habitStreak(h.id, habitsData.completions)))
       : 0;
 
-    const nextEvent = OV_EVENTS
-      .map(e => ({ ...e, days: App.daysUntil(e.date) }))
-      .filter(e => e.days >= 0)
-      .sort((a, b) => a.days - b.days)[0] || null;
-
     const now         = new Date();
     const monthPrefix = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
     const monthPnL    = tradeData.trades
@@ -68,16 +97,18 @@ function renderOverview(container) {
     const incomePct   = monthlyRate > 0 ? Math.round((monthlyRate / MONTHLY_TARGET) * 100) : null;
 
     // ── Today's habits ────────────────────────────────────────
-    const todayKey     = App.todayKey();
-    const todayDayKey  = ['sun','mon','tue','wed','thu','fri','sat'][now.getDay()];
-    const todayHabits  = habitsData.habits.filter(h => h.targetDays.includes(todayDayKey));
-    const todayDone    = habitsData.completions[todayKey] || [];
+    const todayKey    = App.todayKey();
+    const todayDayKey = ['sun','mon','tue','wed','thu','fri','sat'][now.getDay()];
+    const todayHabits = habitsData.habits.filter(h => h.targetDays.includes(todayDayKey));
+    const todayDone   = habitsData.completions[todayKey] || [];
 
-    // ── Recent trades ─────────────────────────────────────────
-    const recentTrades = [...tradeData.trades]
-      .filter(t => t.exitPrice)
-      .sort((a, b) => b.date.localeCompare(a.date) || (b.entryTime || '').localeCompare(a.entryTime || ''))
-      .slice(0, 3);
+    // ── This week's events ────────────────────────────────────
+    const calData   = App.lsGet('jamesOS_calendar', { events: [] });
+    const weekStart = App.todayKey();
+    const weekEnd   = (() => { const d = new Date(); d.setDate(d.getDate() + 6); return App.formatDateKey(d); })();
+    const weekEvents = calData.events
+      .filter(ev => ev.date >= weekStart && ev.date <= weekEnd)
+      .sort((a, b) => a.date.localeCompare(b.date) || (a.time || '').localeCompare(b.time || ''));
 
     // ── Greeting ──────────────────────────────────────────────
     const hour     = now.getHours();
@@ -85,45 +116,85 @@ function renderOverview(container) {
     const dateStr  = now.toLocaleDateString('en-AU', { weekday: 'long', day: 'numeric', month: 'long' });
 
     // ── Render ────────────────────────────────────────────────
-    const taskCount    = tasks ? tasks.filter(t => t.status?.type !== 'closed').length : null;
-    const pnlColor     = monthPnL >= 0 ? 'positive' : 'negative';
-    const pnlDisplay   = hasTrades
+    const taskCount  = tasks ? tasks.filter(t => t.status?.type !== 'closed').length : null;
+    const pnlColor   = monthPnL >= 0 ? 'positive' : 'negative';
+    const pnlDisplay = hasTrades
       ? (monthPnL >= 0 ? `+${App.formatCurrencyDecimals(monthPnL)}` : App.formatCurrencyDecimals(monthPnL))
       : '—';
-    const eventColor   = nextEvent && nextEvent.days <= 14 ? 'negative' : 'neutral';
 
-    let html = `<div class="flex items-center justify-between mb-16">
+    const incomeStatColor = incomePct === null ? '' : incomePct >= 100 ? 'positive' : incomePct >= 30 ? 'neutral' : 'negative';
+
+    const progPct   = monthlyRate > 0 ? Math.min(100, Math.round((monthlyRate / MONTHLY_TARGET) * 100)) : 0;
+    const progColor = progPct < 30 ? 'red' : progPct < 70 ? 'amber' : 'green';
+
+    let html = `<div class="flex items-center justify-between mb-12">
       <div>
-        <div style="font-size:20px;font-weight:700">${greeting}, James</div>
+        <div style="font-size:18px;font-weight:700">${greeting}, James</div>
         <div class="text-sm text-secondary mt-4">${dateStr}</div>
       </div>
     </div>
     <div class="stats-bar mb-20">
       <div class="stat-item">
-        <div class="stat-label">Tasks Remaining</div>
-        <div class="stat-value neutral">${taskCount !== null ? taskCount : (tasksLoading ? '…' : '—')}</div>
-      </div>
-      <div class="stat-item">
         <div class="stat-label">Best Streak</div>
         <div class="stat-value">${bestStreak > 0 ? bestStreak + 'd' : '—'}</div>
       </div>
       <div class="stat-item">
-        <div class="stat-label">${nextEvent ? nextEvent.label : 'Next Event'}</div>
-        <div class="stat-value ${eventColor}">${nextEvent ? nextEvent.days + 'd' : '—'}</div>
+        <div class="stat-label">Monthly Rate</div>
+        <div class="stat-value neutral">${monthlyRate > 0 ? App.formatCurrency(monthlyRate) : '—'}</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-label">Income vs $10k</div>
+        <div class="stat-value ${incomeStatColor}">${incomePct !== null ? incomePct + '%' : '—'}</div>
       </div>
       <div class="stat-item">
         <div class="stat-label">P&amp;L This Month</div>
         <div class="stat-value ${hasTrades ? pnlColor : ''}">${pnlDisplay}</div>
       </div>
       <div class="stat-item">
-        <div class="stat-label">Income vs $10k</div>
-        <div class="stat-value ${incomePct !== null && incomePct >= 100 ? 'positive' : 'neutral'}">${incomePct !== null ? incomePct + '%' : '—'}</div>
+        <div class="stat-label">Tasks Remaining</div>
+        <div class="stat-value neutral">${taskCount !== null ? taskCount : (tasksLoading ? '…' : '—')}</div>
       </div>
     </div>`;
 
-    html += `<div class="overview-2col">`;
+    html += `<div class="overview-3col">`;
 
-    // ── LEFT: Habits + Goals ──────────────────────────────────
+    // ── COL 1: Goals (dark navy) ──────────────────────────────
+    html += `<div class="goals-card-ov">`;
+    html += `<div class="section-header mb-12"><span class="section-title" style="color:#4a9eff">Goals</span></div>`;
+
+    html += `<div class="goals-section-header">Hard Targets</div>`;
+    GOALS_DATA.hardTargets.forEach(goal => {
+      const days = App.daysUntil(goal.deadline);
+      const { color, badge } = urgency(days);
+      html += `<div class="task-item">
+        <span class="task-name font-500">${App.esc(goal.title)}</span>
+        <span class="badge badge-${color}">${badge}</span>
+      </div>`;
+    });
+
+    html += `<div class="goals-section-header">Building Toward</div>`;
+    GOALS_DATA.buildingToward.forEach(goal => {
+      const p = goalProg[goal.id] || { progress: 0, notes: '' };
+      html += `<div class="mb-12">
+        <div class="flex items-center justify-between mb-6">
+          <span class="text-sm font-500">${App.esc(goal.title)}</span>
+          <span class="mono text-xs text-blue">${p.progress}%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill blue" style="width:${p.progress}%"></div></div>
+        ${p.notes ? `<div class="text-xs text-secondary mt-4">${App.esc(p.notes)}</div>` : ''}
+      </div>`;
+    });
+
+    html += `<div class="goals-section-header">Long-term</div>`;
+    GOALS_DATA.longTerm.forEach(goal => {
+      html += `<div class="task-item">
+        <span class="task-name text-sm text-secondary">${App.esc(goal.title)}</span>
+      </div>`;
+    });
+
+    html += `</div>`; // end col 1
+
+    // ── COL 2: Habits + Tasks + Progress bar ──────────────────
     html += `<div>`;
 
     html += `<div class="section-header mb-8"><span class="section-title">Today's Habits</span></div>
@@ -144,51 +215,11 @@ function renderOverview(container) {
     }
     html += `</div>`;
 
-    html += `<div class="section-header mb-8"><span class="section-title">Goals</span></div>`;
-
-    html += `<div class="card mb-8">`;
-    GOALS_DATA.hardTargets.forEach(goal => {
-      const days = App.daysUntil(goal.deadline);
-      const { color, badge } = urgency(days);
-      html += `<div class="task-item">
-        <span class="task-name font-500">${App.esc(goal.title)}</span>
-        <span class="badge badge-${color}">${badge}</span>
-      </div>`;
-    });
-    html += `</div>`;
-
-    html += `<div class="card mb-8">`;
-    GOALS_DATA.buildingToward.forEach(goal => {
-      const p = goalProg[goal.id] || { progress: 0, notes: '' };
-      html += `<div class="mb-12">
-        <div class="flex items-center justify-between mb-6">
-          <span class="text-sm font-500">${App.esc(goal.title)}</span>
-          <span class="mono text-xs text-blue">${p.progress}%</span>
-        </div>
-        <div class="progress-bar"><div class="progress-fill blue" style="width:${p.progress}%"></div></div>
-        ${p.notes ? `<div class="text-xs text-secondary mt-4">${App.esc(p.notes)}</div>` : ''}
-      </div>`;
-    });
-    html += `</div>`;
-
-    html += `<div class="card">`;
-    GOALS_DATA.longTerm.forEach(goal => {
-      html += `<div class="task-item">
-        <span class="task-name text-sm text-secondary">${App.esc(goal.title)}</span>
-      </div>`;
-    });
-    html += `</div>`;
-
-    html += `</div>`; // end left col
-
-    // ── RIGHT: Tasks + Trades ─────────────────────────────────
-    html += `<div>`;
-
     html += `<div class="section-header mb-8">
       <span class="section-title">Today's Tasks</span>
       <button class="btn btn-ghost btn-sm" id="ov-refresh" ${tasksLoading ? 'disabled' : ''}>${tasksLoading ? '…' : '↻ Refresh'}</button>
     </div>
-    <div class="card mb-20">`;
+    <div class="card mb-16">`;
 
     if (tasksLoading) {
       html += Array(3).fill('<div class="skeleton" style="height:36px;margin-bottom:8px;border-radius:4px"></div>').join('');
@@ -213,46 +244,24 @@ function renderOverview(container) {
     }
     html += `</div>`;
 
-    html += `<div class="section-header mb-8"><span class="section-title">Recent Trades</span></div>
-    <div class="card">`;
-    if (!recentTrades.length) {
-      html += `<div class="empty-state">No completed trades yet.</div>`;
-    } else {
-      recentTrades.forEach(t => {
-        const net   = ovPnl(t);
-        const isWin = net !== null && net > 0;
-        const isLoss = net !== null && net <= 0;
-        const fmtNet = net === null ? '—'
-          : net >= 0 ? `+${App.formatCurrencyDecimals(net)}`
-          : App.formatCurrencyDecimals(net);
-        const dirBadge = t.direction === 'long'
-          ? '<span class="badge badge-green" style="font-size:10px">L</span>'
-          : '<span class="badge badge-red" style="font-size:10px">S</span>';
-        html += `<div class="task-item">
-          <span class="mono text-xs text-muted" style="min-width:74px;flex-shrink:0">${t.date}</span>
-          <span class="mono text-sm font-600">${App.esc(t.instrument || '—')}</span>
-          ${dirBadge}
-          <span class="mono text-sm ${isWin ? 'text-green' : isLoss ? 'text-red' : ''}" style="margin-left:auto">${fmtNet}</span>
-        </div>`;
-      });
-    }
-    html += `</div>`;
+    html += `<div class="card">
+      <div class="flex items-center justify-between mb-8">
+        <span class="text-xs font-600 text-secondary" style="text-transform:uppercase;letter-spacing:.08em">Progress to $10k/mo</span>
+        <span class="mono text-xs text-${progColor}">${monthlyRate > 0 ? progPct + '%' : '—'}</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill ${progColor}" style="width:${progPct}%"></div></div>
+      <div class="text-xs text-secondary mt-6">${monthlyRate > 0 ? `${App.formatCurrency(monthlyRate)} of ${App.formatCurrency(MONTHLY_TARGET)}` : 'No income data — sync Finances tab'}</div>
+    </div>`;
 
-    html += `</div>`; // end right col
-    html += `</div>`; // end 2col
+    html += `</div>`; // end col 2
 
-    // ── This Week's Events ────────────────────────────────────
-    const calData   = App.lsGet('jamesOS_calendar', { events: [] });
-    const weekStart = App.todayKey();
-    const weekEnd   = (() => { const d = new Date(); d.setDate(d.getDate() + 6); return App.formatDateKey(d); })();
-    const weekEvents = calData.events
-      .filter(ev => ev.date >= weekStart && ev.date <= weekEnd)
-      .sort((a, b) => a.date.localeCompare(b.date) || (a.time || '').localeCompare(b.time || ''));
+    // ── COL 3: Events (compact) + Equity Curve ────────────────
+    html += `<div>`;
 
-    html += `<div class="section-header mb-8 mt-20"><span class="section-title">This Week's Events</span></div>`;
-    html += `<div class="card">`;
+    html += `<div class="section-header mb-8"><span class="section-title">This Week</span></div>
+    <div class="card mb-16" style="padding:10px 14px">`;
     if (!weekEvents.length) {
-      html += `<div class="empty-state" style="padding:20px">No events this week.</div>`;
+      html += `<div class="empty-state" style="padding:12px">No events this week.</div>`;
     } else {
       weekEvents.forEach(ev => {
         const evDate   = new Date(ev.date + 'T00:00:00');
@@ -260,18 +269,25 @@ function renderOverview(container) {
         const diffDays = Math.round((evDate - todayD) / 86400000);
         const dayLabel = diffDays === 0 ? 'Today'
           : diffDays === 1 ? 'Tomorrow'
-          : evDate.toLocaleDateString('en-AU', { weekday: 'long' });
+          : evDate.toLocaleDateString('en-AU', { weekday: 'short' });
         const colorMap = (typeof CAL_CATEGORY_COLORS !== 'undefined') ? CAL_CATEGORY_COLORS : {};
         const color    = colorMap[ev.category] || 'muted';
         const catLabel = ev.category ? ev.category.charAt(0).toUpperCase() + ev.category.slice(1) : '';
-        html += `<div class="task-item">
-          <span class="text-sm text-secondary" style="min-width:90px;flex-shrink:0">${dayLabel}</span>
-          <span class="task-name font-500">${App.esc(ev.title)}</span>
-          <span class="badge badge-${color}">${catLabel}</span>
+        html += `<div class="task-item" style="padding:7px 0">
+          <span class="text-xs text-secondary" style="min-width:64px;flex-shrink:0">${dayLabel}</span>
+          <span class="task-name font-500" style="font-size:13px">${App.esc(ev.title)}</span>
+          ${catLabel ? `<span class="badge badge-${color}" style="font-size:10px">${catLabel}</span>` : ''}
         </div>`;
       });
     }
     html += `</div>`;
+
+    html += `<div class="section-header mb-8"><span class="section-title">Equity Curve</span></div>
+    <div class="mini-equity">${miniEquitySVG(tradeData.trades)}</div>`;
+
+    html += `</div>`; // end col 3
+
+    html += `</div>`; // end 3col
 
     container.innerHTML = html;
 
