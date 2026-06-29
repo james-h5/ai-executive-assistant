@@ -5,7 +5,7 @@
 // ── Globals (referenced by overview.js — loaded before it) ───
 const CAL_CATEGORY_COLORS = {
   boxing: 'red', business: 'blue', trading: 'purple',
-  health: 'green', personal: 'amber', other: 'muted',
+  health: 'green', personal: 'amber', work: 'amber', uni: 'blue', other: 'muted',
 };
 
 function getCalendarData() { return App.lsGet('jamesOS_calendar', { events: [] }); }
@@ -63,8 +63,12 @@ function renderCalendar(container) {
             <input class="form-input" id="cal-f-date" type="date" value="${v('date')}">
           </div>
           <div class="form-group">
-            <label class="form-label">Time</label>
+            <label class="form-label">Start Time</label>
             <input class="form-input" id="cal-f-time" type="time" value="${v('time')}">
+          </div>
+          <div class="form-group">
+            <label class="form-label">End Time</label>
+            <input class="form-input" id="cal-f-endtime" type="time" value="${v('endTime')}">
           </div>
         </div>
         <div class="form-row">
@@ -80,6 +84,8 @@ function renderCalendar(container) {
               <option value="trading"${sel('category','trading')}>Trading</option>
               <option value="health"${sel('category','health')}>Health</option>
               <option value="personal"${sel('category','personal')}>Personal</option>
+              <option value="work"${sel('category','work')}>Work</option>
+              <option value="uni"${sel('category','uni')}>Uni</option>
               <option value="other"${sel('category','other')}>Other</option>
             </select>
           </div>
@@ -185,7 +191,7 @@ function renderCalendar(container) {
 
         html += `<div class="task-item" style="padding:10px 16px;align-items:center">
           <span class="badge badge-muted mono text-xs" style="flex-shrink:0;min-width:96px">${dayLabel}</span>
-          ${ev.time ? `<span class="mono text-xs text-muted" style="flex-shrink:0;margin-right:4px">${ev.time}</span>` : ''}
+          ${ev.time ? `<span class="mono text-xs text-muted" style="flex-shrink:0;margin-right:4px">${ev.time}${ev.endTime ? '–' + ev.endTime : ''}</span>` : ''}
           <span class="task-name font-500">${App.esc(ev.title)}</span>
           <span class="badge badge-${color}" style="flex-shrink:0">${catLabel}</span>
           <button class="btn-icon cal-edit-btn" data-id="${ev.id}" title="Edit" style="flex-shrink:0">✎</button>
@@ -235,6 +241,7 @@ function renderCalendar(container) {
         title,
         date,
         time:     container.querySelector('#cal-f-time').value,
+        endTime:  container.querySelector('#cal-f-endtime').value,
         endDate:  container.querySelector('#cal-f-enddate').value,
         category: container.querySelector('#cal-f-category').value,
         notes:    container.querySelector('#cal-f-notes').value,
