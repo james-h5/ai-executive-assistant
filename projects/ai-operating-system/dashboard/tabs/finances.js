@@ -6,7 +6,7 @@
 // After deploying finance-dashboard-setup.gs as a Web App, paste the URL here.
 // Deploy: Apps Script editor → Deploy → New deployment → Web App
 //         Execute as: Me | Who has access: Anyone with the link
-const SHEETS_WEB_APP_URL = '';
+const SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbw_foTZTcKu6Bz3Iu7hpfsmc4bRMwr2fYfVxT_twzZLDve2_E6zJ5jUvEI3js2oZKk/exec';
 
 function initFinances() {
   renderFinances(document.getElementById('tab-finances'));
