@@ -249,20 +249,24 @@ function buildExportData() {
   const lastLogRow = log.getLastRow();
   const latestWeekly = lastLogRow >= 4 ? (log.getRange(lastLogRow, 7).getValue() || 0) : 0;
 
-  // This month's expenses
+  // This month's expenses — total + by category
   const today = new Date();
   const expLastRow = exp.getLastRow();
   let thisMonthExpenses = 0;
+  const byCategory = {};
   if (expLastRow >= 4) {
     const expData = exp.getRange(4, 1, expLastRow - 3, 4).getValues();
-    thisMonthExpenses = expData.reduce((sum, row) => {
+    expData.forEach(row => {
       const d = row[0];
-      if (d instanceof Date && d.getMonth() === today.getMonth() && d.getFullYear() === today.getFullYear()) {
-        return sum + (parseFloat(row[3]) || 0);
-      }
-      return sum;
-    }, 0);
+      if (!(d instanceof Date) || d.getMonth() !== today.getMonth() || d.getFullYear() !== today.getFullYear()) return;
+      const amount = parseFloat(row[3]) || 0;
+      const cat    = String(row[1] || 'Other');
+      thisMonthExpenses += amount;
+      byCategory[cat] = (byCategory[cat] || 0) + amount;
+    });
   }
+  // Round all category values
+  Object.keys(byCategory).forEach(k => { byCategory[k] = +byCategory[k].toFixed(2); });
 
   return {
     timestamp: new Date().toISOString(),
@@ -279,7 +283,8 @@ function buildExportData() {
       gapToTarget:   +Math.max(0, MONTHLY_TARGET - latestWeekly * 4.33).toFixed(2),
     },
     expenses: {
-      thisMonth: +thisMonthExpenses.toFixed(2),
+      thisMonth:  +thisMonthExpenses.toFixed(2),
+      byCategory,
     },
     investments,
   };
@@ -574,8 +579,8 @@ function buildInvestments(ss) {
     .setBackground(COLORS.section.bg).setFontColor(COLORS.section.fg)
     .setFontWeight('bold').setHorizontalAlignment('center');
 
-  // Row 4 — S&P 500
-  sh.getRange(4, 1).setValue('S&P 500 (VOO / SPX)').setFontWeight('bold').setBackground(COLORS.white.bg);
+  // Row 4 — Nasdaq (NDQ)
+  sh.getRange(4, 1).setValue('Nasdaq (NDQ)').setFontWeight('bold').setBackground(COLORS.white.bg);
   inputCell(sh, 4, 2, 0, '#,##0.000000');  // units (e.g. 3.456789 shares)
   inputCell(sh, 4, 3, 0, '$#,##0.00');     // avg buy price
   inputCell(sh, 4, 4, 0, '$#,##0.00');     // current price — update regularly

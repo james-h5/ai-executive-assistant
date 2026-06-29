@@ -12,108 +12,168 @@ function initFinances() {
   renderFinances(document.getElementById('tab-finances'));
 }
 
-const INCOME_STREAMS = [
-  { id: 'bartending', name: 'Bartending',            status: 'active',      defaultActual: 500 },
-  { id: 'tutoring',   name: 'Tutoring (Maths/Sci)',  status: 'active',      defaultActual: 110 },
-  { id: 'consulting', name: 'AI Consulting',          status: 'pre-launch',  defaultActual: 0   },
-  { id: 'trading',    name: 'Futures Trading',        status: 'building',    defaultActual: 0   },
-];
-
 const PIPELINE_STAGES = ['Prospect', 'Contacted', 'Demo Booked', 'Proposal Sent', 'Closed Won', 'Closed Lost'];
-
-const ACTIVE_PROJECTS = [
-  { name: 'AI Operating System',     status: 'active',   next: 'Build dashboard ✓ → automate morning brief' },
-  { name: 'AI Consulting Portfolio', status: 'active',   next: 'Publish demo video + case study' },
-  { name: 'Business Processes',      status: 'planning', next: 'Draft client intake form' },
-  { name: 'Landing First Client',    status: 'planning', next: 'Define outreach channel + first message' },
-];
-
-const STATUS_BADGE = {
-  active:       '<span class="badge badge-green">Active</span>',
-  'pre-launch': '<span class="badge badge-amber">Pre-launch</span>',
-  building:     '<span class="badge badge-blue">Building</span>',
-  planning:     '<span class="badge badge-muted">Planning</span>',
-};
 
 const MONTHLY_TARGET = 10000;
 
-function getFinData() { return App.lsGet('jamesOS_finances', { actuals: {}, pipeline: [] }); }
+// Expense categories in preferred display order
+const EXP_CATEGORIES = [
+  'Food & Groceries',
+  'Eating Out',
+  'Rent / Board',
+  'Transport',
+  'Gym / Boxing',
+  'Subscriptions',
+  'Entertainment',
+  'Clothing',
+  'Health',
+  'Education',
+  'Business',
+  'Other',
+];
+
+function getFinData() { return App.lsGet('jamesOS_finances', { pipeline: [] }); }
 function saveFinData(d) { App.lsSet('jamesOS_finances', d); }
 
 function renderFinances(container) {
   let showForm = false;
   let editId = null;
-  let sheetsData = null; // cached from Google Sheets Web App
+  let sheetsData = null;
 
   function render() {
     const data = getFinData();
 
-    const weeklyTotal = INCOME_STREAMS.reduce((sum, s) => {
-      return sum + (data.actuals[s.id] !== undefined ? parseFloat(data.actuals[s.id]) : s.defaultActual);
-    }, 0);
-    const monthly = weeklyTotal * 4.33;
-    const gap = Math.max(0, MONTHLY_TARGET - monthly);
-    const pct = Math.min(100, (monthly / MONTHLY_TARGET * 100)).toFixed(1);
+    // ── Derive key numbers from Sheets (or zeros while loading) ───────────────
+    const inc       = sheetsData?.income    || {};
+    const nw        = sheetsData?.netWorth  || {};
+    const exp       = sheetsData?.expenses  || {};
+    const invList   = sheetsData?.investments || [];
+
+    const monthly   = inc.monthlyRate  || 0;
+    const gap       = inc.gapToTarget  != null ? inc.gapToTarget : Math.max(0, MONTHLY_TARGET - monthly);
+    const pct       = Math.min(100, (monthly / MONTHLY_TARGET * 100)).toFixed(1);
     const pipelineVal = data.pipeline
       .filter(p => p.stage !== 'Closed Lost')
       .reduce((s, p) => s + (parseFloat(p.estimatedValue) || 0), 0);
+    const netSavings = monthly - (exp.thisMonth || 0);
+    const loading   = sheetsData === null && SHEETS_WEB_APP_URL;
 
-    // Net worth panel (populated after Sheets fetch)
-    let html = sheetsData ? buildNetWorthPanel(sheetsData) : (SHEETS_WEB_APP_URL ? '<div id="nw-panel" class="card mb-20" style="opacity:0.5;text-align:center;padding:10px;font-size:13px;color:var(--text-secondary)">Loading from Google Sheets...</div>' : '<div id="nw-panel"></div>');
+    // ── Net Worth panel ───────────────────────────────────────────────────────
+    let html = '';
+    if (loading) {
+      html += `<div class="card mb-20" style="opacity:0.5;text-align:center;padding:10px;font-size:13px;color:var(--text-secondary)">Loading from Google Sheets…</div>`;
+    } else if (sheetsData) {
+      html += buildNetWorthPanel(nw, exp, monthly);
+    }
 
+    // ── Stats bar ─────────────────────────────────────────────────────────────
+    const dash = v => loading ? '<span class="text-muted">—</span>' : App.formatCurrency(v);
     html += `<div class="stats-bar">
-      <div class="stat-item"><div class="stat-label">Weekly Income</div><div class="stat-value">${App.formatCurrency(weeklyTotal)}</div></div>
-      <div class="stat-item"><div class="stat-label">Monthly Rate</div><div class="stat-value">${App.formatCurrency(monthly)}</div></div>
+      <div class="stat-item"><div class="stat-label">Weekly Income</div><div class="stat-value">${dash(inc.latestWeekly || 0)}</div></div>
+      <div class="stat-item"><div class="stat-label">Monthly Rate</div><div class="stat-value">${dash(monthly)}</div></div>
       <div class="stat-item"><div class="stat-label">Target</div><div class="stat-value">${App.formatCurrency(MONTHLY_TARGET)}/mo</div></div>
-      <div class="stat-item"><div class="stat-label">Gap</div><div class="stat-value ${gap > 0 ? 'negative' : 'positive'}">${gap > 0 ? '−' : ''}${App.formatCurrency(gap)}</div></div>
+      <div class="stat-item"><div class="stat-label">Gap</div><div class="stat-value ${gap > 0 ? 'negative' : 'positive'}">${gap > 0 ? '−' : ''}${dash(gap)}</div></div>
       <div class="stat-item"><div class="stat-label">Pipeline</div><div class="stat-value neutral">${App.formatCurrency(pipelineVal)}</div></div>
     </div>`;
 
-    // Progress bar
+    // ── Progress bar ──────────────────────────────────────────────────────────
     html += `<div class="card mb-20">
       <div class="flex items-center justify-between mb-6">
         <span class="section-title">Progress to ${App.formatCurrency(MONTHLY_TARGET)}/month</span>
-        <span class="mono text-sm text-blue">${pct}%</span>
+        <span class="mono text-sm text-blue">${loading ? '—' : pct + '%'}</span>
       </div>
-      <div class="progress-bar" style="height:6px"><div class="progress-fill ${parseFloat(pct) >= 100 ? 'green' : 'blue'}" style="width:${pct}%"></div></div>
+      <div class="progress-bar" style="height:6px"><div class="progress-fill ${parseFloat(pct) >= 100 ? 'green' : 'blue'}" style="width:${loading ? 0 : pct}%"></div></div>
     </div>`;
 
-    // Income streams
-    html += `<div class="section-header"><span class="section-title">Income Streams</span></div>
-    <div class="card mb-20" style="padding:0;overflow:hidden">
-      <table class="table">
-        <thead><tr><th>Stream</th><th>Status</th><th>Actual / week</th></tr></thead>
+    // ── Investments ───────────────────────────────────────────────────────────
+    html += `<div class="section-header"><span class="section-title">Investments</span></div>`;
+    if (loading) {
+      html += `<div class="card mb-20" style="opacity:0.5;font-size:13px;color:var(--text-secondary);text-align:center;padding:12px">Loading…</div>`;
+    } else if (invList.length === 0) {
+      html += `<div class="card mb-20" style="font-size:13px;color:var(--text-secondary);text-align:center;padding:12px">No investment data yet — fill in the Investments tab in Google Sheets.</div>`;
+    } else {
+      html += `<div class="card mb-20" style="padding:0;overflow:hidden"><table class="table">
+        <thead><tr><th>Asset</th><th>Value</th><th>Gain / Loss</th><th>Return</th></tr></thead>
         <tbody>`;
+      invList.forEach(inv => {
+        const isFutures = /futures/i.test(inv.asset);
+        const glClass   = inv.gainLoss > 0 ? 'positive' : inv.gainLoss < 0 ? 'negative' : '';
+        const sign      = inv.gainLoss > 0 ? '+' : '';
+        html += `<tr${isFutures ? ' style="background:var(--bg-card-hover)"' : ''}>
+          <td class="font-500">${App.esc(inv.asset)}${isFutures ? ' <span class="badge badge-blue">Trading</span>' : ''}</td>
+          <td class="mono">${App.formatCurrency(inv.value)}</td>
+          <td class="mono ${glClass}">${sign}${App.formatCurrency(inv.gainLoss)}</td>
+          <td class="mono ${glClass}">${sign}${(inv.returnPct * 100).toFixed(1)}%</td>
+        </tr>`;
+      });
+      const totalVal = invList.reduce((s, i) => s + (i.value || 0), 0);
+      const totalGL  = invList.reduce((s, i) => s + (i.gainLoss || 0), 0);
+      const totalGLClass = totalGL > 0 ? 'positive' : totalGL < 0 ? 'negative' : '';
+      const totalSign    = totalGL > 0 ? '+' : '';
+      html += `<tr style="background:var(--bg-card-hover)">
+        <td class="font-600">Total Portfolio</td>
+        <td class="mono font-600">${App.formatCurrency(totalVal)}</td>
+        <td class="mono font-600 ${totalGLClass}">${totalSign}${App.formatCurrency(totalGL)}</td>
+        <td></td>
+      </tr></tbody></table></div>`;
+    }
 
-    INCOME_STREAMS.forEach(s => {
-      const actual = data.actuals[s.id] !== undefined ? data.actuals[s.id] : s.defaultActual;
-      html += `<tr>
-        <td class="font-500">${App.esc(s.name)}</td>
-        <td>${STATUS_BADGE[s.status] || s.status}</td>
-        <td>
-          <div class="flex items-center gap-8">
-            <span class="text-muted text-sm">$</span>
-            <input class="form-input mono fin-actual" data-id="${s.id}" type="number" value="${actual}" style="width:100px;padding:5px 8px">
-          </div>
-        </td>
-      </tr>`;
-    });
+    // ── Expenses this month ───────────────────────────────────────────────────
+    html += `<div class="section-header"><span class="section-title">Expenses — This Month</span></div>`;
+    if (loading) {
+      html += `<div class="card mb-20" style="opacity:0.5;font-size:13px;color:var(--text-secondary);text-align:center;padding:12px">Loading…</div>`;
+    } else {
+      const byCat  = exp.byCategory || {};
+      const total  = exp.thisMonth  || 0;
+      const hasCats = Object.keys(byCat).length > 0;
 
-    html += `<tr style="background:var(--bg-card-hover)">
-        <td class="font-600">Total</td><td></td>
-        <td class="mono font-600">${App.formatCurrency(weeklyTotal)}<span class="text-muted text-sm font-400"> /wk · ${App.formatCurrency(monthly)}/mo</span></td>
-      </tr>
-    </tbody></table></div>`;
+      html += `<div class="card mb-20">`;
 
-    // Pipeline
+      // Summary row
+      html += `<div class="flex items-center justify-between mb-12">
+        <span class="text-secondary text-sm">Total spent</span>
+        <span class="mono font-600 ${total > 0 ? 'negative' : ''}">${App.formatCurrency(total)}</span>
+      </div>
+      <div class="flex items-center justify-between mb-16">
+        <span class="text-secondary text-sm">Net savings</span>
+        <span class="mono font-600 ${netSavings >= 0 ? 'positive' : 'negative'}">${netSavings >= 0 ? '+' : ''}${App.formatCurrency(netSavings)}</span>
+      </div>`;
+
+      if (hasCats && total > 0) {
+        // Sort categories by amount descending, only show ones with spend
+        const catEntries = EXP_CATEGORIES
+          .map(c => [c, byCat[c] || 0])
+          .filter(([, v]) => v > 0)
+          .sort((a, b) => b[1] - a[1]);
+
+        catEntries.forEach(([cat, amount]) => {
+          const barPct = Math.min(100, (amount / total * 100)).toFixed(1);
+          html += `<div class="mb-10">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-sm">${App.esc(cat)}</span>
+              <span class="mono text-sm">${App.formatCurrency(amount)}</span>
+            </div>
+            <div class="progress-bar" style="height:4px">
+              <div class="progress-fill" style="width:${barPct}%;background:var(--accent-amber,#f59e0b)"></div>
+            </div>
+          </div>`;
+        });
+      } else if (!hasCats) {
+        html += `<div class="text-secondary text-sm" style="text-align:center;padding:8px 0">No expenses logged yet this month — import from Westpac to see the breakdown.</div>`;
+      }
+
+      html += `</div>`;
+    }
+
+    // ── Consulting Pipeline ───────────────────────────────────────────────────
     html += `<div class="section-header">
       <span class="section-title">Consulting Pipeline</span>
       <button class="btn btn-primary btn-sm" id="pl-add">+ Add Lead</button>
     </div>`;
 
     if (showForm) {
-      const ed = editId ? data.pipeline.find(p => p.id === editId) : null;
-      const v = k => App.esc(ed?.[k] ?? '');
+      const ed  = editId ? data.pipeline.find(p => p.id === editId) : null;
+      const v   = k => App.esc(ed?.[k] ?? '');
       const sel = (k, val) => ed?.[k] === val ? ' selected' : '';
       html += `<div class="inline-form mb-16">
         <div class="form-row">
@@ -162,35 +222,11 @@ function renderFinances(container) {
     });
     html += `</div>`;
 
-    // Projects
-    html += `<div class="section-header"><span class="section-title">Active Projects</span></div>
-    <div class="grid-2">`;
-    ACTIVE_PROJECTS.forEach(p => {
-      html += `<div class="card">
-        <div class="flex items-center justify-between mb-6">
-          <span class="font-500">${App.esc(p.name)}</span>${STATUS_BADGE[p.status] || ''}
-        </div>
-        <div class="text-secondary text-sm">Next: ${App.esc(p.next)}</div>
-      </div>`;
-    });
-    html += `</div>`;
-
     container.innerHTML = html;
     attachEvents();
   }
 
   function attachEvents() {
-    // Income actuals
-    container.querySelectorAll('.fin-actual').forEach(input => {
-      input.onchange = () => {
-        const d = getFinData();
-        d.actuals[input.dataset.id] = parseFloat(input.value) || 0;
-        saveFinData(d);
-        render();
-      };
-    });
-
-    // Pipeline add
     container.querySelector('#pl-add').onclick = () => { showForm = true; editId = null; render(); container.querySelector('#pl-biz')?.focus(); };
     container.querySelector('#pl-cancel')?.addEventListener('click', () => { showForm = false; editId = null; render(); });
 
@@ -231,14 +267,14 @@ function renderFinances(container) {
     });
   }
 
-  function buildNetWorthPanel(d) {
-    const nw  = d.netWorth  || {};
-    const exp = d.expenses  || {};
-    const monthlyRate = d.income ? d.income.monthlyRate : 0;
-    const netSavings  = monthlyRate - (exp.thisMonth || 0);
-    return `<div id="nw-panel" class="card mb-20">
+  function buildNetWorthPanel(nw, exp, monthlyRate) {
+    const netSavings = monthlyRate - (exp.thisMonth || 0);
+    const cash       = nw.cash || 0;
+    const monthly    = exp.thisMonth || 0;
+    const runway     = monthly > 0 ? (cash / monthly).toFixed(1) : '∞';
+    return `<div class="card mb-20">
       <div class="flex items-center justify-between mb-12">
-        <span class="section-title">Net Worth &amp; Expenses</span>
+        <span class="section-title">Net Worth</span>
         <span class="text-sm" style="color:var(--text-muted)">Google Sheets · live</span>
       </div>
       <div class="stats-bar" style="margin-bottom:0">
@@ -248,19 +284,19 @@ function renderFinances(container) {
         </div>
         <div class="stat-item">
           <div class="stat-label">Cash</div>
-          <div class="stat-value">${App.formatCurrency(nw.cash || 0)}</div>
+          <div class="stat-value">${App.formatCurrency(cash)}</div>
         </div>
         <div class="stat-item">
           <div class="stat-label">Investments</div>
           <div class="stat-value">${App.formatCurrency(nw.totalInvestments || 0)}</div>
         </div>
         <div class="stat-item">
-          <div class="stat-label">Expenses (this month)</div>
-          <div class="stat-value ${exp.thisMonth > 0 ? 'negative' : ''}">${App.formatCurrency(exp.thisMonth || 0)}</div>
+          <div class="stat-label">Runway</div>
+          <div class="stat-value">${runway} mo</div>
         </div>
         <div class="stat-item">
-          <div class="stat-label">Net Savings (this month)</div>
-          <div class="stat-value ${netSavings >= 0 ? 'positive' : 'negative'}">${App.formatCurrency(netSavings)}</div>
+          <div class="stat-label">Net Savings</div>
+          <div class="stat-value ${netSavings >= 0 ? 'positive' : 'negative'}">${netSavings >= 0 ? '+' : ''}${App.formatCurrency(netSavings)}</div>
         </div>
       </div>
     </div>`;
