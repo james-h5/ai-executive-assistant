@@ -112,20 +112,51 @@ function processImportedCSV(csvText) {
 
 function parseWestpacCSV(csvText) {
   const lines = csvText.trim().split('\n').map(l => l.trim()).filter(l => l.length > 0);
+  if (lines.length === 0) return [];
+
+  // ── Auto-detect column positions from header row ──────────────────────────
+  let dateCol = -1, descCol = -1, debitCol = -1;
+  let startRow = 0;
+
+  const headerCols = splitCSVLine(lines[0]);
+  const isHeader = headerCols.some(c => /date|narrative|narration|debit|bsb|bank/i.test(c));
+
+  if (isHeader) {
+    startRow = 1;
+    headerCols.forEach((h, i) => {
+      const hl = h.toLowerCase().trim();
+      if (hl === 'date' || hl === 'transaction date')                              dateCol  = i;
+      if (hl === 'narrative' || hl === 'narration' || hl === 'description')        descCol  = i;
+      if (hl === 'debit amount' || hl === 'debit')                                 debitCol = i;
+    });
+  }
+
+  // Fallback: detect by which column contains a date value
+  if (dateCol === -1) {
+    const sample = splitCSVLine(lines[0]);
+    if (/\d{2}\/\d{2}\/\d{4}/.test(sample[1])) {
+      // Format: Bank Account | Date | Narrative | Debit Amount | ...
+      dateCol = 1; descCol = 2; debitCol = 3;
+    } else if (/\d{2}\/\d{2}\/\d{4}/.test(sample[2])) {
+      // Format: BSB | Account | Date | Narration | Cheque | Debit | ...
+      dateCol = 2; descCol = 3; debitCol = 5;
+    } else {
+      throw new Error('Could not detect CSV format. Make sure you exported a Westpac transaction CSV (not a PDF or statement).');
+    }
+  }
+
   const results = [];
 
-  for (let i = 0; i < lines.length; i++) {
+  for (let i = startRow; i < lines.length; i++) {
     const cols = splitCSVLine(lines[i]);
+    if (cols.length <= Math.max(dateCol, descCol, debitCol)) continue;
 
-    // Skip header row — Westpac headers start with "BSB" or non-numeric first col
-    if (i === 0 && (cols[0].toLowerCase() === 'bsb' || cols[0].toLowerCase() === 'date' || isNaN(cols[0].replace(/[-/]/g, '')))) continue;
+    const dateStr  = cols[dateCol].trim();
+    const desc     = cols[descCol].trim();
+    const debitStr = cols[debitCol].trim();
 
-    // Westpac standard: BSB(0), Account(1), Date(2), Narration(3), Cheque(4), Debit(5), Credit(6), Balance(7), Type(8)
-    if (cols.length < 7) continue;
-
-    const dateStr  = cols[2].trim();
-    const desc     = cols[3].trim();
-    const debitStr = cols[5].trim();
+    // Skip internal transfers (savings/offset account transfers — not real expenses)
+    if (/TFR Westpac Lif/i.test(desc) || /TRANSFER TO OWN/i.test(desc)) continue;
 
     // Only import debits (money out = expenses)
     const debit = parseFloat(debitStr);
@@ -158,18 +189,21 @@ function splitCSVLine(line) {
 function categorizeTransaction(description) {
   const d = description.toUpperCase();
   const rules = [
-    { cat: 'Food & Groceries', kw: ['WOOLWORTHS', 'WW ', 'COLES', 'ALDI', ' IGA ', 'HARRIS FARM', 'GROCERY', 'BUTCHER', 'BAKERY'] },
-    { cat: 'Eating Out',       kw: ['MCDONALD', 'KFC', 'HUNGRY JACK', 'NANDOS', "GRILL'D", 'UBEREATS', 'UBER EATS', 'DELIVEROO', 'MENULOG', 'DOORDASH', 'CAFE', 'COFFEE', 'RESTAURANT', 'SUSHI', 'THAI', 'PIZZA', 'SUBWAY', 'DOMINO', 'KEBAB', 'GUZMAN'] },
-    { cat: 'Transport',        kw: ['UBER', 'OLA ', 'DIDI', 'TAXI', ' BP ', 'CALTEX', 'AMPOL', 'SHELL ', '7-ELEVEN', 'PETROL', 'PARKING', 'TRANSLINK', 'GO CARD', 'GOCARD', 'QUEENSLAND RAIL'] },
-    { cat: 'Gym / Boxing',     kw: ['BOXING', ' GYM ', 'FITNESS', 'PLANET FITNESS', 'ANYTIME FITNESS', 'F45', 'CROSSFIT'] },
-    { cat: 'Subscriptions',    kw: ['NETFLIX', 'SPOTIFY', 'CLAUDE', 'ANTHROPIC', 'APPLE.COM', 'APPLE STORE', 'GOOGLE', 'AMAZON PRIME', 'DISNEY', 'CHATGPT', 'OPENAI', 'MICROSOFT', 'ADOBE'] },
-    { cat: 'Clothing',         kw: ['KMART', 'COTTON ON', 'H&M', 'UNIQLO', 'MYER', 'DAVID JONES', 'TARGET', 'BIG W', 'FACTORIE', 'SUPRE', 'JD SPORT', 'REBEL SPORT', 'FOOT LOCKER'] },
-    { cat: 'Entertainment',    kw: ['EVENT CINEMA', 'HOYTS', 'VILLAGE CINEMA', 'TIMEZONE', 'BOWLING'] },
+    { cat: 'Food & Groceries', kw: ['WOOLWORTHS', 'WW ', 'COLES', 'ALDI', ' IGA ', 'HARRIS FARM', 'GROCERY', 'BUTCHER', 'BAKERY', 'BLACKBUTT BAKERY', 'QUT GUILD'] },
+    { cat: 'Eating Out',       kw: ['MCDONALD', 'MCDONALDS', 'HJS ', 'HJ\'S', 'HUNGRY JACK', 'KFC', 'NANDOS', "GRILL'D", 'UBEREATS', 'UBER EATS', 'DELIVEROO', 'MENULOG', 'DOORDASH', 'CAFE', 'COFFEE', 'STARBUCKS', 'RESTAURANT', 'SUSHI', 'THAI', 'PIZZA', 'SUBWAY', 'DOMINO', 'KEBAB', 'GUZMAN', 'RED ROOSTER', 'YO-CHI', 'PAELLA', 'LUCKY BOWL', 'DER WURST', 'GRIND CAFE', 'BOATHOUSE', 'WURST', 'SQ *'] },
+    { cat: 'Transport',        kw: ['TRANSLINK', 'GO CARD', 'GOCARD', 'QUEENSLAND RAIL', 'UBER', 'OLA ', 'DIDI', 'TAXI', ' BP ', 'CALTEX', 'AMPOL', 'SHELL ', '7-ELEVEN', 'PETROL', 'PARKING', 'QUT PARKING', 'LIME*RIDE', 'LIME RIDE'] },
+    { cat: 'Gym / Boxing',     kw: ['NEONBOXING', 'BOXING', 'GOODLIFE', ' GYM ', 'FITNESS', 'PLANET FITNESS', 'ANYTIME FITNESS', 'F45', 'CROSSFIT', 'PAYRIX*NEON'] },
+    { cat: 'Subscriptions',    kw: ['NETFLIX', 'SPOTIFY', 'CLAUDE', 'ANTHROPIC', 'APPLE.COM', 'APPLE STORE', 'GOOGLE', 'AMAZON PRIME', 'DISNEY', 'CHATGPT', 'OPENAI', 'MICROSOFT', 'ADOBE', 'TRADINGVIEW', 'PLAYSTATION', 'FANBASIS'] },
+    { cat: 'Entertainment',    kw: ['EVENT CINEMA', 'HOYTS', 'VILLAGE CINEMA', 'CINEPLEX', 'VRTP', 'TIMEZONE', 'BOWLING', 'PROHIBITION', 'NIGHTCLUB', 'ALH VENUES', 'ALHGROUP', 'HOTEL', 'FINN MCCOOL', 'FINNMCCOOL', 'BEACH BAR', 'GRAND VIEW', 'SLSSC', 'DOCK ', 'BEACH HOTEL', 'MOOLOOLABA', 'NOOSA', 'STRADDR'] },
+    { cat: 'Clothing',         kw: ['KMART', 'COTTON ON', 'H&M', 'UNIQLO', 'MYER', 'DAVID JONES', 'TARGET', 'BIG W', 'FACTORIE', 'SUPRE', 'JD SPORT', 'REBEL SPORT', 'FOOT LOCKER', 'HIDDEN IDENTITY'] },
     { cat: 'Health',           kw: ['PHARMACY', 'CHEMIST', 'PRICELINE', 'DOCTOR', 'MEDICAL', 'DENTAL', 'HOSPITAL', 'MEDICARE', 'OPTICAL'] },
     { cat: 'Rent / Board',     kw: ['RENT', 'BOARD PAYMENT', 'REAL ESTATE', 'LEASE'] },
-    { cat: 'Education',        kw: ['QUT', 'GRIFFITH UNI', 'UNIVERSITY', 'TAFE', 'UDEMY', 'COURSERA'] },
-    { cat: 'Business',         kw: ['OFFICEWORKS', 'BUNNINGS', 'HARVEY NORMAN', 'JB HI-FI'] },
+    { cat: 'Education',        kw: ['QUT PARKING', 'QUT ', 'GRIFFITH UNI', 'UNIVERSITY', 'TAFE', 'UDEMY', 'COURSERA'] },
+    { cat: 'Business',         kw: ['OFFICEWORKS', 'BUNNINGS', 'HARVEY NORMAN', 'JB HI-FI', 'API CREDIT', 'WWW.ALHGROUP'] },
   ];
+
+  // Note: 'SQ *' catches Square POS payments (cafes, bars etc.) → Eating Out
+  // WITHDRAWAL-OSKO to people (bill splits) → left as ❓ Review for manual categorisation
 
   for (const rule of rules) {
     if (rule.kw.some(kw => d.includes(kw))) return rule.cat;
