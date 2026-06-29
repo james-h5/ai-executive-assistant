@@ -102,7 +102,9 @@ function renderHabits(container) {
         <th>Streak</th><th></th>
       </tr></thead><tbody>`;
 
-    data.habits.forEach(habit => {
+    data.habits.forEach((habit, habitIdx) => {
+      const isFirst = habitIdx === 0;
+      const isLast  = habitIdx === data.habits.length - 1;
       if (editHabitId === habit.id) {
         html += `<tr>
           <td colspan="${days.length + 3}" style="padding:6px 0">
@@ -118,7 +120,7 @@ function renderHabits(container) {
       }
       const streak = getStreak(habit.id, data.completions);
       html += `<tr>
-        <td class="habit-row-name">${App.esc(habit.icon || '')} ${App.esc(habit.name)}</td>`;
+        <td class="habit-row-name"><button class="hbt-icon btn-icon" data-habit="${habit.id}" title="Change emoji" style="font-size:16px;padding:2px 4px">${App.esc(habit.icon || '✓')}</button> ${App.esc(habit.name)}</td>`;
       days.forEach(d => {
         const done = data.completions[d.key]?.includes(habit.id);
         const isTarget = habit.targetDays.includes(DAY_KEYS[d.dayIdx]);
@@ -128,6 +130,8 @@ function renderHabits(container) {
       });
       html += `<td class="mono text-sm" style="white-space:nowrap;padding:0 8px">${streak > 0 ? '🔥 ' + streak : '<span class="text-muted">—</span>'}</td>`;
       html += `<td style="white-space:nowrap">
+        <button class="btn-icon hbt-up" data-habit="${habit.id}" title="Move up" ${isFirst ? 'disabled style="opacity:0.25"' : ''}>↑</button>
+        <button class="btn-icon hbt-dn" data-habit="${habit.id}" title="Move down" ${isLast  ? 'disabled style="opacity:0.25"' : ''}>↓</button>
         <button class="btn-icon hbt-edit" data-habit="${habit.id}" title="Edit" style="margin-right:2px">✎</button>
         <button class="btn-icon hbt-del" data-habit="${habit.id}" title="Delete">✕</button>
       </td>`;
@@ -202,6 +206,32 @@ function renderHabits(container) {
         d.habits = d.habits.filter(h => h.id !== btn.dataset.habit);
         saveHabitsData(d);
         render();
+      };
+    });
+
+    container.querySelectorAll('.hbt-icon').forEach(btn => {
+      btn.onclick = () => {
+        const d = getHabitsData();
+        const habit = d.habits.find(h => h.id === btn.dataset.habit);
+        if (!habit) return;
+        const newIcon = prompt('New emoji:', habit.icon || '✓');
+        if (newIcon !== null && newIcon.trim()) { habit.icon = newIcon.trim(); saveHabitsData(d); render(); }
+      };
+    });
+
+    container.querySelectorAll('.hbt-up').forEach(btn => {
+      btn.onclick = () => {
+        const d = getHabitsData();
+        const idx = d.habits.findIndex(h => h.id === btn.dataset.habit);
+        if (idx > 0) { [d.habits[idx - 1], d.habits[idx]] = [d.habits[idx], d.habits[idx - 1]]; saveHabitsData(d); render(); }
+      };
+    });
+
+    container.querySelectorAll('.hbt-dn').forEach(btn => {
+      btn.onclick = () => {
+        const d = getHabitsData();
+        const idx = d.habits.findIndex(h => h.id === btn.dataset.habit);
+        if (idx < d.habits.length - 1) { [d.habits[idx], d.habits[idx + 1]] = [d.habits[idx + 1], d.habits[idx]]; saveHabitsData(d); render(); }
       };
     });
   }
