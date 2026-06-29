@@ -24,10 +24,12 @@
 
     if (!overlay) return;
 
-    // Prime AudioContext on any click (user gesture requirement)
-    overlay.addEventListener('click', function () {
-      if (window.Sounds) Sounds._initCtx();
-    }, { once: true });
+    // Show a prompt and wait for a click — satisfies browser gesture requirement for both
+    // AudioContext and speechSynthesis before the boot sequence starts
+    var prompt = document.createElement('div');
+    prompt.textContent = 'CLICK TO INITIALIZE';
+    prompt.style.cssText = 'position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-family:monospace;font-size:12px;letter-spacing:.2em;color:#444;animation:blink 1.2s step-end infinite';
+    overlay.appendChild(prompt);
 
     var lineIdx = 0;
 
@@ -81,7 +83,7 @@
       var lines = [
         'Suddenly the champion returns, with initiative and vengeance.',
         'Good ' + timeOfDay + ', sir.',
-        'You can be anything you want to be, if you can see it, and you believe it will happen.',
+        'You can be anything you want to be, if you can see it, and you believe it, it will happen.',
       ];
 
       function speak(voices) {
@@ -110,6 +112,10 @@
       }
     }
 
-    runSequence();
+    overlay.addEventListener('click', function () {
+      prompt.remove();
+      if (window.Sounds) Sounds._initCtx();
+      runSequence();
+    }, { once: true });
   });
 })();
