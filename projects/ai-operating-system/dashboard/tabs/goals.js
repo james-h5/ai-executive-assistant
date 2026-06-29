@@ -27,7 +27,8 @@ const GOALS_DATA = {
     { id: 'pilot',    icon: '✈️',  title: "Pilot's license",                          description: '' },
     { id: 'skydive',  icon: '🪂', title: 'Skydiving license',                        description: '' },
     { id: 'moto',     icon: '🏍️', title: 'Get a motorbike',                          description: '' },
-    { id: 'travel',   icon: '🌏', title: 'Extended travel',                          description: 'Japan-style 1–2 month solo trips' },
+    { id: 'travel',        icon: '🌏', title: 'Extended travel',  description: 'Japan-style 1–2 month solo trips' },
+    { id: 'aston-martin', icon: '🏎️', title: 'Aston Martin',     description: '' },
   ],
 };
 

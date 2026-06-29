@@ -144,8 +144,20 @@ function renderOverview(container) {
     }
     html += `</div>`;
 
-    html += `<div class="section-header mb-8"><span class="section-title">Goal Progress</span></div>
-    <div class="card">`;
+    html += `<div class="section-header mb-8"><span class="section-title">Goals</span></div>`;
+
+    html += `<div class="card mb-8">`;
+    GOALS_DATA.hardTargets.forEach(goal => {
+      const days = App.daysUntil(goal.deadline);
+      const { color, badge } = urgency(days);
+      html += `<div class="task-item">
+        <span class="task-name font-500">${App.esc(goal.title)}</span>
+        <span class="badge badge-${color}">${badge}</span>
+      </div>`;
+    });
+    html += `</div>`;
+
+    html += `<div class="card mb-8">`;
     GOALS_DATA.buildingToward.forEach(goal => {
       const p = goalProg[goal.id] || { progress: 0, notes: '' };
       html += `<div class="mb-12">
@@ -155,6 +167,14 @@ function renderOverview(container) {
         </div>
         <div class="progress-bar"><div class="progress-fill blue" style="width:${p.progress}%"></div></div>
         ${p.notes ? `<div class="text-xs text-secondary mt-4">${App.esc(p.notes)}</div>` : ''}
+      </div>`;
+    });
+    html += `</div>`;
+
+    html += `<div class="card">`;
+    GOALS_DATA.longTerm.forEach(goal => {
+      html += `<div class="task-item">
+        <span class="task-name text-sm text-secondary">${App.esc(goal.title)}</span>
       </div>`;
     });
     html += `</div>`;

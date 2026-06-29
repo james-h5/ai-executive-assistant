@@ -54,9 +54,10 @@
 
   window.Sounds = {
 
-    // Short soft click on tab switch
+    // Low tactical double-blip on tab switch
     playTabSwitch() {
-      playTone(800, 0.06, 0.08);
+      playTone(180, 0.05, 0.07, 'square', 0);
+      playTone(260, 0.04, 0.05, 'square', 0.045);
     },
 
     // Ascending two-tone ping when habit is completed
