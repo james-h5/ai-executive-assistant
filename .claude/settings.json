@@ -21,6 +21,12 @@
             "command": "$s = git -C 'C:/Users/james/OneDrive/AI/Executive Assistant' status --porcelain; if ($s) { $t = Get-Date -Format 'yyyy-MM-dd HH:mm'; git -C 'C:/Users/james/OneDrive/AI/Executive Assistant' add -A; git -C 'C:/Users/james/OneDrive/AI/Executive Assistant' commit -m \"Auto-commit: session changes $t\"; $null = git -C 'C:/Users/james/OneDrive/AI/Executive Assistant' push 2>&1 }",
             "timeout": 60,
             "statusMessage": "Committing session changes..."
+          },
+          {
+            "type": "command",
+            "command": "powershell -ExecutionPolicy Bypass -NoProfile -File \"C:/Users/james/OneDrive/AI/Executive Assistant/.claude/hooks/tts.ps1\"",
+            "timeout": 120,
+            "statusMessage": "Speaking response..."
           }
         ]
       }
