@@ -36,6 +36,7 @@ Build a skill when you notice you're repeating the same type of request.
 - `weekly-review` — End-of-week reflection and reset ✓ built
 - `learn-language` — Conversational language sessions for travel ✓ built
 - `comm-coach` — Clarify thoughts and review communication for clarity and confidence ✓ built
+- `reality` — Brutally honest strategic check-in: am I on track? What's the fastest path? ✓ built
 - `trade-journal` — Log and review futures trades
 - `client-onboarding` — New AI consulting client intake process
 - `content-workflow` — Instagram/YouTube content creation pipeline
