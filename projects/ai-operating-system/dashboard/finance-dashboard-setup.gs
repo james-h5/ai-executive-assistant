@@ -300,7 +300,6 @@ function buildInvestments(ss) {
   sh.setConditionalFormatRules([posRule, negRule]);
 
   sh.setFrozenRows(3);
-  sh.setFrozenColumns(1);
 }
 
 // ── INCOME LOG ────────────────────────────────────────────────────────────────
