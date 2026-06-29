@@ -9,8 +9,8 @@ function initOverview() {
 const OV_TICK_VALUES = { MES: 5, MNQ: 2, ES: 50, NQ: 20, CL: 1000, GC: 100, RTY: 50, YM: 5, OTHER: 1 };
 
 const OV_EVENTS = [
-  { label: 'Boxing Fight',  date: '2026-07-31', icon: '🥊' },
-  { label: 'Golden Gloves', date: '2026-08-31', icon: '🏆' },
+  { label: 'Boxing Fight',  date: '2026-07-31' },
+  { label: 'Golden Gloves', date: '2026-08-31' },
 ];
 
 function renderOverview(container) {
@@ -105,11 +105,11 @@ function renderOverview(container) {
       </div>
       <div class="stat-item">
         <div class="stat-label">Best Streak</div>
-        <div class="stat-value">${bestStreak > 0 ? '🔥 ' + bestStreak + 'd' : '—'}</div>
+        <div class="stat-value">${bestStreak > 0 ? bestStreak + 'd' : '—'}</div>
       </div>
       <div class="stat-item">
         <div class="stat-label">${nextEvent ? nextEvent.label : 'Next Event'}</div>
-        <div class="stat-value ${eventColor}">${nextEvent ? nextEvent.icon + ' ' + nextEvent.days + 'd' : '—'}</div>
+        <div class="stat-value ${eventColor}">${nextEvent ? nextEvent.days + 'd' : '—'}</div>
       </div>
       <div class="stat-item">
         <div class="stat-label">P&amp;L This Month</div>
@@ -136,7 +136,7 @@ function renderOverview(container) {
         html += `<div class="habit-check-item${done ? ' done' : ''}">
           <label class="checkbox-label" style="flex:1">
             <input type="checkbox" class="ov-habit-check" data-habit="${h.id}" ${done ? 'checked' : ''}>
-            <span class="task-name">${App.esc(h.icon)} ${App.esc(h.name)}</span>
+            <span class="task-name">${App.esc(h.name)}</span>
           </label>
           ${done ? '<span class="badge badge-green">Done</span>' : ''}
         </div>`;
@@ -150,7 +150,7 @@ function renderOverview(container) {
       const p = goalProg[goal.id] || { progress: 0, notes: '' };
       html += `<div class="mb-12">
         <div class="flex items-center justify-between mb-6">
-          <span class="text-sm font-500">${goal.icon} ${App.esc(goal.title)}</span>
+          <span class="text-sm font-500">${App.esc(goal.title)}</span>
           <span class="mono text-xs text-blue">${p.progress}%</span>
         </div>
         <div class="progress-bar"><div class="progress-fill blue" style="width:${p.progress}%"></div></div>
@@ -179,7 +179,7 @@ function renderOverview(container) {
     } else {
       const remaining = tasks.filter(t => t.status?.type !== 'closed');
       if (!remaining.length) {
-        html += `<div class="empty-state"><div class="empty-state-icon">✅</div>Clear schedule today!</div>`;
+        html += `<div class="empty-state">Clear schedule today.</div>`;
       } else {
         remaining.slice(0, 5).forEach(t => {
           html += `<div class="task-item">
