@@ -228,14 +228,11 @@ function buildInvestments(ss) {
     .setBackground(COLORS.neutral.bg).setFontColor('#666666')
     .setFontSize(9).setFontStyle('italic').setHorizontalAlignment('center');
 
-  // Headers (row 3)
-  const headers = ['Asset', 'Units', 'Avg Buy Price', 'Current Price', 'Total Value', 'Gain / Loss $', 'Return %', 'Notes'];
-  headers.forEach((h, i) => {
-    sh.getRange(3, i + 1)
-      .setValue(h)
-      .setBackground(COLORS.section.bg).setFontColor(COLORS.section.fg)
-      .setFontWeight('bold').setHorizontalAlignment('center');
-  });
+  // Headers (row 3) — one batch write
+  sh.getRange(3, 1, 1, 8)
+    .setValues([['Asset', 'Units', 'Avg Buy Price', 'Current Price', 'Total Value', 'Gain / Loss $', 'Return %', 'Notes']])
+    .setBackground(COLORS.section.bg).setFontColor(COLORS.section.fg)
+    .setFontWeight('bold').setHorizontalAlignment('center');
 
   // Row 4 — S&P 500
   sh.getRange(4, 1).setValue('S&P 500 (VOO / SPX)').setFontWeight('bold').setBackground(COLORS.white.bg);
@@ -328,13 +325,11 @@ function buildIncomeLog(ss) {
     .setBackground(COLORS.neutral.bg).setFontColor('#666666')
     .setFontSize(9).setFontStyle('italic').setHorizontalAlignment('center');
 
-  // Headers (row 3)
-  ['Week Ending', 'Bartending', 'Tutoring', 'AI Consulting', 'Trading', 'Other', 'Total'].forEach((h, i) => {
-    sh.getRange(3, i + 1)
-      .setValue(h)
-      .setBackground(COLORS.section.bg).setFontColor(COLORS.section.fg)
-      .setFontWeight('bold').setHorizontalAlignment('center');
-  });
+  // Headers (row 3) — one batch write
+  sh.getRange(3, 1, 1, 7)
+    .setValues([['Week Ending', 'Bartending', 'Tutoring', 'AI Consulting', 'Trading', 'Other', 'Total']])
+    .setBackground(COLORS.section.bg).setFontColor(COLORS.section.fg)
+    .setFontWeight('bold').setHorizontalAlignment('center');
 
   // Row 4 — pre-fill this week with known defaults
   const today = new Date();
@@ -343,24 +338,36 @@ function buildIncomeLog(ss) {
   sunday.setDate(today.getDate() + daysToSunday);
 
   inputCell(sh, 4, 1, sunday, 'dd/mm/yyyy');
-  inputCell(sh, 4, 2, 500, '$#,##0.00');  // Bartending default
-  inputCell(sh, 4, 3, 110, '$#,##0.00');  // Tutoring default
-  inputCell(sh, 4, 4, 0,   '$#,##0.00');  // AI Consulting
-  inputCell(sh, 4, 5, 0,   '$#,##0.00');  // Trading
-  inputCell(sh, 4, 6, 0,   '$#,##0.00');  // Other
+  sh.getRange(4, 2, 1, 5).setValues([[500, 110, 0, 0, 0]]).setNumberFormat('$#,##0.00').setBackground(COLORS.input.bg);
   calcCell(sh, 4, 7, '=SUM(B4:F4)', '$#,##0.00', true);
 
-  // Rows 5-53 — empty rows with Total formula ready, alternating background
-  for (let i = 1; i <= 50; i++) {
-    const r = 4 + i;
-    const bg = i % 2 === 0 ? COLORS.white.bg : COLORS.neutral.bg;
-    sh.getRange(r, 1, 1, 7).setBackground(bg);
-    sh.getRange(r, 1).setNumberFormat('dd/mm/yyyy');
-    sh.getRange(r, 2, 1, 5).setNumberFormat('$#,##0.00');
-    sh.getRange(r, 7)
-      .setFormula(`=IF(COUNTA(B${r}:F${r})>0,SUM(B${r}:F${r}),"")`)
-      .setNumberFormat('$#,##0.00').setBackground(COLORS.calc.bg).setFontWeight('bold');
+  // ── Batch format 50 empty rows (rows 5–54) ──────────────────────────────────
+  const ROWS = 50;
+  const START = 5;
+
+  // 1. Entire block white
+  sh.getRange(START, 1, ROWS, 7).setBackground(COLORS.white.bg);
+
+  // 2. Alternating rows neutral — single getRangeList call
+  const altRanges = [];
+  for (let i = 1; i < ROWS; i += 2) altRanges.push(`A${START + i}:G${START + i}`);
+  sh.getRangeList(altRanges).setBackground(COLORS.neutral.bg);
+
+  // 3. Column formats — one call per column group
+  sh.getRange(START, 1, ROWS, 1).setNumberFormat('dd/mm/yyyy');
+  sh.getRange(START, 2, ROWS, 5).setNumberFormat('$#,##0.00');
+
+  // 4. Total column — build array then write all formulas at once
+  const totalFormulas = [];
+  for (let i = 0; i < ROWS; i++) {
+    const r = START + i;
+    totalFormulas.push([`=IF(COUNTA(B${r}:F${r})>0,SUM(B${r}:F${r}),"")`]);
   }
+  sh.getRange(START, 7, ROWS, 1)
+    .setFormulas(totalFormulas)
+    .setNumberFormat('$#,##0.00')
+    .setFontWeight('bold')
+    .setBackground(COLORS.calc.bg);
 
   sh.setFrozenRows(3);
 }
@@ -409,33 +416,33 @@ function buildExpenses(ss) {
     .build();
   sh.getRange(4, 2, 200, 1).setDataValidation(catRule);
 
-  // Sample rows
+  // Sample rows — write all values in one batch
   const today = new Date();
-  const samples = [
+  const sampleValues = [
     [today, 'Food & Groceries', 'Woolworths weekly shop', 80, ''],
-    [today, 'Gym / Boxing', 'Boxing gym membership', 60, 'Monthly fee'],
-    [today, 'Subscriptions', 'Claude Pro', 20, 'Monthly'],
-    [today, 'Transport', 'Petrol / Uber', 40, ''],
+    [today, 'Gym / Boxing',     'Boxing gym membership',  60, 'Monthly fee'],
+    [today, 'Subscriptions',    'Claude Pro',              20, 'Monthly'],
+    [today, 'Transport',        'Petrol / Uber',           40, ''],
   ];
+  sh.getRange(4, 1, sampleValues.length, 5).setValues(sampleValues);
+  sh.getRange(4, 1, sampleValues.length, 1).setNumberFormat('dd/mm/yyyy');
+  sh.getRange(4, 4, sampleValues.length, 1).setNumberFormat('$#,##0.00');
 
-  samples.forEach((row, i) => {
-    const r = 4 + i;
-    const bg = i % 2 === 0 ? COLORS.white.bg : COLORS.neutral.bg;
-    sh.getRange(r, 1).setValue(row[0]).setNumberFormat('dd/mm/yyyy').setBackground(bg);
-    sh.getRange(r, 2).setValue(row[1]).setBackground(bg);
-    sh.getRange(r, 3).setValue(row[2]).setBackground(bg);
-    sh.getRange(r, 4).setValue(row[3]).setNumberFormat('$#,##0.00').setBackground(bg);
-    sh.getRange(r, 5).setValue(row[4]).setBackground(bg).setFontColor('#888888').setFontSize(9);
-  });
+  // ── Batch format 100 empty rows after samples ────────────────────────────────
+  const ROWS = 100;
+  const START = 4 + sampleValues.length;
 
-  // Format remaining rows
-  for (let i = samples.length; i < 200; i++) {
-    const r = 4 + i;
-    const bg = i % 2 === 0 ? COLORS.white.bg : COLORS.neutral.bg;
-    sh.getRange(r, 1, 1, 5).setBackground(bg);
-    sh.getRange(r, 1).setNumberFormat('dd/mm/yyyy');
-    sh.getRange(r, 4).setNumberFormat('$#,##0.00');
-  }
+  // 1. Entire block white
+  sh.getRange(START, 1, ROWS, 5).setBackground(COLORS.white.bg);
+
+  // 2. Alternating rows neutral — single getRangeList call
+  const altRanges = [];
+  for (let i = 1; i < ROWS; i += 2) altRanges.push(`A${START + i}:E${START + i}`);
+  sh.getRangeList(altRanges).setBackground(COLORS.neutral.bg);
+
+  // 3. Column formats — one call each
+  sh.getRange(START, 1, ROWS, 1).setNumberFormat('dd/mm/yyyy');
+  sh.getRange(START, 4, ROWS, 1).setNumberFormat('$#,##0.00');
 
   sh.setFrozenRows(3);
 }
@@ -487,20 +494,37 @@ function buildNetWorthHistory(ss) {
   sh.getRange(4, 6).setValue('(live)').setFontColor('#aaaaaa')
     .setHorizontalAlignment('center').setBackground(COLORS.calc.bg).setFontStyle('italic');
 
-  // Rows 5-28 — historical snapshots (manual, pre-formatted)
-  for (let i = 1; i <= 24; i++) {
-    const r = 4 + i;
-    const bg = i % 2 === 0 ? COLORS.white.bg : COLORS.neutral.bg;
-    sh.getRange(r, 1, 1, 6).setBackground(bg);
-    sh.getRange(r, 1).setNumberFormat('mmm yyyy');
-    sh.getRange(r, 2, 1, 3).setNumberFormat('$#,##0.00');
-    sh.getRange(r, 5)
-      .setFormula(`=IF(COUNTA(B${r}:D${r})=3,B${r}+C${r}-D${r},"")`)
-      .setNumberFormat('$#,##0.00').setFontWeight('bold').setBackground(bg);
-    sh.getRange(r, 6)
-      .setFormula(`=IF(E${r}<>"",E${r}-E${r-1},"")`)
-      .setNumberFormat('$#,##0.00').setBackground(bg);
+  // ── Batch format 24 historical rows (rows 5–28) ─────────────────────────────
+  const HIST_ROWS = 24;
+  const HIST_START = 5;
+
+  // 1. Entire block white
+  sh.getRange(HIST_START, 1, HIST_ROWS, 6).setBackground(COLORS.white.bg);
+
+  // 2. Alternating rows neutral — single getRangeList call
+  const altRanges = [];
+  for (let i = 1; i < HIST_ROWS; i += 2) altRanges.push(`A${HIST_START + i}:F${HIST_START + i}`);
+  sh.getRangeList(altRanges).setBackground(COLORS.neutral.bg);
+
+  // 3. Column formats — one call each
+  sh.getRange(HIST_START, 1, HIST_ROWS, 1).setNumberFormat('mmm yyyy');
+  sh.getRange(HIST_START, 2, HIST_ROWS, 3).setNumberFormat('$#,##0.00');
+
+  // 4. Net Worth (col E) and vs Last Month (col F) — build arrays, write at once
+  const nwFormulas = [];
+  const vsFormulas = [];
+  for (let i = 0; i < HIST_ROWS; i++) {
+    const r = HIST_START + i;
+    nwFormulas.push([`=IF(COUNTA(B${r}:D${r})=3,B${r}+C${r}-D${r},"")`]);
+    vsFormulas.push([i === 0 ? '""' : `=IF(E${r}<>"",E${r}-E${r-1},"")`]);
   }
+  sh.getRange(HIST_START, 5, HIST_ROWS, 1)
+    .setFormulas(nwFormulas)
+    .setNumberFormat('$#,##0.00')
+    .setFontWeight('bold');
+  sh.getRange(HIST_START, 6, HIST_ROWS, 1)
+    .setFormulas(vsFormulas)
+    .setNumberFormat('$#,##0.00');
 
   // Conditional formatting: "vs Last Month" green if up, red if down
   const vsRange = sh.getRange(5, 6, 24, 1);
