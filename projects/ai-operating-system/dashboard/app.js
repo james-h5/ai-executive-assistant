@@ -24,6 +24,7 @@ const App = (() => {
   }
 
   function activateTab(tab) {
+    if (window.Sounds) Sounds.playTabSwitch();
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + tab));
     if (!tabInited[tab]) {

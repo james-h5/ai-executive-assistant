@@ -10,6 +10,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Boot overlay — populated and removed by boot.js -->
+  <div id="boot-overlay">
+    <div id="boot-lines"></div>
+    <span class="boot-cursor">_</span>
+  </div>
+
   <div id="setup-banner" class="setup-banner hidden">
     <span>⚠ ClickUp not configured.</span>
     <span>Copy <code>config.example.js</code> → <code>config.js</code> and add your API key. The Daily tab needs it; other tabs work without it.</span>
@@ -44,6 +50,8 @@
 
   <script>var CONFIG = null;</script>
   <script src="config.js"></script>
+  <script src="sounds.js"></script>
+  <script src="boot.js"></script>
   <script src="app.js"></script>
   <script src="tabs/daily.js"></script>
   <script src="tabs/habits.js"></script>

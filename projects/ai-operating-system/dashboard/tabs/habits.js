@@ -164,8 +164,13 @@ function renderHabits(container) {
         const d = getHabitsData();
         if (!d.completions[btn.dataset.key]) d.completions[btn.dataset.key] = [];
         const idx = d.completions[btn.dataset.key].indexOf(btn.dataset.habit);
-        if (idx > -1) d.completions[btn.dataset.key].splice(idx, 1);
-        else d.completions[btn.dataset.key].push(btn.dataset.habit);
+        if (idx > -1) {
+          d.completions[btn.dataset.key].splice(idx, 1);
+          if (window.Sounds) Sounds.playHabitUncheck();
+        } else {
+          d.completions[btn.dataset.key].push(btn.dataset.habit);
+          if (window.Sounds) Sounds.playHabitComplete();
+        }
         saveHabitsData(d);
         render();
       };
