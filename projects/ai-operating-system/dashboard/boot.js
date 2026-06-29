@@ -94,8 +94,8 @@
 
         lines.forEach(function (text) {
           var msg = new SpeechSynthesisUtterance(text);
-          msg.pitch = 1.0;
-          msg.rate  = 0.9;
+          msg.pitch = 0.95;
+          msg.rate  = 0.75;
           msg.lang  = 'en-AU';
           if (voice) msg.voice = voice;
           try { speechSynthesis.speak(msg); } catch {}
