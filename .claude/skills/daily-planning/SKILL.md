@@ -2,7 +2,7 @@
 name: daily-planning
 description: Morning kickoff — generate a structured daily plan based on priorities and commitments
 triggers: [plan my day, what should I do today, morning kickoff, daily planning]
-version: 1.0
+version: 1.1
 ---
 
 # Daily Planning Skill
@@ -17,23 +17,39 @@ Ask both of these questions in a single message:
 
 Wait for James's reply before generating the plan.
 
-## Step 2: Load Context
-Before generating the plan, read:
-- `@context/current-priorities.md`
-- `@context/goals.md`
+## Step 2: Load Context and Run Diagnostic
+
+Before generating the plan, read all of the following:
+- `context/current-priorities.md`
+- `context/goals.md`
+- `context/work.md`
+- `context/me.md`
 
 If ClickUp MCP is available, check for any tasks due or scheduled for today.
 
-Check `logs/daily/` for the most recent daily log file — if one exists, pull any incomplete items as rollovers.
+Check `logs/daily/` for the most recent daily log file — if one exists, pull any incomplete items as rollovers, and note patterns of what's been worked on vs avoided.
+
+**Then run this diagnostic internally — do not output it:**
+
+Against the top goal ($10k/month location-independent income), ask:
+- What is the single biggest bottleneck right now?
+- Is James working on the bottleneck, or working around it?
+- What is being avoided that matters most?
+- What feels productive but isn't moving the needle?
+
+Hold the answer as the diagnostic result. It drives Step 3 — specifically the Main Focus and task blocks. Do not surface the full diagnosis in the plan output.
 
 ## Step 3: Generate the Plan
+
 Output the plan in this exact format:
 
 ---
 
 ### Today's Plan — [Weekday, DD Month YYYY]
 
-**Main Focus:** [ONE thing — the single highest-leverage move toward the #1 goal today]
+**Main Focus:** [ONE thing — derived from the bottleneck identified in the diagnostic, not just whatever feels urgent. The single highest-leverage move toward removing the current constraint.]
+
+**Strategic context:** [One sentence — why this focus matters today, naming the bottleneck plainly. E.g. "The constraint right now is X, so everything else waits."]
 
 **Blocks:**
 - Morning: [specific task with enough detail to act on immediately]
@@ -65,3 +81,5 @@ If yes, save the plan to `logs/daily/YYYY-MM-DD.md`.
 - If a hard commitment fills the evening block, note it and pack the remaining blocks harder
 - Anything not completed today rolls over automatically to the next day's plan
 - Keep the whole output tight — James doesn't need essays, he needs a clear direction
+- Main Focus must come from the diagnostic bottleneck — if the bottleneck is getting the first client, the Main Focus is a client acquisition action, not a build task
+- Strategic context is one sentence only — name the bottleneck, don't explain it at length
