@@ -258,6 +258,38 @@ function buildExportData() {
 
   // This month's expenses — total + by category
   const today = new Date();
+
+  // Actual monthly income — sum Income Log entries for current month (prev month fallback)
+  let actualMonthlyIncome = 0;
+  if (lastLogRow >= 4) {
+    const allLogData = log.getRange(4, 1, lastLogRow - 3, 7).getValues();
+    const thisMonth = today.getMonth();
+    const thisYear  = today.getFullYear();
+    let hasCurrentMonth = false;
+    let currentTotal = 0;
+    for (const row of allLogData) {
+      const d = row[0], v = parseFloat(row[6]);
+      if (!(d instanceof Date) || isNaN(v) || v <= 0) continue;
+      if (d.getMonth() === thisMonth && d.getFullYear() === thisYear) {
+        currentTotal += v;
+        hasCurrentMonth = true;
+      }
+    }
+    if (hasCurrentMonth) {
+      actualMonthlyIncome = currentTotal;
+    } else {
+      const prevMonth = thisMonth === 0 ? 11 : thisMonth - 1;
+      const prevYear  = thisMonth === 0 ? thisYear - 1 : thisYear;
+      for (const row of allLogData) {
+        const d = row[0], v = parseFloat(row[6]);
+        if (!(d instanceof Date) || isNaN(v) || v <= 0) continue;
+        if (d.getMonth() === prevMonth && d.getFullYear() === prevYear) {
+          actualMonthlyIncome += v;
+        }
+      }
+    }
+  }
+
   const expLastRow = exp.getLastRow();
   let thisMonthExpenses = 0;
   const byCategory = {};
@@ -285,9 +317,9 @@ function buildExportData() {
     },
     income: {
       latestWeekly:  latestWeekly,
-      monthlyRate:   +(latestWeekly * 4.33).toFixed(2),
+      monthlyRate:   +actualMonthlyIncome.toFixed(2),
       targetMonthly: MONTHLY_TARGET,
-      gapToTarget:   +Math.max(0, MONTHLY_TARGET - latestWeekly * 4.33).toFixed(2),
+      gapToTarget:   +Math.max(0, MONTHLY_TARGET - actualMonthlyIncome).toFixed(2),
     },
     expenses: {
       thisMonth:  +thisMonthExpenses.toFixed(2),
@@ -395,8 +427,8 @@ function buildDashboard(ss) {
   // Row 6 — Total investments | Monthly rate
   rowLabel(sh, 6, 1, 'Total investments');
   calcCell(sh, 6, 2, '=IFERROR(SUM(Investments!E4:E6),0)', '$#,##0.00');
-  rowLabel(sh, 6, 4, 'Monthly rate (x4.33)');
-  calcCell(sh, 6, 5, '=E5*4.33', '$#,##0.00');
+  rowLabel(sh, 6, 4, 'Monthly income (actual)');
+  calcCell(sh, 6, 5, '=SUMIFS(\'Income Log\'!G4:G500,\'Income Log\'!A4:A500,">="&DATE(YEAR(TODAY()),MONTH(TODAY()),1),\'Income Log\'!A4:A500,"<"&DATE(YEAR(TODAY()),MONTH(TODAY())+1,1))', '$#,##0.00');
 
   // Row 7 — Liabilities | Gap to $10k
   rowLabel(sh, 7, 1, 'Liabilities');
