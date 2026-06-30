@@ -21,12 +21,12 @@ export const processLead = task({
   run: async (payload: { url: string; title: string }) => {
     const firecrawlApiKey = process.env.FIRECRAWL_API_KEY;
     const anthropicApiKey = process.env.ANTHROPIC_API_KEY;
-    const clickupApiToken = process.env.CLICKUP_API_TOKEN;
+    const clickupApiKey = process.env.CLICKUP_API_KEY;
     const clickupListId = process.env.CLICKUP_LIST_ID;
 
     if (!firecrawlApiKey) throw new Error("FIRECRAWL_API_KEY is not set");
     if (!anthropicApiKey) throw new Error("ANTHROPIC_API_KEY is not set");
-    if (!clickupApiToken) throw new Error("CLICKUP_API_TOKEN is not set");
+    if (!clickupApiKey) throw new Error("CLICKUP_API_KEY is not set");
     if (!clickupListId) throw new Error("CLICKUP_LIST_ID is not set");
 
     // 1. Scrape the business website
@@ -180,7 +180,7 @@ Return ONLY valid JSON (no markdown, no code fences) in this exact format:
       {
         method: "POST",
         headers: {
-          Authorization: clickupApiToken,
+          Authorization: clickupApiKey,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({

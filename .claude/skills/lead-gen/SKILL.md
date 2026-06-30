@@ -6,7 +6,7 @@ description:
 
 # Skill: Lead Generation
 
-On-demand Brisbane trade business lead research. Finds businesses, scrapes contact info, locates Instagram handles, checks reviews for pain signals, rates warmth, writes to `outreach-pipeline.md`, and pushes each lead to ClickUp.
+On-demand Brisbane trade business lead research using the Firecrawl API. Finds businesses via Firecrawl search, scrapes their websites, locates Instagram handles, checks reviews for pain signals, rates warmth, writes to `outreach-pipeline.md`, and pushes each lead to ClickUp.
 
 ## When to use
 User says `/lead-gen`, "find me leads", "build a hit list", or "research [trade] businesses in [location]".
@@ -16,64 +16,130 @@ Brisbane trade businesses (electricians, plumbers, HVAC/air conditioning). Overr
 
 ---
 
-## Steps
+## Setup check â€” run this first
 
-### 1. Search for candidates
+Load credentials from the EA root `.env` file using PowerShell. Stop and tell the user if anything is missing.
 
-Use WebSearch with these queries (adjust trade/location if overridden):
-- `"electrician Brisbane" -site:yellowpages.com.au -site:truelocal.com.au -site:facebook.com`
-- `"plumber Brisbane" -site:yellowpages.com.au -site:truelocal.com.au -site:facebook.com`
-- `"air conditioning Brisbane" -site:yellowpages.com.au -site:truelocal.com.au -site:facebook.com`
-- `"HVAC Brisbane Queensland" -site:yellowpages.com.au -site:truelocal.com.au`
+```powershell
+$envPath = "C:\Users\james\OneDrive\AI\Executive Assistant\.env"
+$env = @{}
+Get-Content $envPath | Where-Object { $_ -match "^\s*[^#].*=" } | ForEach-Object {
+    $parts = $_ -split "=", 2
+    $env[$parts[0].Trim()] = $parts[1].Trim()
+}
+$firecrawlKey  = $env["FIRECRAWL_API_KEY"]
+$clickupKey    = $env["CLICKUP_API_KEY"]
+$clickupListId = $env["CLICKUP_LIST_ID"]
 
-Run all searches in parallel. Filter results against this skip list:
-- **Skip**: yellowpages.com.au, truelocal.com.au, hotfrog.com.au, yelp.com, facebook.com, linkedin.com, instagram.com, airtasker.com, hipages.com.au, seek.com.au, jims.net
+if (-not $firecrawlKey)  { Write-Host "MISSING: FIRECRAWL_API_KEY in .env" }
+if (-not $clickupKey)    { Write-Host "MISSING: CLICKUP_API_KEY in .env" }
+if (-not $clickupListId) { Write-Host "MISSING: CLICKUP_LIST_ID in .env" }
+```
 
-Collect ~15 candidates, shortlist the best 10 (prefer small/local over large franchises).
+If any key is missing, stop and tell the user what to fill in before continuing.
 
-### 2. Scrape each website
+---
 
-Use WebFetch on each business homepage. Extract:
+## Step 1 â€” Search for candidates with Firecrawl
+
+Run these queries in sequence via the Firecrawl search API (limit 5 per query). Stop collecting once you have 25 unique candidates.
+
+```powershell
+function Search-Firecrawl($query, $apiKey) {
+    $body = @{ query = $query; limit = 5 } | ConvertTo-Json
+    $resp = Invoke-RestMethod -Uri "https://api.firecrawl.dev/v1/search" `
+        -Method POST `
+        -Headers @{ Authorization = "Bearer $apiKey"; "Content-Type" = "application/json" } `
+        -Body $body
+    return $resp.data
+}
+```
+
+Queries to run:
+- `"electrician Brisbane small business"`
+- `"electrician Brisbane residential local"`
+- `"plumber Brisbane small business"`
+- `"plumber Brisbane residential local"`
+- `"air conditioning Brisbane small business"`
+- `"HVAC Brisbane Queensland small business"`
+
+**Skip these domains** (directories, social, franchises):
+`facebook.com`, `linkedin.com`, `instagram.com`, `twitter.com`, `yellowpages.com.au`, `truelocal.com.au`, `hotfrog.com.au`, `yelp.com`, `google.com`, `seek.com.au`, `indeed.com`, `airtasker.com`, `hipages.com.au`, `jims.net`
+
+Deduplicate by domain. Collect the best 15 candidates, then shortlist 10 (prefer small/local over franchises based on title and URL).
+
+---
+
+## Step 2 â€” Scrape each website with Firecrawl
+
+For each of the 10 shortlisted businesses:
+
+```powershell
+function Scrape-Website($url, $apiKey) {
+    $body = @{
+        url = $url
+        formats = @("markdown")
+        onlyMainContent = $true
+    } | ConvertTo-Json
+    $resp = Invoke-RestMethod -Uri "https://api.firecrawl.dev/v1/scrape" `
+        -Method POST `
+        -Headers @{ Authorization = "Bearer $apiKey"; "Content-Type" = "application/json" } `
+        -Body $body
+    return $resp.data.markdown
+}
+```
+
+From the scraped markdown, extract:
 - Business name
 - Phone number (Australian format)
 - Email address
-- Whether they have: online booking, contact form, live chat (note as "has automation" if yes)
+- Any instagram.com link in the page
+- Whether they have: online booking form, contact form, live chat (flag as "has automation")
 
-Run in batches of 3 in parallel.
+Cap content at 6000 characters before processing.
 
-### 3. Find Instagram handle
+---
 
-For each business:
-1. Check the scraped website content for an instagram.com link
-2. If not found, run WebSearch: `"[business name] Brisbane" site:instagram.com`
+## Step 3 â€” Find Instagram handle
 
-Record handle as `@handle` or `none found`.
+1. First check if the scraped website content contains an instagram.com link â€” use that
+2. If not found, search Firecrawl: query = `"[business name] Brisbane site:instagram.com"`, limit 3
+   ```powershell
+   $igResults = Search-Firecrawl '"[business name] Brisbane" site:instagram.com' $firecrawlKey
+   $igUrl = ($igResults | Where-Object { $_.url -match "instagram\.com/" } | Select-Object -First 1).url
+   if ($igUrl -match 'instagram\.com/([^/?#]+)') { $handle = "@$($Matches[1])" }
+   ```
 
-### 4. Check for pain signals
+Record as `@handle` or `none found`.
 
-For each business, run WebSearch: `"[business name]" Brisbane reviews`
+---
 
-Scan snippets for:
-- **Review signals**: "no response", "missed call", "never called back", "slow to reply", "couldn't get through", "didn't answer", "left a message"
-- **Structural signals** (from website scrape): mobile-only contact number, no contact form, no online booking â†’ note as "Mobile only, no form â€” likely manual"
+## Step 4 â€” Check for pain signals
 
-Record the most useful signal as a short quote or structural note.
+For each business, run a Firecrawl search: `'"[business name]" Brisbane reviews'`, limit 3.
 
-### 5. Rate warmth
+Scan the title and description snippets for:
+- **Review signals**: "no response", "missed call", "never called back", "slow to reply", "couldn't get through", "didn't answer", "left a message", "no call back"
+- **Structural signals** (from website scrape): mobile-only number with no contact form â†’ note as "Mobile only, no form"
+- **Hours signals**: office hours listed as Mâ€“F only â†’ note as "After-hours enquiries go to voicemail"
+
+Quote the most useful signal verbatim or note it structurally.
+
+---
+
+## Step 5 â€” Rate warmth
 
 | Rating | Criteria |
 |--------|----------|
-| **Hot** | Review mentions slow/missed response OR mobile-only + no form, AND active Instagram |
-| **Warm** | Small crew, simple website, no visible automation |
-| **Cold** | Large company, franchise signals, already automated |
+| **Hot** | Review quote confirming slow/missed response, OR mobile-only with no form |
+| **Warm** | Small crew, simple site, contact form but no booking, no visible automation |
+| **Cold** | Large company, franchise, or already has booking/chat automation |
 
-### 6. Build the table
+---
 
-Compile all data into a markdown table. Aim for 10 leads.
+## Step 6 â€” Write outreach-pipeline.md
 
-### 7. Write outreach-pipeline.md
-
-Write to `projects/landing-first-client/outreach-pipeline.md`. If the file already exists, append new leads â€” do not overwrite existing ones.
+Write to `projects/landing-first-client/outreach-pipeline.md`. If the file already exists, **append** new leads after any existing ones â€” do not overwrite.
 
 Format:
 ```markdown
@@ -85,46 +151,58 @@ Format:
 
 | # | Business | Trade | Website | Instagram | Phone | Email | Pain Signal | Warmth |
 |---|----------|-------|---------|-----------|-------|-------|-------------|--------|
-| 1 | [name] | [trade] | [url] | @handle | [phone] | [email] | [signal] | Hot |
-...
-
-## Notes
-- [Pattern or observation across the list]
-- [Who to contact first and why]
-```
-
-### 8. Push each lead to ClickUp
-
-Use Bash to POST each lead to ClickUp. Read `CLICKUP_API_TOKEN` and `CLICKUP_LIST_ID` from the `.env` file in `projects/ai-lead-generator/` (if it exists).
-
-```bash
-curl -s -X POST "https://api.clickup.com/api/v2/list/${CLICKUP_LIST_ID}/task" \
-  -H "Authorization: ${CLICKUP_API_TOKEN}" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "[Warmth] BusinessName â€” Trade",
-    "description": "Phone: ...\nEmail: ...\nWebsite: ...\nInstagram: ...\n\nPain Signal: ...\n\nAI Pitch: ..."
-  }'
-```
-
-If the `.env` doesn't exist or credentials are missing, write the pipeline.md and tell the user to set up credentials before ClickUp push can run.
+| 1 | [name]   | [trade] | [url] | @handle   | [phone] | [email] | [signal] | Hot |
 
 ---
 
-## AI pitch template (per lead)
+## Notes
+- [Pattern or observation]
+- [Who to contact first and why â€” top 2 Hot leads]
 
-When writing the ClickUp description, include a 2-3 sentence pitch:
+---
 
-> "[Business name] likely handles new enquiries manually â€” every missed call or slow reply is a lost job. An AI lead response system would auto-reply within 60 seconds, qualify the lead, and notify [owner] instantly, so they capture jobs even when they're on-site."
+## Status
+| # | Business | Status | Notes |
+|---|----------|--------|-------|
+| 1 | [name]   | Not contacted | |
+```
 
-Adapt to the specific business based on what you scraped.
+---
+
+## Step 7 â€” Push each lead to ClickUp
+
+For each lead, POST to ClickUp using PowerShell:
+
+```powershell
+function Push-ToClickUp($lead, $apiKey, $listId) {
+    $name = "[$($lead.Warmth)] $($lead.BusinessName) â€” $($lead.Trade)"
+    $desc = @"
+Phone: $($lead.Phone)
+Email: $($lead.Email)
+Website: $($lead.Website)
+Instagram: $($lead.Instagram)
+
+Pain Signal: $($lead.PainSignal)
+
+AI Pitch:
+$($lead.BusinessName) likely handles new enquiries manually â€” every missed call or slow reply is a lost job. An AI lead response system would auto-reply within 60 seconds, qualify the lead, and notify the owner instantly, so they capture jobs even when they're on-site.
+"@
+    $body = @{ name = $name; description = $desc } | ConvertTo-Json
+    Invoke-RestMethod -Uri "https://api.clickup.com/api/v2/list/$listId/task" `
+        -Method POST `
+        -Headers @{ Authorization = $apiKey; "Content-Type" = "application/json" } `
+        -Body $body
+}
+```
+
+If ClickUp push fails for a lead, log the error and continue â€” don't abort the whole run.
 
 ---
 
 ## Output summary
 
-After completing, tell the user:
-- How many leads found and their breakdown (Hot / Warm / Cold)
-- File written: `projects/landing-first-client/outreach-pipeline.md`
-- ClickUp: X tasks created (or: "Set up .env credentials to enable ClickUp push")
-- Who to contact first and why (top 1-2 Hot leads)
+Tell the user:
+- **Leads found:** X total (X Hot / X Warm / X Cold)
+- **File written:** `projects/landing-first-client/outreach-pipeline.md`
+- **ClickUp:** X tasks created (or specific errors if any failed)
+- **Contact first:** top 1â€“2 Hot leads and why
