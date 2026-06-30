@@ -24,6 +24,7 @@ Active workstreams live in `projects/`. Each has a `README.md` with status, desc
 - `projects/ai-consulting-portfolio/` — Portfolio to attract first clients
 - `projects/consulting-business-processes/` — SOPs and forms for the consulting firm
 - `projects/landing-first-client/` — Pipeline and strategy for signing first client
+- `projects/ai-lead-generator/` — Trigger.dev automation: finds Brisbane trade leads weekly, enriches with Claude, pushes to ClickUp
 - `projects/language-learning/` — Conversational practice across Italian, Japanese, French, German
 - `projects/communication-excellence/` — Developing clear, confident expression
 
@@ -37,6 +38,7 @@ Build a skill when you notice you're repeating the same type of request.
 - `learn-language` — Conversational language sessions for travel ✓ built
 - `comm-coach` — Clarify thoughts and review communication for clarity and confidence ✓ built
 - `reality` — Brutally honest strategic check-in: am I on track? What's the fastest path? ✓ built
+- `lead-gen` — On-demand Brisbane trade business lead research → outreach-pipeline.md + ClickUp ✓ built
 - `trade-journal` — Log and review futures trades
 - `client-onboarding` — New AI consulting client intake process
 - `content-workflow` — Instagram/YouTube content creation pipeline
