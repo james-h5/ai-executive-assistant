@@ -9,13 +9,24 @@ version: 1.1
 
 **Trigger:** Run this skill when James says anything like "plan my day", "what should I do today", "morning kickoff", "daily planning", or similar.
 
-## Step 1: Check-In
-Ask both of these questions in a single message:
+## Step 1: Load Calendar
 
-1. **What's on today?** Any hard commitments? (bartending shift, boxing training, uni, appointments — and what time)
-2. **Anything specific you want to push forward today** that's not already in the system?
+Read the calendar export file at `projects/ai-operating-system/dashboard/calendar-export.json`.
 
-Wait for James's reply before generating the plan.
+If the file exists:
+- Parse it and filter events where `date` matches today (YYYY-MM-DD format)
+- Sort by `time` field
+- Use these as the hard commitments — no need to ask James what's on
+- If there are events, display a brief one-liner: "I can see you have: [event list]" before generating the plan
+
+If the file doesn't exist or is empty/unreadable:
+- Ask: "Quick — anything on today? (shifts, boxing, appointments, times?)"
+- And: "Anything specific you want to push forward?"
+- Wait for reply before proceeding
+
+> Note: The calendar-export.json is synced from the AI OS calendar via the "Sync to file" button. If today's events look wrong, ask James to sync the calendar first.
+
+Even if the calendar file has today's events, always ask: **"Anything specific you want to push forward today?"** — this captures work intentions that won't be in the calendar.
 
 ## Step 2: Load Context and Run Diagnostic
 

@@ -11,6 +11,70 @@ const CAL_CATEGORY_COLORS = {
 function getCalendarData() { return App.lsGet('jamesOS_calendar', { events: [] }); }
 function saveCalendarData(d) { App.lsSet('jamesOS_calendar', d); }
 
+// ── File sync (File System Access API) ───────────────────────
+const CAL_IDB = { name: 'jamesOS', store: 'handles', ver: 1 };
+
+function _idbOpen() {
+  return new Promise((res, rej) => {
+    const r = indexedDB.open(CAL_IDB.name, CAL_IDB.ver);
+    r.onupgradeneeded = e => e.target.result.createObjectStore(CAL_IDB.store);
+    r.onsuccess = e => res(e.target.result);
+    r.onerror = () => rej(r.error);
+  });
+}
+async function _idbGet(key) {
+  try {
+    const db = await _idbOpen();
+    return new Promise(res => {
+      const r = db.transaction(CAL_IDB.store).objectStore(CAL_IDB.store).get(key);
+      r.onsuccess = () => res(r.result ?? null);
+      r.onerror = () => res(null);
+    });
+  } catch { return null; }
+}
+async function _idbSet(key, val) {
+  try {
+    const db = await _idbOpen();
+    return new Promise(res => {
+      const tx = db.transaction(CAL_IDB.store, 'readwrite');
+      tx.objectStore(CAL_IDB.store).put(val, key);
+      tx.oncomplete = () => res(true);
+      tx.onerror = () => res(false);
+    });
+  } catch { return false; }
+}
+
+async function calWriteToFile(handle, data) {
+  const w = await handle.createWritable();
+  await w.write(JSON.stringify(data, null, 2));
+  await w.close();
+}
+
+async function calSync() {
+  if (!window.showSaveFilePicker) return { ok: false, reason: 'not-supported' };
+  let handle = await _idbGet('calExportHandle');
+  if (!handle) {
+    try {
+      handle = await window.showSaveFilePicker({
+        suggestedName: 'calendar-export.json',
+        types: [{ description: 'JSON', accept: { 'application/json': ['.json'] } }],
+      });
+      await _idbSet('calExportHandle', handle);
+    } catch (e) {
+      return { ok: false, reason: e.name === 'AbortError' ? 'cancelled' : 'error' };
+    }
+  } else {
+    const perm = await handle.requestPermission({ mode: 'readwrite' });
+    if (perm !== 'granted') return { ok: false, reason: 'permission-denied' };
+  }
+  await calWriteToFile(handle, getCalendarData());
+  return { ok: true, name: handle.name };
+}
+
+async function calResetHandle() {
+  await _idbSet('calExportHandle', null);
+}
+
 function initCalendar() {
   renderCalendar(document.getElementById('tab-calendar'));
 }
@@ -42,7 +106,10 @@ function renderCalendar(container) {
         <span style="min-width:160px;text-align:center;font-size:15px;font-weight:600">${monthName}</span>
         <button class="btn btn-ghost btn-sm" id="cal-next">&gt;</button>
       </div>
-      <button class="btn btn-primary btn-sm" id="cal-add">+ Add Event</button>
+      <div class="flex items-center gap-8">
+        <button class="btn btn-ghost btn-sm" id="cal-sync" title="Export calendar to a JSON file so Claude can read it when planning your day">⬡ Sync to file</button>
+        <button class="btn btn-primary btn-sm" id="cal-add">+ Add Event</button>
+      </div>
     </div>`;
 
     // ── Form ───────────────────────────────────────────────────
@@ -206,6 +273,29 @@ function renderCalendar(container) {
   }
 
   function attachEvents() {
+    // Sync to file
+    container.querySelector('#cal-sync').onclick = async () => {
+      const btn = container.querySelector('#cal-sync');
+      btn.textContent = '⬡ Syncing…';
+      btn.disabled = true;
+      const result = await calSync();
+      btn.disabled = false;
+      if (result.ok) {
+        btn.textContent = '✓ Synced';
+        setTimeout(() => { btn.textContent = '⬡ Sync to file'; }, 2500);
+      } else if (result.reason === 'not-supported') {
+        btn.textContent = '⬡ Sync to file';
+        alert('File sync requires Chrome or Edge.');
+      } else if (result.reason === 'permission-denied') {
+        btn.textContent = '⬡ Sync to file';
+        // Clear the stale handle so next click shows the picker again
+        await calResetHandle();
+        alert('Permission denied. Click Sync again to re-link the file.');
+      } else {
+        btn.textContent = '⬡ Sync to file';
+      }
+    };
+
     // Month navigation
     container.querySelector('#cal-prev').onclick = () => {
       viewMonth--;
