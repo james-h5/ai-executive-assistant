@@ -1,0 +1,92 @@
+{
+  "events": [
+    {
+      "title": "Horse Races",
+      "date": "2026-07-11",
+      "time": "10:00",
+      "endDate": "",
+      "category": "personal",
+      "notes": "Dress up in Suit",
+      "id": "9f9b9282-16d1-4863-a0ab-0f2b3a12ac36"
+    },
+    {
+      "title": "Work",
+      "date": "2026-07-01",
+      "time": "15:00",
+      "endTime": "21:00",
+      "endDate": "",
+      "category": "work",
+      "notes": "",
+      "id": "0d227a29-23d4-4188-bc96-6fc64b5481ef"
+    },
+    {
+      "title": "Work",
+      "date": "2026-07-03",
+      "time": "17:00",
+      "endTime": "23:00",
+      "endDate": "",
+      "category": "work",
+      "notes": "",
+      "id": "49140c3f-2588-4dd8-9780-2eec7d27ebae"
+    },
+    {
+      "title": "Work",
+      "date": "2026-07-04",
+      "time": "17:00",
+      "endTime": "23:00",
+      "endDate": "",
+      "category": "work",
+      "notes": "",
+      "id": "95130fb7-da68-4109-bd89-554b27aff431"
+    },
+    {
+      "title": "Sparring",
+      "date": "2026-07-02",
+      "time": "16:30",
+      "endDate": "",
+      "category": "boxing",
+      "notes": "",
+      "id": "8ebd054e-1cdd-4702-a24c-74de2b7167a3"
+    },
+    {
+      "title": "Sparring",
+      "date": "2026-06-30",
+      "time": "16:30",
+      "endTime": "18:00",
+      "endDate": "",
+      "category": "boxing",
+      "notes": "",
+      "id": "a891d0f6-3487-4fdf-ad02-41770af36a67"
+    },
+    {
+      "title": "Fighters Class",
+      "date": "2026-07-04",
+      "time": "08:00",
+      "endTime": "09:30",
+      "endDate": "",
+      "category": "boxing",
+      "notes": "",
+      "id": "46383a8e-96e0-4524-a55c-90dc3ae19b75"
+    },
+    {
+      "title": "Uni Starts",
+      "date": "2026-07-20",
+      "time": "",
+      "endTime": "",
+      "endDate": "",
+      "category": "uni",
+      "notes": "",
+      "id": "5c32204d-923b-43db-8295-b6a4b32e0bfe"
+    },
+    {
+      "title": "Final Grades",
+      "date": "2026-07-03",
+      "time": "",
+      "endTime": "",
+      "endDate": "",
+      "category": "uni",
+      "notes": "",
+      "id": "dc572550-7d6b-4098-84fa-3312b570207f"
+    }
+  ]
+}
