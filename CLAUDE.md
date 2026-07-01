@@ -39,6 +39,7 @@ Build a skill when you notice you're repeating the same type of request.
 - `comm-coach` — Clarify thoughts and review communication for clarity and confidence ✓ built
 - `reality` — Brutally honest strategic check-in: am I on track? What's the fastest path? ✓ built
 - `lead-gen` — On-demand Brisbane trade business lead research → outreach-pipeline.md + ClickUp ✓ built
+- `save` — Log completed actions to project progress.md and get the next step ✓ built
 - `trade-journal` — Log and review futures trades
 - `client-onboarding` — New AI consulting client intake process
 - `content-workflow` — Instagram/YouTube content creation pipeline
