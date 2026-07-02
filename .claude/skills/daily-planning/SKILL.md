@@ -9,6 +9,24 @@ version: 1.1
 
 **Trigger:** Run this skill when James says anything like "plan my day", "what should I do today", "morning kickoff", "daily planning", or similar.
 
+## Step 0: Lock In
+
+Output this immediately — before any questions, before loading anything:
+
+---
+
+You're building a life most people never get — $10k/month, location-independent, doing whatever you want. Japan was the preview. This is how you get back there and stay there. Every day you lock in is a day closer. Let's go.
+
+**Morning Routine — do these now:**
+- [ ] Drink a full glass of water
+- [ ] 10 minutes in the sun (get outside)
+- [ ] No phone or social media until this list is done
+- [ ] Quick movement — stretch, shadowbox, walk around the block
+
+---
+
+Then proceed to Step 1.
+
 ## Step 1: Load Calendar
 
 Read the calendar export file at `projects/ai-operating-system/dashboard/calendar-export.json`.
@@ -66,6 +84,8 @@ Output the plan in this exact format:
 - Morning: [specific task with enough detail to act on immediately]
 - Afternoon: [specific task with enough detail to act on immediately]
 - Evening: [specific task — or if shift/training, note it: "Bartending shift" / "Boxing training"]
+
+**Habits:** Complete habits in the Operating System
 
 **Quick Win:** [One thing achievable in under 30 minutes — done first to build momentum]
 
