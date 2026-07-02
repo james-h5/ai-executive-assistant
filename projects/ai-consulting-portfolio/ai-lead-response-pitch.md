@@ -24,10 +24,11 @@ The **AI Lead Response System** automatically handles new enquiries the moment t
 When a potential customer fills out your contact form, sends a DM, or submits an enquiry:
 
 1. **AI responds within 60 seconds** â€” professional, personalised message that matches your tone
-2. **Qualifies the lead** â€” asks the key questions (job type, location, timeline, budget)
-3. **Notifies you immediately** â€” you get a summary of the conversation and the lead's answers before you've even looked at your phone
+2. **Checks if it's a new or existing contact** â€” if it's someone already in your system, they don't get the new-lead treatment. The system skips qualification and just notifies you: *”John Smith called â€” existing customer, wants to book a job.”*
+3. **Qualifies new leads only** â€” asks the key questions (job type, location, timeline, budget) for contacts it doesn't recognise
+4. **Notifies you immediately** â€” you get a summary before you've even looked at your phone
 
-You only pick up the phone when there's a qualified, interested customer on the other end.
+You only pick up the phone when there's a qualified, interested customer on the other end â€” and your regulars never feel like strangers.
 
 ---
 
@@ -58,6 +59,7 @@ For most trade businesses, one extra job per month more than covers the cost.
 
 - Faster response than your competitors â€” every time, automatically
 - Leads qualified before you call â€” no more dead-end conversations
+- Existing customers recognised and handled separately â€” no awkward bot interactions for your regulars
 - More time on the tools, less time chasing enquiries
 - A system that works nights, weekends, and public holidays
 
