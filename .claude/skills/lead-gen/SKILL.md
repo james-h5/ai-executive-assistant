@@ -38,6 +38,23 @@ if (-not $clickupListId) { Write-Host "MISSING: CLICKUP_LIST_ID in .env" }
 
 If any key is missing, stop and tell the user what to fill in before continuing.
 
+**Also load existing pipeline domains to avoid duplicates:**
+
+```powershell
+$pipelinePath = "C:\Users\james\OneDrive\AI\Executive Assistant\projects\landing-first-client\outreach-pipeline.md"
+$existingDomains = @{}
+if (Test-Path $pipelinePath) {
+    $pipelineContent = Get-Content $pipelinePath -Raw
+    $domainMatches = [regex]::Matches($pipelineContent, '([a-zA-Z0-9-]+\.(?:com\.au|net\.au|org\.au|com|net|au))')
+    foreach ($m in $domainMatches) {
+        $existingDomains[$m.Groups[1].Value.ToLower()] = $true
+    }
+    Write-Host "Loaded $($existingDomains.Count) existing domains from pipeline — will skip these."
+}
+```
+
+Skip any candidate whose domain appears in `$existingDomains`.
+
 ---
 
 ## Step 1 — Search for candidates with Firecrawl
@@ -55,16 +72,24 @@ function Search-Firecrawl($query, $apiKey) {
 }
 ```
 
-Queries to run:
-- `"electrician Brisbane small business"`
-- `"electrician Brisbane residential local"`
-- `"plumber Brisbane small business"`
-- `"plumber Brisbane residential local"`
-- `"air conditioning Brisbane small business"`
-- `"HVAC Brisbane Queensland small business"`
+Use suburb-level queries so Firecrawl returns less prominent businesses rather than the same top-ranked results. Rotate through Brisbane suburbs:
 
-**Skip these domains** (directories, social, franchises):
+Queries to run (limit 5 per query, stop at 25 unique candidates):
+- `"electrician Ipswich Queensland local"`
+- `"electrician Logan Brisbane residential"`
+- `"electrician Redlands Bay Area electrician"`
+- `"electrician Northside Brisbane small business"`
+- `"plumber Ipswich Queensland local"`
+- `"plumber Logan City small business"`
+- `"plumber Redlands Queensland residential"`
+- `"air conditioning Ipswich Queensland local"`
+- `"air conditioning Logan small business"`
+- `"HVAC Redlands Brisbane small business"`
+
+**Skip these domains** (directories, social, franchises, already in pipeline):
 `facebook.com`, `linkedin.com`, `instagram.com`, `twitter.com`, `yellowpages.com.au`, `truelocal.com.au`, `hotfrog.com.au`, `yelp.com`, `google.com`, `seek.com.au`, `indeed.com`, `airtasker.com`, `hipages.com.au`, `jims.net`
+
+Also skip any domain in `$existingDomains` (loaded from the existing pipeline above).
 
 Deduplicate by domain. Collect the best 15 candidates, then shortlist 10 (prefer small/local over franchises based on title and URL).
 
@@ -131,9 +156,15 @@ Quote the most useful signal verbatim or note it structurally.
 
 | Rating | Criteria |
 |--------|----------|
-| **Hot** | Review quote confirming slow/missed response, OR mobile-only with no form |
+| **Hot** | Review quote confirming slow/missed response, OR mobile-only with no form AND no 24/7 mention |
 | **Warm** | Small crew, simple site, contact form but no booking, no visible automation |
-| **Cold** | Large company, franchise, or already has booking/chat automation |
+| **Cold** | Large company, franchise, already has booking/chat automation, OR advertises 24/7 availability |
+
+**Important:** Before rating a mobile-only number as Hot, check whether the scraped content contains "24/7", "24 hour", "24-hour", "around the clock", or "always available". If it does, the business is actively answering calls — downgrade to Warm. The pitch only lands where there's a genuine missed-call problem.
+
+```powershell
+$is24x7 = $content -match '24/7|24 hour|24-hour|around the clock|always available|available anytime'
+```
 
 ---
 
