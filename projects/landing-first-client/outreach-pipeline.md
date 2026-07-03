@@ -142,3 +142,50 @@ Four variations — pick the one that matches the prospect's pain signal. Swap i
 
 **Status options:** Not contacted → Sent → Replied → Call booked → Closed / Not interested
 
+
+
+---
+
+# Lead Gen Run — 2026-07-03 (Suburbs: Ipswich / Logan / Redlands / Northside)
+
+*10 new leads — all fresh, none previously contacted.*
+
+## Hit List
+
+| # | Business | Trade | Website | Instagram | Phone | Email | Pain Signal | Warmth |
+|---|----------|-------|---------|-----------|-------|-------|-------------|--------|
+| 1 | Redland City Plumbing and Gas | Plumber | plumberredlands.com.au | none found | 0401 612 199 | plumberredlandsqld@gmail.com | Mobile number + Gmail address — sole trader, every on-site job = missed call | **Hot** |
+| 2 | Stat Electrical | Electrician | statelectrical.com.au | @stat_electrical | 0430 061 413 | not found | Mobile-only number, no contact form, no 24/7 | **Hot** |
+| 3 | Ipswich Air Conditioning and Electrical | Air Conditioning | ipswichairconditioningandelectrical.com.au | none found | 0418 720 150 | not found | Mobile-only, no contact form, no 24/7 | **Hot** |
+| 4 | Don Evans Plumbers | Plumber | donevansplumbers.com.au | @deplumbers | 07 3288 0959 | admin@donevansplumbers.com.au | Advertises 24/7 but small local Ipswich outfit — worth testing the pitch | **Warm** |
+| 5 | Chalk Electrical | Electrician | chalkelectrical.com.au | @uncommonelectricians | 0438 730 367 | not found | Mobile number, has basic booking form but no AI/chat | **Warm** |
+| 6 | Moran Power Solutions | Electrician | moranpowersolutions.com.au | @moranpowersolutions | 07 3820 3999 | not found | Landline, no form, local Redlands operator | **Warm** |
+| 7 | Jim Monger Plumbing | Plumber | jimmongerplumbing.com.au | @jimmongerplumbingandgas | not found | not found | No contact info on site — very small/referral-only operation | **Warm** |
+| 8 | GT Aircon | Air Conditioning | gtaircon.com.au | @gtaircon | not found | not found | No contact info scraped, no automation — has IG presence | **Warm** |
+| 9 | Comma Electrical | Electrician | commaelectrical.com.au | not found | 1300 665 372 | not found | 1300 number, 24/7, has booking form | **Cold** |
+| 10 | Liqwyd Plumbing | Plumber | liqwyd.com.au | none found | 03 3299 8735 | not found | Victorian phone number — likely national service, not local | **Cold** |
+
+---
+
+## Notes
+- Three clear Hot leads this run — all mobile-only with no 24/7 flag
+- Redland City Plumbing and Gas is the standout: mobile number AND Gmail address = definite sole/micro operator. No missed enquiry buffer at all.
+- Stat Electrical has IG (@stat_electrical) — easy DM entry point
+- Don Evans Plumbers has email (admin@donevansplumbers.com.au) — good for cold email even though they advertise 24/7
+
+---
+
+## Status
+| # | Business | Status | Notes |
+|---|----------|--------|-------|
+| 1 | Redland City Plumbing and Gas | Not contacted | Mobile + Gmail — sole trader |
+| 2 | Stat Electrical | Not contacted | DM @stat_electrical |
+| 3 | Ipswich Air Conditioning and Electrical | Not contacted | Mobile only |
+| 4 | Don Evans Plumbers | Not contacted | Email: admin@donevansplumbers.com.au |
+| 5 | Chalk Electrical | Not contacted | DM @uncommonelectricians |
+| 6 | Moran Power Solutions | Not contacted | DM @moranpowersolutions |
+| 7 | Jim Monger Plumbing | Not contacted | Contact via IG @jimmongerplumbingandgas |
+| 8 | GT Aircon | Not contacted | Contact via IG @gtaircon |
+| 9 | Comma Electrical | Not contacted | Low priority |
+| 10 | Liqwyd Plumbing | Not contacted | Low priority — possibly national |
+
