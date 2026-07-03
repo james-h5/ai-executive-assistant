@@ -21,6 +21,7 @@ You're building a life most people never get — $10k/month, location-independen
 - [ ] Drink a full glass of water
 - [ ] 10 minutes in the sun (get outside)
 - [ ] No phone or social media until this list is done
+- [ ] 50 push-ups
 - [ ] Quick movement — stretch, shadowbox, walk around the block
 
 ---
