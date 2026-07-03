@@ -141,3 +141,49 @@ Four variations — pick the one that matches the prospect's pain signal. Swap i
 | 7 | Air-rite Mechanical | Email | D | 2026-07-03 | Sent | | In ClickUp — in progress |
 
 **Status options:** Not contacted → Sent → Replied → Call booked → Closed / Not interested
+
+---
+
+# Lead Gen Run — 2026-07-03
+
+*10 leads researched across electricians, plumbers, and air conditioning businesses in Brisbane.*
+
+## Hit List
+
+| # | Business | Trade | Website | Instagram | Phone | Email | Pain Signal | Warmth |
+|---|----------|-------|---------|-----------|-------|-------|-------------|--------|
+| 1 | Brisbane City Plumbing and Gas | Plumber | brisbanecityplumbingandgas.com.au | @bcpandg | 0435 878 512 | not found | Mobile-only number, no contact form — after-hours calls go to voicemail | **Hot** |
+| 2 | Dawson Electric | Electrician | dawsonelectric.com.au | @dawsonelectric | 07 3324 1447 | not found | No booking form, no live chat — small local operator | **Warm** |
+| 3 | Crusader Electrical | Electrician | crusaderelectrical.com.au | @crusader_electrical_and_air | 07 3060 9105 | admin@crusaderelectrical.com.au | Simple site, no booking form or automation | **Warm** |
+| 4 | Bayside Plumbing | Plumber | bayside-plumbing.com.au | none found | not found | Sparse web presence — minimal site, no contact info scraped | **Warm** |
+| 5 | Jason's Plumbing | Plumber | jasonsplumbing.com.au | none found | not found | Minimal site, no contact info or automation found | **Warm** |
+| 6 | LW Plumbing | Plumber | lwplumbing.com.au | none found | 07 3186 0544 | not found | Has basic booking form but no AI/chat automation | **Warm** |
+| 7 | Brisbane Air | Air Conditioning | brisbaneair.com.au | none found | 07 3269 8450 | not found | Local installer, no booking form or automation | **Warm** |
+| 8 | Quality Air | Air Conditioning | qualityac.com.au | @qualityairconditioning | 07 3395 7633 | not found | No booking form, no automation — small local operator | **Warm** |
+| 9 | Air-rite Mechanical | Air Conditioning | airritemech.com.au | none found | not found | No contact info scraped, no visible automation | **Warm** |
+| 10 | Brisbane Power Electricians | Electrician | bpelectricians.com.au | @brisbanepower | 1300 032 003 | not found | Has online booking form, 1300 number — more established | **Cold** |
+
+---
+
+## Notes
+- Brisbane City Plumbing and Gas is the standout Hot lead — mobile-only number with no contact form means enquiries outside business hours go unanswered
+- Crusader Electrical is the best Warm lead to approach after — has an email address making cold outreach easier than phone-only businesses
+- No review-based pain signals surfaced this run (reviews not indexed by Firecrawl search); structural signals are the main indicator
+- Jason's Plumbing and Bayside Plumbing both had no contact info scraped — worth visiting manually to verify they're still active
+
+---
+
+## Status
+| # | Business | Status | Notes |
+|---|----------|--------|-------|
+| 1 | Brisbane City Plumbing and Gas | Not contacted | |
+| 2 | Dawson Electric | Not contacted | |
+| 3 | Crusader Electrical | Not contacted | Has email — easiest cold outreach |
+| 4 | Bayside Plumbing | Not contacted | Verify site manually |
+| 5 | Jason's Plumbing | Not contacted | Verify site manually |
+| 6 | LW Plumbing | Not contacted | |
+| 7 | Brisbane Air | Not contacted | |
+| 8 | Quality Air | Not contacted | |
+| 9 | Air-rite Mechanical | Not contacted | |
+| 10 | Brisbane Power Electricians | Not contacted | Low priority — already has booking |
+
