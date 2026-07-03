@@ -132,15 +132,15 @@ Four variations — pick the one that matches the prospect's pain signal. Swap i
 
 | # | Business | Channel | Template | Date Sent | Status | Follow-up Due | Notes |
 |---|----------|---------|----------|-----------|--------|---------------|-------|
-| 1 | Brisbane City Plumbing and Gas | Instagram DM | A | | Not contacted | | |
-| 2 | Bayside Plumbing | Email | D | | Not contacted | | |
-| 3 | Jason's Plumbing | Email | B | | Not contacted | | |
-| 4 | Quality Air | Instagram DM | B | | Not contacted | | |
-| 5 | Dawson Electric | Instagram DM | C | | Not contacted | | |
-| 6 | Miranda Electrical | Instagram DM | A | | Not contacted | | |
-| 7 | Crusader Electrical | Instagram DM | C | | Not contacted | | |
-| 8 | Local Brisbane Plumber | Email | D | | Not contacted | | |
-| 9 | LCM Air | Email | D | | Not contacted | | |
-| 10 | Air-rite Mechanical | Email | D | | Not contacted | | |
+| 1 | Brisbane City Plumbing and Gas | Instagram DM | A | | Not contacted | | Not in ClickUp — not sent yet |
+| 2 | Bayside Plumbing | Email | D | 2026-07-01 | Sent | 2026-07-03 | In ClickUp — in progress |
+| 3 | Jason's Plumbing | Email | B | 2026-07-01 | Sent | 2026-07-03 | In ClickUp — in progress |
+| 4 | Quality Air | Instagram DM | B | 2026-07-01 | Sent | 2026-07-03 | In ClickUp — in progress |
+| 5 | Dawson Electric | Instagram DM | C | 2026-07-01 | Sent | 2026-07-03 | In ClickUp — in progress |
+| 6 | Miranda Electrical | Instagram DM | A | | Not contacted | | Not in ClickUp — not sent yet |
+| 7 | Crusader Electrical | Instagram DM | C | 2026-07-01 | Sent | 2026-07-03 | In ClickUp — in progress |
+| 8 | Local Brisbane Plumber | Email | D | | Not contacted | | Not in ClickUp — not sent yet |
+| 9 | LCM Air | Email | D | 2026-07-01 | Sent | 2026-07-03 | In ClickUp — in progress |
+| 10 | Air-rite Mechanical | Email | D | 2026-07-01 | Sent | 2026-07-03 | In ClickUp — in progress |
 
 **Status options:** Not contacted → Sent → Replied → Call booked → Closed / Not interested
