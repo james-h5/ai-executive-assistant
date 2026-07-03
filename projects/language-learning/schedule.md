@@ -6,20 +6,20 @@ description:
 
 # Language Learning Schedule
 
-Monthly rotation â€” one language per month, cycling through all four, then repeating for reinforcement.
+Monthly rotation — one language per month, cycling through all four, then repeating for reinforcement.
 
 | Month | Language | Notes |
 |---|---|---|
-| January | French | â€” |
-| February | German | â€” |
-| March | Italian | â€” |
-| April | Japanese | â€” |
+| January | French | — |
+| February | German | — |
+| March | Italian | — |
+| April | Japanese | — |
 | May | French | Reinforcement cycle |
 | June | German | Reinforcement cycle |
-| July | Italian | Start here â€” bucket list priority |
-| August | Japanese | Loves Japan â€” go deeper |
-| September | French | â€” |
-| October | German | â€” |
+| July | Italian | Start here — bucket list priority |
+| August | Japanese | Loves Japan — go deeper |
+| September | French | — |
+| October | German | — |
 | November | Italian | Reinforcement cycle |
 | December | Japanese | Reinforcement cycle |
 

@@ -28,15 +28,15 @@ When a potential customer fills out your contact form, sends a DM, or submits an
 3. **Qualifies new leads only** — asks the key questions (job type, location, timeline, budget) for contacts it doesn't recognise
 4. **Notifies you immediately** — you get a summary before you've even looked at your phone
 
-You only pick up the phone when there's a qualified, interested customer on the other end â€” and your regulars never feel like strangers.
+You only pick up the phone when there's a qualified, interested customer on the other end — and your regulars never feel like strangers.
 
 ---
 
 ## Real Example
 
-> A Brisbane electrician gets a website enquiry at 2pm on a Wednesday â€” he's in a switchboard in Chermside.
+> A Brisbane electrician gets a website enquiry at 2pm on a Wednesday — he's in a switchboard in Chermside.
 >
-> Within 60 seconds, the system replies to the customer, asks about the job, and collects their details. Two minutes later, the owner gets a notification: *"New lead â€” commercial fit-out, Fortitude Valley, wants quote this week. Contact: [name + number]."*
+> Within 60 seconds, the system replies to the customer, asks about the job, and collects their details. Two minutes later, the owner gets a notification: *"New lead — commercial fit-out, Fortitude Valley, wants quote this week. Contact: [name + number]."*
 >
 > The customer feels looked after. The owner books the job that evening. Nobody lost anything to a competitor.
 
@@ -57,9 +57,9 @@ For most trade businesses, one extra job per month more than covers the cost.
 
 ## What You Get
 
-- Faster response than your competitors â€” every time, automatically
-- Leads qualified before you call â€” no more dead-end conversations
-- Existing customers recognised and handled separately â€” no awkward bot interactions for your regulars
+- Faster response than your competitors — every time, automatically
+- Leads qualified before you call — no more dead-end conversations
+- Existing customers recognised and handled separately — no awkward bot interactions for your regulars
 - More time on the tools, less time chasing enquiries
 - A system that works nights, weekends, and public holidays
 

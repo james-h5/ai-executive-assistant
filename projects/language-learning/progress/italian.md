@@ -8,7 +8,7 @@ description:
 
 ## Sessions
 - Total: 0
-- Last session: â€”
+- Last session: —
 
 ## Scenarios Covered
 (none yet)
@@ -17,4 +17,4 @@ description:
 (none yet)
 
 ## Next Recommended Scenario
-Introductions â€” who you are, where you're from, what you do
+Introductions — who you are, where you're from, what you do

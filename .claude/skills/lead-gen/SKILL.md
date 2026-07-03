@@ -16,7 +16,7 @@ Brisbane trade businesses (electricians, plumbers, HVAC/air conditioning). Overr
 
 ---
 
-## Setup check â€” run this first
+## Setup check — run this first
 
 Load credentials from the EA root `.env` file using PowerShell. Stop and tell the user if anything is missing.
 
@@ -40,7 +40,7 @@ If any key is missing, stop and tell the user what to fill in before continuing.
 
 ---
 
-## Step 1 â€” Search for candidates with Firecrawl
+## Step 1 — Search for candidates with Firecrawl
 
 Run these queries in sequence via the Firecrawl search API (limit 5 per query). Stop collecting once you have 25 unique candidates.
 
@@ -70,7 +70,7 @@ Deduplicate by domain. Collect the best 15 candidates, then shortlist 10 (prefer
 
 ---
 
-## Step 2 â€” Scrape each website with Firecrawl
+## Step 2 — Scrape each website with Firecrawl
 
 For each of the 10 shortlisted businesses:
 
@@ -100,9 +100,9 @@ Cap content at 6000 characters before processing.
 
 ---
 
-## Step 3 â€” Find Instagram handle
+## Step 3 — Find Instagram handle
 
-1. First check if the scraped website content contains an instagram.com link â€” use that
+1. First check if the scraped website content contains an instagram.com link — use that
 2. If not found, search Firecrawl: query = `"[business name] Brisbane site:instagram.com"`, limit 3
    ```powershell
    $igResults = Search-Firecrawl '"[business name] Brisbane" site:instagram.com' $firecrawlKey
@@ -114,20 +114,20 @@ Record as `@handle` or `none found`.
 
 ---
 
-## Step 4 â€” Check for pain signals
+## Step 4 — Check for pain signals
 
 For each business, run a Firecrawl search: `'"[business name]" Brisbane reviews'`, limit 3.
 
 Scan the title and description snippets for:
 - **Review signals**: "no response", "missed call", "never called back", "slow to reply", "couldn't get through", "didn't answer", "left a message", "no call back"
 - **Structural signals** (from website scrape): mobile-only number with no contact form â†’ note as "Mobile only, no form"
-- **Hours signals**: office hours listed as Mâ€“F only â†’ note as "After-hours enquiries go to voicemail"
+- **Hours signals**: office hours listed as M–F only â†’ note as "After-hours enquiries go to voicemail"
 
 Quote the most useful signal verbatim or note it structurally.
 
 ---
 
-## Step 5 â€” Rate warmth
+## Step 5 — Rate warmth
 
 | Rating | Criteria |
 |--------|----------|
@@ -137,9 +137,9 @@ Quote the most useful signal verbatim or note it structurally.
 
 ---
 
-## Step 6 â€” Write outreach-pipeline.md
+## Step 6 — Write outreach-pipeline.md
 
-Write to `projects/landing-first-client/outreach-pipeline.md`. If the file already exists, **append** new leads after any existing ones â€” do not overwrite.
+Write to `projects/landing-first-client/outreach-pipeline.md`. If the file already exists, **append** new leads after any existing ones — do not overwrite.
 
 Format:
 ```markdown
@@ -157,7 +157,7 @@ Format:
 
 ## Notes
 - [Pattern or observation]
-- [Who to contact first and why â€” top 2 Hot leads]
+- [Who to contact first and why — top 2 Hot leads]
 
 ---
 
@@ -169,13 +169,13 @@ Format:
 
 ---
 
-## Step 7 â€” Push each lead to ClickUp
+## Step 7 — Push each lead to ClickUp
 
 For each lead, POST to ClickUp using PowerShell:
 
 ```powershell
 function Push-ToClickUp($lead, $apiKey, $listId) {
-    $name = "[$($lead.Warmth)] $($lead.BusinessName) â€” $($lead.Trade)"
+    $name = "[$($lead.Warmth)] $($lead.BusinessName) — $($lead.Trade)"
     $desc = @"
 Phone: $($lead.Phone)
 Email: $($lead.Email)
@@ -185,7 +185,7 @@ Instagram: $($lead.Instagram)
 Pain Signal: $($lead.PainSignal)
 
 AI Pitch:
-$($lead.BusinessName) likely handles new enquiries manually â€” every missed call or slow reply is a lost job. An AI lead response system would auto-reply within 60 seconds, qualify the lead, and notify the owner instantly, so they capture jobs even when they're on-site.
+$($lead.BusinessName) likely handles new enquiries manually — every missed call or slow reply is a lost job. An AI lead response system would auto-reply within 60 seconds, qualify the lead, and notify the owner instantly, so they capture jobs even when they're on-site.
 "@
     $body = @{ name = $name; description = $desc } | ConvertTo-Json
     Invoke-RestMethod -Uri "https://api.clickup.com/api/v2/list/$listId/task" `
@@ -195,7 +195,7 @@ $($lead.BusinessName) likely handles new enquiries manually â€” every misse
 }
 ```
 
-If ClickUp push fails for a lead, log the error and continue â€” don't abort the whole run.
+If ClickUp push fails for a lead, log the error and continue — don't abort the whole run.
 
 ---
 
@@ -205,4 +205,4 @@ Tell the user:
 - **Leads found:** X total (X Hot / X Warm / X Cold)
 - **File written:** `projects/landing-first-client/outreach-pipeline.md`
 - **ClickUp:** X tasks created (or specific errors if any failed)
-- **Contact first:** top 1â€“2 Hot leads and why
+- **Contact first:** top 1–2 Hot leads and why

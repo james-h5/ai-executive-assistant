@@ -10,7 +10,7 @@ Finds and qualifies Brisbane trade business leads (electricians, plumbers, HVAC)
 
 ## What it does
 
-1. **Searches** for Brisbane trade businesses using Firecrawl â€” filters out directories, franchises, and social media
+1. **Searches** for Brisbane trade businesses using Firecrawl — filters out directories, franchises, and social media
 2. **Scrapes** each business website for contact info
 3. **Finds Instagram** handle via search + website scrape
 4. **Checks reviews** for pain signals (missed calls, slow response)
@@ -27,11 +27,11 @@ cp .env.example .env
 ```
 
 Fill in each value:
-- `FIRECRAWL_API_KEY` â€” [firecrawl.dev/app/api-keys](https://firecrawl.dev/app/api-keys)
-- `ANTHROPIC_API_KEY` â€” [console.anthropic.com/api-keys](https://console.anthropic.com/api-keys)
-- `CLICKUP_API_TOKEN` â€” ClickUp > Settings > Apps
-- `CLICKUP_LIST_ID` â€” right-click your outreach list in ClickUp > Copy link > grab ID from URL
-- `TRIGGER_SECRET_KEY` â€” cloud.trigger.dev > your project > API keys
+- `FIRECRAWL_API_KEY` — [firecrawl.dev/app/api-keys](https://firecrawl.dev/app/api-keys)
+- `ANTHROPIC_API_KEY` — [console.anthropic.com/api-keys](https://console.anthropic.com/api-keys)
+- `CLICKUP_API_TOKEN` — ClickUp > Settings > Apps
+- `CLICKUP_LIST_ID` — right-click your outreach list in ClickUp > Copy link > grab ID from URL
+- `TRIGGER_SECRET_KEY` — cloud.trigger.dev > your project > API keys
 
 ### 2. Install dependencies
 ```bash
@@ -65,8 +65,8 @@ npm run deploy
 
 ```
 src/trigger/trade-leads/
-  find-leads.ts     â€” scheduled search (Monday 8am AEST)
-  process-lead.ts   â€” scrape + extract + ClickUp push per business
+  find-leads.ts     — scheduled search (Monday 8am AEST)
+  process-lead.ts   — scrape + extract + ClickUp push per business
 ```
 
 ## Adapting search targets

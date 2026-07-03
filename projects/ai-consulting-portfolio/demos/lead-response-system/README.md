@@ -4,7 +4,7 @@ type: project
 description: 
 ---
 
-# Lead Response System â€” Demo
+# Lead Response System — Demo
 
 AI-powered lead response and follow-up system for local trade businesses in Brisbane.
 
@@ -18,9 +18,9 @@ https://www.loom.com/share/4a8e5b8381cf4d7585d8981e99237aac
 - Automatically follows up 24 hours later if no reply
 
 ## Built With
-- Claude AI (Anthropic) â€” generates the SMS response
-- Trigger.dev â€” automation workflow and scheduling
-- Twilio â€” SMS delivery
+- Claude AI (Anthropic) — generates the SMS response
+- Trigger.dev — automation workflow and scheduling
+- Twilio — SMS delivery
 
 ## Code
 https://github.com/jamesheathcote/lead-response-demo
