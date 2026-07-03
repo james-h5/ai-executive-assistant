@@ -151,6 +151,18 @@ Four variations — pick the one that matches the prospect's pain signal. Swap i
 | 6 | LCM Air | Email | D | 2026-07-03 | Sent | | In ClickUp — in progress |
 | 7 | Air-rite Mechanical | Email | D | 2026-07-03 | Sent | | In ClickUp — in progress |
 
+| 8 | LW Plumbing | Phone/Form | — | | Not contacted | | No Instagram or email — form or cold call only |
+| 9 | Brisbane Air | Phone/Form | — | | Not contacted | | No Instagram or email — form or cold call only |
+| 10 | Brisbane Power Electricians | Instagram DM | C | | Not contacted | | Cold — has booking form already |
+| 11 | Redland City Plumbing and Gas | Email | D | | Not contacted | | Gmail address — sole trader |
+| 12 | Stat Electrical | Instagram DM | A | | Not contacted | | |
+| 13 | Ipswich Air Conditioning and Electrical | Phone/Form | — | | Not contacted | | No Instagram or email |
+| 14 | Don Evans Plumbers | Instagram DM / Email | — | | ⚠️ Verify fit | | Advertises 24/7 — check before sending |
+| 15 | Chalk Electrical | Instagram DM | C | | Not contacted | | |
+| 16 | Moran Power Solutions | Instagram DM | C | | Not contacted | | |
+| 17 | Jim Monger Plumbing | Instagram DM | A | | Not contacted | | No phone or email — IG only |
+| 18 | GT Aircon | Instagram DM | A | | Not contacted | | No phone or email — IG only |
+
 **Status options:** Not contacted → Sent → Replied → Call booked → Closed / Not interested
 
 
