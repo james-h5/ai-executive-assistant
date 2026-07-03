@@ -16,6 +16,17 @@
 | 8 | Local Brisbane Plumber | Plumber | [localbrisbaneplumber.com](https://localbrisbaneplumber.com) | none found | (not listed) | hello@localbrisbaneplumber.com | No phone visible on site — email-only contact, very small operation | Warm |
 | 9 | LCM Air | HVAC | [lcmair.com.au](https://lcmair.com.au) | none found | (not listed) | admin@lcmair.com.au | No phone on site, form + email only — small commercial HVAC outfit | Warm |
 | 10 | Air-rite Mechanical | HVAC | [airritemech.com.au](https://airritemech.com.au) | none found | 07 3274 2199 | info@airritemech.com.au | Contact form only, no online booking — family business since 1987, all enquiries handled manually | Warm |
+| 11 | LW Plumbing | Plumber | [lwplumbing.com.au](https://lwplumbing.com.au) | none found | 07 3186 0544 | (not listed) | Basic booking form but no AI/chat automation | Warm |
+| 12 | Brisbane Air | Air Conditioning | [brisbaneair.com.au](https://brisbaneair.com.au) | none found | 07 3269 8450 | (not listed) | Local installer, no booking form or automation | Warm |
+| 13 | Brisbane Power Electricians | Electrician | [bpelectricians.com.au](https://bpelectricians.com.au) | @brisbanepower | 1300 032 003 | (not listed) | Has online booking form, 1300 number — more established | Cold |
+| 14 | Redland City Plumbing and Gas | Plumber | [plumberredlands.com.au](https://plumberredlands.com.au) | none found | 0401 612 199 | plumberredlandsqld@gmail.com | Mobile number + Gmail — sole trader, every on-site job is a missed call | Hot |
+| 15 | Stat Electrical | Electrician | [statelectrical.com.au](https://statelectrical.com.au) | @stat_electrical | 0430 061 413 | (not listed) | Mobile-only, no contact form, no 24/7 | Hot |
+| 16 | Ipswich Air Conditioning and Electrical | Air Conditioning | [ipswichairconditioningandelectrical.com.au](https://ipswichairconditioningandelectrical.com.au) | none found | 0418 720 150 | (not listed) | Mobile-only, no contact form, no 24/7 | Hot |
+| 17 | Don Evans Plumbers | Plumber | [donevansplumbers.com.au](https://donevansplumbers.com.au) | @deplumbers | 07 3288 0959 | admin@donevansplumbers.com.au | Advertises 24/7 — verify before contacting | Warm |
+| 18 | Chalk Electrical | Electrician | [chalkelectrical.com.au](https://chalkelectrical.com.au) | @uncommonelectricians | 0438 730 367 | (not listed) | Mobile but basic booking form — no automation | Warm |
+| 19 | Moran Power Solutions | Electrician | [moranpowersolutions.com.au](https://moranpowersolutions.com.au) | @moranpowersolutions | 07 3820 3999 | (not listed) | Landline only, no contact form, local Redlands operator | Warm |
+| 20 | Jim Monger Plumbing | Plumber | [jimmongerplumbing.com.au](https://jimmongerplumbing.com.au) | @jimmongerplumbingandgas | (not listed) | (not listed) | No contact info on site — very small/referral-only operation | Warm |
+| 21 | GT Aircon | Air Conditioning | [gtaircon.com.au](https://gtaircon.com.au) | @gtaircon | (not listed) | (not listed) | No contact info scraped, no automation — active Instagram | Warm |
 
 ---
 
