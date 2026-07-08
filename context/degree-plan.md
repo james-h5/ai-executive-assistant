@@ -14,7 +14,7 @@ See `context/academic-record.md` for completed results and current enrolment.
 - **Business Core Unit Option → MGB130**, taken in Summer (placed in Summer 2026/27 below — adjust if a different summer period is meant). Doing it in Summer means it doesn't cost a regular-semester slot.
 - **Advanced Electrical electives → all 6 of interest**, not just the required 4: EGH445 (Modern Control), EGH446 (Autonomous Systems), EGH448 (Power Electronics), EGH449 (Advanced Electronics), EGH443 (Advanced Telecommunications and RF), EGH444 (Digital Signals and Image Processing).
   - **Unconfirmed:** the course structure specifies "choose 4 of 8." Taking 6 means 2 units beyond the stated minimum. Confirm with a QUT engineering advisor that the enrolment system allows adding extra units from that pool (as overload) rather than capping at 4 — don't assume it's automatic.
-- **Goal: finish degree by mid-2029** (2029 S1) using sustained 60cp/semester loads. Only 2026 S1 is a confirmed 60cp result so far — 2026 S2 is in progress at 60cp too but not yet marked, so this pace is one data point, not a proven pattern yet.
+- **Goal: finish degree by mid-2029** (2029 S1). Doesn't require four straight 60cp semesters — 264cp remaining across 5 semesters (2027 S1 – 2029 S1) means **2 semesters at 60cp + 3 at standard 48cp = 264cp exactly**. Only 2026 S1 is a confirmed 60cp result so far (2026 S2 in progress, not yet marked), so keeping overload to 2 semesters instead of 4 is the lower-risk way to hit the same finish date.
 
 ## Status at end of 2026 Semester 2 (assuming current enrolment passes)
 - 228cp completed via regular semesters + 12cp (MGB130) via Summer 2026/27
@@ -35,21 +35,26 @@ See `context/academic-record.md` for completed results and current enrolment.
 - EFB360 needs EFB335 + EFB343 completed + 192cp total
 - BSB399 needs BSB105/106/108 (done) + 192cp total — credit-wise unlockable now, but capstone units sometimes carry a "final year" enrolment rule beyond pure credit points. Worth confirming before locking in 2027 S1.
 
-## Plan to finish by mid-2029 (60cp/semester)
+## Plan to finish by mid-2029 — only 2 overload semesters
 
 | Semester | Units | cp |
 |---|---|---|
 | Summer 2026/27 | MGB130 | 12 |
-| 2027 S1 | EGB240, EGB241, EGB242, EFB343, BSB399 | 60 |
-| 2027 S2 | EGB348, EGB341, EGB342, **EGB345**, EFB335 | 60 |
-| 2028 S1 | EGH419, EGH404, EGH443, EGH448, **EGH445** | 60 |
-| 2028 S2 | EGH490-1, EGH444, EGH449, **EGH446**, EFB344 | 60 |
-| 2029 S1 | EGH490-2, EFB360, EGB499 (placement report, 0cp) | 24 |
+| 2027 S1 | EGB240, EGB241, EGB242, EFB343, BSB399 | **60 (overload)** |
+| 2027 S2 | EGB348, EGB341, EGB342, **EGB345**, EFB335 | **60 (overload)** |
+| 2028 S1 | EGH419, EGH404, EGH443, EGH448 | 48 (standard) |
+| 2028 S2 | EGH490-1, EGH444, EGH449, **EGH446** | 48 (standard) |
+| 2029 S1 | **EGH445**, EFB344, EGH490-2, EFB360, EGB499 (placement report, 0cp) | 48 (standard) |
 
-**Degree still complete mid-2029** — the semester-only-offered units (bolded above) just changed which semester everything else falls into, they didn't push the finish date out. EGB345 moved to 2027 S2 (its only available slot), which pulled EGH445 into 2028 S1 and EGH446 into 2028 S2 right behind it.
+**Only 2027 S1 and 2027 S2 need to be overload semesters.** All of Year 4 (2028) runs at standard 48cp, and 2029 S1 is a normal finishing semester rather than the light wind-down version. Total is still 264cp remaining across the 5 semesters, still lands mid-2029.
 
-Ordering notes:
+Why this arrangement works:
+- EGB345 (Sem 2 only) sits in 2027 S2 — its only option this early.
+- EGH446 (Sem 2 only, needs EGB345) sits in 2028 S2 — the next available Sem 2 after EGB345 lands.
+- EGH445 (Sem 1 only, needs EGB345) moved to 2029 S1 instead of 2028 S1 — 2029 S1 is still a Semester 1, so the restriction still holds, and this is what frees up 2028 S1 to drop to 48cp.
+- EFB344 (needs EFB343 done — from 2027 S1) also moved to 2029 S1 to free up 2028 S2 to 48cp, since it has no semester restriction of its own.
 - BSB399 placed early (2027 S1) since its only stated requirements (BSB105/106/108 + 192cp) are already met — flagged above as worth double-checking against enrolment-rule restrictions, not just prerequisites.
-- EFB344 assumed to need EFB343 completed first (matches QUT's default Y3S2→Y4S1 sequencing) — moved to 2028 S2 in this version, still a semester after EFB343.
-- EFB360 moved to 2029 S1 (needs EFB335 + EFB343 + 192cp, all met well before then) to keep 2028 S2 at exactly 60cp.
+- EFB360 sits in 2029 S1 (needs EFB335 + EFB343 + 192cp, all met well before then).
 - EGH443/EGH448 land in 2028 S1 (right after EGB342/EGB348 in 2027 S2); EGH444/EGH449 land in 2028 S2 (same logic).
+
+If you'd rather spread the 2 overload semesters differently (e.g. one in 2027, one in 2028 instead of both in 2027), the same 264cp total still works — just needs re-checking against the semester-lock and prereq constraints above before swapping units around.
