@@ -26,6 +26,7 @@ See `context/academic-record.md` for completed results and current enrolment.
 - EGB241 → unlocks EGB341
 - EGB240 → unlocks EGH419
 - Advanced Electrical electives each need their intermediate unit completed first: EGH448/449 need EGB348; EGH443/444 need EGB342; EGH445/446 need EGB345
+- **Semester-offering restrictions (confirmed by James):** EGB345 only runs Semester 2; EGH445 only runs Semester 1; EGH446 only runs Semester 2. These drive the ordering below more than the credit prereqs do.
 - EGH404 needs 144cp (already satisfied)
 - EGH490-1 needs EGH404 **completed** (not concurrent) + 240cp total
 - EGH490-2 needs EGH490-1 completed
@@ -40,14 +41,15 @@ See `context/academic-record.md` for completed results and current enrolment.
 |---|---|---|
 | Summer 2026/27 | MGB130 | 12 |
 | 2027 S1 | EGB240, EGB241, EGB242, EFB343, BSB399 | 60 |
-| 2027 S2 | EGB348, EGB341, EGB342, EFB335, EFB344 | 60 |
-| 2028 S1 | EGB345, EGH419, EGH404, EGH443, EGH448 | 60 |
-| 2028 S2 | EGH490-1, EGH444, EGH449, EGH445, EFB360 | 60 |
-| 2029 S1 | EGH490-2, EGH446, EGB499 (placement report, 0cp) | 24 |
+| 2027 S2 | EGB348, EGB341, EGB342, **EGB345**, EFB335 | 60 |
+| 2028 S1 | EGH419, EGH404, EGH443, EGH448, **EGH445** | 60 |
+| 2028 S2 | EGH490-1, EGH444, EGH449, **EGH446**, EFB344 | 60 |
+| 2029 S1 | EGH490-2, EFB360, EGB499 (placement report, 0cp) | 24 |
 
-**Degree complete mid-2029** — about 6 months earlier than the standard 5-year pattern, using the same overload capacity already proven twice. 2029 S1 is light by design (24cp) — it's the wind-down semester once the last research unit and elective land, with the work placement report as the only other piece.
+**Degree still complete mid-2029** — the semester-only-offered units (bolded above) just changed which semester everything else falls into, they didn't push the finish date out. EGB345 moved to 2027 S2 (its only available slot), which pulled EGH445 into 2028 S1 and EGH446 into 2028 S2 right behind it.
 
 Ordering notes:
 - BSB399 placed early (2027 S1) since its only stated requirements (BSB105/106/108 + 192cp) are already met — flagged above as worth double-checking against enrolment-rule restrictions, not just prerequisites.
-- EFB344 assumed to need EFB343 completed first (matches QUT's default Y3S2→Y4S1 sequencing) — placed a semester after EFB343 accordingly.
-- AE electives are paired with their unlocking intermediate unit's *following* semester (e.g. EGH443/EGH448 in 2028 S1, right after EGB342/EGB348 land in 2027 S2).
+- EFB344 assumed to need EFB343 completed first (matches QUT's default Y3S2→Y4S1 sequencing) — moved to 2028 S2 in this version, still a semester after EFB343.
+- EFB360 moved to 2029 S1 (needs EFB335 + EFB343 + 192cp, all met well before then) to keep 2028 S2 at exactly 60cp.
+- EGH443/EGH448 land in 2028 S1 (right after EGB342/EGB348 in 2027 S2); EGH444/EGH449 land in 2028 S2 (same logic).
