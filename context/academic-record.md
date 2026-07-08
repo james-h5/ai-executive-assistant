@@ -40,3 +40,16 @@ Double degree: Engineering (Electrical) + Business (Finance), QUT.
 - Quant/engineering units consistently strongest (MZB127 97, EGB103 89, EGB120 85 — all HD)
 - Business units weaker and more variable (BSB106 56 Pass, BSB108 66)
 - GPA trending up every semester, best result yet in 2026 Sem 1
+
+## Currently Enrolled — 2026 Semester 2
+
+| Unit | Title | Credit Points | Census Date | Requisite |
+|---|---|---|---|---|
+| EFB210 | Fundamentals of Finance | 12 | 14-Aug-2026 | — |
+| EFB222 | Introduction to Applied Econometrics | 12 | 14-Aug-2026 | — |
+| EGB202 | Microprocessors and Digital Systems | 12 | 14-Aug-2026 | (P) pre-req to be completed |
+| MZB221 | Advanced Engineering Mathematics | 12 | 14-Aug-2026 | (P) pre-req to be completed |
+| QUT010 | QUT You: People with Robots (6wk C, Online) | 6 | 14-Aug-2026 | — |
+| QUT009 | QUT You: Data Science for Society (6wk D, Online) | 6 | 18-Sep-2026 | — |
+
+Load: 60 credit points (heavier than usual 48 — two 6cp QUT You units stacked on top of 4 standard units).
