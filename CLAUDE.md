@@ -10,6 +10,7 @@ Help James experience as much of the world as possible — that means helping hi
 @context/work.md
 @context/current-priorities.md
 @context/goals.md
+@context/academic-record.md
 
 ## Tool Integrations
 - **ClickUp** — project and task management (MCP connected)
@@ -68,6 +69,7 @@ Don't delete old material — move it to `archives/` instead.
 ## Keeping Context Current
 - **Focus shifted?** Update `context/current-priorities.md`
 - **New quarter?** Update `context/goals.md` (currently Q3 2026)
+- **New uni results?** Update `context/academic-record.md`
 - **Big decision made?** Append to `decisions/log.md`
 - **Repeating a request?** Build a skill in `.claude/skills/`
 - **Want something remembered?** Say "remember that..." — it's saved automatically
