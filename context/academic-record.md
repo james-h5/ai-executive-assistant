@@ -5,7 +5,7 @@ description: QUT academic results by semester — update when new results land
 
 # Academic Record
 
-Double degree: Engineering (Electrical) + Business (Finance), QUT.
+Double degree: Engineering (Electrical) + Business (Finance), QUT. Full remaining semester-by-semester plan: `context/degree-plan.md`.
 
 ## Results
 
