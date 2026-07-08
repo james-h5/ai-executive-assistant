@@ -8,7 +8,7 @@ last_updated: 2026-07-08
 
 *Last updated: 2026-07-08*
 
-Uni break is over — Semester 2 2026 rebalance. See `context/academic-record.md` for unit load (60cp, same overload level as his best-performing semester).
+Uni break is over — Semester 2 2026 rebalance. See `context/academic-record.md` for unit load (60cp, same overload level as his best-performing semester — but this semester's results aren't in yet, so it's not confirmed twice).
 
 ## Right Now (in order)
 1. **Semester 2 study load** — EFB210, EFB222, EGB202, MZB221 + two QUT You units. Watch EGB202/MZB221 pre-req status (both enrolled as "(P)" pending Sem 1 results). Use AI systems to make uni more efficient, not a time sink.

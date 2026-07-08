@@ -40,7 +40,7 @@ Double degree: Engineering (Electrical) + Business (Finance), QUT. Full remainin
 - Quant/engineering units consistently strongest (MZB127 97, EGB103 89, EGB120 85 — all HD)
 - Business units weaker and more variable (BSB106 56 Pass, BSB108 66)
 - GPA trending up every semester, best result yet in 2026 Sem 1
-- 2026 Sem 1 was already an overloaded semester (5 units / 60cp, not the standard 4/48) — and it was his best result. Track record of handling overload fine, so 2026 Sem 2's 60cp load isn't unprecedented.
+- 2026 Sem 1 was already an overloaded semester (5 units / 60cp, not the standard 4/48) — and it was his best result. **Only one confirmed overload result so far** — 2026 Sem 2 is currently in progress at 60cp too, but not yet marked, so "proven track record" is one data point, not two, until those results land.
 
 ## Currently Enrolled — 2026 Semester 2
 
@@ -53,4 +53,4 @@ Double degree: Engineering (Electrical) + Business (Finance), QUT. Full remainin
 | QUT010 | QUT You: People with Robots (6wk C, Online) | 6 | 14-Aug-2026 | — |
 | QUT009 | QUT You: Data Science for Society (6wk D, Online) | 6 | 18-Sep-2026 | — |
 
-Load: 60 credit points — same overload level as 2026 Sem 1 (his best-performing semester), so within his demonstrated capacity.
+Load: 60 credit points — same overload level as 2026 Sem 1 (his best-performing semester). Results not yet in — this is the semester that will confirm (or not) whether 60cp holds up a second time.

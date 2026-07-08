@@ -14,7 +14,7 @@ See `context/academic-record.md` for completed results and current enrolment.
 - **Business Core Unit Option → MGB130**, taken in Summer (placed in Summer 2026/27 below — adjust if a different summer period is meant). Doing it in Summer means it doesn't cost a regular-semester slot.
 - **Advanced Electrical electives → all 6 of interest**, not just the required 4: EGH445 (Modern Control), EGH446 (Autonomous Systems), EGH448 (Power Electronics), EGH449 (Advanced Electronics), EGH443 (Advanced Telecommunications and RF), EGH444 (Digital Signals and Image Processing).
   - **Unconfirmed:** the course structure specifies "choose 4 of 8." Taking 6 means 2 units beyond the stated minimum. Confirm with a QUT engineering advisor that the enrolment system allows adding extra units from that pool (as overload) rather than capping at 4 — don't assume it's automatic.
-- **Goal: finish degree by mid-2029** (2029 S1) using sustained 60cp/semester loads, matching the pace already proven in 2026 S1 and S2.
+- **Goal: finish degree by mid-2029** (2029 S1) using sustained 60cp/semester loads. Only 2026 S1 is a confirmed 60cp result so far — 2026 S2 is in progress at 60cp too but not yet marked, so this pace is one data point, not a proven pattern yet.
 
 ## Status at end of 2026 Semester 2 (assuming current enrolment passes)
 - 228cp completed via regular semesters + 12cp (MGB130) via Summer 2026/27
