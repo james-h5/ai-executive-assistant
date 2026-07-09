@@ -46,7 +46,7 @@ Double degree: Engineering (Electrical) + Business (Finance), QUT. Full remainin
 
 | Unit | Title | Credit Points | Census Date | Requisite |
 |---|---|---|---|---|
-| EFB210 | Fundamentals of Finance | 12 | 14-Aug-2026 | — |
+| EGB242 | Signal Analysis | 12 | 14-Aug-2026 | Coreq with MZB221 (allowed concurrently) |
 | EFB222 | Introduction to Applied Econometrics | 12 | 14-Aug-2026 | — |
 | EGB202 | Microprocessors and Digital Systems | 12 | 14-Aug-2026 | (P) pre-req to be completed |
 | MZB221 | Advanced Engineering Mathematics | 12 | 14-Aug-2026 | (P) pre-req to be completed |
@@ -54,3 +54,5 @@ Double degree: Engineering (Electrical) + Business (Finance), QUT. Full remainin
 | QUT009 | QUT You: Data Science for Society (6wk D, Online) | 6 | 18-Sep-2026 | — |
 
 Load: 60 credit points — same overload level as 2026 Sem 1 (his best-performing semester). Results not yet in — this is the semester that will confirm (or not) whether 60cp holds up a second time.
+
+**Changed 2026-07-09:** swapped EFB210 out for EGB242 (pulled forward from the 2027 S1 degree plan — see `context/degree-plan.md`). EFB210 moves to Summer 2026/27 instead. This drops 2027 S1 from an overload semester back to standard 48cp while keeping the same mid-2029 finish target. EGB242 is a coreq with MZB221, not a strict prereq, so taking them together is allowed — but it does mean 3 technically dense units at once (EGB202, MZB221, EGB242). Use the 14-Aug census date as a checkpoint: if it's too much in the first few weeks, revert to EFB210 with no cost.
