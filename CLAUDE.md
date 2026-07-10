@@ -41,6 +41,7 @@ Build a skill when you notice you're repeating the same type of request.
 - `reality` — Brutally honest strategic check-in: am I on track? What's the fastest path? ✓ built
 - `lead-gen` — On-demand Brisbane trade business lead research → outreach-pipeline.md + ClickUp ✓ built
 - `save` — Log completed actions to project progress.md and get the next step ✓ built
+- `outreach` — Draft personalized outreach messages for today's ClickUp lead batch + chat-shortcut stage moves (mark sent, follow-up, etc.) ✓ built
 - `trade-journal` — Log and review futures trades
 - `client-onboarding` — New AI consulting client intake process
 - `content-workflow` — Instagram/YouTube content creation pipeline

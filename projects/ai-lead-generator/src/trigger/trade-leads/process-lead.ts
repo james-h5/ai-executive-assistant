@@ -161,6 +161,8 @@ Return ONLY valid JSON (no markdown, no code fences) in this exact format:
     }
 
     // 5. Push to ClickUp
+    // Status/priority/tags match the shape the `outreach` skill and lead-gen skill expect —
+    // see .claude/skills/outreach/SKILL.md for the full field mapping.
     const description = [
       `📞 Phone: ${lead.phone || "Not found"}`,
       `📧 Email: ${lead.email || "Not found"}`,
@@ -175,6 +177,12 @@ Return ONLY valid JSON (no markdown, no code fences) in this exact format:
       lead.aiPitch,
     ].join("\n");
 
+    const priorityByWarmth: Record<LeadInfo["warmth"], number> = {
+      Hot: 1,
+      Warm: 3,
+      Cold: 4,
+    };
+
     const clickupResponse = await fetch(
       `https://api.clickup.com/api/v2/list/${clickupListId}/task`,
       {
@@ -184,9 +192,11 @@ Return ONLY valid JSON (no markdown, no code fences) in this exact format:
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: `[${lead.warmth}] ${lead.businessName} — ${lead.trade}`,
+          name: `${lead.businessName} — ${lead.trade}`,
           description,
-          tags: [lead.trade.toLowerCase(), lead.warmth.toLowerCase()],
+          status: "New Lead",
+          priority: priorityByWarmth[lead.warmth],
+          tags: [lead.trade.toLowerCase()],
         }),
       }
     );

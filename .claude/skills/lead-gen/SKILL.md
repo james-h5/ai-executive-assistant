@@ -170,7 +170,7 @@ $is24x7 = $content -match '24/7|24 hour|24-hour|around the clock|always availabl
 
 ## Step 6 — Write outreach-pipeline.md
 
-Write to `projects/landing-first-client/outreach-pipeline.md`. If the file already exists, **append** new leads after any existing ones — do not overwrite.
+Write to `projects/landing-first-client/outreach-pipeline.md`. If the file already exists, **append** new leads after any existing ones — do not overwrite. This file is a **research log only** — pipeline stage is tracked in ClickUp (see the `outreach` skill), not here. Do not write a Status table.
 
 Format:
 ```markdown
@@ -189,24 +189,18 @@ Format:
 ## Notes
 - [Pattern or observation]
 - [Who to contact first and why — top 2 Hot leads]
-
----
-
-## Status
-| # | Business | Status | Notes |
-|---|----------|--------|-------|
-| 1 | [name]   | Not contacted | |
 ```
 
 ---
 
 ## Step 7 — Push each lead to ClickUp
 
-For each lead, POST to ClickUp using PowerShell:
+Each lead becomes a card in status `New Lead`, warmth mapped to native ClickUp priority, trade as a tag. The task description holds contact info + pain signal for the `outreach` skill to read later — no drafted pitch here, that's the `outreach` skill's job, not lead-gen's.
 
 ```powershell
 function Push-ToClickUp($lead, $apiKey, $listId) {
-    $name = "[$($lead.Warmth)] $($lead.BusinessName) — $($lead.Trade)"
+    $name = "$($lead.BusinessName) — $($lead.Trade)"
+    $priority = switch ($lead.Warmth) { "Hot" { 1 }; "Warm" { 3 }; "Cold" { 4 } }
     $desc = @"
 Phone: $($lead.Phone)
 Email: $($lead.Email)
@@ -214,11 +208,15 @@ Website: $($lead.Website)
 Instagram: $($lead.Instagram)
 
 Pain Signal: $($lead.PainSignal)
-
-AI Pitch:
-$($lead.BusinessName) likely handles new enquiries manually — every missed call or slow reply is a lost job. An AI lead response system would auto-reply within 60 seconds, qualify the lead, and notify the owner instantly, so they capture jobs even when they're on-site.
+Warmth: $($lead.Warmth)
 "@
-    $body = @{ name = $name; description = $desc } | ConvertTo-Json
+    $body = @{
+        name        = $name
+        description = $desc
+        status      = "New Lead"
+        priority    = $priority
+        tags        = @($lead.Trade.ToLower())
+    } | ConvertTo-Json
     Invoke-RestMethod -Uri "https://api.clickup.com/api/v2/list/$listId/task" `
         -Method POST `
         -Headers @{ Authorization = $apiKey; "Content-Type" = "application/json" } `
@@ -226,7 +224,7 @@ $($lead.BusinessName) likely handles new enquiries manually — every missed cal
 }
 ```
 
-If ClickUp push fails for a lead, log the error and continue — don't abort the whole run.
+If ClickUp push fails for a lead, log the error and continue — don't abort the whole run. If the push fails specifically because `New Lead` isn't a valid status on the list, stop and tell the user to complete the one-time ClickUp status setup described in the `outreach` skill before continuing.
 
 ---
 

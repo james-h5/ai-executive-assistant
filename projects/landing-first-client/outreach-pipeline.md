@@ -32,90 +32,7 @@
 
 ## Message Templates
 
-Four variations — pick the one that matches the prospect's pain signal. Swap in the `[personalisation hook]` before sending. Keep it casual — these are Australian tradies, not American executives.
-
----
-
-**Template A — On-the-tools / mobile only**
-*Use for: Brisbane City Plumbing, Bayside Plumbing, Miranda Electrical*
-
-> Hey [Name] — [hook, e.g. "saw you're based out in Redlands"].
->
-> When you're mid-job and a quote request comes through — what happens to it?
->
-> Built something that auto-replies within 60 seconds, asks the basic questions, and sends you a summary. Existing customers don't get the bot treatment — it recognises them and just lets you know they called.
->
-> Demo here if you're keen: [Loom link]
->
-> Worth a chat?
-
----
-
-**Template B — After-hours / strict office hours**
-*Use for: Quality Air, Jason's Plumbing*
-
-> Hey [Name] — [hook, e.g. "noticed you guys wrap up at 4"].
->
-> Reckon many quotes are hitting voicemail after that?
->
-> Built something that handles those automatically — replies within 60 seconds, qualifies them, pings you a summary so nothing falls through overnight.
->
-> Demo here: [Loom link]
->
-> Worth a chat?
-
----
-
-**Template C — Manual quote process / form only**
-*Use for: Crusader Electrical, Air-rite Mechanical, Dawson Electric*
-
-> Hey [Name] — [hook, e.g. "came across your site"].
->
-> When a quote request comes in, how long before someone gets back to them?
->
-> Built something that handles that first reply automatically — responds within 60 seconds, asks the right questions, sends you a summary. Takes the back-and-forth out of qualifying leads.
->
-> Demo here: [Loom link]
->
-> Happy to show you how it works if it's useful.
-
----
-
-**Template D — Email version (no Instagram)**
-*Use for: Bayside Plumbing, LCM Air, Air-rite Mechanical, Local Brisbane Plumber*
-
-> Subject: Quick one about your enquiries
->
-> Hey [Name],
->
-> [Hook, e.g. "Came across your site — looks like enquiries all come through the contact form."]
->
-> When one lands after hours or while you're on the tools — what happens to it?
->
-> Built something that auto-replies within 60 seconds, qualifies the lead, and sends you a summary. Existing customers get handled separately so they're not treated like a cold enquiry.
->
-> Demo here if you want a look: [Loom link]
->
-> Happy to have a quick chat if it's relevant.
->
-> James
-
----
-
-## Personalisation Hooks (pre-written per prospect)
-
-| # | Business | Hook |
-|---|----------|------|
-| 1 | Brisbane City Plumbing and Gas | "Saw your mobile's the main contact — you must be on the tools most of the day" |
-| 2 | Bayside Plumbing | "Came across your site — looks like enquiries go straight to your mobile or email" |
-| 3 | Jason's Plumbing | "Noticed you're Mon-Fri 7–5 — what happens to weekend enquiries?" |
-| 4 | Quality Air | "Noticed you wrap up at 4 on weekdays" |
-| 5 | Dawson Electric | "Came across your site — phone only, no after-hours option" |
-| 6 | Miranda Electrical | "Came across your profile — solid work" |
-| 7 | Crusader Electrical | "Came across your site — all quotes go through the form hey" |
-| 8 | Local Brisbane Plumber | "Came across your site — email only contact" |
-| 9 | LCM Air | "Came across your site — form and email only, no phone listed" |
-| 10 | Air-rite Mechanical | "Saw you've been going since 1987 — still handling all enquiries manually?" |
+Moved to `references/examples/outreach-templates.md` — the `outreach` skill drafts from there now. This file stays a research log (Hit List + Notes) rather than duplicating templates.
 
 ---
 
@@ -139,7 +56,9 @@ Four variations — pick the one that matches the prospect's pain signal. Swap i
 
 ---
 
-## Status
+## Status (frozen 2026-07-10)
+
+**⚠️ No longer the live tracker.** Pipeline stage now lives in ClickUp (list `AI Consulting Leads`) — the table below is a snapshot of state as of the ClickUp restructure and won't be updated further. Use the `outreach` skill or the ClickUp board to check current status.
 
 | # | Business | Channel | Template | Date Sent | Status | Follow-up Due | Notes |
 |---|----------|---------|----------|-----------|--------|---------------|-------|
@@ -198,7 +117,7 @@ Four variations — pick the one that matches the prospect's pain signal. Swap i
 
 ---
 
-## Status
+## Status (frozen 2026-07-10 — see note above, tracked in ClickUp now)
 | # | Business | Status | Notes |
 |---|----------|--------|-------|
 | 1 | Redland City Plumbing and Gas | Not contacted | Mobile + Gmail — sole trader |
