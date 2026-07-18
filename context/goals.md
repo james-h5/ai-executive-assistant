@@ -17,6 +17,7 @@ quarter: Q3 2026
 ### Building Toward (target: end of 2026)
 - [ ] Sign first AI consulting client
 - [ ] Get first trading payout from funded account
+- [ ] Hit $500/week from trading + consulting combined
 
 ### No Hard Deadline
 - [ ] Reach $10k/month from location-independent income (AI consulting + trading)
