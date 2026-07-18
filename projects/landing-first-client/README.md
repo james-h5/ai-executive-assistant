@@ -22,3 +22,7 @@ The goal is to sign the first paying AI consulting client by end of 2026. This p
 - Decide on outreach channel (Instagram, cold outreach, referrals, Skool network)
 - Build a simple offer (what's the first engagement look like?)
 - Track pipeline here once outreach starts
+
+## Channels
+- **Direct outreach** — warm network + cold Instagram DMs to Brisbane trade businesses (primary)
+- **Fiverr / Upwork** — set up profiles and gigs/proposals as a secondary channel, running in parallel with outreach
