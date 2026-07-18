@@ -15,6 +15,7 @@ description: Income streams, business status, tools, and professional context
 | S&P 500 | Passive investment | — |
 | XRP | Speculative hold | — |
 | AI consulting | Pre-launch | — |
+| Freelance (Fiverr/Upwork) | Pre-launch | — |
 
 ## AI Consulting Business
 - **Status:** Pre-launch. Foundation decisions locked; building demo and outreach materials.
@@ -23,6 +24,7 @@ description: Income streams, business status, tools, and professional context
 - **First Offer:** AI Lead Response + Follow-Up System — auto-responds to new enquiries within 60 seconds, qualifies the lead, books/notifies the owner. Built with Claude + trigger.dev.
 - **Pricing:** $1,500–$2,000 setup + $300/month ongoing
 - **Approach:** Build working demo → one-page case study → direct outreach (warm network + cold Instagram DMs)
+- **Two-track approach:** Direct outreach to Brisbane trades (primary) runs in parallel with Fiverr/Upwork freelance work — prompt engineering, lightweight AI audits, content creation for creators (~8-12 hrs/week). The freelance track is faster cash and builds case studies for the main consultancy. See `projects/landing-first-client/freelance-platforms-strategy.md`
 
 ## Tools & Integrations
 - **Claude Code** — primary AI development environment

@@ -17,7 +17,9 @@ quarter: Q3 2026
 ### Building Toward (target: end of 2026)
 - [ ] Sign first AI consulting client
 - [ ] Get first trading payout from funded account
-- [ ] Hit $500/week from trading + consulting combined
+
+### $500/week (target: ~2026-10-18, 3 months out)
+- [ ] Hit $500/week from trading + consulting combined — pursued via direct outreach (Brisbane trades) + Fiverr/Upwork freelance platforms in parallel. See `projects/landing-first-client/freelance-platforms-strategy.md`
 
 ### No Hard Deadline
 - [ ] Reach $10k/month from location-independent income (AI consulting + trading)
