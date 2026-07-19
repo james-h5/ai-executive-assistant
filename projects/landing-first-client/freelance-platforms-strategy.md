@@ -61,8 +61,9 @@ Secondary channel to [Direct outreach](README.md), aimed at faster cash flow whi
 Position Fiverr/Upwork profiles as a general "Claude/AI automation freelancer" rather than the Brisbane-trades-specific pitch — keeps the two channels distinct. Confirm wording when actually writing profile copy.
 
 ## Open next steps
-- [ ] Fiverr/Upwork profile copy
-- [ ] 3-hour audit template/checklist
+- [x] Fiverr/Upwork profile copy — see [freelance-profile-copy.md](freelance-profile-copy.md)
+- [x] 3-hour audit template/checklist — see `templates/ai-audit-template.md`
+- [ ] Post the gig/profile live on Fiverr and Upwork
 - [ ] 30-day launch checklist (daily actions)
 
 Track actual gigs/proposals/replies in [freelance-pipeline.md](freelance-pipeline.md).
