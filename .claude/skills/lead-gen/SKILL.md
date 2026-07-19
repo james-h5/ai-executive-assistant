@@ -152,19 +152,25 @@ Quote the most useful signal verbatim or note it structurally.
 
 ---
 
-## Step 5 — Rate warmth
+## Step 5 — Exclude 24/7 emergency service businesses, then rate warmth
+
+**Exclude first.** If the scraped content markets the business as a 24/7 emergency responder — "24/7 emergency", "emergency callout", "burst pipe", "no lockout too late", or similar urgent/emergency framing alongside "24/7"/"24 hour"/"around the clock" — **drop the candidate entirely, don't push it to ClickUp.** An AI auto-reply is a poor fit when someone has a genuine emergency (burst pipe, power outage, lockout) — they need a human immediately, not a bot. This is different from a business that's simply *open* long hours without emergency framing; those still qualify normally.
+
+```powershell
+$isEmergency247 = $content -match '24/7|24 hour|24-hour|around the clock|always available|available anytime' -and $content -match 'emergency|urgent|callout|call-out|burst|locked out|lockout'
+```
+
+If `$isEmergency247` is true, skip the candidate and move to the next one — note it in the run summary as "excluded (24/7 emergency)" rather than counting it toward Hot/Warm/Cold.
+
+For everything else, rate warmth:
 
 | Rating | Criteria |
 |--------|----------|
-| **Hot** | Review quote confirming slow/missed response, OR mobile-only with no form AND no 24/7 mention |
+| **Hot** | Review quote confirming slow/missed response, OR mobile-only with no form |
 | **Warm** | Small crew, simple site, contact form but no booking, no visible automation |
-| **Cold** | Large company, franchise, already has booking/chat automation, OR advertises 24/7 availability |
+| **Cold** | Large company, franchise, already has booking/chat automation |
 
-**Important:** Before rating a mobile-only number as Hot, check whether the scraped content contains "24/7", "24 hour", "24-hour", "around the clock", or "always available". If it does, the business is actively answering calls — downgrade to Warm. The pitch only lands where there's a genuine missed-call problem.
-
-```powershell
-$is24x7 = $content -match '24/7|24 hour|24-hour|around the clock|always available|available anytime'
-```
+A business that mentions "24/7" without emergency-service framing (e.g. just states long opening hours) isn't automatically excluded, but should still be checked for genuine automation before rating Hot.
 
 ---
 
@@ -231,7 +237,7 @@ If ClickUp push fails for a lead, log the error and continue — don't abort the
 ## Output summary
 
 Tell the user:
-- **Leads found:** X total (X Hot / X Warm / X Cold)
+- **Leads found:** X total (X Hot / X Warm / X Cold), X excluded (24/7 emergency service)
 - **File written:** `projects/landing-first-client/outreach-pipeline.md`
 - **ClickUp:** X tasks created (or specific errors if any failed)
 - **Contact first:** top 1–2 Hot leads and why
