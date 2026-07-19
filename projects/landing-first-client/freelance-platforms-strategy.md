@@ -63,7 +63,6 @@ Position Fiverr/Upwork profiles as a general "Claude/AI automation freelancer" r
 ## Open next steps
 - [x] Fiverr/Upwork profile copy — see [freelance-profile-copy.md](freelance-profile-copy.md)
 - [x] 3-hour audit template/checklist — see `templates/ai-audit-template.md`
-- [ ] Post the gig/profile live on Fiverr and Upwork
-- [ ] 30-day launch checklist (daily actions)
+- [ ] Post the gig/profile live on Fiverr and Upwork — see [freelance-launch-checklist.md](freelance-launch-checklist.md)
 
 Track actual gigs/proposals/replies in [freelance-pipeline.md](freelance-pipeline.md).
