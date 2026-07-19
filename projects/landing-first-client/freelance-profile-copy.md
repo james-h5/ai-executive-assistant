@@ -154,6 +154,23 @@ Worth doing one of these regardless — it's a legitimate credential, not just a
 
 ---
 
+## Fiverr Buyer Requirements (the "get info from buyers" questions)
+
+Keep it to 4-5 questions max — too many and buyers abandon the order form. Set these as the question types noted.
+
+1. **[Free text, required]** "What task or process do you want help with? Be as specific as possible — e.g. 'auto-reply to customer emails' or 'summarize weekly sales data.'"
+2. **[Free text, required]** "What tools/software do you currently use for this (if any)? e.g. Gmail, Zapier, Notion, spreadsheets, a CRM — or 'none yet.'"
+3. **[Free text, required]** "What does 'done' look like to you? Describe the result you want to see."
+4. **[Multiple choice, required]** "How urgent is this?" → Options: *Standard delivery is fine* / *I need this faster (may involve a rush fee)*
+5. **[File attachment, optional]** "If you have any examples, templates, screenshots, or current process docs, attach them here — not required, but it helps me start faster and get you a better result."
+
+**If a Full AI Audit package is ordered, also add:**
+6. **[Free text, required]** "What's your business/industry, and what's the best day/time this week for a 30-45 min discovery call?"
+
+Why these specifically: #1-3 give you everything needed to scope the work without a back-and-forth message first; #4 filters out rush jobs before you commit; #5 is optional so it doesn't block low-effort buyers from ordering, but catches the ones who have useful context; #6 only matters for the audit package since that starts with a call, not a build.
+
+---
+
 ## Next steps once posted
 - Log the gig/profile in [freelance-pipeline.md](freelance-pipeline.md)
 - First 3-5 jobs: prioritize getting reviews over rate — case studies + ratings compound
