@@ -13,6 +13,7 @@ Tracks gigs posted, proposals sent, and client conversions for the freelance-pla
 | # | Platform | Gig/Service | Date Posted | Status | Notes |
 |---|----------|-------------|-------------|--------|-------|
 | 1 | Fiverr | AI automation workflows using Claude (3 packages: Prompt Starter / Workflow Build / Full AI Audit) | 2026-07-19 | Live | First gig posted, using freelance-profile-copy.md + blueprint gig image |
+| 2 | Upwork | Profile — AI Automation & Claude Workflow Specialist | 2026-07-19 | Posted | Submitted, awaiting platform review (24-48hrs) |
 
 **Status options:** Draft -> Posted -> Live -> Paused
 
