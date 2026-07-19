@@ -84,19 +84,19 @@ Pick the template that matches the lead's structural pain signal (from the Click
 
 ## Follow-up templates
 
-Shorter and lighter than the initial message — don't re-pitch, just nudge. Used when a lead moves into `Follow-up 1` or `Follow-up 2`.
+Shorter and lighter than the initial message — don't re-pitch, just nudge. Used when a lead moves into `Follow-up 1` or `Follow-up 2`. Keep both to 3 short lines: greeting + reason for the nudge, pain-point restatement + ask, soft close. Use the owner's first name if the business name gives one (e.g. "Jason's Plumbing" -> "Jason"), otherwise "[Business] team".
 
 **Follow-up 1** (a few days after the initial message, no reply yet):
 
-> Hey [Name] — just floating this back up in case it got buried. [One-line restatement of the pain point, e.g. "still keen to see if the auto-reply thing would help with those after-hours calls."]
->
+> Hey [Name/team], just floating this back up in case it got buried.
+> If [one-line restatement of the pain point, e.g. "the auto-reply idea is still relevant for those after-hours calls"], keen for a quick chat.
 > No stress if it's not a priority right now — happy to send the demo through whenever suits.
 
 **Follow-up 2** (final nudge, a bit more direct):
 
-> Hey [Name] — last one from me on this, don't want to keep bugging you.
->
-> If it's useful, keen for a quick chat. If not, all good — appreciate you having a look either way.
+> Hey [Name/team], don't want to keep bugging you, so last one from me.
+> If [one-line restatement of the pain point] is still relevant, keen for a quick chat.
+> If not, all good — appreciate you having a look either way.
 
 ---
 
