@@ -6,14 +6,19 @@ description:
 
 # Cold Call Log (Brisbane Trades)
 
-Tracks discovery calls â€” what each business already has (if anything) and where the actual gap is. See [cold-call-script.md](cold-call-script.md) for the call structure. This is the real data that should drive any offer changes, not guesswork from unanswered DMs.
+Tracks discovery calls - what each business already has (if anything) and where the actual gap is. See [cold-call-script.md](cold-call-script.md) for the call structure. This is the real data that should drive any offer changes, not guesswork from unanswered DMs.
 
-| # | Business | Phone | Date Called | What They Already Have | Outcome | Next Step |
-|---|----------|-------|-------------|------------------------|---------|-----------|
-| | | | | | | |
+| # | Business | Phone | Date Called | Message-Response (what they have) | AI/Automation Elsewhere | Outcome | Next Step |
+|---|----------|-------|-------------|-------------------------------------|--------------------------|---------|-----------|
+| | | | | | | | |
 
-**Outcome options:** Genuine gap (prospect) / Real AI system already (drop) / Emergency-only (deprioritize) / No answer / Bad time, retry
-**Next step options:** Send demo / Retry call / Move to Interested in ClickUp / Not interested / Add to freelance-platforms audit pipeline instead
+**Outcome options:** Genuine gap - message response (prospect, demo sent) / No AI anywhere (sit-down booked) / Real AI system already (drop) / Emergency-only (deprioritize) / No answer / Bad time, retry
+**Next step options:** Send demo / Book sit-down / Retry call / Move to Interested in ClickUp / Not interested / Add to freelance-platforms audit pipeline instead
 
 ## Patterns
-*(fill in once a few calls are done â€” e.g. "most have a generic auto-reply, not a qualifying system" or "genuine emergency framing is more common than expected")*
+
+This is where the aggregate picture lives once there's real call data - what Brisbane trades actually have adopted, not assumptions. Update after every few calls:
+
+- **Message-response automation:** *(e.g. "most have a generic auto-reply, not a qualifying system" or "genuine emergency framing is more common than expected")*
+- **AI/automation elsewhere in the business:** *(e.g. scheduling tools, invoicing software, marketing automation - what's actually common vs rare)*
+- **Sit-down conversion rate:** *(once a few are booked - how many "no AI anywhere" calls actually convert to a booked sit-down)*
