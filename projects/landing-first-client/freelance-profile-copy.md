@@ -96,6 +96,64 @@ Use as a starting point, customize the first line to reference the specific job:
 
 ---
 
+## Full Profile Fields (Display Name, About, Skills, Experience, Education)
+
+### Display name
+**Use your real name: James Heathcote** on both platforms.
+- Upwork requires your legal name to match ID verification anyway — no choice there.
+- Fiverr allows a chosen username/handle, but for a solo technical freelancer, a real name builds more trust than a brand handle. If `jamesheathcote` is taken as the Fiverr username/URL, try `jamesheathcoteai` or `jamesbuildswithai`.
+
+### About / Seller Description (Fiverr's separate bio field — different from the gig description above)
+> I'm James — an Engineering (Electrical) and Business (Finance) student building AI automation systems with Claude. I use these same tools daily to run my own business's operations, from lead generation to client outreach. I help small businesses and creators do the same: turning a manual, repetitive process into a working AI system, not just advice on what AI could theoretically do.
+>
+> I explain everything in plain English, deliver systems that actually run, and I'm upfront if something isn't a good fit for AI — you won't get sold a solution you don't need. Message me before ordering if you want to talk through your project first.
+
+(Upwork doesn't have a separate About field — the Overview above already serves this purpose.)
+
+### Skills & Expertise tags
+Fiverr limits tags per gig (~5); Upwork allows more (~15). Priority order:
+
+1. Prompt Engineering
+2. Claude AI
+3. AI Automation
+4. Business Process Automation
+5. Workflow Automation
+6. AI Agent Development
+7. Zapier
+8. Make (Integromat)
+9. API Integration
+10. Python
+11. ChatGPT / LLM Integration
+12. AI Consulting
+13. Content Strategy
+14. Data Analysis
+
+**Fiverr (top 5):** Prompt Engineering, Claude AI, AI Automation, Business Process Automation, Workflow Automation
+**Upwork (all ~14):** the full list above
+
+Only list Python if you're comfortable being asked about it in a job — EGB103/MXB161 coursework counts, but be ready to back it up.
+
+### Work Experience
+List these, most relevant first — self-directed/building work counts on both platforms, you don't need to have been paid by someone else for it to be legitimate experience:
+
+1. **AI Automation Builder — Self-Employed** (Jun 2026-Present)
+   Building and running an AI-powered business operating system (Claude-based executive assistant, automated lead-generation pipeline using trigger.dev + Firecrawl + ClickUp) to manage and grow my own consulting business.
+2. **Maths & Science Tutor — Self-Employed** (Ongoing)
+   Teach maths and science to high-school students, breaking down complex concepts into plain, understandable steps.
+3. **Bartender** (Ongoing) — optional, lower priority. Include only if a platform asks for general work history/reliability signal; not directly relevant to the AI skillset so skip if space is limited.
+
+### Education & Certificates
+**Education:**
+> Bachelor of Engineering (Electrical) & Bachelor of Business (Finance) — Queensland University of Technology (QUT), double degree, in progress (expected completion ~2029). Consistently high-distinction results in quantitative and technical units.
+
+**Certificates:** Honestly — you don't have one yet, and that's fine, leave the field blank rather than filling it with something you haven't done. If you want to close that gap before or shortly after launch, these are real and quick:
+- Anthropic's own Claude/prompt engineering documentation and courses (free)
+- DeepLearning.AI's short prompt engineering courses (many are free, ~1hr, issue a certificate)
+
+Worth doing one of these regardless — it's a legitimate credential, not just a profile filler.
+
+---
+
 ## Next steps once posted
 - Log the gig/profile in [freelance-pipeline.md](freelance-pipeline.md)
 - First 3-5 jobs: prioritize getting reviews over rate — case studies + ratings compound
