@@ -12,9 +12,9 @@ Tracks gigs posted, proposals sent, and client conversions for the freelance-pla
 
 | # | Platform | Gig/Service | Date Posted | Status | Notes |
 |---|----------|-------------|-------------|--------|-------|
-| | | | | | |
+| 1 | Fiverr | AI automation workflows using Claude (3 packages: Prompt Starter / Workflow Build / Full AI Audit) | 2026-07-19 | Live | First gig posted, using freelance-profile-copy.md + blueprint gig image |
 
-**Status options:** Draft â†’ Posted â†’ Live â†’ Paused
+**Status options:** Draft -> Posted -> Live -> Paused
 
 ## Proposals / Applications
 
@@ -23,7 +23,7 @@ Tracks gigs posted, proposals sent, and client conversions for the freelance-pla
 | | | | | | | | |
 
 **Pathway options:** Prompt engineering / AI audit / Content creation / Productized template / White-label
-**Status options:** Sent â†’ Replied â†’ Interview â†’ Hired â†’ Closed / Not selected
+**Status options:** Sent -> Replied -> Interview -> Hired -> Closed / Not selected
 
 ## Notes
 *(add patterns, what's converting, what's not, as gigs go live)*
