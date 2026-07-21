@@ -1,0 +1,30 @@
+{
+  "businessName": "Sorensen Plumbing & Gas",
+  "ownerName": "Rick Sorensen",
+  "trade": "Plumbing & gas fitting",
+  "serviceArea": "Wynnum, Manly, Lota, Wakerley, Capalaba (Brisbane bayside)",
+  "monitoredPhone": "0400000001",
+  "tone": {
+    "style": "Casual, straight to the point, no corporate politeness. No 'Hi there!' greetings, no exclamation marks, no emoji. Signs off with first name only. Asks for the suburb early since travel time matters for quoting.",
+    "sampleMessage": "yeah can do, whats the address and whats the job roughly, ill swing by after the one im on now"
+  },
+  "qualifyingQuestions": [
+    "Job type (blocked drain, leak, hot water, gas fitting, other)",
+    "Suburb/location",
+    "How urgent (today, this week, no rush)",
+    "Rough description of the problem"
+  ],
+  "urgentBypassKeywords": ["gas leak", "smell gas", "no hot water and it's urgent"],
+  "notificationPrefs": {
+    "channel": "SMS",
+    "quietHoursStart": "00:00",
+    "quietHoursEnd": "06:30",
+    "note": "Notifications generated before 6:30am should be queued and marked for delivery at 6:30am instead of immediately."
+  },
+  "faqs": [
+    { "question": "Do you charge a call-out fee?", "answer": "Yes, $80 call-out, waived if the job goes ahead." },
+    { "question": "Are you licensed and insured?", "answer": "Yes, licensed plumber and gas fitter, fully insured." },
+    { "question": "Do you work weekends?", "answer": "Saturdays for urgent jobs only, not Sundays." },
+    { "question": "Do you do hot water systems?", "answer": "Yes, supply and install, all major brands." }
+  ]
+}

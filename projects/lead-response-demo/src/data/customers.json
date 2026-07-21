@@ -1,0 +1,8 @@
+[
+  { "name": "Karen Whitfield", "phone": "0412111222", "notes": "Manages a few rental properties, regular plumbing work" },
+  { "name": "Tony DiMaggio", "phone": "0413222333", "notes": "Neighbour, small jobs, mate's rates" },
+  { "name": "Bayside Cafe (Wynnum)", "phone": "0413333444", "notes": "Commercial account, monthly maintenance" },
+  { "name": "Sue Patterson", "phone": "0414444555", "notes": "Hot water system replacement 2025, occasional callouts" },
+  { "name": "Greg Marsh", "phone": "0415555666", "notes": "Investment properties, regular tenant-related jobs" },
+  { "name": "Wynnum Bowls Club", "phone": "0416666777", "notes": "Commercial, quarterly gas safety checks" }
+]
