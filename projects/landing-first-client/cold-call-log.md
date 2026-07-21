@@ -10,7 +10,8 @@ Tracks discovery calls - what each business already has (if anything) and where 
 
 | # | Business | Phone | Date Called | Message-Response (what they have) | AI/Automation Elsewhere | Outcome | Next Step |
 |---|----------|-------|-------------|-------------------------------------|--------------------------|---------|-----------|
-| 1 | Brisbane Power Electricians | 1300 032 003 | 2026-07-21 | 24/7 already covered | Unknown - no answer | No answer | Retry call |
+| 1 | Brisbane Power Electricians | 1300 032 003 | 2026-07-21 | 24/7 already covered | TBD - discussing this afternoon | Callback booked | Call this afternoon |
+| 2 | Redland City Plumbing and Gas | 0401 612 199 | 2026-07-21 | TBD | TBD | No answer | Retry call |
 
 **Outcome options:** Genuine gap - message response (prospect, demo sent) / No AI anywhere (sit-down booked) / Real AI system already (drop) / Emergency-only (deprioritize) / No answer / Bad time, retry
 **Next step options:** Send demo / Book sit-down / Retry call / Move to Interested in ClickUp / Not interested / Add to freelance-platforms audit pipeline instead
