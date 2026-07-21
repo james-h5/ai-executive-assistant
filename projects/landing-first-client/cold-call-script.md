@@ -10,7 +10,7 @@ Purpose: find out what these businesses actually have (if anything) handling enq
 
 ## Opening (10-15 seconds, low pressure)
 
-> "Hey, is this [Business Name]? ... Full disclosure, this is a cold call — happy to let you go right now, no hard feelings, or if you've got 30 seconds I'll be quick. Up to you."
+> "Hey, is this [Business Name]? This is a cold call — do you wanna hang up now, or give me 30 seconds. Up to you."
 
 Say it warm, not flat — a bit of a smile in your voice. The honesty is the point: you're handing them the exit before you even ask for anything, so there's nothing to feel bad about.
 
