@@ -275,6 +275,68 @@
     font-size: 0.94rem;
   }
 
+  blockquote.story {
+    margin: 1.2rem 0 0.6rem;
+    padding: 1rem 1.5rem;
+    max-width: 65ch;
+    background: var(--surface);
+    border-left: 3px solid var(--brass);
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+  }
+  blockquote.story p { margin: 0; max-width: none; }
+  .story-caption {
+    max-width: 65ch;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+  }
+
+  .dialogue {
+    margin-top: 1.5rem;
+    max-width: 65ch;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.4rem 1.6rem;
+  }
+  .dialogue .exchange {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .dialogue .exchange:last-child { border-bottom: none; }
+  .dialogue .exchange.beat {
+    padding: 0.5rem 0;
+    color: var(--ink-soft);
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+  .dialogue .line-text { margin: 0; font-size: 0.98rem; }
+  .dialogue .speaker {
+    font-family: -apple-system, "Segoe UI", Roboto, ui-sans-serif, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
+    font-weight: 600;
+    margin-right: 0.5rem;
+    vertical-align: 1px;
+  }
+  .dialogue .speaker.you { color: var(--brass); }
+  .dialogue .speaker.them { color: var(--wine); }
+  .dialogue .aside { font-style: italic; color: var(--ink-soft); }
+  .dialogue .technique {
+    margin: 0.45rem 0 0;
+    padding-left: 0.9rem;
+    border-left: 2px solid var(--line-strong);
+    font-family: -apple-system, "Segoe UI", Roboto, ui-sans-serif, sans-serif;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+  .dialogue-note {
+    max-width: 65ch;
+    color: var(--ink-soft);
+  }
+
   footer {
     margin-top: 2.5rem;
     padding-top: 1.5rem;
@@ -473,7 +535,15 @@
         <p class="dek">What to talk about, storytelling, banter, listening, and escalating a conversation.</p>
 
         <h3>Opening a conversation</h3>
-        <p>The best openers are observational or situational, not rehearsed lines or compliments on appearance — compliments-as-openers signal intent immediately and put the other person on guard. Good default shape: notice something in the shared environment, plus a light question or comment. <em>"This queue is somehow never moving."</em> The goal of an opener is not to be clever — it's to be low-pressure enough that responding is easy. Wit comes later, once a real exchange is going.</p>
+        <p>The best openers are observational or situational, not rehearsed lines or compliments on appearance — compliments-as-openers signal intent immediately and put the other person on guard. Good default shape: notice something in the shared environment, plus a light question or comment. The goal of an opener is not to be clever — it's to be low-pressure enough that responding is easy. Wit comes later, once a real exchange is going.</p>
+        <ul>
+          <li><strong>Party, mutual friend around:</strong> "How do you know [host]?" — always available, always answerable, opens straight into shared context.</li>
+          <li><strong>Queue, checkout, waiting room:</strong> "This queue is somehow never moving" — shared frustration is an easy, low-risk bond.</li>
+          <li><strong>Gym:</strong> "Is this machine actually this hard, or am I just having a bad day?" — self-deprecating, invites a real answer instead of a compliment.</li>
+          <li><strong>Elevator, hallway, passing moment:</strong> doesn't need words at all — see <a href="#body">Chapter III</a> and <a href="#presence">Chapter IV</a>. Held eye contact plus a genuine smile is a complete opener on its own; a line only follows if there's a natural window.</li>
+          <li><strong>Networking event:</strong> "What's the most interesting thing you've come across here so far?" — better than "what do you do," which reads as transactional before any rapport exists.</li>
+          <li><strong>Class or lecture:</strong> "Are we actually meant to have read chapter four, or is that just me panicking?" — shared stakes, easy to answer, low pressure.</li>
+        </ul>
 
         <h3>What to talk about</h3>
         <ul>
@@ -484,16 +554,74 @@
         </ul>
 
         <h3>Storytelling</h3>
-        <p>Structure: setup, brief — the interesting turn — the payoff. Cut the throat-clearing detail that doesn't serve the turn. Land the story and stop; don't over-explain the punchline or justify why it was funny. Real, specific stakes — a fight, a trade gone wrong, two months solo in Japan — beat generic material every time.</p>
+        <p>Structure: setup, brief — the interesting turn — the payoff. Cut the throat-clearing detail that doesn't serve the turn. Land the story and stop; don't over-explain the punchline or justify why it was funny. Real, specific stakes beat generic material every time.</p>
+        <blockquote class="story">
+          <p>"First week solo abroad, I tried to order what I thought was chicken ramen — pointed at a picture, nodded a lot, very confident. Turned out to be a bowl of something that was almost entirely internal organs. Ate the whole thing anyway because the guy running the place looked so proud of it. Still don't know what it was. Ten out of ten, would not order again."</p>
+        </blockquote>
+        <p class="story-caption">Notice the shape: the scene is set in one line, the turn arrives fast, the payoff lands and stops — no moral, no explaining why it's funny.</p>
 
         <h3>Banter and playfulness</h3>
         <p>Banter is a light, friendly challenge, not an insult. A gentle tease — <em>"you say that like it's a good thing"</em> — keeps things fun without risk. Callback humor, referencing something said a few minutes earlier, reads as attentive and clever without needing to be quick-witted in the moment.</p>
+        <ul>
+          <li><strong>Them:</strong> "I'm actually really good at parallel parking." <strong>You:</strong> "That's a very specific thing to be proud of. I respect it."</li>
+          <li><strong>Them:</strong> "I've never lost at Mario Kart." <strong>You:</strong> "Bold claim. I'm now obligated to end that."</li>
+          <li><strong>Callback, later in the same conversation:</strong> "Careful — don't want to break your unbeaten Mario Kart record before we've even played."</li>
+        </ul>
 
         <h3>Listening</h3>
         <p>The most underrated social skill. Genuine, specific follow-up questions read as more charismatic than a great opener ever will. People remember how a conversation made them feel, not the cleverness of the lines used. Don't plan the next thing to say while they're still talking — actually listen, then respond to what was actually said.</p>
 
         <h3>Escalating a conversation</h3>
         <p>Escalation means moving from surface-level exchange toward more personal, more playful, or — romantically — more direct, done gradually and by reading their response, not all at once. A simple ladder: situational small talk, genuine curiosity, light banter, a personal question or a direct statement of interest. If going for a number: be direct rather than vague. <em>"I'd like to keep talking to you — can I get your number"</em> beats a hinting, indirect exit.</p>
+
+        <h3>Worked example: a full conversation</h3>
+        <p class="dialogue-note">Setting: a house party, a mutual friend hosting. You don't know anyone else. Someone's standing near the drinks table for a moment, alone.</p>
+        <div class="dialogue">
+          <div class="exchange">
+            <p class="line-text"><span class="speaker you">You</span>"Please tell me there's more of these, because I've had four and I'm not stopping."</p>
+            <p class="technique">Situational opener — observational, low-pressure, easy to answer.</p>
+          </div>
+          <div class="exchange">
+            <p class="line-text"><span class="speaker them">Them</span><span class="aside">(laughs)</span> "There's a second bowl in the kitchen, I saw it earlier."</p>
+          </div>
+          <div class="exchange">
+            <p class="line-text"><span class="speaker you">You</span>"You're a hero. How do you know [host]?"</p>
+            <p class="technique">Light thanks, then the always-safe mutual-context question.</p>
+          </div>
+          <div class="exchange">
+            <p class="line-text"><span class="speaker them">Them</span>"We did a semester abroad together. You?"</p>
+          </div>
+          <div class="exchange">
+            <p class="line-text"><span class="speaker you">You</span>"Uni as well — different circle though, mine's the boring finance kind."</p>
+            <p class="technique">Answering your own question, offering something about yourself unprompted.</p>
+          </div>
+          <div class="exchange">
+            <p class="line-text"><span class="speaker them">Them</span>"Boring finance kind — could be worse."</p>
+          </div>
+          <div class="exchange">
+            <p class="line-text"><span class="speaker you">You</span>"Give it a week and I'll have you convinced spreadsheets are romantic."</p>
+            <p class="technique">Light banter, playful without risk.</p>
+          </div>
+          <div class="exchange">
+            <p class="line-text"><span class="speaker them">Them</span>"I'd need to see that pitch."</p>
+          </div>
+          <div class="exchange">
+            <p class="line-text"><span class="speaker you">You</span>"What's kept you busy since the semester abroad thing?"</p>
+            <p class="technique">Genuine curiosity — a real follow-up, not a prepared next topic.</p>
+          </div>
+          <div class="exchange beat">
+            (they answer, mention a recent trip; conversation continues naturally for a few minutes)
+          </div>
+          <div class="exchange">
+            <p class="line-text"><span class="speaker you">You</span>"Okay wait, that's actually the most interesting thing anyone's told me tonight."</p>
+            <p class="technique">Genuine reaction — proof you were actually listening.</p>
+          </div>
+          <div class="exchange">
+            <p class="line-text"><span class="speaker you">You</span>"I've got to say bye to a few people before I go, but I'd like to keep talking to you — can I get your number?"</p>
+            <p class="technique">Direct escalation. No hinting, no vague "we should hang out sometime" — a clear ask, and a clean exit either way.</p>
+          </div>
+        </div>
+        <p class="story-caption">The shape to notice: the opener costs nothing, banter stays light, curiosity is genuine rather than interview-mode, and the escalation at the end is direct instead of a hopeful trail-off. If the answer is no, the frame holds — see <a href="#presence">Chapter IV</a>.</p>
 
         <div class="callout">
           <span class="label">Questions for the Count</span>
