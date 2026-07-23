@@ -37,6 +37,20 @@ Real material, tightened for actual delivery — written to be told out loud, no
 - Kept every specific number — 5 days, 5kg, 7K, 3 teaspoons — those are what make it land; a vaguer "barely ate anything" loses the impact
 - Stopped cold on "knocked the guy out in the first round" — no "and it felt amazing" tacked on after. The suffering already described is the setup; adding more after the KO steps on the punchline
 
+## Worst meal in Kyushu
+
+**Raw:**
+"worst thing I ate ever was in the middle of Kyushu, Japan we were trying to hitchhike in the middle of knowwhere there no buses no public transport and Japanese people are reluctant to picking up people that aren't their race. And we were starving and the only food close was an old grandmas cottage on the side of the road. You would think that these types of places have the best food but no it had hair in it, it looked off I'm never going there again."
+
+**Polished:**
+"Middle of nowhere in rural Kyushu — no buses, no trains, and nobody was stopping to pick up two foreigners on the side of the road. Starving, and the only food around was an old woman's roadside cottage — the kind of place you'd bet serves the best home cooking in the country. It did not. There was hair in it. Never going back."
+
+**What changed:**
+- Cut the line about locals being reluctant to pick up non-Japanese hitchhikers down to "nobody was stopping to pick up two foreigners" — same fact, no editorializing, keeps it moving
+- Cut "it looked off" — redundant next to "hair in it," which is the sharper, more specific detail
+- Added "the kind of place you'd bet serves the best home cooking in the country" — makes the subversion explicit. Without setting up that expectation, "it did not" has nothing to land against
+- Ended on "never going back" — matches the deadpan closers already in this bank, stops before explaining
+
 ---
 
 ## New Entries (added below as more stories get polished)
