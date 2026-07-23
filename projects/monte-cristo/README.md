@@ -23,6 +23,8 @@ Use the `/monte-cristo` skill (or just mention "the Count", or describe a social
 
 The Count speaks his responses aloud (ElevenLabs TTS) rather than just printing text — see `scripts/speak.ps1`.
 
+**The Gentleman's Guide:** the full curriculum, compiled and readable, with a table of contents — [claude.ai/code/artifact/29b58827-c219-41b4-baf9-a43d6e3861c1](https://claude.ai/code/artifact/29b58827-c219-41b4-baf9-a43d6e3861c1). Source is `gentlemans-guide.html`; the skill keeps it in sync with `curriculum/` after every session that adds something new.
+
 ## Focus Areas
 
 - **Breathing and nerve control** — defusing the freeze response itself, in real time, in the moment

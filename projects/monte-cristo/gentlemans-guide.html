@@ -1,0 +1,565 @@
+<title>The Gentleman's Guide</title>
+<style>
+  :root {
+    --bg: #ECE4D3;
+    --surface: #FBF7EE;
+    --ink: #2B2420;
+    --ink-soft: #5A5044;
+    --brass: #86612F;
+    --wine: #7A2E3A;
+    --line: rgba(43,36,32,0.16);
+    --line-strong: rgba(43,36,32,0.3);
+    --shadow: rgba(43,36,32,0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #171310;
+      --surface: #211C17;
+      --ink: #E7DFCF;
+      --ink-soft: #B7AC98;
+      --brass: #CBA25F;
+      --wine: #C1616F;
+      --line: rgba(231,223,207,0.16);
+      --line-strong: rgba(231,223,207,0.3);
+      --shadow: rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #171310;
+    --surface: #211C17;
+    --ink: #E7DFCF;
+    --ink-soft: #B7AC98;
+    --brass: #CBA25F;
+    --wine: #C1616F;
+    --line: rgba(231,223,207,0.16);
+    --line-strong: rgba(231,223,207,0.3);
+    --shadow: rgba(0,0,0,0.4);
+  }
+  :root[data-theme="light"] {
+    --bg: #ECE4D3;
+    --surface: #FBF7EE;
+    --ink: #2B2420;
+    --ink-soft: #5A5044;
+    --brass: #86612F;
+    --wine: #7A2E3A;
+    --line: rgba(43,36,32,0.16);
+    --line-strong: rgba(43,36,32,0.3);
+    --shadow: rgba(43,36,32,0.12);
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Charter, Georgia, Cambria, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-weight: 700;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .label {
+    font-family: -apple-system, "Segoe UI", Roboto, ui-sans-serif, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+  a { color: var(--wine); }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+  }
+
+  .page { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem 5rem; }
+
+  .masthead {
+    padding: 4rem 0 2.5rem;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  .masthead .label { color: var(--brass); margin-bottom: 0.9rem; display: block; }
+  .masthead h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    margin: 0 0 0.8rem;
+    letter-spacing: -0.01em;
+  }
+  .masthead .standfirst {
+    max-width: 60ch;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .masthead .origin {
+    margin-top: 1.6rem;
+    padding: 1rem 1.25rem;
+    background: var(--surface);
+    border-left: 3px solid var(--wine);
+    max-width: 62ch;
+    font-size: 0.96rem;
+    color: var(--ink-soft);
+  }
+  .masthead .origin strong { color: var(--ink); }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 3.5rem;
+    padding-top: 2.5rem;
+  }
+  @media (max-width: 760px) {
+    .layout { grid-template-columns: 1fr; gap: 1.5rem; }
+  }
+
+  nav.index {
+    position: sticky;
+    top: 1.5rem;
+    align-self: start;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+  }
+  @media (max-width: 760px) {
+    nav.index {
+      position: static;
+      max-height: none;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: var(--surface);
+      padding: 0.25rem 0.75rem;
+    }
+  }
+  nav.index .label { margin-bottom: 0.9rem; display: block; }
+  nav.index ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  nav.index a {
+    display: flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-family: -apple-system, "Segoe UI", Roboto, ui-sans-serif, sans-serif;
+    font-size: 0.92rem;
+    padding: 0.5rem 0.4rem;
+    border-radius: 3px;
+    border-left: 2px solid transparent;
+  }
+  nav.index a:hover { color: var(--ink); background: var(--surface); }
+  nav.index a .chapter-no {
+    font-variant-numeric: tabular-nums;
+    color: var(--brass);
+    font-size: 0.8rem;
+    min-width: 1.1em;
+  }
+  nav.index .badge {
+    display: inline-block;
+    margin-left: auto;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--wine);
+    border: 1px solid var(--wine);
+    border-radius: 2px;
+    padding: 0.1rem 0.35rem;
+  }
+
+  main.content { min-width: 0; }
+
+  section.chapter {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 1.5rem;
+  }
+  section.chapter:last-of-type { border-bottom: none; }
+  .chapter-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+  .chapter-eyebrow .chapter-no {
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    font-size: 1rem;
+    color: var(--brass);
+    font-variant-numeric: tabular-nums;
+  }
+  section.chapter h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0 0 0.5rem;
+  }
+  section.chapter .dek {
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+    max-width: 62ch;
+    margin: 0 0 1.8rem;
+  }
+  .max-measure { max-width: 65ch; }
+  section.chapter h3 {
+    font-size: 1.05rem;
+    margin: 1.8rem 0 0.6rem;
+    color: var(--wine);
+  }
+  section.chapter p { max-width: 65ch; }
+  section.chapter ul, section.chapter ol { max-width: 65ch; padding-left: 1.3rem; }
+  section.chapter li { margin-bottom: 0.5rem; }
+  section.chapter strong { color: var(--ink); }
+
+  .callout {
+    margin-top: 2rem;
+    max-width: 65ch;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.3rem 1.5rem;
+  }
+  .callout .label { color: var(--brass); margin-bottom: 0.7rem; display: block; }
+  .callout ol { margin: 0; padding-left: 1.2rem; }
+  .callout li { margin-bottom: 0.4rem; }
+
+  .start-badge {
+    font-family: -apple-system, "Segoe UI", Roboto, ui-sans-serif, sans-serif;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--wine);
+    border: 1px solid var(--wine);
+    border-radius: 3px;
+    padding: 0.15rem 0.5rem;
+  }
+
+  .scripts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.1rem;
+    margin-top: 1.5rem;
+  }
+  .script-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.3rem 1.4rem;
+  }
+  .script-card h3 {
+    margin: 0 0 0.7rem;
+    font-size: 0.98rem;
+    color: var(--ink);
+  }
+  .script-card .field-label {
+    font-family: -apple-system, "Segoe UI", Roboto, ui-sans-serif, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.66rem;
+    letter-spacing: 0.07em;
+    color: var(--brass);
+    display: block;
+    margin: 0.8rem 0 0.25rem;
+  }
+  .script-card .field-label:first-of-type { margin-top: 0; }
+  .script-card p { font-size: 0.94rem; margin: 0; max-width: none; }
+
+  .new-entries {
+    margin-top: 1.5rem;
+    padding: 1.4rem 1.5rem;
+    border: 1px dashed var(--line-strong);
+    border-radius: 6px;
+    color: var(--ink-soft);
+    font-size: 0.94rem;
+  }
+
+  footer {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line-strong);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-family: -apple-system, "Segoe UI", Roboto, ui-sans-serif, sans-serif;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    section.chapter { scroll-behavior: smooth; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="masthead">
+    <span class="label">A Monte Cristo Field Manual</span>
+    <h1>The Gentleman's Guide</h1>
+    <p class="standfirst">Composure, presence, and conversation — built from first principles, for a man who is never again caught flat-footed by his own hesitation.</p>
+    <p class="origin"><strong>Origin, 23 July 2026:</strong> a stranger smiled on the train. The words were there, the intent was there — the body simply didn't move in time. This guide exists because that freeze was diagnosable, and everything diagnosable can be trained.</p>
+  </header>
+
+  <div class="layout">
+    <nav class="index" aria-label="Table of contents">
+      <span class="label">Contents</span>
+      <ol>
+        <li><a href="#breathing"><span class="chapter-no">I</span> Breathing &amp; Nerve Control <span class="badge">Start here</span></a></li>
+        <li><a href="#voice"><span class="chapter-no">II</span> Voice &amp; Speech</a></li>
+        <li><a href="#body"><span class="chapter-no">III</span> Body Language</a></li>
+        <li><a href="#presence"><span class="chapter-no">IV</span> Expression &amp; Presence</a></li>
+        <li><a href="#conversation"><span class="chapter-no">V</span> Conversation &amp; Wit</a></li>
+        <li><a href="#scripts"><span class="chapter-no">VI</span> The Situation Library</a></li>
+        <li><a href="#grows"><span class="chapter-no">VII</span> How This Guide Grows</a></li>
+      </ol>
+    </nav>
+
+    <main class="content">
+
+      <section class="chapter" id="breathing">
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter I</span> <span class="start-badge">Start here</span></div>
+        <h2>Breathing &amp; Nerve Control</h2>
+        <p class="dek">The most important chapter. The train incident wasn't a knowledge gap — the opening line was never needed, because the body froze before the mind could act. This is the physiology of that freeze, and how to interrupt it in real time.</p>
+
+        <h3>What freezing actually is</h3>
+        <p>Freeze is a nervous system response, same family as fight-or-flight. A novel social opportunity with stakes — attraction, status, rejection risk — spikes cortisol and adrenaline fast. The body prepares for threat, not charm: shallow breath, tight chest, tunnel focus. Talking to a stranger needs the opposite state — loose, breathing low, present. That mismatch is the freeze.</p>
+        <p>It is not a character flaw. It is a mistimed stress response, and it responds to training the same way stage fright does: exposure, plus a physical reset technique, repeated.</p>
+
+        <h3>The in-the-moment reset — use this live</h3>
+        <p>When the moment appears — someone smiles, eye contact holds a beat too long, an opening exists:</p>
+        <ol>
+          <li><strong>One physiological sigh.</strong> Two short inhales through the nose, one long exhale through the mouth. The fastest known way to drop heart rate and offload the CO2 buildup from shallow breathing. Under five seconds, doesn't look unusual.</li>
+          <li><strong>Drop the shoulders, unclench the jaw.</strong> A tension check, release both immediately.</li>
+          <li><strong>Move toward the moment physically before thinking of the perfect line.</strong> A half-step, a turn of the body, holding eye contact half a second longer than reflex wants. Motion breaks the freeze faster than a perfect sentence does — the line can come after the body has already committed.</li>
+        </ol>
+        <p>The order matters: <strong>breath, then body, then words.</strong> Trying to think of the right thing to say first is what caused the freeze — the nervous system was never given the signal that it was safe.</p>
+
+        <h3>Pre-loading composure</h3>
+        <ul>
+          <li><strong>Box breathing</strong> — four in, four hold, four out, four hold — for sixty seconds before any environment with social stakes. Lowers baseline arousal so a sudden opportunity doesn't spike as hard.</li>
+          <li><strong>Lower the stakes on purpose.</strong> Decide in advance that the goal of any single interaction is "be present for ten seconds," not "win." Removing outcome pressure is what keeps the nervous system from treating the moment as threat.</li>
+        </ul>
+
+        <h3>Why this beats "just have more confidence"</h3>
+        <p>Confidence is downstream of a regulated nervous system, not the other way round. Willing yourself into confidence while the body is still in threat-state is fighting biology with willpower. Regulate the body first — breath, posture, movement — and the words follow far more easily.</p>
+
+        <div class="callout">
+          <span class="label">Questions for the Count</span>
+          <ol>
+            <li>Did you recognize the moment? If yes, this chapter applies. If the moment wasn't noticed at all, that's <a href="#presence">Chapter IV</a> instead.</li>
+            <li>Where in the body did you feel it — chest, throat, stomach? Helps target which reset lands.</li>
+            <li>Was there a next physical action available — a step, a nod, held eye contact — that didn't require words yet?</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="chapter" id="voice">
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter II</span></div>
+        <h2>Voice &amp; Speech</h2>
+        <p class="dek">Tone, pacing, projection — sounding composed rather than rushed or uncertain.</p>
+
+        <h3>Tone and pitch</h3>
+        <ul>
+          <li>Speak from the chest, not the throat — lower, more resonant, reads as calm and grounded almost effortlessly. Test it: hand on chest, feel it vibrate slightly while speaking.</li>
+          <li>Uptalk — a rising pitch at the end of statements — reads as a question and undermines authority even when the words are fine. End statements flat, or falling.</li>
+        </ul>
+
+        <h3>Pacing</h3>
+        <p>Slower than feels natural. Rushing is a nervous-system tell — the same freeze-adjacent urge to get the words out and escape the moment. A half-beat pause before responding reads as thoughtful, not slow.</p>
+        <p>Pause instead of filling with "um," "like," "you know." Silence is not a gap that needs patching — a composed man is comfortable letting a beat of silence sit.</p>
+
+        <h3>Volume and projection</h3>
+        <p>Project to be heard without straining. A common freeze pattern is talking quietly enough to half-hope you're not heard — it reads as uncertainty. Match the volume of the room, not below it.</p>
+
+        <h3>Cutting filler words</h3>
+        <p>The fix is not "try not to say um" — it's giving the brain permission to pause instead of filling the gap. Filler words happen when the mouth moves faster than the thought is ready. Slow the pace, and the filler drops out on its own.</p>
+
+        <h3>Composed vs. rehearsed</h3>
+        <p><strong>Composed:</strong> unhurried, willing to pause, tone stays level whether the moment is easy or has stakes. <strong>Rehearsed</strong> — avoid this — pre-loaded lines delivered too fast, tone climbing in pitch and speed the moment stakes appear. That climb is the tell that gives nerves away faster than the words themselves.</p>
+
+        <h3>Delivering a line</h3>
+        <p>Open with an observation or a genuine question, not a compliment that sounds like a pickup line — compliments-as-openers put the other person on the defensive because they signal intent immediately. See <a href="#conversation">Chapter V</a> for what to actually say. Deliver the opener, then stop talking. Resist stacking three sentences to fill space while waiting for a response.</p>
+
+        <div class="callout">
+          <span class="label">Questions for the Count</span>
+          <ol>
+            <li>Was the pace rushed, or did it stay level throughout?</li>
+            <li>Any filler words — and at which point did they appear? Usually right when the stakes went up.</li>
+            <li>Did the pitch rise at the end of statements?</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="chapter" id="body">
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter III</span></div>
+        <h2>Body Language</h2>
+        <p class="dek">Posture, walk, stance, sitting, hands, eye contact.</p>
+
+        <h3>Posture — standing</h3>
+        <ul>
+          <li>Weight evenly on both feet, spine long, shoulders back and <em>down</em> — not up around the ears, which is tension, not confidence.</li>
+          <li>Chin level — not tilted up (arrogant) or down (avoidant).</li>
+          <li>Chest open, not caved. A caved chest is one of the most common tells of a freeze or withdrawal state.</li>
+        </ul>
+
+        <h3>Walk</h3>
+        <ul>
+          <li>Even, unhurried pace. Rushing while walking reads as anxious or late-to-something, even with a neutral face.</li>
+          <li>Let arms swing naturally — don't pin them to the sides or cross them while moving.</li>
+          <li>Eyes up, scanning the environment naturally, not locked on a phone or the ground. This is also what fixes noticing a moment too late — if the eyes are down, the opportunity is invisible before it can be acted on.</li>
+        </ul>
+
+        <h3>Stance — standing still, in conversation</h3>
+        <ul>
+          <li>Feet shoulder-width, weight settled — not shifting or rocking, which reads as impatience or nerves.</li>
+          <li>Hands visible and relaxed — in pockets is fine (thumb out, not a full fist), or loose at the sides, or gesturing naturally.</li>
+          <li>Avoid fully crossing the arms in a conversation you want to go well — it reads as closed even when that's not the intent.</li>
+        </ul>
+
+        <h3>Sitting</h3>
+        <p>Sit back into the chair, not perched on the edge — perching reads as ready to flee, the seated version of the freeze/flight state. Spread naturally into the space available rather than folding small; taking up appropriate space reads as ease, not entitlement, when paired with genuine attentiveness to the other person.</p>
+
+        <h3>Hands and gestures</h3>
+        <p>Use hands naturally to support speech — stillness overcorrected into stiffness reads as tense, not composed. Avoid self-touch fidgeting (face, hair, adjusting clothes repeatedly): it spikes when nervous and is one of the most visible tells in the room.</p>
+
+        <h3>Eye contact</h3>
+        <p>Hold eye contact through the end of a sentence, break naturally rather than darting away mid-thought. In a passing moment — the train, a hallway — the ability to hold eye contact half a second longer than instinct wants, paired with a genuine small smile, <em>is</em> the opener. It doesn't require words to not be a freeze.</p>
+
+        <div class="callout">
+          <span class="label">Questions for the Count</span>
+          <ol>
+            <li>Where were the eyes — up and aware, or down and distracted — before the moment happened?</li>
+            <li>Any specific tell noticed after the fact — arms crossed, shifting weight, self-touch?</li>
+            <li>Was the body's first reaction to move toward, away, or freeze in place?</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="chapter" id="presence">
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter IV</span></div>
+        <h2>Expression &amp; Presence</h2>
+        <p class="dek">Resting expression, genuine smiling, reading a room, and holding frame.</p>
+
+        <h3>Resting expression</h3>
+        <p>Neutral-relaxed, not neutral-flat. A slightly softened brow and mouth reads as approachable; a flat, tense "resting" face reads as closed off — and makes it easy to miss when someone is signaling interest, because the face isn't scanning for it. Awareness starts with the face being relaxed enough to actually notice what's happening around it.</p>
+
+        <h3>Smiling</h3>
+        <p>A genuine smile engages the eyes — a slight crinkle — not just the mouth. Practicable in a mirror; the difference is very visible, and very obvious to others too. A small, held smile in passing — train, hallway, elevator — is a complete social move on its own. It doesn't need words attached. It signals warmth and awareness without committing either way.</p>
+
+        <h3>Reading a room, reading a moment</h3>
+        <p>Before anything else, the job is noticing: eye contact held a beat too long, a smile, a body angled slightly toward you, a laugh that lands your way. These are low-stakes signals worth acting on, not proof required before acting. The train moment was a clear signal — a smile, directly at him. The miss wasn't in reading it; it was in the freeze after recognizing it. See <a href="#breathing">Chapter I</a>.</p>
+
+        <h3>Holding frame</h3>
+        <p>"Frame" means staying yourself regardless of the other person's response. Composure isn't dependent on the interaction going well — it's an internal state that doesn't collapse if the other person doesn't respond, is busy, or isn't interested. Practically: deliver the smile, the opener, the line — then let the outcome be whatever it is. No slumping, no visible disappointment, no over-explaining if it doesn't land. A held frame after a miss reads as more composed, and more attractive, than a perfect opener followed by visible deflation.</p>
+
+        <h3>Micro-expressions worth controlling</h3>
+        <p>An eyebrow flash on greeting someone — a quick, natural raise — reads universally as friendly recognition. Avoid the instinctive "flinch" face — eyes widening, slight recoil — when someone unexpected engages. It's the visible version of the freeze response, and can read as rejection even when that isn't the intent.</p>
+
+        <div class="callout">
+          <span class="label">Questions for the Count</span>
+          <ol>
+            <li>Was the signal actually noticed in the moment, or only in hindsight?</li>
+            <li>What was the resting face doing right before the moment — tense, distracted, relaxed?</li>
+            <li>After the interaction, or non-interaction, did the frame hold, or was there visible deflation?</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="chapter" id="conversation">
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter V</span></div>
+        <h2>Conversation &amp; Wit</h2>
+        <p class="dek">What to talk about, storytelling, banter, listening, and escalating a conversation.</p>
+
+        <h3>Opening a conversation</h3>
+        <p>The best openers are observational or situational, not rehearsed lines or compliments on appearance — compliments-as-openers signal intent immediately and put the other person on guard. Good default shape: notice something in the shared environment, plus a light question or comment. <em>"This train is somehow always exactly four minutes late."</em> The goal of an opener is not to be clever — it's to be low-pressure enough that responding is easy. Wit comes later, once a real exchange is going.</p>
+
+        <h3>What to talk about</h3>
+        <ul>
+          <li>Start light and specific, not broad and abstract — specific is easier to respond to ("best thing you've eaten this week" beats "what do you like to do for fun").</li>
+          <li>Follow genuine curiosity — a real follow-up on whatever they just said, rather than a pivot to a prepared next topic. This is what makes a conversation feel alive instead of an interview.</li>
+          <li>Good territory: things happening right now, light opinions ("best/worst" style questions), things they're clearly into.</li>
+          <li>Avoid interview-mode — stacking questions without offering anything of yourself. Trade information: answer your own question too, sometimes, or share something first.</li>
+        </ul>
+
+        <h3>Storytelling</h3>
+        <p>Structure: setup, brief — the interesting turn — the payoff. Cut the throat-clearing detail that doesn't serve the turn. Land the story and stop; don't over-explain the punchline or justify why it was funny. Real, specific stakes — a fight, a trade gone wrong, two months solo in Japan — beat generic material every time.</p>
+
+        <h3>Banter and playfulness</h3>
+        <p>Banter is a light, friendly challenge, not an insult. A gentle tease — <em>"you say that like it's a good thing"</em> — keeps things fun without risk. Callback humor, referencing something said a few minutes earlier, reads as attentive and clever without needing to be quick-witted in the moment.</p>
+
+        <h3>Listening</h3>
+        <p>The most underrated social skill. Genuine, specific follow-up questions read as more charismatic than a great opener ever will. People remember how a conversation made them feel, not the cleverness of the lines used. Don't plan the next thing to say while they're still talking — actually listen, then respond to what was actually said.</p>
+
+        <h3>Escalating a conversation</h3>
+        <p>Escalation means moving from surface-level exchange toward more personal, more playful, or — romantically — more direct, done gradually and by reading their response, not all at once. A simple ladder: situational small talk, genuine curiosity, light banter, a personal question or a direct statement of interest. If going for a number: be direct rather than vague. <em>"I'd like to keep talking to you — can I get your number"</em> beats a hinting, indirect exit.</p>
+
+        <div class="callout">
+          <span class="label">Questions for the Count</span>
+          <ol>
+            <li>What was actually said — or what would the natural opener have been, replaying it?</li>
+            <li>Was there a real follow-up question available that wasn't asked?</li>
+            <li>Did the exchange stay in interview-mode, or was something actually traded both ways?</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="chapter" id="scripts">
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter VI</span></div>
+        <h2>The Situation Library</h2>
+        <p class="dek">A living record of situation and best response — some seeded to start, the rest built from real debriefs and real questions as they happen.</p>
+
+        <div class="scripts-grid">
+          <div class="script-card">
+            <h3>Public transit / passing moment</h3>
+            <span class="field-label">Situation</span>
+            <p>A stranger smiles at you in a passing, low-stakes environment — train, street, elevator — with no natural reason yet to talk. (The train, 23 July 2026.)</p>
+            <span class="field-label">Best response</span>
+            <p>Hold eye contact half a beat longer than instinct, return the smile genuinely — eyes engaged, not just the mouth. That alone is a complete, low-risk move; it obligates nobody to anything further. If a natural window follows — same stop, sitting nearby — a light situational opener comes next. If not, the smile itself was the win.</p>
+            <span class="field-label">Root cause, on the day</span>
+            <p>The moment was recognized. The body froze before any words were needed. The fix was the physiological sigh and moving or holding eye contact — not a better line. See Chapter I.</p>
+          </div>
+          <div class="script-card">
+            <h3>Approaching someone at a bar or party</h3>
+            <span class="field-label">Situation</span>
+            <p>Wanting to approach someone unfamiliar in a social venue.</p>
+            <span class="field-label">Best response</span>
+            <p>Approach directly — don't linger and build it up, which spikes the freeze response. Box-breathe beforehand if there's time. Open with something situational about the venue or event, not a compliment. Stay a few minutes, read engagement, exit or escalate on their response — don't overstay past a natural lull.</p>
+          </div>
+          <div class="script-card">
+            <h3>Networking introduction</h3>
+            <span class="field-label">Situation</span>
+            <p>Meeting someone at an event relevant to the AI consulting business.</p>
+            <span class="field-label">Best response</span>
+            <p>Firm handshake, name plus one clear line on what you do — not a pitch. "I build AI systems that handle lead response for trade businesses." Ask what they do, and actually follow up before pivoting to your own agenda. Any follow-up ask comes at a natural close, not mid-conversation.</p>
+          </div>
+          <div class="script-card">
+            <h3>Client small talk</h3>
+            <span class="field-label">Situation</span>
+            <p>The few minutes of casual conversation around a business meeting.</p>
+            <span class="field-label">Best response</span>
+            <p>Genuine, brief, situational — something about their business, the location, or their industry. Same presence and composure skills as any other scenario in this guide; the stakes are just professional instead of romantic.</p>
+          </div>
+        </div>
+
+        <div class="new-entries">New situations get added here by the Count as real debriefs and questions come in — nothing to do but keep asking.</div>
+      </section>
+
+      <section class="chapter" id="grows">
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter VII</span></div>
+        <h2>How This Guide Grows</h2>
+        <p class="dek">This isn't a static document.</p>
+        <p>Every time a real situation gets debriefed, or a hypothetical gets asked through the <code>/monte-cristo</code> skill, whatever's missing here gets added — a new entry in the Situation Library, a sharper point in an existing chapter, sometimes a whole new chapter if a new pattern shows up often enough. The source of truth lives in <code>projects/monte-cristo/curriculum/</code>; this page is the readable, always-current copy of it.</p>
+        <p>If something comes up that this guide doesn't cover yet — say so. That's the update mechanism.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <span>The Gentleman's Guide &middot; Monte Cristo Project</span>
+    <span>Last updated 23 July 2026</span>
+  </footer>
+
+</div>

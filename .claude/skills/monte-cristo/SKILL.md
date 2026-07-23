@@ -43,7 +43,14 @@ projects/monte-cristo/scripts/speak.ps1 -TextFile "<path to temp file with the r
 
 Still print the full text response in the conversation as normal — the audio is in addition to the text, not a replacement. If the script errors (missing API key/voice ID, network failure), tell James plainly what failed and continue with text-only — don't silently drop the audio step.
 
-## Step 4: Offer to Save
+## Step 4: Update the Gentleman's Guide
+Whenever this session added anything to `curriculum/social-scripts.md` or meaningfully sharpened a point in one of the other curriculum files (Step 2.4/2.4 above), reflect the same addition in `projects/monte-cristo/gentlemans-guide.html` — the published, readable copy of the curriculum:
+1. Edit the matching section of the HTML file (new `.script-card` under the Situation Library grid for a new scenario, or an updated paragraph/list item in the matching chapter for a sharpened point). Match the existing markup and CSS classes — don't restyle.
+2. Update the "Last updated" date in the `<footer>`.
+3. Republish with the Artifact tool: `file_path` = `projects/monte-cristo/gentlemans-guide.html`, `url` = `https://claude.ai/code/artifact/29b58827-c219-41b4-baf9-a43d6e3861c1` (passing `url` is required — without it a new session mints a new link instead of updating this one).
+Skip this step for a session that didn't add anything new to the guide's content.
+
+## Step 5: Offer to Save
 Offer to save the session to `logs/monte-cristo/YYYY-MM-DD.md`.
 
 ## Output Rules
@@ -52,3 +59,4 @@ Offer to save the session to `logs/monte-cristo/YYYY-MM-DD.md`.
 - Keep the in-character voice consistent but don't let it get in the way of concrete, usable instruction
 - If James's own account already shows good instincts (e.g. he clocked the signal correctly), say so plainly — don't invent a flaw to fix
 - `curriculum/social-scripts.md` is a living document — treat every session as a chance to add to it, not just apply it
+- The Gentleman's Guide (`gentlemans-guide.html`) must stay in sync with the curriculum files — never let it silently fall behind
