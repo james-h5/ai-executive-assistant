@@ -35,6 +35,8 @@ description: What to talk about, storytelling, banter, listening, escalating a c
 
 Notice what it does: sets the scene in one line, gets to the turn fast (the surprise), lands the payoff (the joke about eating it anyway) and stops — no moral, no over-explaining why it's funny.
 
+See `story-bank.md` for James's own stories tightened this same way — it grows every time a new one gets polished.
+
 ## Banter and Playfulness
 - Banter = light, friendly challenge, not insult. A gentle tease ("you say that like it's a good thing") keeps things fun without risk.
 - Callback humor — referencing something said a few minutes earlier — reads as attentive and clever without needing to be quick-witted in the moment.

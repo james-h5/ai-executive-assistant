@@ -337,6 +337,40 @@
     color: var(--ink-soft);
   }
 
+  .story-entry {
+    margin-top: 2.2rem;
+    padding-bottom: 2.2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .story-entry:last-of-type { border-bottom: none; padding-bottom: 0; }
+  .story-entry h3 { margin: 0 0 0.9rem; font-size: 1.1rem; }
+  .story-entry blockquote.story { margin-top: 0; }
+  .story-entry details {
+    margin-top: 1.1rem;
+    max-width: 65ch;
+  }
+  .story-entry summary {
+    cursor: pointer;
+    font-family: -apple-system, "Segoe UI", Roboto, ui-sans-serif, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.07em;
+    font-weight: 600;
+    color: var(--brass);
+  }
+  .story-entry details p {
+    margin: 0.6rem 0 0;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    font-style: italic;
+  }
+  .story-entry .changed {
+    margin-top: 1.1rem;
+    max-width: 65ch;
+    padding-left: 1.2rem;
+  }
+  .story-entry .changed li { font-size: 0.92rem; margin-bottom: 0.4rem; }
+
   footer {
     margin-top: 2.5rem;
     padding-top: 1.5rem;
@@ -374,7 +408,8 @@
         <li><a href="#presence"><span class="chapter-no">IV</span> Expression &amp; Presence</a></li>
         <li><a href="#conversation"><span class="chapter-no">V</span> Conversation &amp; Wit</a></li>
         <li><a href="#scripts"><span class="chapter-no">VI</span> The Situation Library</a></li>
-        <li><a href="#grows"><span class="chapter-no">VII</span> How This Guide Grows</a></li>
+        <li><a href="#stories"><span class="chapter-no">VII</span> The Story Library</a></li>
+        <li><a href="#grows"><span class="chapter-no">VIII</span> How This Guide Grows</a></li>
       </ol>
     </nav>
 
@@ -674,11 +709,52 @@
         <div class="new-entries">New situations get added here by the Count as real debriefs and questions come in — nothing to do but keep asking.</div>
       </section>
 
-      <section class="chapter" id="grows">
+      <section class="chapter" id="stories">
         <div class="chapter-eyebrow"><span class="chapter-no">Chapter VII</span></div>
+        <h2>The Story Library</h2>
+        <p class="dek">Real material, tightened for actual delivery using the setup / turn / payoff method from Chapter V. Raw version kept for reference — polished version is what to actually say.</p>
+
+        <div class="story-entry">
+          <h3>Kyoto blackout</h3>
+          <blockquote class="story">
+            <p>"First proper night out in Kyoto — three weeks into the trip. Pre-gamed at the hostel on those 196 cans, which should honestly be classified as a war crime. Walked what felt like forty minutes to the club, and my mate spent the whole queue buttering up the self-proclaimed DJ, who rewarded him with free shots. Next thing I remember, I was waking up in an alleyway. Never did find out how I got there."</p>
+          </blockquote>
+          <ul class="changed">
+            <li>Cut "we had such a good day" — throat-clearing, delays the turn</li>
+            <li>Cut the "looking back it's funny" line — explaining the joke instead of trusting it; the gap in memory <em>is</em> the punchline</li>
+            <li>Kept "self-proclaimed DJ" untouched — the best line in the original</li>
+            <li>"War crime" for the 196 cans — exaggeration instead of flat description, funnier and still true</li>
+          </ul>
+          <details>
+            <summary>Raw version</summary>
+            <p>"We went clubbing in Kyoto for first time since we got to japan probably was like 3 weeks in, and we had such a good day, then we went and pre up at hostel with the toxic 196 massive cans. then walked ages to this club and my mate was talking to the so called dj he got us free shots and the next minute I woke up in some alley way looking back its funny but in the moment it wasnt."</p>
+          </details>
+        </div>
+
+        <div class="story-entry">
+          <h3>The weight cut</h3>
+          <blockquote class="story">
+            <p>"First fight was booked five days after I landed back from Melbourne, and I still had five kilos to lose. Day one: skipped rope for an hour, ran seven K. Weight didn't move. So it was basically just water for the rest of the week. Tuesday I got put through sparring anyway, ate three teaspoons of tuna that day, worked a full shift. Last day — sauna, then a hot bath, walked out lightheaded, threw the tracksuit on, somehow made weight. Fight night, I knocked the guy out in the first round."</p>
+          </blockquote>
+          <ul class="changed">
+            <li>Broke the training grind into short fragments — matches how it'd actually be told out loud, speeds the pace through the middle so it doesn't drag before the payoff</li>
+            <li>Kept every specific number — 5 days, 5kg, 7K, 3 teaspoons — those are what make it land; a vaguer "barely ate anything" loses the impact</li>
+            <li>Stopped cold on "knocked the guy out in the first round" — no "and it felt amazing" after. The suffering already described is the setup; adding more after the KO steps on the punchline</li>
+          </ul>
+          <details>
+            <summary>Raw version</summary>
+            <p>"For my first fight I got back from Melbourne and I had 5 days to lose 5kg, first day skipped for 1hr and half went on 7km run weight didnt change, then drank nothing much for the rest got beat up on the tuesday at sparring had 3 teaspoons tuna that day and full day of work. and then last day I had to sauna and hot bath got out super light headed put tracksuits on somehow got down to weight for fight day and knocked the guy out first round"</p>
+          </details>
+        </div>
+
+        <div class="new-entries">New stories get added here whenever one comes up and gets tightened — bring the raw version, the Count does the rest.</div>
+      </section>
+
+      <section class="chapter" id="grows">
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter VIII</span></div>
         <h2>How This Guide Grows</h2>
         <p class="dek">This isn't a static document.</p>
-        <p>Every time a real situation gets debriefed, or a hypothetical gets asked through the <code>/monte-cristo</code> skill, whatever's missing here gets added — a new entry in the Situation Library, a sharper point in an existing chapter, sometimes a whole new chapter if a new pattern shows up often enough. The source of truth lives in <code>projects/monte-cristo/curriculum/</code>; this page is the readable, always-current copy of it.</p>
+        <p>Every time a real situation gets debriefed, a story gets tightened, or a hypothetical gets asked through the <code>/monte-cristo</code> skill, whatever's missing here gets added — a new entry in the Situation Library or Story Library, a sharper point in an existing chapter, sometimes a whole new chapter if a new pattern shows up often enough. The source of truth lives in <code>projects/monte-cristo/curriculum/</code>; this page is the readable, always-current copy of it.</p>
         <p>If something comes up that this guide doesn't cover yet — say so. That's the update mechanism.</p>
       </section>
 
