@@ -51,6 +51,21 @@ Real material, tightened for actual delivery — written to be told out loud, no
 - Added "the kind of place you'd bet serves the best home cooking in the country" — makes the subversion explicit. Without setting up that expectation, "it did not" has nothing to land against
 - Ended on "never going back" — matches the deadpan closers already in this bank, stops before explaining
 
+## The whispered "bye"
+
+**Raw:**
+"I was on the train on the way to uni minding my own business having a good day, and these two beautiful girls come on. I'm almost there and we catch eyes and she starts checking me out and smiling. As I walked off she whispered under her breath oh bye, such a missed opportunity i hated myself for not saying something"
+
+**Polished:**
+"Train to uni, having a decent day. Two girls get on, and one of them and I catch eyes — she's checking me out, smiling, the unmistakable kind. My stop comes up before I've figured out what to do about any of it. I get off, walk past her, out onto the platform — and right as the doors are closing I hear her go, under her breath, 'oh... bye.' So to be clear: she gave me the signal, then handed me a second one on the way out the door, and I still said nothing. Not a word."
+
+**What changed:**
+- Cut "minding my own business" — throat-clearing
+- Cut "such a missed opportunity I hated myself for not saying something" — moralizing the punchline instead of trusting it; the sequence alone (signal, second signal, silence) already makes the point
+- Swapped "beautiful" for a specific detail — "checking me out, smiling, the unmistakable kind" does more work than a vague adjective
+- Added "So to be clear:" before the close — turns the sequence into an explicit setup for the self-own, landing it cleanly
+- Ended on "Not a word." — short, stops, no explaining why it stings
+
 ---
 
 ## New Entries (added below as more stories get polished)
