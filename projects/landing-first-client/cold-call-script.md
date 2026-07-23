@@ -21,7 +21,7 @@ If they say go ahead: "Cheers — I'm James, I help local trade businesses with 
 
 Ask in order, let them talk, don't rush to the pitch:
 
-1. "When someone calls or messages you for a quote and you're on a job or after hours — what happens to that enquiry?"
+1. "When you miss a call or message from someone wanting a quote — what happens with that?"
 2. "Do you use anything automatic for that — like a chatbot, auto-reply, or booking system?"
    - If **yes**: "Oh nice, what does it actually do — does it just send a message back, or does it ask questions and let you know straight away?" 
    - If **no**: "Right, so if someone messages at 6pm tonight, when would they actually hear back?"
