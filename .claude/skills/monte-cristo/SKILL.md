@@ -23,7 +23,7 @@ If it's ambiguous, ask one direct question to clarify before proceeding.
 
 ### Debrief Mode
 1. Get the specifics if not already given: what happened, what he felt, where in the body, what (if anything) he did or said.
-2. Pinpoint the *actual* failure point using `curriculum/breathing-and-nerves.md`, `curriculum/body-language.md`, `curriculum/facial-expressions-and-presence.md`, `curriculum/voice-and-speech.md`, and `curriculum/conversation-and-wit.md` — was it a freeze (nervous system), a missed signal (awareness), a knowledge gap (no script), or a delivery issue (voice/body)? Don't default to "you need more confidence" — name the specific mechanism.
+2. Pinpoint the *actual* failure point using `curriculum/breathing-and-nerves.md`, `curriculum/body-language.md`, `curriculum/facial-expressions-and-presence.md`, `curriculum/reading-signals.md`, `curriculum/voice-and-speech.md`, and `curriculum/conversation-and-wit.md` — was it a freeze (nervous system), a missed signal (awareness), a misread signal (calibration — see `reading-signals.md`), a knowledge gap (no script), or a delivery issue (voice/body)? Don't default to "you need more confidence" — name the specific mechanism.
 3. Give the corrected version: the exact physical/breathing adjustment and the exact words or action that would have worked, for next time this pattern shows up.
 4. Check `curriculum/social-scripts.md` — if this situation type isn't already covered, append a new entry (situation + best response + root cause) under "New Entries" at the bottom.
 5. Update `progress.md`: increment session count, log the situation under "Situations Debriefed," and add to "Patterns / Weak Points Identified" if this reveals a recurring theme rather than a one-off.
