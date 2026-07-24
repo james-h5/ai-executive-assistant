@@ -32,3 +32,8 @@ A growing reference of real and hypothetical situations, each broken down into w
 ---
 
 ## New Entries (appended by skill sessions below)
+
+### Senior/appraising figure asks what you do (e.g. a friend's parent, groom's mother, someone socially "watched")
+**Situation:** Someone higher-status or clearly evaluating you asks a plain question ("what are you up to these days?").
+**Best response:** State what you actually do plainly and stop — no self-deprecating minimizer tacked on the end ("not much," "nothing exciting"). Something genuinely solid (a double degree, a real skill) doesn't need to be shrunk to read as modest; downplaying reads as uncertainty about your own value, which is the opposite of what you want a senior/appraising person to pick up on.
+**Root cause (2026-07-24 practice session):** Filler ("you know") plus a minimizing close ("not much") both showed up specifically with the highest-status person drilled that session — confirms the stakes-linked filler pattern escalates further with senior/appraising figures specifically, not just "bigger crowd." See `voice-and-speech.md` and `breathing-and-nerves.md`.
