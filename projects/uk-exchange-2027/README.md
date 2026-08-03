@@ -23,7 +23,7 @@ A semester exchange at a QUT UK partner university during 2027 Semester 2 (Sept 
 ## Files
 - [university-shortlist.md](university-shortlist.md) — eligibility screen of all 22 UK partner unis against James's GPA/degree/undergrad status
 - [degree-plan-notes.md](degree-plan-notes.md) — how 2027 S2's overload load reconciles with a standard exchange semester, and what's still undecided
-- `study-plans/` — one file per university once we start unit-matching research
+- `study-plans/` — one file per university, plus `pass1-summary.md` (all 6 originally shortlisted) and `top4-summary.md` (consolidated unit tables for the 4 active candidates: Aston, Sheffield, Birmingham, City St George's)
 
 ## Next Steps
 - **Pass 1 complete** for all 6 shortlisted universities (Aston, Bristol, Leeds, Sheffield, City St George's, Manchester Met) — broad-net candidate units found for each, see `study-plans/` and the cross-university comparison in `study-plans/pass1-summary.md`
