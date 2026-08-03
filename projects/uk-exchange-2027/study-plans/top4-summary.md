@@ -13,7 +13,7 @@ Consolidates the Pass 1 (broad-net, title/description-level) findings for the fo
 
 | University | EGB345 (critical unit) | Overall engineering | Overall finance | Structural risk | Status |
 |---|---|---|---|---|---|
-| **Sheffield** | Strong | Strongest of the 4 | Good | Low-Medium | Top candidate |
+| **Sheffield** | Strong (verified, safe) | Strong *if* "subject to subject" exchange applies; only 1 safe match if "university wide" | Strong (verified, safe) | **Medium — hinges on 1 unresolved question** (see below) | Top candidate, pending the exchange-type question |
 | **Aston** | Strong | Good (4/5 fixed units match) | Strong | Low | Top candidate |
 | **Birmingham** | Partial (bundled) | Good | Good | Low-Medium | Solid 3rd |
 | **City St George's** | N/A | Likely inaccessible | Best of all, but moot | High — engineering exchange likely blocked | Low priority pending 1 question |
@@ -42,21 +42,22 @@ Consolidates the Pass 1 (broad-net, title/description-level) findings for the fo
 
 ## University of Sheffield
 
-**Admin:** Single-semester students take 40-60 credits (20-30 ECTS); cannot mix modules across two semesters (clean split, not full-year-heavy like Leeds). Level 300 (Year 3) needs "appropriate academic background" — fine given James's coursework. **Open items:** exact semester (autumn/spring) timing unconfirmed for any module (Sheffield's module database requires student login); Year 3 splits into specialisation pathways and the strongest lineup spans two of them — needs confirming exchange students can mix across pathways.
+**UPDATE (verified against the real 2026/27 exchange module catalogue — see `sheffield.md` for full detail):** the earlier Pass 1 findings below were based on Sheffield's general degree course page and turned out to name modules that don't actually match the real exchange catalogue (wrong codes, wrong department, or not semester-accessible). The real picture is more mixed — and hinges on one unresolved question.
 
-| QUT Unit | Sheffield Candidate(s) | Match |
-|---|---|---|
-| **EGB345** Control and Dynamic Systems | **Control Systems Design** (ACS230, Y3 "Electrical" pathway) | **Strong** |
-| **EGB341** Energy Supply and Delivery | **Energy Systems and Power Electronics** (Y3 "Electrical" pathway) + Electrical Energy Conversion (Y2, backup) | **Strong** |
-| **EGB342** Telecommunications and RF | **Communication Systems** (Y3 "Electronic and Communication" pathway) + Digital Signal Processing (Y3, backup) | **Strong** |
-| **EGB348** Electronics | Analogue Devices and Circuits (Y2) + Integrated Electronic and Semiconductor Systems (Y3, backup) | Good |
-| **EFB335** Investments | Economics with Finance BSc module (code TBD) | Good |
-| EFB343 Corporate Finance | Accounting and Financial Management BA module (code TBD) | Good |
-| EFB344 Risk Management and Derivatives | Only found at Finance MSc level — undergrad accessibility unconfirmed | Weak/Uncertain |
-| BSB399 Business Capstone | Nothing found | None |
-| EGH404 Research in Engineering Practice | Nothing found | None |
+**Critical open question:** the real catalogue splits exchange access into "subject to subject exchange students" and "university wide exchange students" columns — several of the best engineering matches are only open to the former. Whether QUT's Sheffield exchange counts as one or the other is unconfirmed and changes everything below.
 
-**Verdict:** The only university where all 4 core engineering units (EGB345, EGB341, EGB342, EGB348) have a genuinely good match — strongest engineering fit of the 4. A pure-engineering 4-unit exchange semester is realistic here, or swap one for EFB335/EFB343 if a finance unit is wanted.
+| QUT Unit | Sheffield Module (verified) | Safe if uni-wide only? | Match |
+|---|---|---|---|
+| **EGB345** Control and Dynamic Systems | **ELE307 Feedback Systems Design** (Autumn) | **Yes — safe either way** | **Strong** |
+| **EGB341** Energy Supply and Delivery | ELE305 Electrical Power Systems (Autumn) | **No — subject-exchange only** | Good, but access-uncertain |
+| **EGB348** Electronics | ELE309 Integrated Electronics (Autumn) | **No — subject-exchange only** | Good, but access-uncertain (fallback ELE203 Electric Circuits is safe but more basic) |
+| **EGB342** Telecommunications and RF | ELE337 Principles of Communications (Autumn) | **No — subject-exchange only** | Good, but access-uncertain |
+| EFB343 Corporate Finance | **MGT321 Advances in Corporate Finance** (Autumn) | **Yes — safe either way** | **Strong** |
+| EFB335 Investments | MGT3009 Company Analysis and Valuation (Autumn) | **Yes — safe either way** | Good |
+| EFB344 Risk Management and Derivatives | No Autumn match (best option, Financial Derivatives, is Spring-only) | — | None |
+| BSB399, EGH404 | Nothing found | — | None |
+
+**Verdict:** If the exchange turns out to be "subject to subject," Sheffield is still the strongest all-round pick. If it's "university wide" only, Sheffield realistically delivers just 1 strong engineering match (control systems) plus 2 finance matches — a real comedown from "strongest of the 4." **Resolving this one question is now the single highest-priority item across the whole shortlist.**
 
 ---
 

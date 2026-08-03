@@ -1,51 +1,46 @@
 ---
 type: project-doc
-description: University of Sheffield — Pass 1 broad-net candidate units (not yet scored for content-match %)
+description: University of Sheffield — VERIFIED against the actual 2026/27 exchange module catalogue (supersedes earlier general-web-search findings)
 ---
 
-# University of Sheffield — Candidate Units (Pass 1)
+# University of Sheffield — Candidate Units (Verified)
 
-Exchange structure looks clean: single-semester students choose 40-60 credits (20-30 ECTS), and **cannot select modules that run across two semesters** — same clean semester/full-year split as Bristol, not Leeds' messier pattern. Level 300 (Year 3) modules need "appropriate academic background" — should be fine given James's QUT coursework by 2027 S2.
+**Source: the real thing.** James found Sheffield's actual published "2026/27 University of Sheffield Study Abroad & Exchange Modules Catalogue" (Google Sheet, as of 26 May 2026) — 836 real modules with confirmed Autumn/Spring/Academic-Year timing and exchange-type eligibility flags. This replaces the earlier Pass 1 findings in this file, which were based on Sheffield's general degree course page (regular curriculum) and turned out to name modules ("Control Systems Design" ACS230, "Energy Systems and Power Electronics", "Communication Systems") that **don't actually match this real exchange catalogue** — either wrong department, wrong code, or not semester-accessible. Good thing this got checked before relying on it.
 
-Module semester timings weren't confirmed in this pass — Sheffield's official module database (`programmeregulationsfinder`) requires a student login, so semester needs confirming directly with Sheffield's Global Opportunities office before relying on any of this.
+**Critical open question:** the catalogue has two separate "available to exchange students" columns — **"subject to subject exchange students"** and **"university wide exchange students"** — and several of the best engineering matches are Yes to the first but No to the second. Whether James's QUT-Sheffield exchange counts as "subject to subject" (likely if it's a specific Engineering-faculty bilateral agreement) or "university wide" (likely if it's QUT's general central exchange office arrangement) **completely changes which modules are actually accessible to him.** This needs a direct answer from QUT's exchange office before finalising anything below.
 
-Sources: [Electrical and Electronic Engineering BEng course page](https://sheffield.ac.uk/undergraduate/courses/2027/electrical-and-electronic-engineering-beng), [What can I study?](https://sheffield.ac.uk/globalopps/inbound/apply/what)
+All modules below are **Autumn semester** (Sept–Jan, matches the window) unless noted — Academic Year modules were excluded since they can't be split for a single semester.
 
-## This is the strongest engineering match found so far
-Sheffield has genuinely dedicated Year 3 modules for three of the four engineering units — much better named/targeted than anything at Aston, Bristol, or Leeds:
+## Engineering (School: Electrical and Electronic Engineering)
 
-## Against EGB345 — Control and Dynamic Systems
-- **Control Systems Design** (Year 3 "Electrical" pathway core, 20cr, module code **ACS230** "Control Systems Design and Analysis") — excellent match: dynamic system modelling, state feedback, observers, model predictive control, hardware-in-the-loop labs
+| QUT Unit | Sheffield Module | Subject-exchange | Uni-wide exchange | Notes |
+|---|---|---|---|---|
+| **EGB345** Control and Dynamic Systems | **ELE307 Feedback Systems Design** (10cr) — modelling, analysis, design of feedback control systems, classical control theory, LTI systems | Yes | **Yes** | **Safe either way** — no prerequisite listed, strongest real match found |
+| EGB345 backup | ELE316 State-Space Control Design (10cr) | Yes | Yes | Safe either way, but needs ELE209/equivalent prereq — James's EGB345 background should satisfy "or equivalent study" |
+| EGB345 backup | ELE317 System Identification (10cr) | Yes | Yes | Safe either way |
+| **EGB341** Energy Supply and Delivery | ELE305 Electrical Power Systems (10cr) | Yes | **No** | **Only safe if James's exchange is "subject to subject"** — otherwise inaccessible |
+| EGB341 backup | ELE311 Power Engineering Electromagnetics (10cr) | Yes | **No** | Same risk |
+| **EGB348** Electronics | ELE309 Integrated Electronics (10cr) — IC circuit elements, VLSI design | Yes | **No** | Same risk — best-named match is restricted |
+| EGB348 fallback | ELE203 Electric Circuits (10cr) | Yes | **Yes** | Safe either way, but more basic/introductory than ideal |
+| **EGB342** Telecommunications and RF | ELE337 Principles of Communications (10cr) | Yes | **No** | Same risk |
 
-## Against EGB341 — Energy Supply and Delivery
-- **Energy Systems and Power Electronics** (Year 3 "Electrical" pathway core, 20cr) — excellent match: power grid structure, DC-DC/DC-AC conversion, protection systems, fault analysis. Best-named match after Leeds' ELEC5580M.
-- Electrical Energy Conversion (Year 2 core, 20cr) — backup, more machines/converters-focused (same partial gap as Aston/Bristol)
+**Read: if the exchange is "university wide" only**, Sheffield realistically delivers just **1 solid engineering match (EGB345 via ELE307)** plus a weak fallback for EGB348 — EGB341 and EGB342 would have no accessible Autumn option at all. **If "subject to subject" applies**, all four have a good-to-strong real match. This is now the single biggest thing to resolve before trusting Sheffield over Aston or Birmingham.
 
-## Against EGB342 — Telecommunications and RF
-- **Communication Systems** (Year 3 "Electronic and Communication" pathway core, 20cr) — excellent match: digital communication principles, modulation/coding, antenna structures
-- Digital Signal Processing (Year 3, optional across multiple pathways) — strong backup
+## Finance (Schools: Management, Economics)
 
-## Against EGB348 — Electronics
-- Analogue Devices and Circuits (Year 2 core, 20cr) — good match: semiconductor physics, transistors, diodes, LEDs, photodetectors, circuit design
-- Integrated Electronic and Semiconductor Systems (Year 3, "Electronic and Semiconductor" pathway core) — backup, broader scope (full hardware system design)
+Much better hit rate here — nearly everything in these two schools is Yes/Yes regardless of exchange type.
 
-## Against EFB335 — Investments
-- Economics with Finance BSc module (code not yet found) — strong content match: time value of money, risk/return/diversification, portfolio selection, CAPM, utility theory
+| QUT Unit | Sheffield Module | Subject-exchange | Uni-wide exchange | Notes |
+|---|---|---|---|---|
+| **EFB343** Corporate Finance | **MGT321 Advances in Corporate Finance** (20cr) | Yes | **Yes** | Excellent, exact-name match, safe either way |
+| **EFB335** Investments | MGT3009 Company Analysis and Valuation (20cr) | Yes | **Yes** | Decent match (asset valuation focus), safe either way |
+| EFB344 Risk Management and Derivatives | — | — | — | **No Autumn match** — the obvious one, MGT375 Financial Derivatives, is Spring only. Same recurring pattern seen at Bristol (derivatives content skewing to second semester) |
 
-## Against EFB343 — Corporate Finance
-- Accounting and Financial Management BA module (code not yet found) — strong match: corporate finance and asset pricing theory, debt/equity financing, M&A, market efficiency and behavioural biases (also touches EFB335 content)
+## Administrative notes
+- All Autumn modules carry a note that finishing in **December** (rather than staying to January) requires a proctored exam arranged between the school and home university — **doesn't apply to James**, since his plan is to stay through to January and sit exams with everyone else.
+- Credits: Sheffield states "2 Sheffield credits = 1 ECTS" — most engineering modules here are 10cr, finance ones 20cr. Need to convert properly against the 48 QUT cp target once a final 4-unit lineup is chosen (don't assume the same credit-per-module count as Aston/Bristol).
 
-## Against EFB344 — Risk Management and Derivatives
-- Only found at Finance MSc level (electives covering corporate finance, investment banking, financial markets, risk management) — **postgraduate**, uncertain whether accessible to an undergraduate exchange student
-
-## Against BSB399, EGH404
-No matches found — consistent with the pattern across every university checked so far. Business capstone and "research practice" prep units may not have a clean UK equivalent; better used as pure QUT-side reshuffle material (see `../degree-plan-notes.md`) rather than something to match abroad.
-
-## One real caveat: Year 3 "specialisation pathways"
-Sheffield's Year 3 splits into named pathways (Electrical / Electronic and Semiconductor / Electrical and Electronic / Electronic and Communication), each with its own core modules — a normal Sheffield student picks one pathway. Control Systems Design is core to "Electrical," Communication Systems is core to "Electronic and Communication" — different pathways. **Need to confirm exchange students can mix modules across pathways** rather than being locked into one, since the strongest 4-unit lineup here (Control Systems Design + Energy Systems and Power Electronics + Communication Systems + a finance unit) spans two different pathways.
-
-## Still to do (Pass 2, if Sheffield stays in contention)
-- Confirm semester (autumn/spring) for ACS230, Energy Systems and Power Electronics, Communication Systems, Analogue Devices and Circuits — directly with Sheffield's exchange office
-- Confirm cross-pathway module mixing is allowed for exchange students
-- Find module codes for the Economics-with-Finance and Accounting-and-Financial-Management modules identified above
-- Check whether EFB344 (Risk Management) has any undergraduate-level equivalent, or accept it's one to leave for the QUT-side reshuffle instead
+## Still to do
+1. **Resolve the subject-to-subject vs university-wide question** — ask QUT's exchange office directly which category the Sheffield partnership falls under. This determines whether Sheffield still leads the shortlist or drops behind Aston/Birmingham.
+2. If "university wide" only: re ask whether Sheffield is still worth it with just 1 strong engineering match (control systems) plus 2 finance matches, needing a 4th unit from somewhere weaker (ELE203 Electric Circuits, or fall back to the QUT-side reshuffle).
+3. Get the actual module credit values reconciled against the 48 QUT cp / 4-unit target.
