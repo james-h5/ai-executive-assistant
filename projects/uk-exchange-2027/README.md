@@ -26,7 +26,8 @@ A semester exchange at a QUT UK partner university during 2027 Semester 2 (Sept 
 - `study-plans/` — one file per university once we start unit-matching research
 
 ## Next Steps
-- Narrow the 19 eligible universities further using preference (city/location, program strength, cost of living) — pure eligibility still leaves too many to research unit-by-unit
-- Once narrowed, start per-university deep research: pull Sept 2027 unit catalogues, find direct-match candidates for EGB348 / EGB341 / EGB342 / EGB345 / EFB335 (research learning outcomes, credit value, contact hours, assessment — aim for 80%+ content match), save URLs + English-language outlines for the application
+- **Pass 1 complete** for all 6 shortlisted universities (Aston, Bristol, Leeds, Sheffield, City St George's, Manchester Met) — broad-net candidate units found for each, see `study-plans/` and the cross-university comparison in `study-plans/pass1-summary.md`
+- **Pass 2 priority: Sheffield and Aston** — strongest EGB345 (critical unit) matches, no major structural red flags, ready for detailed syllabus comparison + semester confirmation
+- **City St George's follow-up** — finance side is the strongest of any university found, but engineering side is an unresearched blind spot (course pages blocked) — worth the module-request-form route before ruling in or out
 - Keep watching 2026 Sem 2 GPA result — it decides whether King's College London moves from stretch to eligible, and reconfirms Leeds' thin margin
-- Once we see what's actually offered, decide which of the 5 current 2027 S2 QUT units doesn't get matched at exchange and where it gets rescheduled (see degree-plan-notes.md)
+- Once Pass 2 narrows to 1-2 real candidates, decide which of the 5 current 2027 S2 QUT units doesn't get matched at exchange and where it gets rescheduled (see degree-plan-notes.md)
