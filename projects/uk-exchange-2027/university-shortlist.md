@@ -47,5 +47,17 @@ Aston University · City University of London · Leeds Beckett University · Man
 ## Totals
 22 UK partners → 2 excluded, 19 eligible now, 1 stretch pending results.
 
+## Narrowing — clusters (2026-08-03)
+19 eligible is still too many to research unit-by-unit. Grouped by the factors that actually matter for James (weekend Europe travel access, cost of living, engineering/finance program fit):
+
+| Cluster | Universities | Notes |
+|---|---|---|
+| London | King's (stretch), City, Westminster, Regent's | Best Europe access (Eurostar + all major airports), strong finance-industry exposure, highest cost of living |
+| Big regional Russell Group | Bristol, Leeds, Sheffield, Birmingham, Liverpool | Strongest engineering depth — best odds of a real EGB345-equivalent match — good transport via regional airports, cheaper than London |
+| Post-92 / applied | Manchester Met, Nottingham Trent, Sheffield Hallam, Leeds Beckett, Aston, Oxford Brookes | Cheapest tier, often strong on business/finance specifically, engineering depth more variable — check unit content carefully |
+| Smaller / more remote | York, Hull, Exeter, Lancaster, Essex | Lower cost but 1hr+ to an airport for most — harder for weekend Europe trips |
+
+**Starting shortlist (6, spans clusters, avoids doubling up a city):** University of Bristol, University of Leeds, University of Sheffield, Aston University, City University of London, Manchester Metropolitan University. Pending James's reaction before starting `study-plans/` research on these.
+
 ## Next step
-This list is still too long to research unit-by-unit (each requires ~6 backup unit options with full outline research). Narrow further using non-eligibility factors — city vs. campus town, cost of living, program reputation for Engineering/Business, or personal preference (e.g. proximity to Europe for weekend trips) — before starting deep per-university research in `study-plans/`.
+Confirm/adjust the 6-university starting shortlist above, then start deep per-university research in `study-plans/` (unit catalogues for Sept 2027, direct-match candidates for EGB348/EGB341/EGB342/EGB345/EFB335, saved outlines + URLs).
