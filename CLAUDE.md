@@ -28,6 +28,7 @@ Active workstreams live in `projects/`. Each has a `README.md` with status, desc
 - `projects/ai-lead-generator/` — Trigger.dev automation: finds Brisbane trade leads weekly, enriches with Claude, pushes to ClickUp
 - `projects/language-learning/` — Conversational practice across Italian, Japanese, French, German
 - `projects/communication-excellence/` — Developing clear, confident expression
+- `projects/uk-exchange-2027/` — QUT semester exchange in the UK (Sept 2027–Jan 2028): university shortlist and unit-matching study plans
 
 ## Skills
 Skills live in `.claude/skills/`. Each skill is a folder: `.claude/skills/skill-name/SKILL.md`

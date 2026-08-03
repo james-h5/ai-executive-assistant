@@ -10,6 +10,8 @@ Source: QUT official course structure PDF for IX59 (fetched 2026-07-08).
 
 See `context/academic-record.md` for completed results and current enrolment.
 
+**Exchange note (2026-08-03):** James is planning a UK semester exchange for 2027 S2 (Sept 2027–Jan 2028) — see `projects/uk-exchange-2027/`. This isn't reflected in the plan below yet. Decided so far: exchange will only carry a standard 4-unit load, so one of the 5 units currently sitting in 2027 S2 (EGB348, EGB341, EGB342, EGB345, EFB335) will need to be pushed to a later semester. Which one, and where it lands, is still open — see `projects/uk-exchange-2027/degree-plan-notes.md`.
+
 ## Decisions locked in (2026-07-08, updated 2026-07-09)
 - **Business Core Unit Option → MGB130**, taken in Summer (placed in Summer 2026/27 below — adjust if a different summer period is meant). Doing it in Summer means it doesn't cost a regular-semester slot.
 - **Advanced Electrical electives → all 6 of interest**, not just the required 4: EGH445 (Modern Control), EGH446 (Autonomous Systems), EGH448 (Power Electronics), EGH449 (Advanced Electronics), EGH443 (Advanced Telecommunications and RF), EGH444 (Digital Signals and Image Processing).
