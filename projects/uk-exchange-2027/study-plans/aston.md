@@ -44,7 +44,9 @@ Sources: [BEng Electrical and Electronic Engineering](https://www.aston.ac.uk/st
 ## Read on the leftover-unit question
 EGB345 (the Sem-2-locked, gating unit) has Aston's *strongest* match — good, since that's the one we most want to avoid leaving over (see `../degree-plan-notes.md`).
 
-**Aston solves the EGB341 gap via a swap, not a defer:** EGB341 (Energy Supply and Delivery) has no good Aston match, but **EFB343 (Corporate Finance) and EFB344 (Risk Management and Derivatives) both match strongly** — either could take EGB341's slot in the exchange lineup, with EGB341 itself moved back into whichever slot the swapped-in unit vacates (2027 S1 or 2029 S1, both standard-load, no semester-lock on EGB341). That avoids the "add an extra semester" fallback entirely for Aston specifically — worth confirming this is your preferred fix once we've done the same check across the other 5 universities.
+**4 of the original 5 units already match well** (EGB345, EGB348, EGB342, EFB335) — that's a clean 4-unit exchange semester without needing the swap pool at all. Only EGB341 is left over, and it has no good Aston match.
+
+**Cleanest fix: relocate the overload, don't defer to an extra semester.** The degree plan already has exactly one overload semester built in (currently 2027 S2, 60cp/5 units). Since exchange forces that semester to a standard 4-unit load, the overload simply moves to a different semester instead — EGB341 becomes the 5th unit in 2027 S1 or 2029 S1 (both otherwise standard-load, no semester-lock on EGB341) rather than needing a brand-new extra semester. EFB343/EFB344 (both strong Aston matches) stay useful mainly as backup unit options for the "minimum 6 choices" application requirement on the finance side, not as required replacements.
 
 ## Still to do (Pass 2, once shortlist is finalised)
 - Pull actual module specs/syllabi (not just titles) for the candidates above to check learning outcomes, assessment, and contact hours against the QUT baseline in `../qut-unit-content.md` — aim for 80%+ content match
