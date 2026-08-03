@@ -38,5 +38,13 @@ James confirmed the following units can also be swapped into 2027 S2 (or matched
 
 **This changes the leftover-unit problem for the better.** Previously the plan was "leave the weakest-match unit unmatched, defer it, maybe add an extra semester." Now, if one of the fixed 5 has no good host match (e.g. EGB341's power-systems content is hard to find abroad), the fix can just be a **straight swap**: bring in whichever of these 4 units *does* have a strong host match instead, and move the weak-match unit into the slot the swapped-in unit vacates (2027 S1, 2028 S1, or 2029 S1 — all currently standard-load semesters with room, and none of the weak-match candidates carry a semester-lock). That potentially avoids needing an extra semester at all — worth checking per-university before falling back to the "defer + extra semester" option.
 
+## Worked example: Sheffield (verified against the real exchange catalogue, 2026-08-03)
+Sheffield's confirmed accessible 4-unit lineup is EGB345, EGB348 (weaker fallback), EFB335, **and EFB343** (pulled forward from 2027 S1, since Sheffield's Corporate Finance match is stronger than its remaining Investments-adjacent options) — see `study-plans/sheffield.md`. That leaves **EGB341 and EGB342 both homeless**, not just one:
+
+- **EGB342** has no prereq blocker (only needs EGB242, already done in 2026 S2) — and since EFB343 moving abroad frees up its old 2027 S1 slot, **EGB342 can drop straight into that vacancy**, keeping 2027 S1 at a standard 4 units (EGB240, EGB241, BSB399, EGB342).
+- **EGB341** needs EGB241, which is itself being done in 2027 S1 — so it *can't* fill that same vacancy (same-semester prereq conflict, no coreq exception like EGB242/MZB221 had). EGB341 is the one genuine leftover — it needs a new home in 2028 S1, 2028 S2, or 2029 S1 as that semester's overload unit (relocating the "one overload semester" from 2027 S2, as originally discussed), or a genuinely new/extra semester if none of those has room.
+
+**This is the general pattern worth applying to every university's real lineup, not just Sheffield:** figure out which of the swappable units (EFB343, EFB344, BSB399, EGH404) end up pulled into the exchange semester, since each one vacates a slot elsewhere in the degree that a homeless fixed-5 unit might cleanly fill — reducing the reshuffle from "two homeless units" down to "one genuinely homeless unit" whenever the freed slot and the homeless unit's prereqs line up.
+
 ## Cross-reference
 A short callout has been added to `context/degree-plan.md` pointing here, so future sessions reading the degree plan know an exchange decision is in flight for 2027 S2.
