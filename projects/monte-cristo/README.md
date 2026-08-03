@@ -33,6 +33,7 @@ The Count speaks his responses aloud (ElevenLabs TTS) rather than just printing 
 - **Facial expression and presence** — resting expression, smiling, reading a room, holding frame
 - **Reading signals** — recognizing interest and disinterest cues (verbal, proximity, touch) and calibrating the response
 - **Conversation and wit** — what to talk about, storytelling, banter, listening
+- **Motivating others** — moving people to act, rallying a group, leading by example
 - **A living library of situations** — real scenarios and best responses, growing over time
 - **A living library of stories** — James's own material, tightened for actual delivery
 
