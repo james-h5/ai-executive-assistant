@@ -35,8 +35,16 @@ Sources: [BEng Electrical and Electronic Engineering](https://www.aston.ac.uk/st
 - Derivatives / Further Topics in Derivatives (Final Year core)
 - Financial Analysis (Final Year optional)
 
+## Against the swappable units (see `../degree-plan-notes.md`)
+- **EFB343 — Corporate Finance:** strong match — Aston has **Corporate Finance** (Year 2 core) and **Advanced Corporate Finance** (Final Year core), both named/content matches
+- **EFB344 — Risk Management and Derivatives:** strong match — Aston's **Derivatives** and **Further Topics in Derivatives** (Final Year core) line up well with the market-risk/derivatives focus
+- **BSB399 — Business Capstone:** no clean equivalent identified yet — Aston's Business School page didn't surface a standalone capstone-style module in this pass; likely a weaker candidate to match abroad anyway per the "final year enrolment rule" and integration caveats noted in degree-plan-notes.md
+- **EGH404 — Research in Engineering Practice:** no direct equivalent found — Aston's Year 3 has "Professional Engineering Practice" (partial overlap on professional practice, not research methodology) and "Final Year Project" (too large in scope vs. a single 15cr prep unit) — worth checking Aston's actual module descriptors before ruling it out
+
 ## Read on the leftover-unit question
-EGB345 (the Sem-2-locked, gating unit) has Aston's *strongest* match — good, since that's the one we most want to avoid leaving over (see `../degree-plan-notes.md`). **EGB341 is the weak link here** — if Aston is chosen, EGB341 is the likely candidate to push out of 2027 S2 rather than EGB345, which is the lower-risk outcome given EGB341 has no semester-lock or downstream gating.
+EGB345 (the Sem-2-locked, gating unit) has Aston's *strongest* match — good, since that's the one we most want to avoid leaving over (see `../degree-plan-notes.md`).
+
+**Aston solves the EGB341 gap via a swap, not a defer:** EGB341 (Energy Supply and Delivery) has no good Aston match, but **EFB343 (Corporate Finance) and EFB344 (Risk Management and Derivatives) both match strongly** — either could take EGB341's slot in the exchange lineup, with EGB341 itself moved back into whichever slot the swapped-in unit vacates (2027 S1 or 2029 S1, both standard-load, no semester-lock on EGB341). That avoids the "add an extra semester" fallback entirely for Aston specifically — worth confirming this is your preferred fix once we've done the same check across the other 5 universities.
 
 ## Still to do (Pass 2, once shortlist is finalised)
 - Pull actual module specs/syllabi (not just titles) for the candidates above to check learning outcomes, assessment, and contact hours against the QUT baseline in `../qut-unit-content.md` — aim for 80%+ content match
