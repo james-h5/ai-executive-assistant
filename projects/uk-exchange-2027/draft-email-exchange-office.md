@@ -5,32 +5,32 @@ description: Draft email to QUT's Study Abroad and Exchange office re Sheffield 
 
 # Draft — email to QUT Study Abroad & Exchange
 
-**Subject:** Sheffield exchange enquiry — unit swaps, full-year credit mapping, and accelerated progression
+**Subject:** Sheffield exchange - a few questions
 
 Hi,
 
-I'm currently in second year of my Bachelor of Business / Bachelor of Engineering (Honours) — Finance and Electrical Engineering — and I'm looking into a QUT exchange to the UK, specifically the University of Sheffield.
+I'm currently in second year of my Bachelor of Business/Bachelor of Engineering (Honours) - Finance and Electrical Engineering - and I'm looking at doing an exchange to the University of Sheffield in the UK.
 
-I haven't locked in semester length yet — still deciding between one semester and a full academic year, currently leaning toward the full year — but I've started mapping out which Sheffield units would match my QUT units either way. Some of what I'm planning to take:
+I haven't decided between one semester or a full year yet, leaning towards a full year at the moment. I've started looking into which Sheffield units would match up with my QUT units either way, some of what I'm thinking of taking is:
 
-- ELE307 Feedback Systems Design → EGB345 Control and Dynamic Systems
-- ELE220 Analogue and Digital Electronics → EGB348 Electronics
-- ELE210 Electrical Energy Management and Conversion → EGB341 Energy Supply and Delivery
-- ELE212 Signals, Systems, and Communications → EGB342 Telecommunications and RF
-- MGT3009 Company Analysis and Valuation → EFB335 Investments
-- MGT321 Advances in Corporate Finance → EFB343 Corporate Finance
+ELE307 Feedback Systems Design (for EGB345)
+ELE220 Analogue and Digital Electronics (for EGB348)
+ELE210 Electrical Energy Management and Conversion (for EGB341)
+ELE212 Signals, Systems and Communications (for EGB342)
+MGT3009 Company Analysis and Valuation (for EFB335)
+MGT321 Advances in Corporate Finance (for EFB343)
 
-(If it ends up being a full year, this would extend into a couple of my 2028 Semester 1 units too — still working through exact matches there.)
+If I end up doing the full year this would probably also cover a couple of my 2028 Sem 1 units too, still working that part out.
 
-A few things I'd like to check before I get further into the application:
+A few things I wanted to ask before I get further into this:
 
-1. **How often do proposed exchange units end up getting swapped for different QUT unit credit** once an application is approved — e.g. if a module gets cancelled or clashes once I'm there and I need to use one of my backup options instead, how much friction is that in practice?
+How often do exchange units end up getting swapped for different QUT credit once you're approved? Just wondering how much of a hassle it is if a unit gets cancelled or clashes once I'm actually over there and I need to use a backup instead.
 
-2. **Does a full academic year Sheffield module count toward one QUT unit or two?** Some of Sheffield's modules run as a single "Academic Year" module (worth 20 Sheffield credits, spanning both their semesters) rather than splitting into two separate semester-length modules — I want to understand whether that maps to one QUT unit equivalent or whether it could count toward two.
+Does a full academic year unit at Sheffield count as one QUT unit or two? A few of their modules run as one "Academic Year" module worth 20 credits across both their semesters rather than splitting into two separate ones, so wasn't sure if that counts as one QUT unit equivalent or two.
 
-3. **Given I've accelerated my degree** — I've done summer units and a couple of 5-unit overload semesters — is there anything about that non-standard pace that would affect how the exchange units get credited, or is there a chance I'd need to complete some units again at QUT despite having done the exchange?
+Also I've accelerated my degree a bit, I've done summer units and a couple of overloaded 5-unit semesters. Does that affect how the exchange units would get credited at all, or is there a chance I'd have to do some units again at QUT even after doing the exchange?
 
-Appreciate any guidance on these — happy to jump on a call if that's easier than email.
+Let me know if it's easier to chat about this on a call.
 
 Thanks,
-James Heathcote
+James
