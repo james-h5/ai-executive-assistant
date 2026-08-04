@@ -30,6 +30,8 @@ Does a full academic year unit at Sheffield count as one QUT unit or two? A few 
 
 Also I've accelerated my degree a bit, I've done summer units and a couple of overloaded 5-unit semesters. Does that affect how the exchange units would get credited at all, or is there a chance I'd have to do some units again at QUT even after doing the exchange?
 
+One more thing - if you've got any advice on going for a semester vs a full year I'd really appreciate it, still going back and forth on it. I've also got a British passport along with my Australian one, so I'd be able to work over there while studying if I wanted to, not sure if that's relevant on your end or just something between me and Sheffield. And I saw OS-HELP lets you take out two loans if you're doing a full year since it counts as two separate six month periods - just want to confirm that's actually correct before I factor it into my budget.
+
 Let me know if it's easier to chat about this on a call.
 
 Thanks,
