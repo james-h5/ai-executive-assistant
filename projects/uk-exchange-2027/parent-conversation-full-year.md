@@ -8,6 +8,30 @@ description: Talking points and precautions for the full-year-vs-semester conver
 ## The pitch, in one line
 The academic case for a full year at Sheffield is actually *stronger* than the semester (all 9 QUT units across both displaced semesters have real matches, vs. 2 needing rework for a semester alone), the cost gap is smaller than a naive "double the money" assumption, and none of it touches the mid-2029 graduation target.
 
+## The money conversation, specifically (this is where it'll actually go)
+
+You already know the shape of it: he asks where the money's coming from, you say the OS-HELP loan, he says you still have to pay that off, you say you'll try get a job. Here's what to have cold for the exchange after that, since "I'll try get a job" on its own won't land as a real answer — it needs a number behind it.
+
+**The full picture, worst-case:**
+| | Amount |
+|---|---|
+| Full year total cost (lean budget, worst-case ceiling) | ~$31,500 AUD |
+| Minus savings already in the bank | −$9,300 |
+| Minus OS-HELP (two loans — full year is two separate 6-month periods) | −$16,884 |
+| **Gap remaining, before you've earned a single dollar over there** | **~$5,300 AUD** |
+
+That's the number to lead with, not "I'll get a job" in the abstract — **you're already ~83% funded before any UK income**, and the remaining ~$5,300 is what a part-time bar job over there is closing, not the whole trip. That reframes it from "I'm hoping it works out" to "the gap I actually need to cover is small and specific."
+
+**On "you still have to pay that off" — have these three facts ready:**
+- OS-HELP debt isn't like a normal loan — no real interest, just indexed to inflation/wages (whichever is lower), and it can't be called in or demand a fixed monthly payment.
+- It's repaid automatically through the tax system, only once you're earning above $69,528/year, as a percentage of income above that line — not a bill that shows up.
+- You're going to carry HECS debt from the degree regardless of this trip (realistically $60-80k by graduation just from the double degree). The $16,884 OS-HELP is roughly a 20-25% add-on to debt you're already taking on either way — not a new, separate financial burden category.
+
+**On the job specifically, if he pushes on "what if you can't get one":**
+- British passport means no visa or hours restriction — you're not competing with international students capped at 20hrs/week.
+- You've already got real bartending experience, which is exactly the kind of work a 65,000-student city like Sheffield has constant demand for.
+- But keep it honest: the job is what shrinks the ~$5,300 gap further and builds a buffer — it was never the thing making the trip possible in the first place. The savings + loan already do that.
+
 ## Concern → answer
 
 **"Can you actually afford this without needing bailout money from us?"**
