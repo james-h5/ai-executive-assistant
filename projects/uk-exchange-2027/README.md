@@ -21,6 +21,7 @@ A semester exchange at a QUT UK partner university during 2027 Semester 2 (Sept 
 - Application: universities require a minimum of 6 unit options per preference — the more approved before departure, the smoother registration at the host university
 
 ## Files
+- [europe-bucket-list.md](europe-bucket-list.md) — exhaustive country-by-country bucket list for the backpacking legs, history-led with nature/beach/nightlife spots mixed in
 - [university-shortlist.md](university-shortlist.md) — eligibility screen of all 22 UK partner unis against James's GPA/degree/undergrad status (full list — kept in case a 4th/5th preference is ever needed)
 - [degree-plan-notes.md](degree-plan-notes.md) — how the exchange load reconciles with the standard QUT degree plan, including the worked Sheffield reshuffle example
 - [qut-unit-content.md](qut-unit-content.md) — content baseline for the 9 QUT units in play (5 fixed 2027 S2 + 4 swappable), used to judge host-university matches
