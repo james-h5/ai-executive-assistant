@@ -1,0 +1,80 @@
+---
+name: party-comparison
+type: project
+description: 
+---
+
+# Party Comparison
+
+Working doc â€” see `README.md` for the method. Every claim below is attributed to a source; nothing here is asserted from memory. Where a party's own site is the source, treat it as "what they say" (their framing), not a neutral fact â€” cross-check the independent/analysis sources alongside it. **"Your take" fields are for James to fill in â€” not pre-populated.**
+
+Sourced as of Aug 2026. Party platforms and track records shift â€” re-check sources before relying on this for a live decision (e.g. an actual election).
+
+## Feasibility context (check before assuming any policy would happen)
+
+Post-2025 election numbers (source: [Wikipedia â€” 2025 Australian House of Representatives election](https://en.wikipedia.org/wiki/2025_Australian_House_of_Representatives_election), [2025 Australian Senate election](https://en.wikipedia.org/wiki/2025_Australian_Senate_election)):
+- **House of Reps:** Labor 94 seats (governing with a strong majority) Â· Coalition 43 Â· Greens 1 Â· Independents ~10 Â· One Nation 0 (despite ~6.4% of the primary vote â€” House seats are single-member electorates, so a spread-out vote share doesn't convert to seats the way it does in the Senate)
+- **Senate:** Labor 29 (close to a working majority on its own) Â· Coalition 13 Â· Greens hold several Â· One Nation holds a handful â€” the Greens' post-2022 "balance of power" leverage is reduced now that Labor sits closer to a Senate majority
+
+**What this means for reading the table below:** Labor's policies are current government action, already legislated in many cases (marked below). Coalition/Greens/One Nation policies are opposition or minor-party *positions* â€” real signals of intent, but they need the numbers (or a minority government) to become law. One Nation in particular has real Senate influence on marginal votes but no House seats, so its House-of-Reps-style policies are aspirational, not governing platforms.
+
+---
+
+## Education & HECS
+
+| | Labor | Coalition | Greens | One Nation |
+|---|---|---|---|---|
+| **What they say** | Cut all HECS/HELP-type debt (HECS-HELP, FEE-HELP, OS-HELP, SA-HELP, START-UP HELP) by 20%; lifted the repayment threshold from $54,435 to $67,000 | Opposed Labor's 20% debt cut, calling it "elitist" and "unfair" to non-graduates (e.g. tradies); own record includes the Job-Ready Graduates scheme (cheaper teaching/nursing/psych degrees, doubled fees for law/business/humanities/arts) | Abolish all student debt outright (HELP, SFSS, VET) and make TAFE/university free, funded by taxing "excessive" corporate profits | Opposes blanket debt forgiveness as unfair to non-graduates and taxpayers; favours targeted relief â€” e.g. HECS-HELP paid in full for doctors/nurses who take bonded rural/regional placements, discounted fees for regional educators |
+| **Track record / status** | **Already legislated and passed** â€” this is enacted government policy, not a promise | Voted against the 20% cut in Parliament | No governing track record (1 House seat, Senate presence) â€” policy is a stated platform position, not something enacted | Pauline Hanson has voted in the Senate generally *for* increasing HECS-HELP indexation (the opposite direction to debt relief) â€” see [They Vote For You](https://theyvoteforyou.org.au/people/senate/queensland/pauline_hanson/policies/70) |
+| **Trade-offs** | Analysts note the cut helps existing debt-holders but arts/humanities students still wait longer for lower ongoing fees; a fixed % cut gives a larger dollar benefit to people with bigger debts | Protects budget/taxpayer cost but leaves existing debt (and its indexation) in place | Removing debt makes higher study "free" at point of use but funding depends on the billionaires/corporate tax being enacted (see Tax section) â€” contested revenue estimate | Targeted-relief model helps rural workforce shortages directly but does nothing for graduates outside the bonded professions |
+| **Sources** | [ministers.education.gov.au](https://ministers.education.gov.au/anthony-albanese/albanese-labor-government-cut-further-20-cent-all-student-loans-debt) Â· [The Conversation](https://theconversation.com/labor-has-promised-fast-action-to-cut-student-debt-but-arts-students-will-have-to-wait-for-lower-fees-255872) | [SBS News](https://www.sbs.com.au/news/article/the-coalition-wont-back-labors-plan-to-wipe-student-debt-saying-its-unfair-to-tradies/oos11zr1h) | [greens.org.au/education](https://greens.org.au/education) Â· [SBS News](https://www.sbs.com.au/news/article/greens-announce-plan-to-wipe-hecs-debts-and-make-university-free/wr5ntj9zz) | [onenation.org.au](https://www.onenation.org.au/hanson-hecs-fairness) Â· [They Vote For You](https://theyvoteforyou.org.au/people/senate/queensland/pauline_hanson/policies/70) |
+| **Your take** | | | | |
+
+---
+
+## Immigration & Migration
+
+| | Labor | Coalition | Greens | One Nation |
+|---|---|---|---|---|
+| **What they say** | Not targeting a sharp cut â€” focused on composition/management. 2026-27 Budget forecasts net overseas migration of 245,000, moderating to ~225,000/yr from 2027-30. Permanent migration program capped at 185,000/yr (~71% skilled) | Cap net overseas migration to the number of new homes built the previous year â€” currently ~173,000-180,000/yr, explicitly tied to the housing shortage; migration to run *below* the cap initially to let housing "catch up" | Only major party not proposing a migration cut â€” argues Australia "benefits from immigration." Wants refugee intake raised to 50,000/yr, a 7-day cap on immigration detention, and a Royal Commission into refugee treatment over the past decade | Net-zero migration target â€” arrivals capped at 130,000/yr, engineered to roughly equal departures (net ~-100,000 from recent levels); plans to deport ~75,000 people it defines as unlawful/overstayers |
+| **Track record / status** | Governing policy â€” the Skills in Demand visa (replacing the old Temporary Skill Shortage visa) is already in effect; a Skills Migration Commissioner is under consultation | Not in government â€” this is an opposition policy platform, not enacted | Not in government; Senate presence lets Greens push back on legislation (e.g. opposed a 2026 migration bill giving the Home Affairs Minister power to block visa holders travelling to Australia) | Not in government (0 House seats); Senate presence only â€” cannot legislate this alone |
+| **Trade-offs** | Business/industry groups value the skilled-migration pipeline; critics link net migration levels to housing/rental pressure | Directly targets housing affordability but ties migration policy to a volatile input (annual home completions) â€” commentators flag it could swing sharply year to year | Higher refugee intake and shorter detention limits address humanitarian concerns but the policy doesn't engage with the housing-pressure argument driving the other parties' positions | A sharp cut would ease housing demand pressure per its own logic, but critics (cited in coverage) argue it would hit skilled-labour and population-growth-dependent sectors hard |
+| **Sources** | [First Migration Service Centre](https://firstmigrationservice.com/en/news/australia-federal-election-migration-policy-comparison-2026/) Â· [ANU Reporter](https://reporter.anu.edu.au/all-stories/changes-needed-to-make-australias-migration-program-fit-for-purpose) | [liberal.org.au](https://www.liberal.org.au/our-plan/migration) Â· [The Conversation](https://theconversation.com/coalition-would-set-net-overseas-migration-under-180-000-bragg-289487) | [greens.org.au/policies/immigration-and-refugees](https://greens.org.au/policies/immigration-and-refugees) Â· [greens.org.au media release](https://greens.org.au/news/media-release/war-parties-pass-law-shut-door-iranian-refugees) | [SBS News](https://www.sbs.com.au/news/article/one-nation-migration-policy-130000-net-migration/zm6jbf83d) Â· [SBS comparison piece](https://www.sbs.com.au/news/article/migration-policy-labor-coalition-greens-one-nation/7dsd8r7y9) |
+| **Your take** | | | | |
+
+---
+
+## Tax & Small Business
+
+| | Labor | Coalition | Greens | One Nation |
+|---|---|---|---|---|
+| **What they say** | Made the $20,000 instant asset write-off permanent (turnover < $10m); introduced a company loss carry-back regime (turnover < $1bn) letting losses offset tax paid up to 2 years earlier | Would raise the instant asset write-off ceiling to $30,000-$50,000; scrap Labor's 30% minimum tax on trusts and its Capital Gains Tax changes (calls it a "start-up tax"); index the bottom two income tax thresholds to inflation from 2028-29 | 10% annual wealth tax on billionaires' net worth (5% on $100m-$1bn), plus a 40% "corporate super-profits tax" on profits above $100m turnover â€” projected by the party (citing PBO modelling) to raise ~$85bn (wealth tax) and ~$296bn over 10 years (super-profits tax) | Longstanding policy (dating to 1985, revived 2017) for a flat 2% turnover tax on every change of ownership of goods/services/property, replacing income tax, company tax, GST, CGT, FBT and payroll-style taxes entirely |
+| **Track record / status** | Enacted â€” permanent instant asset write-off and loss carry-back are legislated 2026-27 Budget measures | Opposition platform, not enacted; some elements (trust tax, CGT changes) are reversals of *Labor's* current-term legislation, contingent on winning government | Not in government; revenue projections are the party's own modelling (with PBO costing behind the billionaires tax specifically) â€” independent commentary flags business-backlash risk to the super-profits tax | Never implemented in any Australian jurisdiction; independent modelling (The Australia Institute) estimates a ~$232bn / 13.3% of GDP revenue shortfall versus current tax take, and flags a turnover tax as regressive (hits lower-income spending harder than income-based tax) |
+| **Trade-offs** | Cash-flow relief is real (~$890m over 5 years) but modest in scale relative to the broader tax system | Bigger write-off ceiling helps larger small businesses more than very small ones; threshold indexation is deferred to 2028-29, not immediate | Directly targets wealth concentration, but revenue estimates are contested and a 40% super-profits tax could affect investment decisions in ways not fully modelled in the party's own figures | The stated goal (cut prices, cut compliance costs) is real, but the revenue-shortfall and regressivity findings come from independent economic modelling, not from One Nation itself â€” worth reading both sides here |
+| **Sources** | [business.gov.au](https://business.gov.au/news/budget-2026-27) Â· [KPMG](https://kpmg.com/us/en/taxnewsflash/news/2026/06/australia-loss-carry-back-instant-asset-write-off.html) | [liberal.org.au/our-plan/tax](https://www.liberal.org.au/our-plan/tax) | [greens.org.au/platform/fair-share](https://greens.org.au/platform/fair-share) Â· [PBO costing](https://www.pbo.gov.au/sites/default/files/2023-05/ECR533%20Billionaires%20Tax%20-%20Australian%20Greens.pdf) | [The Australia Institute](https://australiainstitute.org.au/report/easytax-resurrected-a-look-at-one-nations-economic-and-taxation-policies/) Â· [isidewith summary](https://australia.isidewith.com/parties/one-nation/policies/economic/taxes-2) |
+| **Your take** | | | | |
+
+---
+
+## Energy & Cost of Living
+
+| | Labor | Coalition | Greens | One Nation |
+|---|---|---|---|---|
+| **What they say** | 82% renewables target for the National Electricity Market by 2030; legislated 43% emissions cut by 2030; $20bn "Rewiring the Nation" grid fund; $2.3bn Cheaper Home Batteries Program (up to 30% subsidy, ~$4,000 saving) | Lift the moratorium on nuclear power â€” federally-owned plants from the mid-2030s through to 2050; walked back the 2030 43%-reduction target; expanded an east-coast gas reserve and constrained some regional renewables projects | Phase out coal-fired power by 2030 (AEMO-managed closure schedule) and thermal coal exports by 2030; ban new coal/oil/gas projects and cancel exploration permits; target net-zero by 2035 (more aggressive than Labor's) | Scrap net zero entirely and withdraw from the Paris Agreement; build new coal-fired power stations; lift the nuclear ban; abolish the Department of Climate Change (claimed $30bn/yr saving); claims ~20% household/business energy cost reduction |
+| **Track record / status** | Enacted â€” 43% target is legislated; battery program and grid funding are current budget items | Opposition platform; nuclear build would need the current moratorium repealed via legislation, and independent analysis (Grattan Institute, CSU) says the plan wouldn't reach net zero by 2050 as currently costed | Senate presence gives leverage on climate legislation but no House seats to govern; 2035 net-zero target is a party platform, not enacted policy | Senate-only presence; cannot repeal net zero or withdraw from Paris without government numbers it doesn't have |
+| **Trade-offs** | Renewables build-out is capital-intensive and grid/transmission delays are a live risk; battery subsidy helps homeowners more than renters | Nuclear has long lead times (first plants not until mid-2030s) â€” critics argue it does little for near-term prices/emissions; independent modelling projects roughly double the electricity-sector emissions of Labor's approach through 2050 | Faster fossil-fuel phase-out reduces long-run emissions/price exposure to volatile gas/coal markets, but a 2030 coal-closure timeline is aggressive relative to current grid replacement capacity | Framed as cheaper and more reliable baseload power; independent commentary (linked in Coalition/Greens rows above) disputes the net-zero and emissions math behind similar coal/gas-forward proposals |
+| **Sources** | [Clayton Utz](https://www.claytonutz.com/insights/2025/may/powering-australia-how-labor-s-energy-policies-will-shape-the-next-decade) Â· [Carbon Brief](https://www.carbonbrief.org/qa-what-does-the-new-australian-labor-government-mean-for-climate-change) | [liberal.org.au](https://www.liberal.org.au/2025/11/13/affordable-and-responsible-the-liberal-plan-for-affordable-energy-and-lower-emissions) Â· [Grattan Institute](https://grattan.edu.au/news/six-problems-with-the-coalitions-nuclear-plan/) | [greens.org.au/policies/climate-change-and-energy](https://greens.org.au/policies/climate-change-and-energy) Â· [greens.org.au/campaigns/no-more-coal-and-gas](https://greens.org.au/campaigns/no-more-coal-and-gas) | [onenation.org.au/abolish-net-zero-policy](https://www.onenation.org.au/abolish-net-zero-policy) Â· [Energy News Bulletin](https://www.energynewsbulletin.net/energy-transition/news-articles/4534443/pauline-hanson-scrapping-net-zero-rubbish) |
+| **Your take** | | | | |
+
+---
+
+## A note on independents/teals
+
+Not a single bloc â€” but the Climate 200-backed "teal" independents (mostly ex-Liberal seats) share three campaign commitments: stronger climate action (some pushing up to 75% emissions reduction by 2035, beyond Labor's target), political integrity/accountability reform, and gender equality â€” while generally keeping fiscally conservative, small-l-liberal positions elsewhere. Worth factoring in if your own electorate has one, since they can hold real leverage in a minority Parliament even without forming government. Source: [Wikipedia â€” Teal independents](https://en.wikipedia.org/wiki/Teal_independents), [Micah Australia](https://www.micahaustralia.org/news/where-do-the-independents-stand-on-global-issues/).
+
+## Neutral trackers worth bookmarking directly
+
+- [They Vote For You](https://theyvoteforyou.org.au) â€” every MP/Senator's actual votes, non-partisan
+- [isidewith.com/australia](https://australia.isidewith.com) â€” policy-by-policy party positions with sourcing
+- [buildaballot.org.au](https://www.buildaballot.org.au) â€” plain-language party policy summaries
+- [ABC Vote Compass](https://www.abc.net.au/news/elections/vote-compass) â€” runs during election campaigns

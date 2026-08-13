@@ -29,6 +29,7 @@ Active workstreams live in `projects/`. Each has a `README.md` with status, desc
 - `projects/language-learning/` — Conversational practice across Italian, Japanese, French, German
 - `projects/communication-excellence/` — Developing clear, confident expression
 - `projects/uk-exchange-2027/` — QUT semester exchange in the UK (Sept 2027–Jan 2028): university shortlist and unit-matching study plans
+- `projects/political-literacy/` — Framework + sourced comparison doc for evaluating party policies from primary sources instead of headlines/social media
 
 ## Skills
 Skills live in `.claude/skills/`. Each skill is a folder: `.claude/skills/skill-name/SKILL.md`
