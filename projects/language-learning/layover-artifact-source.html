@@ -1,0 +1,605 @@
+<title>Layover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ground: #12161d;
+    --surface: #1b212b;
+    --surface-raised: #232b37;
+    --border: #333d4c;
+    --border-soft: #262f3b;
+    --text: #eef1f6;
+    --text-dim: #8f9aad;
+    --text-faint: #5c6779;
+    --accent: #f2a93b;
+    --accent-soft: #3a3020;
+    --accent-text: #1c1409;
+    --success: #5fb489;
+    --success-soft: #1c2b25;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+    --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  html { color-scheme: dark; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    background-image:
+      radial-gradient(circle at 15% 8%, rgba(242, 169, 59, 0.05), transparent 40%),
+      radial-gradient(circle at 85% 92%, rgba(95, 180, 137, 0.04), transparent 40%);
+    color: var(--text);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px 18px 60px;
+  }
+
+  .app {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  header.masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1 {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: clamp(2rem, 8vw, 2.6rem);
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+  }
+
+  .tagline {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    max-width: 38ch;
+  }
+
+  /* Language chips */
+  .lang-row {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+  }
+
+  .lang-chip {
+    flex: 0 0 auto;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 9px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+
+  .lang-chip:hover { border-color: var(--text-faint); color: var(--text); }
+
+  .lang-chip[aria-pressed="true"] {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .lang-chip .badge {
+    font-size: 0.72rem;
+    color: var(--text-faint);
+    background: rgba(255,255,255,0.06);
+    border-radius: 999px;
+    padding: 1px 7px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lang-chip[aria-pressed="true"] .badge {
+    background: rgba(242, 169, 59, 0.18);
+    color: var(--accent);
+  }
+
+  /* Stats row */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .stat {
+    background: var(--surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+
+  .stat .n {
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    color: var(--text);
+  }
+
+  .stat.due .n { color: var(--accent); }
+  .stat.mastered .n { color: var(--success); }
+
+  .stat .label {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-top: 2px;
+  }
+
+  /* Card */
+  .deck {
+    perspective: 1200px;
+    min-height: 260px;
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(.2,.8,.3,1);
+  }
+
+  .card.flipped { transform: rotateY(180deg); }
+
+  .face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .face.front {
+    background:
+      repeating-linear-gradient(to bottom, transparent 0 9px, transparent 9px) ,
+      var(--surface);
+    position: relative;
+  }
+
+  .face.front::before {
+    content: "";
+    position: absolute;
+    left: 22px; right: 22px; top: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, var(--border) 50%, transparent 50%);
+    background-size: 10px 1px;
+  }
+
+  .face.back {
+    transform: rotateY(180deg);
+    background: var(--surface-raised);
+  }
+
+  .card-lang {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+  }
+
+  .phrase {
+    font-family: var(--font-mono);
+    font-size: clamp(1.5rem, 7vw, 2.1rem);
+    font-weight: 600;
+    line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  .hint {
+    font-size: 0.82rem;
+    color: var(--text-faint);
+  }
+
+  .pron {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--accent);
+  }
+
+  .meaning {
+    font-size: 1.15rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Actions */
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .actions button {
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 13px 10px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.1s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .actions button:disabled { opacity: 0.35; cursor: default; }
+
+  .actions button:not(:disabled):hover { border-color: var(--text-faint); }
+  .actions button:not(:disabled):active { transform: scale(0.98); }
+
+  .actions .got-it:not(:disabled) { border-color: var(--success); color: var(--success); }
+  .actions .still-learning:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+
+  .empty-state {
+    min-height: 260px;
+    border-radius: 16px;
+    border: 1px dashed var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    padding: 24px;
+    color: var(--text-dim);
+  }
+
+  .empty-state .big { font-family: var(--font-mono); font-size: 1.1rem; color: var(--text); }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: var(--text-faint);
+  }
+
+  footer button {
+    background: none;
+    border: none;
+    color: var(--text-faint);
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 4px 0;
+  }
+
+  footer button:hover { color: var(--text-dim); }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+</style>
+
+<div class="app">
+  <header class="masthead">
+    <span class="eyebrow">Now boarding · vocab review</span>
+    <h1>Layover</h1>
+    <p class="tagline">A few minutes between sessions to keep the words that matter. Tap a card to reveal it.</p>
+  </header>
+
+  <nav class="lang-row" id="langRow" role="tablist" aria-label="Language"></nav>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="deck" id="deck"></div>
+
+  <div class="actions" id="actions">
+    <button class="still-learning" id="btnStillLearning" disabled>Still learning</button>
+    <button class="got-it" id="btnGotIt" disabled>Got it</button>
+  </div>
+
+  <footer>
+    <span id="footNote">Progress saves to this browser.</span>
+    <button id="btnReviewAll" type="button">Review all again</button>
+  </footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---- Seed vocabulary ---------------------------------------------------
+  // Survival phrases from projects/language-learning/primers/*.md.
+  // Extend each list here after logging new vocab from a /learn-language session.
+  var DATA = {
+    spanish: {
+      label: "Spanish",
+      words: [
+        ["Hola", "OH-lah", "Hello"],
+        ["Por favor", "por fah-VOR", "Please"],
+        ["Gracias", "GRAH-syahs", "Thank you"],
+        ["De nada", "deh NAH-dah", "You're welcome"],
+        ["Sí", "see", "Yes"],
+        ["No", "noh", "No"],
+        ["Perdón", "per-DOHN", "Sorry / excuse me"],
+        ["¿Habla inglés?", "AH-blah een-GLESS", "Do you speak English?"],
+        ["¿Cuánto cuesta?", "KWAN-toh KWES-tah", "How much does it cost?"],
+        ["Me llamo...", "meh YAH-moh", "My name is..."]
+      ]
+    },
+    italian: {
+      label: "Italian",
+      words: [
+        ["Ciao", "chow", "Hi"],
+        ["Per favore", "per fah-VOH-reh", "Please"],
+        ["Grazie", "GRAHT-syeh", "Thank you"],
+        ["Prego", "PREH-goh", "You're welcome"],
+        ["Sì", "see", "Yes"],
+        ["No", "noh", "No"],
+        ["Scusi", "SKOO-zee", "Excuse me / sorry"],
+        ["Parla inglese?", "PAR-lah een-GLEH-zeh", "Do you speak English?"],
+        ["Quanto costa?", "KWAN-toh KOS-tah", "How much does it cost?"],
+        ["Mi chiamo...", "mee kee-AH-moh", "My name is..."]
+      ]
+    },
+    french: {
+      label: "French",
+      words: [
+        ["Bonjour", "bohn-ZHOOR", "Hello"],
+        ["S'il vous plaît", "seel voo PLEH", "Please"],
+        ["Merci", "mehr-SEE", "Thank you"],
+        ["De rien", "duh ree-EN", "You're welcome"],
+        ["Oui", "wee", "Yes"],
+        ["Non", "nohn", "No"],
+        ["Excusez-moi", "ex-koo-zay MWAH", "Excuse me / sorry"],
+        ["Parlez-vous anglais?", "par-lay voo ahn-GLEH", "Do you speak English?"],
+        ["Combien ça coûte?", "kohm-bee-EN sah KOOT", "How much does it cost?"],
+        ["Je m'appelle...", "zhuh mah-PELL", "My name is..."]
+      ]
+    },
+    portuguese: {
+      label: "Portuguese",
+      words: [
+        ["Olá", "oh-LAH", "Hello"],
+        ["Por favor", "por fah-VOR", "Please"],
+        ["Obrigado", "oh-bree-GAH-doo", "Thank you"],
+        ["De nada", "deh NAH-dah", "You're welcome"],
+        ["Sim", "seeng", "Yes"],
+        ["Não", "now (nasal)", "No"],
+        ["Desculpe", "desh-KOOL-peh", "Excuse me / sorry"],
+        ["Fala inglês?", "FAH-lah een-GLESH", "Do you speak English?"],
+        ["Quanto custa?", "KWAN-too KOOSH-tah", "How much does it cost?"],
+        ["Chamo-me...", "SHAH-moo-meh", "My name is..."]
+      ]
+    },
+    german: {
+      label: "German",
+      words: [
+        ["Hallo", "HAH-loh", "Hello"],
+        ["Bitte", "BIT-tuh", "Please"],
+        ["Danke", "DAHN-kuh", "Thank you"],
+        ["Bitte schön", "BIT-tuh shurn", "You're welcome"],
+        ["Ja", "yah", "Yes"],
+        ["Nein", "nine", "No"],
+        ["Entschuldigung", "ent-SHOOL-dee-gung", "Excuse me / sorry"],
+        ["Sprechen Sie Englisch?", "SHPREH-khun zee ENG-lish", "Do you speak English?"],
+        ["Wie viel kostet das?", "vee feel KOS-tet dahs", "How much does it cost?"],
+        ["Ich heiße...", "ikh HY-suh", "My name is..."]
+      ]
+    }
+  };
+
+  var LANG_ORDER = ["spanish", "italian", "french", "portuguese", "german"];
+  var BUCKET_DAYS = [0, 1, 3, 7, 16, 35];
+  var STORAGE_KEY = "layover-vocab-v1";
+
+  // ---- Storage -------------------------------------------------------------
+  function loadState() {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    } catch (e) {
+      return {};
+    }
+  }
+  function saveState(state) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  }
+  function todayStr() {
+    var d = new Date();
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function addDays(dateStr, days) {
+    var d = new Date(dateStr + "T00:00:00");
+    d.setDate(d.getDate() + days);
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+  function slug(s) {
+    return s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+  }
+
+  var state = loadState();
+  var today = todayStr();
+
+  function cardsFor(lang) {
+    var words = DATA[lang].words;
+    if (!state[lang]) state[lang] = {};
+    return words.map(function (w) {
+      var id = slug(w[0]);
+      if (!state[lang][id]) state[lang][id] = { bucket: 0, due: today };
+      return { id: id, phrase: w[0], pron: w[1], meaning: w[2], progress: state[lang][id] };
+    });
+  }
+
+  // ---- App state -------------------------------------------------------------
+  var activeLang = LANG_ORDER[0];
+  var queue = [];
+  var qi = 0;
+
+  function buildQueue(lang, forceAll) {
+    var cards = cardsFor(lang);
+    queue = cards.filter(function (c) {
+      return forceAll || c.progress.due <= today;
+    });
+    qi = 0;
+  }
+
+  // ---- Rendering ---------------------------------------------------------
+  var langRow = document.getElementById("langRow");
+  var statsEl = document.getElementById("stats");
+  var deckEl = document.getElementById("deck");
+  var btnStill = document.getElementById("btnStillLearning");
+  var btnGot = document.getElementById("btnGotIt");
+  var btnReviewAll = document.getElementById("btnReviewAll");
+
+  function countsFor(lang) {
+    var cards = cardsFor(lang);
+    var due = 0, mastered = 0;
+    cards.forEach(function (c) {
+      if (c.progress.due <= today) due++;
+      if (c.progress.bucket >= 4) mastered++;
+    });
+    return { due: due, mastered: mastered, total: cards.length, learning: cards.length - mastered };
+  }
+
+  function renderLangRow() {
+    langRow.innerHTML = "";
+    LANG_ORDER.forEach(function (lang) {
+      var c = countsFor(lang);
+      var chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "lang-chip";
+      chip.setAttribute("role", "tab");
+      chip.setAttribute("aria-pressed", lang === activeLang ? "true" : "false");
+      chip.innerHTML = DATA[lang].label + (c.due > 0 ? ' <span class="badge">' + c.due + '</span>' : "");
+      chip.addEventListener("click", function () {
+        activeLang = lang;
+        buildQueue(activeLang, false);
+        renderAll();
+      });
+      langRow.appendChild(chip);
+    });
+  }
+
+  function renderStats() {
+    var c = countsFor(activeLang);
+    statsEl.innerHTML =
+      '<div class="stat due"><div class="n">' + c.due + '</div><div class="label">Due</div></div>' +
+      '<div class="stat"><div class="n">' + c.learning + '</div><div class="label">Learning</div></div>' +
+      '<div class="stat mastered"><div class="n">' + c.mastered + '</div><div class="label">Mastered</div></div>';
+  }
+
+  function renderDeck() {
+    if (qi >= queue.length) {
+      deckEl.innerHTML =
+        '<div class="empty-state"><div class="big">All caught up on ' + DATA[activeLang].label + '</div>' +
+        '<div>Come back tomorrow, or review everything again now.</div></div>';
+      btnStill.disabled = true;
+      btnGot.disabled = true;
+      return;
+    }
+    var card = queue[qi];
+    deckEl.innerHTML =
+      '<div class="card" id="cardEl">' +
+        '<div class="face front">' +
+          '<span class="card-lang">' + DATA[activeLang].label + '</span>' +
+          '<div class="phrase">' + card.phrase + '</div>' +
+          '<span class="hint">Tap to reveal</span>' +
+        '</div>' +
+        '<div class="face back">' +
+          '<span class="card-lang">' + DATA[activeLang].label + '</span>' +
+          '<div class="pron">' + card.pron + '</div>' +
+          '<div class="meaning">' + card.meaning + '</div>' +
+        '</div>' +
+      '</div>';
+    var cardEl = document.getElementById("cardEl");
+    var revealed = false;
+    cardEl.addEventListener("click", function () {
+      revealed = !revealed;
+      cardEl.classList.toggle("flipped", revealed);
+      btnStill.disabled = !revealed;
+      btnGot.disabled = !revealed;
+    });
+    btnStill.disabled = true;
+    btnGot.disabled = true;
+  }
+
+  function renderAll() {
+    renderLangRow();
+    renderStats();
+    renderDeck();
+  }
+
+  function markCard(known) {
+    if (qi >= queue.length) return;
+    var card = queue[qi];
+    var prog = state[activeLang][card.id];
+    if (known) {
+      prog.bucket = Math.min(prog.bucket + 1, BUCKET_DAYS.length - 1);
+      prog.due = addDays(today, BUCKET_DAYS[prog.bucket]);
+      saveState(state);
+      queue.splice(qi, 1);
+    } else {
+      prog.bucket = 0;
+      prog.due = today;
+      saveState(state);
+      var c = queue.splice(qi, 1)[0];
+      queue.push(c);
+    }
+    renderAll();
+  }
+
+  btnStill.addEventListener("click", function () { markCard(false); });
+  btnGot.addEventListener("click", function () { markCard(true); });
+  btnReviewAll.addEventListener("click", function () {
+    buildQueue(activeLang, true);
+    renderAll();
+  });
+
+  buildQueue(activeLang, false);
+  renderAll();
+})();
+</script>

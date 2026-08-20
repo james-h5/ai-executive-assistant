@@ -26,7 +26,7 @@ Active workstreams live in `projects/`. Each has a `README.md` with status, desc
 - `projects/consulting-business-processes/` — SOPs and forms for the consulting firm
 - `projects/landing-first-client/` — Pipeline and strategy for signing first client
 - `projects/ai-lead-generator/` — Trigger.dev automation: finds Brisbane trade leads weekly, enriches with Claude, pushes to ClickUp
-- `projects/language-learning/` — Conversational practice across Italian, Japanese, French, German
+- `projects/language-learning/` — Conversational practice across Spanish, Italian, French, Portuguese, German
 - `projects/communication-excellence/` — Developing clear, confident expression
 - `projects/uk-exchange-2027/` — QUT semester exchange in the UK (Sept 2027–Jan 2028): university shortlist and unit-matching study plans
 - `projects/political-literacy/` — Framework + sourced comparison doc for evaluating party policies from primary sources instead of headlines/social media

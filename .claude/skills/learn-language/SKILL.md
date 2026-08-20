@@ -1,7 +1,7 @@
 ---
 name: learn-language
 description: Conversational language practice — scenario-based sessions to build enough confidence to speak with locals while travelling
-triggers: [learn language, practice Italian, practice Japanese, practice French, practice German, language practice, language lesson, teach me Italian, teach me Japanese, teach me French, teach me German, language drill]
+triggers: [learn language, practice Spanish, practice Italian, practice French, practice German, practice Portuguese, language practice, language lesson, teach me Spanish, teach me Italian, teach me French, teach me German, teach me Portuguese, language drill]
 version: 2.0
 ---
 
@@ -61,6 +61,7 @@ After the session ends, update `projects/language-learning/progress/[language].m
   5. At the bar / social situations
   6. Shopping and markets
   *(After all 6 are covered, loop back to #1 and go deeper)*
+- Redeploy the vocab review Artifact ([Layover](https://claude.ai/code/artifact/f4dc26fd-68eb-415e-aeca-e50db982df3a)) with the newly appended words: edit the `DATA` object in `projects/language-learning/layover-artifact-source.html`, then republish that file via the Artifact tool passing `url: "https://claude.ai/code/artifact/f4dc26fd-68eb-415e-aeca-e50db982df3a"` so it updates in place instead of creating a new artifact
 
 ---
 
@@ -70,3 +71,4 @@ After the session ends, update `projects/language-learning/progress/[language].m
 - Focus on useful, realistic phrases — things you'd actually say
 - Pronunciation guides must be readable at a glance
 - If James makes a mistake in the dialogue, gently correct and move on — don't dwell
+- Spanish, Italian, French, and Portuguese are easily confused (shared Romance vocabulary). If James slips in a word from a different one of these languages mid-session, flag it lightly the same way as any other mistake — don't dwell
