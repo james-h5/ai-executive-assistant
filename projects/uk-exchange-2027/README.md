@@ -26,6 +26,7 @@ A semester exchange at a QUT UK partner university during 2027 Semester 2 (Sept 
 - [degree-plan-notes.md](degree-plan-notes.md) — how the exchange load reconciles with the standard QUT degree plan, including the worked Sheffield reshuffle example
 - [qut-unit-content.md](qut-unit-content.md) — content baseline for the 9 QUT units in play (5 fixed 2027 S2 + 4 swappable), used to judge host-university matches
 - `study-plans/` — **Sheffield** (primary focus, verified against the real exchange module catalogue), **Aston** and **Birmingham** (backups), plus `candidates-summary.md` (consolidated comparison table across the 3)
+- [study-plans/sheffield-exhaustive-matches.md](study-plans/sheffield-exhaustive-matches.md) — exhaustive, inclusive list of every Sheffield module (Engineering/Economics/Management, any semester) relating to James's 10 candidate QUT units — a brainstorm feeding into `study-plans/sheffield.md`, not a replacement for it. Surfaced two modules the earlier Autumn-only pass missed: MGT375 (Financial Derivatives — a real EFB344 match) and MGT230 (a second Corporate Finance match), both Spring-only.
 
 ## Next Steps
 - **Sheffield is verified and primary.** Real 4-unit semester lineup confirmed (EGB345, EGB348-weak, EFB343, EFB335), 12+ backup unit options identified for the application. EGB341 and EGB342 need rescheduling elsewhere in the degree — see `degree-plan-notes.md`.
