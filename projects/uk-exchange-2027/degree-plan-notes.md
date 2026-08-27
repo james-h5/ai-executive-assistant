@@ -20,7 +20,10 @@ Full QUT plan lives in `context/degree-plan.md` — this file only covers the ex
 
 A standard UK exchange semester is a normal full-time load — QUT's ratio is 12 QUT cp = 15 UK credits, so a standard UK semester (~60 UK credits) converts to ~48 QUT cp, i.e. **4 units, not 5**.
 
-## Decision (settled 2026-08-03)
+## Superseded 2026-08-27
+James has since decided to go for a full year, not a standard 4-unit semester — see `study-plans/sheffield.md`'s 2026-08-27 section and `decisions/log.md`. The "only ever a standard 4-unit load" decision below no longer holds; a full year needs ~120 Sheffield credits (roughly 8 QUT units across both 2027 S2 and 2028 S1), so this file's reshuffle logic (built around one leftover unit from a single semester) needs redoing against two semesters' worth of units once the exchange type (engineering-only vs. mixed) is confirmed. Left in place below for the reasoning history, not as the current plan.
+
+## Decision (settled 2026-08-03, superseded 2026-08-27)
 - **Exchange will only ever carry a standard 4-unit load.** Don't force a 5-unit overload exchange and don't petition for one.
 - Whichever of the 5 units above doesn't get a direct match (or elective slot) at the chosen host university gets **pushed out of 2027 S2 entirely** — James is fine adding an extra semester later in the degree to absorb it, rather than cramming or doing an awkward reshuffle now.
 - **Not yet decided:** which unit ends up unmatched, and where it gets rescheduled. That depends on what's actually offered at the host university — e.g. if a strong EGB345 equivalent exists, something else might be the leftover instead. Revisit once `study-plans/` research is underway for the shortlisted universities.
