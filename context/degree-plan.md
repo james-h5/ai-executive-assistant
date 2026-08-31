@@ -10,7 +10,7 @@ Source: QUT official course structure PDF for IX59 (fetched 2026-07-08).
 
 See `context/academic-record.md` for completed results and current enrolment.
 
-**Exchange note (2026-08-03):** James is planning a UK semester exchange for 2027 S2 (Sept 2027–Jan 2028) — see `projects/uk-exchange-2027/`. This isn't reflected in the plan below yet. Decided so far: exchange will only carry a standard 4-unit load, so one of the 5 units currently sitting in 2027 S2 (EGB348, EGB341, EGB342, EGB345, EFB335) will need to be pushed to a later semester. Which one, and where it lands, is still open — see `projects/uk-exchange-2027/degree-plan-notes.md`.
+**Exchange note (updated 2026-08-27):** James is now doing a **full-year** UK exchange at Sheffield (2027 S2 – 2028 S1), **engineering-only** (subject-exchange to Electrical and Electronic Engineering) — reverses the 2026-08-03 single-semester decision. See `projects/uk-exchange-2027/` and `decisions/log.md`. The plan below reflects James's own restructure (given 2026-08-27), which resolves the earlier open question about where EGB348/341/342/345/335 and EGB240/241 land.
 
 ## Decisions locked in (2026-07-08, updated 2026-07-09)
 - **Business Core Unit Option → MGB130**, taken in Summer (placed in Summer 2026/27 below — adjust if a different summer period is meant). Doing it in Summer means it doesn't cost a regular-semester slot.
@@ -36,27 +36,31 @@ See `context/academic-record.md` for completed results and current enrolment.
 - EGB499 needs 192cp of engineering-prefixed credit + a completed, certified 60-day placement (30 engineering days) — this is a real-world constraint, not just a coursework one. **Start arranging it during 2028** so it's certified in time for 2029 S1.
 - EFB210 (done) → unlocks EFB343, EFB335, EFB344
 - EFB360 needs EFB335 + EFB343 completed + 192cp total
-- BSB399 needs BSB105/106/108 (done) + 192cp total — credit-wise unlockable now, but capstone units sometimes carry a "final year" enrolment rule beyond pure credit points. Worth confirming before locking in 2027 S1.
+- BSB399 needs BSB105/106/108 (done) + 192cp total — credit-wise unlockable now, but capstone units sometimes carry a "final year" enrolment rule beyond pure credit points. **Now a bigger risk than before:** the plan below places it in Year 3 Sem 1, which is clearly not final-year once the degree runs through Year 5 Sem 2. Couldn't get QUT's exact enrolment-requirement text for BSB399 (site blocks direct fetch) — confirm with a QUT advisor before relying on this placement. If it turns out to require final-year standing, Year 5 Sem 1 or Sem 2 both have room.
+- EGB499 needs 192cp of engineering-prefixed credit + a completed, certified 60-day placement (30 engineering days) — a real-world constraint, not just a coursework one.
 
-## Plan to finish by mid-2029 — only 1 overload semester
+## Plan (updated 2026-08-27 — full-year engineering-only Sheffield exchange, per James's restructure)
 
 | Semester | Units | cp |
 |---|---|---|
 | Summer 2026/27 | MGB130, EFB210 | 24 |
-| 2027 S1 | EGB240, EGB241, EFB343, BSB399 | 48 (standard) |
-| 2027 S2 | EGB348, EGB341, EGB342, **EGB345**, EFB335 | **60 (overload)** |
-| 2028 S1 | EGH419, EGH404, EGH443, EGH448 | 48 (standard) |
-| 2028 S2 | EGH490-1, EGH444, EGH449, **EGH446** | 48 (standard) |
-| 2029 S1 | **EGH445**, EFB344, EGH490-2, EFB360, EGB499 (placement report, 0cp) | 48 (standard) |
+| Year 3 S1 (2027 S1) | EFB344 Risk Management, EFB343 Corporate Finance, EFB335 Investments, BSB399 Business Capstone | 48 (standard) |
+| Year 3 S2 (2027 S2) — **UK exchange begins (Sheffield, engineering-only)** | EGB348, EGB341, EGB342, EGB345, EGB240, EGB241 — via Sheffield's Option A list (ELE209, ELE345, ELE327, ELE342, ELE343, ELE339), see `projects/uk-exchange-2027/study-plans/sheffield.md` | see note |
+| Year 4 S1 (2028 S1) — **UK exchange continues** | same 6 units as above (year-long Sheffield modules span both semesters) | see note |
+| Year 4 S2 (2028 S2) | EGH444, EGH449, EGH446, EGH404 | 48 (standard) |
+| Year 5 S1 (2029 S1) | EGH445, EGH443, EGH448, EGH490-1 | 48 (standard) |
+| Year 5 S2 (2029 S2) — **new semester, extends finish date** | EGH490-2, EFB360, EGH419, EGB499 (placement report, 0cp) | 36 |
 
-**Only 2027 S2 needs to be an overload semester now.** Pulling EGB242 into 2026 S2 removed it from the 2027 S1 slot, dropping that semester to standard 48cp. Total is 252cp across the 5 semesters (2027 S1 – 2029 S1), still lands mid-2029.
+**Degree now finishes end of 2029 (2029 S2) instead of mid-2029 (2029 S1)** — a full-year exchange (2 QUT semesters displaced) inherently adds roughly one semester to the timeline versus the previous single-semester plan, since only 6 distinct QUT units get matched abroad against what would otherwise have been ~9 units' worth of QUT-side enrolment across those two semesters.
 
 Why this arrangement works:
-- EGB242 already done (2026 S2) — 2027 S1 no longer needs it, dropping to 4 units.
-- EGB345 (Sem 2 only) sits in 2027 S2 — its only option this early, and this is now the sole overload semester.
-- EGH446 (Sem 2 only, needs EGB345) sits in 2028 S2 — the next available Sem 2 after EGB345 lands.
-- EGH445 (Sem 1 only, needs EGB345) sits in 2029 S1 — still a Semester 1, so the restriction holds, and this keeps 2028 S1 at 48cp.
-- EFB344 (needs EFB343 done — from 2027 S1) sits in 2029 S1 to keep 2028 S2 at 48cp, since it has no semester restriction of its own.
-- BSB399 placed early (2027 S1) since its only stated requirements (BSB105/106/108 + 192cp) are already met — flagged above as worth double-checking against enrolment-rule restrictions, not just prerequisites.
-- EFB360 sits in 2029 S1 (needs EFB335 + EFB343 + 192cp, all met well before then).
-- EGH443/EGH448 land in 2028 S1 (right after EGB342/EGB348 in 2027 S2); EGH444/EGH449 land in 2028 S2 (same logic).
+- EGB240/EGB241 move out of Year 3 S1 (their old slot) and into the Sheffield exchange instead — this is what frees up Year 3 S1 for EFB344, which used to sit much later (2029 S1) in the old plan.
+- EGB345 (Sem 2 only) and EGH446 (Sem 2 only, needs EGB345) and EGH445 (Sem 1 only, needs EGB345) still respect their semester-offering restrictions: EGB345 is done abroad in Year 3 S2/Year 4 S1 (Autumn+Spring, effectively both), EGH446 lands in Year 4 S2 (a Semester 2), EGH445 lands in Year 5 S1 (a Semester 1).
+- EGH443/EGH448 need EGB342 (done abroad); EGH444/EGH449 need EGB342/EGB348 (also done abroad) — both pairs land in Year 4 S2/Year 5 S1, well after the exchange completes.
+- EGH404 must complete before EGH490-1 (not concurrent) — EGH404 sits in Year 4 S2, EGH490-1 in Year 5 S1, correctly sequenced. EGH490-2 (needs EGH490-1 done) sits in Year 5 S2.
+- EFB360 (needs EFB335 + EFB343 + 192cp) sits in Year 5 S2 — those prereqs were completed back in Year 3 S1, comfortably satisfied.
+- EGH419 (needs EGB240, done abroad) sits in Year 5 S2 — much later than strictly necessary (it was unlocked as soon as the exchange finished, Year 4 S2), so there's flexibility to pull it forward if Year 5 S2's light 36cp load is a concern, or to keep Year 5 S2 deliberately light as a wind-down semester.
+
+**Two things this plan doesn't yet solve — flag before treating it as locked:**
+1. **EGB499's placement itself** (the certified 60-day / 30-engineering-day placement, separate from the 0cp enrolment) has no arranging timeline in this version. The old plan flagged "start arranging during 2028" — but 2028 is now entirely consumed by the UK exchange (Year 4 S1) and the semester right after it (Year 4 S2). Worth deciding whether the placement happens in the UK, in an AU break between exchange and Year 4 S2, or gets pushed to a break later in the plan.
+2. **Credit-value reconciliation between "6 Sheffield modules" and "8 QUT units."** `projects/uk-exchange-2027/degree-plan-notes.md` and `sheffield.md` use a 12 QUT cp = 15 UK credit workload ratio, which would suggest a full UK year (120 credits) converts to ~96 QUT cp (8 units), not the 6 units (72cp) mapped here. Whether QUT actually credits it unit-for-unit (6 Sheffield modules → 6 specific QUT units, regardless of the underlying UK credit weight) or by aggregate workload (requiring 2 more units' worth of matched content) is still unconfirmed — worth a direct question to the exchange office before finalising.
