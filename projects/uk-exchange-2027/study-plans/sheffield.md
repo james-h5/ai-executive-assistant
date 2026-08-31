@@ -9,9 +9,9 @@ description: University of Sheffield — VERIFIED against the actual 2026/27 exc
 
 James has decided to stay the full year (Sept 2027 – ~June 2028) rather than the single Sept–Jan semester this file was originally scoped around. This reverses the 2026-08-03 decision logged in `decisions/log.md` — see that file for an updated entry. **The single-semester "Confirmed viable 4-unit lineup" further down this page is now the fallback, not the plan** — kept for reference in case the year option falls through.
 
-A UK full-time year is ~120 Sheffield credits (2 Sheffield credits = 1 ECTS) — usually 6 module-slots of 20 credits each (a "slot" can be one year-long 20cr module, one semester-long 20cr module, or two paired 10cr modules). Below are two full-year lists — one for each exchange-type outcome, since which one James actually gets isn't confirmed yet (see `sheffield-exhaustive-matches.md`'s access-flag caveat and the "Still to do" list at the bottom of this file).
+A UK full-time year is ~120 Sheffield credits (2 Sheffield credits = 1 ECTS) — usually 6 module-slots of 20 credits each (a "slot" can be one year-long 20cr module, one semester-long 20cr module, or two paired 10cr modules). Two full-year lists were drawn up, one per exchange-type outcome — **James has since chosen Option A (engineering only)**, so Option B is kept below only as a record of what mixed would have looked like, not as an active plan.
 
-### Option A — Engineering only (subject-exchange, Electrical and Electronic Engineering)
+### Option A — Engineering only (subject-exchange, Electrical and Electronic Engineering) — CHOSEN 2026-08-27
 
 If the exchange comes through as subject-level rather than university-wide, James is restricted to Engineering modules only — but gains access to every "Uni-wide: No" module, which unlocks the strongest content matches for every one of his 6 engineering QUT units. Six year-long 20-credit modules = a clean 120-credit year, one per unit:
 
@@ -33,7 +33,7 @@ Backups per slot (semester-length alternates, useful if a Year module isn't offe
 - EGB241: ELE306 Engineering Electromagnetics (Spring, 10cr) + ELE335 Machine Design (Spring, 10cr) or ELE311 Power Engineering Electromagnetics (Autumn, 10cr)
 - EGB240: ELE205 HDL-Based Design & Programmable Logic (Spring, 10cr) + ELE332 Digital Design (Autumn, 10cr)
 
-### Option B — Mixed (university-wide exchange)
+### Option B — Mixed (university-wide exchange) — NOT chosen, kept for reference only
 
 Restricted to "Uni-wide: Yes" modules only. **EGB241 Electromagnetics and Machines has no Uni-wide match at all** — every real content match for it (ELE306, ELE311, ELE335, ELE343) is subject-exchange only, so it's dropped from this list entirely; it would need to stay at QUT regardless of which exchange type comes through. To still land on a clean 120-credit year, four year-long engineering modules are paired with two semester-length finance modules (one per half of the year):
 
