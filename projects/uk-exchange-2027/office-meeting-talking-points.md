@@ -19,4 +19,18 @@ description: Talking points for James's in-person meeting with QUT Study Abroad 
 
 ---
 
+## Why am I not doing any business modules?
+
+**1. They're already covered domestically.** EFB343 (Corporate Finance), EFB335 (Investments), EFB344 (Risk Management), and BSB399 (Business Capstone) are all scheduled at QUT in Year 3 Sem 1, immediately before departure. There's nothing left in the finance side of the degree to send abroad even if he wanted to — and the exchange planner's own checklist rules out repeat study on exchange anyway, so doubling up on finance content overseas wouldn't have been usable even as an option.
+
+**2. Going mixed genuinely produces a worse outcome, not just a different one.** This isn't a preference call made in a vacuum — Electromagnetics and Machines (EGB241) has zero Sheffield module accessible under university-wide/mixed exchange; every real content match for it is subject-exchange-only. Choosing mixed would mean leaving one full engineering unit unmatched regardless of how the other slots were filled. Choosing engineering-only is the only path where all 6 units get their strongest possible match.
+
+**3. Finance content travels; engineering content benefits from where it's taught.** Core corporate finance, investment, and risk theory is largely the same wherever it's studied — same analytical toolkit, similar case-study method — so there's little marginal gain from doing it at a different institution instead of QUT. Engineering is different: control systems, power engineering, and electromagnetics benefit directly from a specific school's labs, hardware access, and depth in a specialisation. That's the real version of "business is easier" for a room that might include business staff — the point isn't that business is less rigorous, it's that *where* you study it matters far less than where you study engineering.
+
+**4. Full immersion at the hardest point in the degree.** This exchange year lines up with the six most technical units left in the whole program (design, electromagnetics, electronics, power, telecoms, control). Going all-in on one discipline for that stretch, rather than splitting attention across engineering and business, is the stronger use of a year with full-time focus available.
+
+**5. Sheffield's Electrical and Electronic Engineering school is the actual reason this partner was chosen** — worth naming directly rather than leaving implied, since it's the whole basis for going engineering-only in the first place.
+
+---
+
 *Next sections to add as James works through more of the meeting prep — e.g. "How will I stay on track academically," "What's my budget/funding plan," "Why Sheffield specifically over other partners."*
