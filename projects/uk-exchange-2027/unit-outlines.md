@@ -7,6 +7,33 @@ description: Full official unit outline text for every unit on James's Sheffield
 
 QUT's application asks for "a document containing the unit outline description of each unit you have chosen on your study plan... copy and pasted from the institution's website." Printable version for actual upload: see the published Artifact (ask to regenerate if the link is lost — source file matches this content).
 
+**2026-08-27: The actual application form has a per-unit "Unit outline URL" field, not a single document upload** — better solution than a combined doc. Sheffield's School of EEE runs a live per-module page hub at `sites.google.com/sheffield.ac.uk/school-of-ele/ele-modules-25-26/`, and all 20 study-plan entries were checked against it directly (19 confirmed live, 1 dead code found and swapped — see below). Paste these straight into the application's URL field, no file upload needed:
+
+| Unit code | URL (all under sites.google.com/sheffield.ac.uk/school-of-ele/ele-modules-25-26/) |
+|---|---|
+| ELE339 | year-3-ele-modules/ele339-digital-engineering |
+| ELE343 | year-3-ele-modules/ele343-electromagnetic-fields-and-devices |
+| ELE345 | year-3-ele-modules/ele345-electronics-and-devices |
+| ELE327 | year-3-ele-modules/ele327-power-engineering |
+| ELE342 | year-3-ele-modules/ele342-communication-engineering |
+| ELE209 | year-2-ele-modules/ele209-control-systems-design-and-analysis |
+| ELE335 | year-3-ele-modules/ele335-machine-design |
+| ELE205 | year-2-ele-modules/ele205-hdl-based-design-and-programmable-logic |
+| ELE307 | year-3-ele-modules/ele307-feedback-systems-design |
+| ELE309 | year-3-ele-modules/ele309-integrated-electronics |
+| ELE305 | year-3-ele-modules/ele305-electrical-power-systems |
+| ELE224 (replaces ELE210 — see below) | year-2-ele-modules/ele224-electrical-energy-and-conversion |
+| ELE316 | year-3-ele-modules/ele316-state-space-control-design |
+| ELE317 | year-3-ele-modules/ele317-system-identification |
+| ELE314 | year-3-ele-modules/ele314-semiconductor-electronics |
+| ELE306 | year-3-ele-modules/ele306-engineering-electromagnetics |
+| ELE311 | year-3-ele-modules/ele311-power-engineering-electromagnetics |
+| ELE337 | year-3-ele-modules/ele337-principles-of-communications |
+| ELE331 | year-3-ele-modules/ele331-antennas-radar-and-navigation |
+| ELE332 | year-3-ele-modules/ele332-digital-design |
+
+**ELE210 correction:** the original catalogue-listed backup for EGB341 (Electrical Energy Management and Conversion) returned a confirmed 404 on this hub — it's a retired code (a legacy "EEE223 Electrical Energy Management and Conversion" from Sheffield's pre-2017 coding scheme still turns up in old search results, confirming the rename). Its content lives on as **ELE224 Electrical Energy and Conversion** (30cr instead of 20cr, same description, confirmed live) — swapped in above and in `study-plans/sheffield.md`. Doesn't affect EGB341's primary pick (ELE327), which was independently confirmed live.
+
 ## University of Sheffield — source verbatim, from the official 2026/27 exchange catalogue
 
 All text below is copied directly from Sheffield's published module descriptions (not paraphrased) — same source verified in `study-plans/sheffield.md`.
