@@ -33,6 +33,18 @@ Source: [MEng Electrical and Electronic Engineering](https://www.aston.ac.uk/stu
 
 Sheffield's weak spot was also EGB241 (no single module covers both electromagnetics *and* machines) — Aston has the same gap from the other direction (machines only, no fields module at all). EGB341 has literally no candidate at either university researched so far. This is starting to look like a genuine hole in what a standard UK EEE undergraduate exchange offers, not a university-specific quirk — worth lowering expectations that any UK partner solves it cleanly, and planning for EGB341 to possibly need bringing home to QUT regardless of which university is chosen.
 
+### 2026-08-27: Finance backups added to Aston's option list
+
+Since Aston shows as "University Wide" in QUT's portal (unlike Sheffield's engineering-only/subject-exchange setup), James can list finance modules as backup options for Aston specifically — using the strong matches from the earlier Pass 1 research below, which are genuinely stronger than several of the engineering entries. Added as extra rows in the application (not a change to the core 6-unit engineering plan, just more real, credit-bearing fallback options):
+
+| QUT Unit | Aston Module | Match |
+|---|---|---|
+| EFB343 Corporate Finance | Advanced Corporate Finance (Final Yr core) | Strong |
+| EFB335 Investments | Portfolio Management and Behavioural Finance (Final Yr core) | Strong |
+| EFB344 Risk Management and Derivatives | Derivatives (Final Yr core) | Strong |
+
+None of these three QUT units are semester-locked, so they're a genuine fallback (real QUT credit if approved) rather than a zero-credit top-up — a better safety net than duplicating weak engineering matches purely to hit the recommended unit count.
+
 ### Still to do
 - Email `eas_exchange@aston.ac.uk` to get the real exchange-specific module list (with access flags), confirm Final Year content is genuinely open to exchange students, and ask directly about any grid/power-systems-adjacent content not visible on the public course page.
 - Pick 2 filler/top-up modules once the real list is available (don't need content-matching — any assessed academic module works).
