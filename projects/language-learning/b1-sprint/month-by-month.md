@@ -17,10 +17,12 @@ Every month has: **the mission**, **exactly what to consume**, and **the test at
 
 **Uni context:** Sem 2 in full swing at 60cp. This is the lightest language month by design.
 
+> ⚡ **Spanish is not starting from zero** — ~15 Language Transfer lessons, children's books and a lot of YouTube are already done (~15–25 hrs). **Don't restart from lesson 1.** Run the 20-minute diagnostic in `progress/spanish.md` first, then continue from where it puts you, and re-listen to the earlier lessons as *stacked* audio so the review costs you nothing. French genuinely is at zero.
+
 #### Spanish
 | What | Dose |
 |---|---|
-| **Language Transfer — Complete Spanish** (free, app or YouTube) | Lessons 1–50. ~2/day in Block A. **This is the priority — everything else is secondary.** |
+| **Language Transfer — Complete Spanish** (free, app or YouTube) | Diagnostic first, then continue to ~lesson 50. ~2/day in Block A. **This is the priority — everything else is secondary.** |
 | **Dreaming Spanish** — Superbeginner tier | 20 min/day, Block B |
 | **Anki** — Spanish frequency top-1000 deck | 15 new/day, ~10 min reviews |
 | Notebook | 3 sentences/day from week 3 |
@@ -48,7 +50,8 @@ Every month has: **the mission**, **exactly what to consume**, and **the test at
 - **Coffee Break Spanish** Season 1 — 3 episodes/week (English scaffolding, good for structure)
 - **Anki** — 15 new/day (running total ~900 words)
 - **Reading starts:** *Short Stories in Spanish for Beginners* (Olly Richards) — 1 story/week
-- 🔴 **Week 5 (~5 Oct): first italki session.** 30 min, community tutor, ~$8–12. It will be awful. Book the second one before you leave the first.
+- 🎧 **Full-speed ear training starts** — 10–15 min/day of natives talking to *each other*: Easy Spanish street interviews, a native podcast, real TV. You'll understand almost nothing. That's the point — it's a different skill from comprehensible input and it's what "understanding them easily" actually depends on. Stacked hours, so it's free.
+- 🔴 **Week 5 (~5 Oct): first conversation session.** 30 min — an italki community tutor (~$8–12) or a free exchange partner. It will be awful. Book the second one before you leave the first.
 
 #### French
 - **Language Transfer** lessons 26–40 — **course complete by ~10 Oct**
@@ -57,6 +60,7 @@ Every month has: **the mission**, **exactly what to consume**, and **the test at
 - **French Comprehensible Input (Lucas)** — A1-labelled videos, 25 min/day
 - **Coffee Break French** Season 1 — 3 eps/week
 - **Reading:** *Short Stories in French for Beginners* — 1 story/week
+- 🎧 **Full-speed ear training** — 10–15 min/day of unscripted natives (Easy French street interviews). Same logic as Spanish; French needs it more.
 - **Dictation** starts — 2×/week, 10 min
 
 **End-of-month test:** Kwiziq French level ≥ A1 complete. Survive a 15-minute Spanish tutor call without switching to English for more than 30 seconds at a time.

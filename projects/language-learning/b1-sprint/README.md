@@ -106,6 +106,30 @@ Interference is real and will happen. It mostly stops mattering past A2. Mitigat
 
 ---
 
+## 4b. What B1 actually feels like — read this before you're disappointed
+
+James's stated goal (2026-09-01): *"go over to Spain or France and be able to easily communicate and easily know mostly what they're saying at a B1 level."*
+
+The first half and the second half of that sentence are different levels. Worth knowing now rather than in a bar in August.
+
+**What B1 genuinely gets you:**
+- ✅ A native speaking **to you** — naturally, but aware you're learning — on an everyday topic. Comfortable.
+- ✅ Ordering, directions, shopping, sorting out a problem, small talk, telling stories, giving opinions. All fine.
+- ✅ Learner-facing podcasts, clear standard speech, a TV show where you can see what's happening.
+- ✅ Making friends. This is the one that matters and B1 clears it comfortably.
+
+**What B1 does *not* get you:**
+- ⚠️ **Two natives talking to each other at full speed.** You'll catch maybe half. They're not adjusting for you, they interrupt each other, and they use slang.
+- ❌ **A noisy bar, a regional accent, three people at once.** Genuinely hard at B1.
+
+"Easily know mostly what they're saying" in that second sense is closer to **B2**, and it's mostly a function of raw listening hours — more than grammar, more than vocabulary.
+
+**So: the plan tilts further toward listening.** From October, add a daily **10–15 minutes of full-speed unscripted native speech** — natives talking to each other, not to a camera — on top of the level-matched input. Easy Spanish and Easy French street interviews, native podcasts, real TV.
+
+You will understand almost none of it at first. **That's fine and it's not the same activity as comprehensible input.** Level-matched CI builds vocabulary and grammar; this builds your ear's tolerance for real speed, liaison, and word boundaries. They're separate skills and the second one is what your stated goal actually depends on.
+
+It's also free — it goes in stacked hours, so it costs you nothing but the choice of what to press play on.
+
 ## 5. Milestones
 
 | By | Spanish | French |
