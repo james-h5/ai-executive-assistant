@@ -1,7 +1,7 @@
 ---
 type: project
 title: UK Semester Exchange 2027
-status: planning
+status: application submitted — awaiting faculty/nomination outcome
 target: 2027-09-01
 ---
 
@@ -28,6 +28,9 @@ A semester exchange at a QUT UK partner university during 2027 Semester 2 (Sept 
 - `study-plans/` — **Sheffield** (1st preference, verified), **Aston** (2nd preference), **Strathclyde** (3rd preference — Scotland isn't "England" under QUT's 1st/2nd-preference-only rule for USA/England), **Birmingham** (earlier backup, superseded), plus `candidates-summary.md` (older comparison table, predates the engineering-only pivot)
 - [office-meeting-talking-points.md](office-meeting-talking-points.md) — prep notes for the Study Abroad and Exchange Office meeting, built up topic by topic; also feeds the formal Motivation Statement
 - [study-plans/sheffield-exhaustive-matches.md](study-plans/sheffield-exhaustive-matches.md) — exhaustive, inclusive list of every Sheffield module (Engineering/Economics/Management, any semester) relating to James's 10 candidate QUT units — a brainstorm feeding into `study-plans/sheffield.md`, not a replacement for it. Surfaced two modules the earlier Autumn-only pass missed: MGT375 (Financial Derivatives — a real EFB344 match) and MGT230 (a second Corporate Finance match), both Spring-only.
+
+## Status update (2026-08-27)
+**Application fully submitted** — Sheffield (1st), Aston (2nd), Strathclyde (3rd), all with study plans, outline links, and the motivation essay attached. Now waiting on QUT's nomination outcome and faculty assessment of the Sheffield/Aston study plans. Next real decision point is whatever comes back from that review.
 
 ## Next Steps
 - **2026-08-27: Decided — full year, not a single semester** (reverses the 2026-08-03 semester decision, see `decisions/log.md`). **2026-08-27: Also decided — engineering only (subject-exchange), not mixed.** `study-plans/sheffield.md` Option A is now the active plan: all 6 engineering QUT units matched via a clean 120-credit year (ELE209, ELE345, ELE327, ELE342, ELE343, ELE339). Option B (mixed) and the old single-semester lineup are both kept for reference only.
