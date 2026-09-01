@@ -9,7 +9,15 @@ started: 2026-06-29
 
 Build enough conversational ability in key languages to speak confidently with locals, make friends, and get by while travelling. Not fluency — just real-world usefulness.
 
-**Status:** Active
+**Status:** Active — running the **[B1 Sprint](b1-sprint/README.md)**
+
+> 🔴 **Current mode (from 2026-09-01): B1 Sprint.** Spanish + French to **B1 by June 2027**, evidenced by sitting DELE B1 and DELF B1 in **May 2027** — timed to land in Europe conversational before the Sheffield exchange starts Sept 2027.
+>
+> ~750 hours across 39 weeks, ~19 hrs/week. Italian, Portuguese and German are **parked until June 2027** and the monthly rotation in `schedule.md` is suspended.
+>
+> **Start here → [`b1-sprint/README.md`](b1-sprint/README.md)** · [month-by-month](b1-sprint/month-by-month.md) · [daily routine](b1-sprint/daily-routine.md) · [resources](b1-sprint/resources.md) · [checkpoints & exams](b1-sprint/checkpoints.md)
+>
+> The `/learn-language` skill is *supplementary* during the sprint — good for a scenario rehearsal before a tutor call, but it is not the curriculum. The curriculum is in `b1-sprint/`.
 
 ## Description
 

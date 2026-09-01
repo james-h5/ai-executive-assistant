@@ -6,6 +6,10 @@ description:
 
 # Language Learning Schedule
 
+> ⚠️ **SUSPENDED as of 2026-09-01.** This rotation is on hold until June 2027 — it's superseded by the **[B1 Sprint](b1-sprint/README.md)** (Spanish + French to B1 by June 2027, exams booked for May 2027).
+>
+> The rotation and the B1 target are mutually exclusive: spreading ~19 hrs/week across five languages makes B1 impossible in any of them. Italian, Portuguese and German are parked until the exams are sat. **Resume this rotation from July 2027** (adjusting for the Sheffield exchange starting Sept 2027) — Spanish and French will re-enter it as maintenance rather than beginner months.
+
 Monthly rotation — one language per month, cycling through all five, then repeating for reinforcement. Order sequences the Romance languages together (Spanish → Italian → French → Portuguese) so vocabulary transfers between them instead of causing confusion; German is unrelated (Germanic) and slots in at the end of each cycle.
 
 | Month | Language | Notes |
