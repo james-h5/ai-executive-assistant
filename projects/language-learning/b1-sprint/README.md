@@ -116,20 +116,21 @@ Interference is real and will happen. It mostly stops mattering past A2. Mitigat
 
 ---
 
-## 6. Cost
+## 6. Cost — three ways to run this
 
-| Item | Monthly |
-|---|---|
-| italki tutors (4 sessions/wk total, community tutors ~$8–12) | ~$150 |
-| Dreaming Spanish (full library) | ~$14 |
-| Kwiziq French (the one paid grammar tool worth it) | ~$20 |
-| **Total** | **~$185/mo** |
+**Everything here can be done for $0 except the exam fees.** B1 the *level* is free. B1 the *certificate* is not. Full breakdown of what money buys and what free costs you: `resources.md` → **The free track**.
 
-One-off: graded readers + Assimil ~$120. Anki is free on desktop/Android, ~$25 on iOS.
+| Track | Monthly | What you give up |
+|---|---|---|
+| **Full** | ~$180 | Nothing. italki 4×/wk, Dreaming Spanish premium, Kwiziq French. |
+| **🎯 Hybrid — recommended** | **~$35** | Almost nothing. Everything free, plus one tutor session per language per fortnight. |
+| **Free** | **$0** | ~10–15% of the outcome, all of it in speaking. Workable, needs more discipline. |
 
-**Lean version (~$70/mo)** if money gets tight: free CI only (YouTube), 1 tutor session per language per week, drop Kwiziq for Lawless French + SpanishDict (both free). Costs you maybe 5% of the outcome. Do not cut tutors to zero — that's the one line item that isn't optional.
+**Unavoidable either way:** exam fees, **~$650–750 once, in February 2027** (DELF B1 ~$400, DELE B1 ~$250–350 — both need confirming). Paid once, valid for life.
 
-Against ~$610/week income this is affordable. Budget it in September so it isn't a decision you re-make every month.
+**Why the hybrid is the recommendation:** the one thing a free language exchange structurally cannot give you is someone whose job is to correct you, at a time you've already paid for and can't flake on. Two sessions a month buys that back for the price of a couple of beers.
+
+**And your unfair advantage:** you bartend in Brisbane, which is full of Latin American and French backpackers. That's free daily speaking practice with natives while you're being paid. On volume it beats italki — it just can't correct you, which is what the free writing-correction subreddits are for.
 
 ---
 

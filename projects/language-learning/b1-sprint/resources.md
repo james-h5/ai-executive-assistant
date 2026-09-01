@@ -150,8 +150,42 @@ Daily world news in deliberately slow, clear French. **Start week 3 of September
 
 ---
 
-# The lean version (~$70/mo)
+# The free track
 
-If the budget bites: keep italki at 1 session per language per week (~$70), keep every free resource (Language Transfer, Dreaming Spanish's YouTube tier, InnerFrench, RFI, all CI channels, Lawless French, SpanishDict, LangCorrect, Anki), drop Kwiziq and the Dreaming Spanish subscription, buy the graded readers second-hand.
+**Everything in this plan can be done for $0 except the exam fees.** B1 the *level* is free. B1 the *certificate* is not.
 
-Costs you maybe 5% of the outcome. **Do not cut tutors to zero** — that's the line item the exam actually tests.
+## What money actually buys
+
+| Paid version | Free replacement | What you lose |
+|---|---|---|
+| **italki tutors** (~$150/mo) | HelloTalk, Tandem, [free4talk](https://free4talk.com) (24/7 drop-in voice rooms, no matching), Discord language servers, r/language_exchange, Brisbane Meetup conversation groups | 🔴 **Real.** No correction discipline, flaky partners, and roughly half your time is spent speaking English in return. Call it a 20–30% hit on the output engine. |
+| **Dreaming Spanish** ($8/mo) | **Free tier: ~1,000 videos.** Premium adds ~4,000 more. | Basically nothing. 1,000 videos is far more than nine months of use. |
+| **Kwiziq French** (~$20/mo) | [Lawless French](https://www.lawlessfrench.com), [Le Point du FLE](https://www.lepointdufle.net), Français avec Pierre's free grammar | Moderate. You lose the adaptive sequencing and — more importantly — your objective French progress metric. **Substitute:** free official DELF B1 sample papers, one section a month. |
+| **Assimil** (~$45) | Language Transfer + free grammar sites, or borrow it from the library | Small. Assimil is a convenience, not a necessity. |
+| **Graded readers** (~$50) | Brisbane City Council library (**BorrowBox / Libby** — free ebooks and audiobooks with a library card), QUT library's language collection, Project Gutenberg for public-domain Spanish and French, and podcast transcripts as reading material | Little, if the library stocks them. Check BCC's free language-platform access too — most Australian councils license one. |
+| **Anki iOS** ($25) | **AnkiWeb in a phone browser** — free. Android app is free too. | Nothing but polish. |
+| **Paid writing correction** | [LangCorrect](https://langcorrect.com), [Journaly](https://journaly.com), and **r/WriteStreakES** + **r/WriteStreakFR** — daily writing corrected free by natives | Nothing. Arguably better than paying a tutor to do it. |
+
+## The unavoidable cost
+
+| | Estimate |
+|---|---|
+| DELF B1 — Alliance Française | ~$400 (Perth's published B1 fee; Brisbane is likely similar — **confirm**) |
+| DELE B1 — Instituto Cervantes | ~$250–350 (**not published in what I could reach — call them**) |
+| **Total, both** | **~$650–750, once, in February 2027** |
+
+That's the floor. It's also six weeks of tutoring money, paid once, for two diplomas valid for life.
+
+## Your unfair advantage — use it
+
+🔴 **You bartend in Brisbane.** Brisbane hospitality is full of Latin American and French backpackers. That's free, daily, high-volume speaking practice with native speakers *while you're being paid*. On sheer volume it beats italki — what it lacks is correction, which is exactly what the free writing-correction subreddits give you back.
+
+Also worth twenty minutes of checking: QUT almost certainly runs a language-exchange or conversation-club program for its international students, and it's free to enrolled students.
+
+## The verdict
+
+Going fully free costs you maybe **10–15% of the outcome, concentrated entirely in speaking** — the one skill the exam scores separately and won't let you compensate for.
+
+**If you can find $35/month**, buy one tutor session per language per fortnight. Not for the teaching — for the thing an exchange partner structurally cannot provide: someone whose job is to correct you, at a time you've already paid for and can't flake on. That single change closes most of the 10–15%.
+
+**If you truly can't**, the free track works. It needs more discipline: schedule your exchange calls like appointments, always ask to be corrected, and lean hard on the writing subreddits to catch the errors nobody interrupts you for.
