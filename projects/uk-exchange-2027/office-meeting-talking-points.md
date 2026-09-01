@@ -33,4 +33,20 @@ description: Talking points for James's in-person meeting with QUT Study Abroad 
 
 ---
 
+## What if they say most people pick easy/elective subjects to leave more time for friends and travel?
+
+This one's worth answering as "I've already got both, without needing to trade down academically" rather than defending the coursework in isolation.
+
+**1. The travel time is already built in on purpose, not something that needs to be carved out of term.** The plan is bookended by roughly two months of backpacking beforehand and up to a month after (`README.md` Key Dates) — that's the actual mechanism for maximising the travel side, not lighter coursework during semester. Choosing "dud" subjects doesn't add travel time; it just lowers what gets learned during the part of the year that's already earmarked for study.
+
+**2. Term breaks exist regardless of subject difficulty.** Christmas and Easter breaks in the UK academic calendar are the same length whichever units are enrolled in — a rigorous engineering load doesn't shrink them. The trade being described (easier subjects = more free time) is smaller than it sounds, since the actual block of free time is set by the calendar, not the coursework.
+
+**3. Friendships come from what you're doing, not from what's easiest.** Engineering units mean lab work and group projects with the same cohort all year — genuinely more natural friend-forming than a scattered set of unrelated electives with different people every class. On top of that, boxing travels well: finding a gym in Sheffield is a built-in social circle from week one, independent of subject choice entirely.
+
+**4. This is the actual substance of "being a positive ambassador for QUT"** — one of the four things the motivation statement explicitly has to address. An exchange student who takes the academic side seriously reflects well on QUT and protects the agreement for the next student who wants to use it; the "easy subjects, working holiday" pattern is precisely the reputational risk the office has to manage on partnerships like this one. Leading with rigor here isn't just a personal choice, it's speaking directly to what they're evaluating for.
+
+**5. The framing to avoid is "sacrificing travel for study."** It's not a trade-off — the strongest version of both is already in the plan: real coursework in a discipline worth learning, plus more dedicated backpacking time than a lot of exchange students build in at all.
+
+---
+
 *Next sections to add as James works through more of the meeting prep — e.g. "How will I stay on track academically," "What's my budget/funding plan," "Why Sheffield specifically over other partners."*
