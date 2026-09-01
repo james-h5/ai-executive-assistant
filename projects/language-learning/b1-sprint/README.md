@@ -8,11 +8,13 @@ target: 2027-05-31
 
 # B1 Sprint — Spanish + French by June 2027
 
-**The goal:** B1 (CEFR) in Spanish *and* French, evidenced by sitting DELE B1 and DELF B1 in May 2027.
+**The goal:** B1 (CEFR) ability in Spanish *and* French — the level, not the certificate. **No exams** (decided 2026-09-01).
 
 **The why:** Sheffield exchange starts Sept 2027 — a full year in the UK with budget flights to France and Spain every other weekend. Landing in Europe already conversational in both is the difference between a year of tourism and a year of actually meeting people.
 
-**The deadline is real:** exams get booked and paid for in March. Once the money's spent, the plan runs itself.
+**The deadline:** with no exam to book, the forcing function is a **flight**. Fly to Europe three weeks early, August 2027, and spend it in Spain and France. Book it in October 2026 when fares open. Money spent, date fixed, and the test is the real thing rather than a role-play with an examiner.
+
+**How you'll know you got there:** ten binary field tests per language, run quarterly — see `checkpoints.md` §2. No score to round up, no "nearly".
 
 ---
 
@@ -96,7 +98,7 @@ Interference is real and will happen. It mostly stops mattering past A2. Mitigat
 ## 4. The rules
 
 - **The zero-day rule.** Minimum viable day = 10 min Anki + 20 min listening, *each language*. 60 minutes total. On your worst day, with a hangover, after a double shift — you still hit 60 minutes. Streak integrity matters more than any single big day.
-- **Track every hour.** The whole plan is a math bet. Log it (see `checkpoints.md`). If your weekly total is under 15 hours three weeks running, the June target is gone — recalibrate *then*, in the moment, not in May.
+- **Track every hour.** The whole plan is a math bet. Log it (see `checkpoints.md`). If your weekly total is under 15 hours three weeks running, the June target is gone — recalibrate *then*, in the moment, not in May. **With no exam date, this is now the only early-warning system you have.** Treat it as a real stop-and-decide.
 - **No third language.** Italian, Portuguese and German are parked until June 2027. Don't touch them. (`schedule.md` rotation is suspended.)
 - **No resource-hopping.** Pick from the stack in `resources.md` and stay with it for the whole phase. Switching apps feels like progress and isn't.
 - **Speak before you're ready.** Always. You will never feel ready.
@@ -108,11 +110,12 @@ Interference is real and will happen. It mostly stops mattering past A2. Mitigat
 
 | By | Spanish | French |
 |---|---|---|
-| End Oct 2026 | Language Transfer done. ~600 words. 15-min tutor call survived. | LT done. ~600 words. Can hear word boundaries. |
+| End Oct 2026 | Language Transfer done. ~600 words. 15-min conversation survived. | LT done. ~600 words. Can hear word boundaries. |
 | End Dec 2026 | A2. Past tense live. 30-min conversation. | A2. InnerFrench at 60% without transcript. |
-| End Feb 2027 | **Low B1.** ~2,000 words. Narrate a story, hold an opinion. | **Low B1.** ~2,000 words. Same. |
-| End Apr 2027 | Mock DELE B1 ≥ 50/100 | Mock DELF B1 ≥ 50/100 |
-| **May 2027** | **Sit DELE B1** | **Sit DELF B1** |
+| End Feb 2027 | **Low B1.** ~2,000 words. First full field-test battery. | **Low B1.** ~2,000 words. Same. |
+| End Apr 2027 | **8 of 10 field tests**, including S1 and S3 | Same |
+| **1 June 2027** | 15-min unscripted recording, played against September's | Same |
+| **Aug 2027** | 🍺 An hour with a stranger in Valencia | 🍺 An hour with a stranger in Lyon |
 
 ---
 
@@ -126,7 +129,7 @@ Interference is real and will happen. It mostly stops mattering past A2. Mitigat
 | **🎯 Hybrid — recommended** | **~$35** | Almost nothing. Everything free, plus one tutor session per language per fortnight. |
 | **Free** | **$0** | ~10–15% of the outcome, all of it in speaking. Workable, needs more discipline. |
 
-**Unavoidable either way:** exam fees, **~$650–750 once, in February 2027** (DELF B1 ~$400, DELE B1 ~$250–350 — both need confirming). Paid once, valid for life.
+**With the exams dropped, the free track is now genuinely $0.** The ~$650–750 in exam fees was the only unavoidable cost in the whole plan, and it's gone.
 
 **Why the hybrid is the recommendation:** the one thing a free language exchange structurally cannot give you is someone whose job is to correct you, at a time you've already paid for and can't flake on. Two sessions a month buys that back for the price of a couple of beers.
 
@@ -145,4 +148,6 @@ Interference is real and will happen. It mostly stops mattering past A2. Mitigat
 
 This is achievable and it is not comfortable. The failure mode is not "too hard" — it's a quiet two-week slide in October where you tell yourself you'll catch up in the summer, and then the summer gets eaten by something else.
 
-The last language project logged zero sessions across two months. That's the pattern to beat, and the only defence is the hour log and the booked exam.
+The last language project logged zero sessions across two months. That's the pattern to beat.
+
+**Dropping the exams removes the strongest defence against that pattern**, so the replacements have to be taken seriously rather than nodded at: the booked flight, the hour log, and the 1 June recording with someone expecting it. An exam is a stranger with a clipboard telling you what you are. Without one, nothing stops "B1" quietly becoming a thing you're always *nearly* at — except tests you can't argue with. That's what the field-test battery is for.

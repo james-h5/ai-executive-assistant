@@ -166,15 +166,13 @@ Daily world news in deliberately slow, clear French. **Start week 3 of September
 | **Anki iOS** ($25) | **AnkiWeb in a phone browser** — free. Android app is free too. | Nothing but polish. |
 | **Paid writing correction** | [LangCorrect](https://langcorrect.com), [Journaly](https://journaly.com), and **r/WriteStreakES** + **r/WriteStreakFR** — daily writing corrected free by natives | Nothing. Arguably better than paying a tutor to do it. |
 
-## The unavoidable cost
+## There is no unavoidable cost any more
 
-| | Estimate |
-|---|---|
-| DELF B1 — Alliance Française | ~$400 (Perth's published B1 fee; Brisbane is likely similar — **confirm**) |
-| DELE B1 — Instituto Cervantes | ~$250–350 (**not published in what I could reach — call them**) |
-| **Total, both** | **~$650–750, once, in February 2027** |
+Exam fees (~$650–750) were the one thing you couldn't get around. **Decided 2026-09-01: no exams** — James wants the level, not the certificate.
 
-That's the floor. It's also six weeks of tutoring money, paid once, for two diplomas valid for life.
+**So the free track is a true $0.** Nothing in this plan now requires spending a cent.
+
+One thing to keep from the exam world: **free official DELF and DELE past papers.** Not to sit as exams — as free, professionally graded listening and reading material that comes with an answer key. That answer key is the only objective, unpaid score in the whole plan.
 
 ## Your unfair advantage — use it
 

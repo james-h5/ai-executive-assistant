@@ -159,58 +159,63 @@ Every month has: **the mission**, **exactly what to consume**, and **the test at
 
 - **1–21 Feb: run the Summer Day template at full intensity.** Last big push.
 - **22 Feb onward:** drop to Uni Day template. Expect a comprehension dip for a week as volume falls. Normal.
-- 🔴 **BOOK THE EXAMS THIS MONTH.** DELF B1 at Alliance Française de Brisbane (May session) and DELE B1 (Brisbane centre, via Instituto Cervantes Sydney, May session). Registration typically closes ~March — see `checkpoints.md`. **Pay the money. This is the single most important action in the whole plan.**
 - Both languages: maintain everything from January, add **one podcast episode a day with no transcript at all** — training tolerance for not understanding
-- ✏️ Writing shifts to **DELF/DELE format**: 160–180 words, timed 45 min, once per week per language
+- ✏️ Writing: 180 words, timed 45 min, once per week per language, corrected
 
-**End-of-month test — the big one:** Sit a **full past DELF B1 and DELE B1 paper**, untimed, at home. Score them. You want ≥ 40/100. Below 30 in either means that language needs the majority of March.
+**End-of-month test — the big one:** run the **full field-test battery** in both languages (`checkpoints.md` §2). Half a day; you'll need a native for the speaking tests. Failing **S1** (30 min, no English) or **S3** (sort out a problem) is the real warning sign — that language then takes 65% of March–April hours.
 
 ---
 
 ## Phase 3 — B1 Build
 ### March 2027 · 18 hrs/wk · Uni Day template
 
-**Mission:** Close the gaps February's mock exposed. Exam format becomes the training method.
+**Mission:** Close the gaps February's field tests exposed. Everything points at real-world use now.
 
 **Uni context:** Sem 1 2027, 48cp (EFB344, EFB343, EFB335, BSB399). Heavy but standard load — no overload this time.
 
 **Both languages:**
-- Rebalance hours toward whichever mock scored lower — do not split 50/50 out of tidiness
-- **Listening:** one exam-style listening exercise per language per day, 15 min. Recordings played twice, then answer without the transcript.
-- **Reading:** one exam-style reading passage per language per day
-- ✏️ **Writing: 2× timed 45-min pieces per language per week.** Tutor corrects both.
-- 🗣️ **Speaking:** tutor sessions shift to DELF/DELE format — guided conversation, information exchange, role play. Tell your tutors explicitly: *"I'm sitting B1 in May, run me through the speaking format."*
+- Rebalance toward whichever language failed more field tests — do not split 50/50 out of tidiness
+- 🗣️ **Speaking is the priority from here.** It's the weakest skill on the free track and the one the field tests actually gate on. Push to 3 conversation sessions per language per week — a paid tutor, an exchange partner, or a native at work; volume matters more than which.
+- **Listening:** 15 min/day per language of *hard* input — full-speed native audio, no transcript. This is the L1/L3 training.
+- **Reading:** one newspaper article per language per day, no dictionary (R1 training)
+- ✏️ **Writing: 2× 180-word pieces per language per week,** corrected on LangCorrect or WriteStreak
+- **Drill S2 explicitly:** once a week, explain something from your own life for 3 minutes on camera, unprepared. Watch it back. It's excruciating and it's the fastest fix for hesitation.
 - Anki: drop new cards to 10/day, prioritise reviews. Consolidation over acquisition from here.
-- Keep one "fun" input source per language so it doesn't become pure exam grind — TV series, football commentary, whatever holds you.
+- Free DELF/DELE past papers are still useful here — not as exams, but as free graded listening and reading material with an answer key.
 
-**End-of-month test:** Timed mock speaking section, recorded, each language. Self-score against the DELF B1 grid.
+**End-of-month test:** re-run **S1, S2 and L1** only. You're looking for movement, not a full battery.
 
 ### April 2027 · 18 hrs/wk
 
-**Mission:** Get both languages over the line and make it repeatable.
+**Mission:** Make it repeatable. B1 isn't a peak you touch once — it's a level you can perform on a bad day.
 
-- **Weekly full mock exam**, alternating languages: Spanish in week 1 and 3, French in week 2 and 4. Timed, all four sections, in one sitting.
-- Error log: every mock, write down the three things that cost you the most marks. Drill exactly those for the following week. Nothing else.
-- Maintain daily input — do not let mock prep crowd out listening volume
-- Tutors: 2× per language per week, all exam format
-- Reading: DELF/DELE reading papers + *L'Étranger* (French) / news (Spanish)
+- **Speaking every single day**, even if it's 15 minutes with an exchange partner or talking to yourself. Consistency beats session length now.
+- **Weekly S3 rehearsal:** pick a different real-world problem each week — wrong bill, changed booking, faulty item, lost booking, complaining about a room — and role-play it until you can do it without rehearsing.
+- **The unfamiliar-topic drill:** have your partner pick topics you haven't prepared. Politics, your degree, a film you just watched. B1 is defined by coping with the unprepared.
+- Maintain daily input — don't let speaking practice crowd out listening volume
+- Reading: *L'Étranger* (French) / news and a novel (Spanish)
 
-**End-of-month test:** 🎯 **Full timed mock in each: target ≥ 50/100 with no section under 10.** This is the go/no-go. Under 40 in a language → sit that one in the November session instead and take the win on the other.
+**End-of-month test:** 🎯 Full field-test battery, both languages. **Target: 8 of 10 passed, including S1 and S3.** Short of that, you have June through August before you fly — that's the buffer an exam date would never have given you.
 
 ---
 
-## Phase 4 — Exam Sprint
+## Phase 4 — Consolidation
 ### May 2027 · 18 hrs/wk
 
-**Mission:** Peak, don't cram.
+**Mission:** Hold the level through uni exams and prove it on 1 June.
 
-**Uni context:** ⚠️ Sem 1 assessment is ramping toward June exams. Both peaks collide. This is why the summer had to carry the load — May is taper, not rescue.
+**Uni context:** ⚠️ Sem 1 assessment ramps toward June exams this month. Without a language exam competing for the same fortnight, this is now much easier than the original plan — **uni gets priority in May and languages go to maintenance without it costing you anything.** That's a real dividend from dropping the exams.
 
-- **Weeks 1–2:** two full mocks per language. Drill the error log. Speaking practice daily, even if just 10 minutes talking to yourself.
-- **Week 3:** volume down 30%. Light input, keep speaking, sleep properly.
-- **Exam week:** morning of each exam — 20 minutes of listening in that language to warm your ear up. Nothing new. Nothing hard.
-- 🎯 **Sit DELF B1. Sit DELE B1.**
-- After: play the September recordings back. Then book something for the Europe year.
+- **Weeks 1–3:** maintenance. Daily input, speaking 3×/week per language, Anki reviews. Don't chase new ground while uni assessment is peaking.
+- 🔴 **1 June — the recording.** 15 minutes unscripted with a native, each language. Play it next to the 60-second September recording. Tell someone the date in advance; that's what makes it happen.
+- Full field-test battery in the first week of June, once uni pressure eases.
+- Then: you have June, July and August before you fly. That's when you push whatever the field tests said is still weak — with no uni load at all.
+
+### The real finish line — August 2027
+
+You don't fly out in May. **The plan ends in a bar in Valencia or Lyon**, three weeks before Sheffield starts, finding out whether an hour with a stranger is a pleasure or an ordeal.
+
+Book that trip in October 2026 (see `checkpoints.md` §1). It's the deadline now.
 
 ---
 
@@ -223,7 +228,8 @@ Every month has: **the mission**, **exactly what to consume**, and **the test at
 | Nov | Español con Juan + writing | First French tutor | Survive exams |
 | **Dec** | **Dreaming Spanish Intermediate** | **InnerFrench** | **A2** |
 | **Jan** | Preterite/imperfect + native TV | Passé composé/imparfait + native TV | **Grammar closed** |
-| **Feb** | Full intensity to the 21st | Same | **Mocks + BOOK EXAMS** |
-| Mar | Exam-format everything | Exam-format everything | Gaps closed |
-| Apr | Weekly full mocks | Weekly full mocks | **≥50/100** |
-| May | Taper | Taper | 🎯 **Sit both** |
+| **Feb** | Full intensity to the 21st | Same | **Field tests** |
+| Mar | Speaking 3×/wk + hard listening | Speaking 3×/wk + hard listening | Gaps closed |
+| Apr | Daily speaking, unfamiliar topics | Daily speaking, unfamiliar topics | **8 of 10 tests** |
+| May | Maintenance (uni exams win) | Maintenance | 🎯 **1 June recording** |
+| Aug | — | — | 🍺 **Valencia / Lyon** |
