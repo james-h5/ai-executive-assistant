@@ -15,7 +15,7 @@ Develop the ability to express thoughts clearly, confidently, and precisely — 
 
 James currently finds it hard to turn his thoughts into words as clearly as he wants to. The gap between what he's thinking and what comes out is the problem. This project is about closing that gap — so he can communicate his ideas with the same clarity they have in his head.
 
-Use the `/comm-coach` skill for practice sessions.
+Use the `/comm-coach` skill for practice sessions. Use `/wit-practice` for daily wit reps (see `wit-practice/`).
 
 ## Focus Areas
 
@@ -23,6 +23,7 @@ Use the `/comm-coach` skill for practice sessions.
 - **Speaking confidently** — no filler words, no second-guessing mid-sentence
 - **Being easy to follow** — logical flow, one point at a time
 - **Writing with impact** — emails, DMs, pitches that land
+- **Wit** — fast, natural, funny under no notice — daily practice via `/wit-practice`
 
 ## Why This Matters
 
