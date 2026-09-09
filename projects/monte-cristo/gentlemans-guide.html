@@ -275,6 +275,64 @@
     font-size: 0.94rem;
   }
 
+  .drill-scroll {
+    overflow-x: auto;
+    margin-top: 1.2rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+  }
+  table.drills {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 520px;
+    font-size: 0.94rem;
+  }
+  table.drills th, table.drills td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+  table.drills tr:last-child td { border-bottom: none; }
+  table.drills th {
+    font-family: -apple-system, "Segoe UI", Roboto, ui-sans-serif, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    font-size: 0.66rem;
+    color: var(--brass);
+    font-weight: 600;
+    border-bottom: 1px solid var(--line-strong);
+  }
+  table.drills td.no {
+    font-variant-numeric: tabular-nums;
+    color: var(--brass);
+    white-space: nowrap;
+    width: 3.2rem;
+  }
+  table.drills td.mech { width: 38%; }
+  table.drills td.mech strong { color: var(--ink); }
+  table.drills td.how { color: var(--ink-soft); }
+
+  .tier-head {
+    margin: 2.4rem 0 0.2rem;
+    font-family: -apple-system, "Segoe UI", Roboto, ui-sans-serif, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--wine);
+  }
+  .tier-note { max-width: 65ch; font-size: 0.94rem; color: var(--ink-soft); margin: 0.4rem 0 0; }
+
+  ol.sequence {
+    max-width: 65ch;
+    margin-top: 1rem;
+    padding-left: 1.4rem;
+  }
+  ol.sequence li { margin-bottom: 0.35rem; }
+  ol.sequence .why { color: var(--ink-soft); font-size: 0.9rem; }
+
   blockquote.story {
     margin: 1.2rem 0 0.6rem;
     padding: 1rem 1.5rem;
@@ -408,10 +466,12 @@
         <li><a href="#presence"><span class="chapter-no">IV</span> Expression &amp; Presence</a></li>
         <li><a href="#signals"><span class="chapter-no">V</span> Reading Signals</a></li>
         <li><a href="#conversation"><span class="chapter-no">VI</span> Conversation &amp; Wit</a></li>
-        <li><a href="#motivating"><span class="chapter-no">VII</span> Motivating Others</a></li>
-        <li><a href="#scripts"><span class="chapter-no">VIII</span> The Situation Library</a></li>
-        <li><a href="#stories"><span class="chapter-no">IX</span> The Story Library</a></li>
-        <li><a href="#grows"><span class="chapter-no">X</span> How This Guide Grows</a></li>
+        <li><a href="#conviction"><span class="chapter-no">VII</span> Conviction &amp; Authority</a></li>
+        <li><a href="#motivating"><span class="chapter-no">VIII</span> Motivating Others</a></li>
+        <li><a href="#scripts"><span class="chapter-no">IX</span> The Situation Library</a></li>
+        <li><a href="#stories"><span class="chapter-no">X</span> The Story Library</a></li>
+        <li><a href="#drills"><span class="chapter-no">XI</span> The Drill Book <span class="badge">Practice</span></a></li>
+        <li><a href="#grows"><span class="chapter-no">XII</span> How This Guide Grows</a></li>
       </ol>
     </nav>
 
@@ -480,6 +540,11 @@
 
         <h3>Cutting filler words</h3>
         <p>The fix is not "try not to say um" — it's giving the brain permission to pause instead of filling the gap. Filler words happen when the mouth moves faster than the thought is ready. Slow the pace, and the filler drops out on its own.</p>
+        <p><strong>Filler is state-dependent, not a fixed habit.</strong> It stays absent through easy conversation and appears exactly where the stakes climb — and it climbs hardest in front of senior or appraising figures specifically, not merely bigger crowds. A friend's parent, a room where you're being evaluated, someone whose opinion carries weight: that's where the "um," the "you know," and the "yeah" lead-in reappear. Because it's state-dependent, the fix isn't unlearning a habit over months — it's catching it live in the moment it spikes. Cut the lead-in entirely and deliver the sentence flat.</p>
+
+        <h3>When the words won't come at all</h3>
+        <p>Distinct from the physical freeze in <a href="#breathing">Chapter I</a>: the body is fine, the read was correct, and still nothing arrives to say. The instinct is to reach for a new idea out of thin air, which is precisely the hardest thing to do under pressure.</p>
+        <p><strong>Anchor to the room instead.</strong> Name the actual object or event in front of you — the thing they're holding, the thing that just happened, the line they just said. Reality is doing the work, not your invention. Nearly every clean recovery in practice has used something physically present as the anchor.</p>
 
         <h3>Composed vs. rehearsed</h3>
         <p><strong>Composed:</strong> unhurried, willing to pause, tone stays level whether the moment is easy or has stakes. <strong>Rehearsed</strong> — avoid this — pre-loaded lines delivered too fast, tone climbing in pitch and speed the moment stakes appear. That climb is the tell that gives nerves away faster than the words themselves.</p>
@@ -528,6 +593,11 @@
 
         <h3>Hands and gestures</h3>
         <p>Use hands naturally to support speech — stillness overcorrected into stiffness reads as tense, not composed. Avoid self-touch fidgeting (face, hair, adjusting clothes repeatedly): it spikes when nervous and is one of the most visible tells in the room.</p>
+
+        <h3>Stillness as presence</h3>
+        <p>The men who draw a room's attention on entry are almost never the ones moving the most. Magnetism comes from the absence of unnecessary motion — no bouncing, no scanning for approval, no adjusting, no filling the space with movement the way a nervous person fills silence with words. Every extraneous movement is a small signal that you are managing discomfort.</p>
+        <p>The distinction that matters: <strong>stillness is not stiffness.</strong> Hands still gesture to support speech, the face still moves, the body still turns toward whoever is speaking. What's removed is the fidget layer underneath — the motion that serves no purpose except discharging nervous energy. Cut that, and what's left reads as gravity.</p>
+        <p>It is also the cheapest mechanic in this guide to practise, because it requires doing less rather than more. Sit through one conversation without a single adjustment of posture, phone, sleeve, or hair, and the difference in how you're treated is visible the same evening.</p>
 
         <h3>Eye contact</h3>
         <p>Hold eye contact through the end of a sentence, break naturally rather than darting away mid-thought. In a passing moment — a hallway, a queue, an elevator — the ability to hold eye contact half a second longer than instinct wants, paired with a genuine small smile, <em>is</em> the opener. It doesn't require words to not be a freeze.</p>
@@ -720,8 +790,56 @@
         </div>
       </section>
 
-      <section class="chapter" id="motivating">
+      <section class="chapter" id="conviction">
         <div class="chapter-eyebrow"><span class="chapter-no">Chapter VII</span></div>
+        <h2>Conviction &amp; Authority</h2>
+        <p class="dek">Sounding certain, disagreeing without heat, and holding your own tempo — the difference between a man who is listened to and a man who is merely heard.</p>
+
+        <h3>Cut every hedge</h3>
+        <p>This is the single largest lever on sounding certain, and it costs nothing but attention. "I think," "kind of," "maybe," "sort of," "probably," "hopefully" — every one of them is a small apology attached to a statement that didn't need one. Remove them and the sentence underneath is unchanged in content and transformed in effect.</p>
+        <p>The men who read as unshakeable do not qualify. They state. Watch any of them under hostile questioning and the striking thing is not what they claim — it's the complete absence of the softening words most people scatter through every second sentence. "We will win the league" and "I think we've got a decent chance, hopefully" describe the same belief. Only one of them sounds like a man who believes it.</p>
+        <p>Hedges are inserted for protection — they leave an exit if you turn out to be wrong. But the protection is worthless (nobody holds you to a prediction) and the cost is constant (everything you say arrives pre-discounted).</p>
+
+        <h3>State the outcome as fact, casually</h3>
+        <p>"I'm going to Europe next year," not "I'm hoping to get to Europe next year." Identical information, opposite signal. The casualness is what does the work — a plan announced as though it were already settled reads as certainty; the same plan announced with visible hope reads as a wish, and invites the listener to weigh whether it will happen.</p>
+        <p>This is not bravado, which is loud and needs an audience. It's the flat, unremarkable delivery of something you have decided.</p>
+
+        <h3>Never minimize what you've done</h3>
+        <p>The mirror image of the hedge, and a confirmed weak point: asked what you're up to by someone whose opinion carries weight, the instinct is to shrink the answer — "not much," "nothing exciting" — attached to something genuinely substantial. It reads as modesty in your head. It reads as uncertainty about your own value to the person listening.</p>
+        <p>State it plainly and stop. A double degree, a real skill, a business being built — none of it requires shrinking to avoid arrogance. Arrogance is in the delivery, not the content. Say the true thing at a normal volume and let it sit.</p>
+
+        <h3>Acknowledge specifically, then counter</h3>
+        <p>Disagreement feels respectful when the other person can tell they were actually heard — and the proof of that is specificity. Restate their actual point, in your own words, before you counter it. Not "I hear you, but" — that's a formality everyone recognizes as a throat-clearing noise before a dismissal. Something closer to: "So the concern is that it costs more upfront and takes longer to pay back — that's fair, and here's where I'd push back on it."</p>
+        <p>Nothing is conceded by doing this. The position is identical. But the other person can no longer argue that you missed their point, and the temperature of the whole exchange drops. This is the single most useful mechanic in the guide for client conversations, not just social ones.</p>
+
+        <h3>Drop the volume in disagreement, never raise it</h3>
+        <p>Raising volume is the loss of frame made audible — it tells the room the argument stopped being about the idea and started being about winning. Going slightly quieter forces attention rather than demanding it, and it signals that you are not threatened by the disagreement. The man who gets quieter when challenged is read as far more dangerous than the man who gets louder.</p>
+
+        <h3>Disagree with the idea, not the person</h3>
+        <p>"I don't think that holds up, because —" rather than "you're wrong." The moment a disagreement attaches to the person, they defend themselves instead of examining the idea, and the conversation is over as a useful exchange. Keeping it on the idea leaves them free to change position without losing face, which is the only way anyone ever actually changes position.</p>
+
+        <h3>Hold your own tempo</h3>
+        <p>If the other person is fast, urgent, or talking over the top, the reflex is to match their speed — and matching it hands them control of the exchange. Answer at your own pace regardless of theirs. Let the half-beat pause sit even when the room is moving quickly.</p>
+        <p>The room adjusting to your tempo is not a byproduct of status; it <em>is</em> the mechanic. A man who cannot be hurried is read as the calmest person present, and calm is what authority is made of.</p>
+
+        <h3>Answer the question, then stop</h3>
+        <p>Certainty leaks out of good answers through the tail end. The answer is delivered, it lands, and then the silence gets uncomfortable and it gets justified, expanded, softened, defended against objections nobody raised. Every additional sentence past the answer is a small signal that you don't think the first one was enough.</p>
+        <p>Say the thing. Let the silence sit. It's the same muscle as <a href="#voice">Chapter II</a>'s pause, applied at the end of a statement rather than the beginning.</p>
+
+        <div class="callout">
+          <span class="label">Questions for the Count</span>
+          <ol>
+            <li>Count the hedges — how many "I think," "kind of," "maybe," "hopefully" made it into that exchange?</li>
+            <li>Was anything true about you shrunk on the way out of your mouth?</li>
+            <li>In the disagreement: was their actual point restated before you countered it, or only acknowledged in form?</li>
+            <li>Did the volume go up, stay level, or drop?</li>
+            <li>Whose tempo was the conversation running at — yours or theirs?</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="chapter" id="motivating">
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter VIII</span></div>
         <h2>Motivating Others</h2>
         <p class="dek">Moving other people to act — rallying a group, leading by example, and calibrating the push to the person in front of you.</p>
 
@@ -778,7 +896,7 @@
       </section>
 
       <section class="chapter" id="scripts">
-        <div class="chapter-eyebrow"><span class="chapter-no">Chapter VIII</span></div>
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter IX</span></div>
         <h2>The Situation Library</h2>
         <p class="dek">A living record of situation and best response — some seeded to start, the rest built from real debriefs and real questions as they happen.</p>
 
@@ -813,13 +931,22 @@
             <span class="field-label">Best response</span>
             <p>Genuine, brief, situational — something about their business, the location, or their industry. Same presence and composure skills as any other scenario in this guide; the stakes are just professional instead of romantic.</p>
           </div>
+          <div class="script-card">
+            <h3>A senior figure asks what you do</h3>
+            <span class="field-label">Situation</span>
+            <p>Someone higher-status or plainly evaluating you — a friend's parent, a host's mother, anyone whose regard carries weight in the room — asks a simple question: "what are you up to these days?"</p>
+            <span class="field-label">Best response</span>
+            <p>State what you actually do plainly, and stop. No minimizer tacked on the end. Something genuinely solid does not need to be shrunk in order to read as modest — downplaying it reads as uncertainty about your own value, which is the exact opposite of what you want an appraising person to take away.</p>
+            <span class="field-label">Common failure point</span>
+            <p>Two tells arrive together here and nowhere else as reliably: the filler lead-in ("um," "you know") and the minimizing close ("not much," "nothing exciting"). Both are state-dependent, both resolve the instant they're noticed. The work is catching them live. See Chapters II and VII.</p>
+          </div>
         </div>
 
         <div class="new-entries">New situations get added here by the Count as real debriefs and questions come in — nothing to do but keep asking.</div>
       </section>
 
       <section class="chapter" id="stories">
-        <div class="chapter-eyebrow"><span class="chapter-no">Chapter IX</span></div>
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter X</span></div>
         <h2>The Story Library</h2>
         <p class="dek">Real material, tightened for actual delivery using the setup / turn / payoff method from Chapter VI. Raw version kept for reference — polished version is what to actually say.</p>
 
@@ -894,8 +1021,145 @@
         <div class="new-entries">New stories get added here whenever one comes up and gets tightened — bring the raw version, the Count does the rest.</div>
       </section>
 
+      <section class="chapter" id="drills">
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter XI</span> <span class="start-badge">Practice</span></div>
+        <h2>The Drill Book</h2>
+        <p class="dek">Everything in this guide, reduced to individual behaviors you can catch yourself doing or failing to do. "Composure" is not a drill. "Pause two seconds before answering" is.</p>
+
+        <p><strong>One mechanic per week — not the list.</strong> Attention is the scarce resource here, and split across forty items it accomplishes nothing. Pick one, run it live everywhere for a week, then take the next. A bar shift is the ideal training ground: several hundred low-stakes interactions with strangers, immediate feedback, nothing riding on any single one.</p>
+
+        <p class="tier-head">Tier 0 · Confirmed weak points — start here</p>
+        <p class="tier-note">These four came out of real debriefs rather than theory. Everything below them stays hypothetical until these are closed.</p>
+        <div class="drill-scroll">
+          <table class="drills">
+            <tr><th>No.</th><th>Mechanic</th><th>The drill</th></tr>
+            <tr><td class="no">0.1</td><td class="mech"><strong>Cut the stakes-linked filler</strong></td><td class="how">"Um," "you know," the "yeah" lead-in. Escalates specifically with senior or appraising people. Cut the lead-in, deliver flat.</td></tr>
+            <tr><td class="no">0.2</td><td class="mech"><strong>Stop minimizing what you do</strong></td><td class="how">No "not much," no "nothing exciting." State it plainly and stop.</td></tr>
+            <tr><td class="no">0.3</td><td class="mech"><strong>Anchor to the room when words won't come</strong></td><td class="how">Name the actual object or event in front of you instead of inventing a topic from nothing.</td></tr>
+            <tr><td class="no">0.4</td><td class="mech"><strong>Treat the second window as live</strong></td><td class="how">A parting remark is still an opening. "I already missed it" is not a reason to miss the next one.</td></tr>
+          </table>
+        </div>
+
+        <p class="tier-head">Tier 1 · Nervous system</p>
+        <p class="tier-note">The foundation. Every mechanic above this tier fails while the body is still in threat-state.</p>
+        <div class="drill-scroll">
+          <table class="drills">
+            <tr><th>No.</th><th>Mechanic</th><th>The drill</th></tr>
+            <tr><td class="no">1.1</td><td class="mech"><strong>Physiological sigh on trigger</strong></td><td class="how">Two short inhales through the nose, one long exhale. Under five seconds, invisible.</td></tr>
+            <tr><td class="no">1.2</td><td class="mech"><strong>Shoulders down, jaw unclenched</strong></td><td class="how">Tension check on any spike, release both at once.</td></tr>
+            <tr><td class="no">1.3</td><td class="mech"><strong>Breath, then body, then words</strong></td><td class="how">Move first — half-step, body turn, held eye contact. The line comes after the body commits.</td></tr>
+            <tr><td class="no">1.4</td><td class="mech"><strong>Box breathing beforehand</strong></td><td class="how">Four in, four hold, four out, four hold — sixty seconds before any room with stakes.</td></tr>
+            <tr><td class="no">1.5</td><td class="mech"><strong>Lower the stakes on purpose</strong></td><td class="how">The goal of a single interaction is "be present for ten seconds," not "win."</td></tr>
+          </table>
+        </div>
+
+        <p class="tier-head">Tier 2 · Voice</p>
+        <div class="drill-scroll">
+          <table class="drills">
+            <tr><th>No.</th><th>Mechanic</th><th>The drill</th></tr>
+            <tr><td class="no">2.1</td><td class="mech"><strong>Chest voice, not throat</strong></td><td class="how">Hand on the chest — it should vibrate slightly as you speak.</td></tr>
+            <tr><td class="no">2.2</td><td class="mech"><strong>Kill uptalk</strong></td><td class="how">Statements end flat or falling, never rising.</td></tr>
+            <tr><td class="no">2.3</td><td class="mech"><strong>Half-beat pause before responding</strong></td><td class="how">Reads as thoughtful, not slow. Two seconds is not too long.</td></tr>
+            <tr><td class="no">2.4</td><td class="mech"><strong>Pause rather than fill</strong></td><td class="how">Silence is not a gap requiring patching.</td></tr>
+            <tr><td class="no">2.5</td><td class="mech"><strong>Match the room's volume</strong></td><td class="how">Speaking quietly enough to half-hope you aren't heard reads as uncertainty.</td></tr>
+            <tr><td class="no">2.6</td><td class="mech"><strong>Deliver, then stop</strong></td><td class="how">No stacking three sentences to fill the space while waiting for a response.</td></tr>
+            <tr><td class="no">2.7</td><td class="mech"><strong>Tone stays level as stakes rise</strong></td><td class="how">The climb in pitch and speed is the tell, more than the words.</td></tr>
+          </table>
+        </div>
+
+        <p class="tier-head">Tier 3 · Body</p>
+        <div class="drill-scroll">
+          <table class="drills">
+            <tr><th>No.</th><th>Mechanic</th><th>The drill</th></tr>
+            <tr><td class="no">3.1</td><td class="mech"><strong>Shoulders back and down, chest open</strong></td><td class="how">Up around the ears is tension. A caved chest is the freeze tell.</td></tr>
+            <tr><td class="no">3.2</td><td class="mech"><strong>Walk unhurried, arms swinging, eyes up</strong></td><td class="how">Eyes down makes the opportunity invisible before it can be acted on.</td></tr>
+            <tr><td class="no">3.3</td><td class="mech"><strong>Settled stance</strong></td><td class="how">No rocking, no weight-shifting — both read as impatience.</td></tr>
+            <tr><td class="no">3.4</td><td class="mech"><strong>Hands visible, no self-touch</strong></td><td class="how">Face, hair, adjusting clothes. The most visible tell in the room.</td></tr>
+            <tr><td class="no">3.5</td><td class="mech"><strong>Sit back, don't perch</strong></td><td class="how">Perching on the edge is the seated version of ready-to-flee.</td></tr>
+            <tr><td class="no">3.6</td><td class="mech"><strong>Eye contact through the end of the sentence</strong></td><td class="how">Break naturally afterward, not darting away mid-thought.</td></tr>
+            <tr><td class="no">3.7</td><td class="mech"><strong>Stillness</strong></td><td class="how">Cut the fidget layer. One conversation with no adjustment of posture, phone, or sleeve.</td></tr>
+          </table>
+        </div>
+
+        <p class="tier-head">Tier 4 · Face &amp; frame</p>
+        <div class="drill-scroll">
+          <table class="drills">
+            <tr><th>No.</th><th>Mechanic</th><th>The drill</th></tr>
+            <tr><td class="no">4.1</td><td class="mech"><strong>Resting face relaxed, not flat</strong></td><td class="how">Softened brow and mouth. A tense, inward face cannot notice signals.</td></tr>
+            <tr><td class="no">4.2</td><td class="mech"><strong>Smile with the eyes</strong></td><td class="how">The crinkle is the difference. Visible in a mirror, obvious to everyone else.</td></tr>
+            <tr><td class="no">4.3</td><td class="mech"><strong>Eyebrow flash on greeting</strong></td><td class="how">A quick natural raise — universally read as friendly recognition.</td></tr>
+            <tr><td class="no">4.4</td><td class="mech"><strong>Kill the flinch</strong></td><td class="how">Widened eyes and a slight recoil read as rejection even when they aren't.</td></tr>
+            <tr><td class="no">4.5</td><td class="mech"><strong>Hold frame after a miss</strong></td><td class="how">No slumping, no over-explaining. This beats a perfect opener followed by collapse.</td></tr>
+          </table>
+        </div>
+
+        <p class="tier-head">Tier 5 · Conversation</p>
+        <div class="drill-scroll">
+          <table class="drills">
+            <tr><th>No.</th><th>Mechanic</th><th>The drill</th></tr>
+            <tr><td class="no">5.1</td><td class="mech"><strong>Situational openers only</strong></td><td class="how">Never an appearance compliment — it signals intent and raises the guard.</td></tr>
+            <tr><td class="no">5.2</td><td class="mech"><strong>Specific over abstract</strong></td><td class="how">"Best thing you've eaten this week" beats "what do you do for fun."</td></tr>
+            <tr><td class="no">5.3</td><td class="mech"><strong>Real follow-ups, not your next topic</strong></td><td class="how">This is what separates a conversation from an interview.</td></tr>
+            <tr><td class="no">5.4</td><td class="mech"><strong>Trade, don't interrogate</strong></td><td class="how">Answer your own question sometimes; offer something unprompted.</td></tr>
+            <tr><td class="no">5.5</td><td class="mech"><strong>Setup, turn, payoff — then stop</strong></td><td class="how">Cut throat-clearing detail. Never explain the punchline.</td></tr>
+            <tr><td class="no">5.6</td><td class="mech"><strong>Banter as light challenge</strong></td><td class="how">"You say that like it's a good thing." Tease, never insult.</td></tr>
+            <tr><td class="no">5.7</td><td class="mech"><strong>Callback humor</strong></td><td class="how">Reference something from earlier — reads as attentive without requiring quick wit.</td></tr>
+            <tr><td class="no">5.8</td><td class="mech"><strong>Listen without drafting your reply</strong></td><td class="how">People remember how the conversation felt, not your lines.</td></tr>
+            <tr><td class="no">5.9</td><td class="mech"><strong>Escalate directly</strong></td><td class="how">"I'd like to keep talking to you — can I get your number." No hopeful trail-off.</td></tr>
+          </table>
+        </div>
+
+        <p class="tier-head">Tier 6 · Reading signals</p>
+        <div class="drill-scroll">
+          <table class="drills">
+            <tr><th>No.</th><th>Mechanic</th><th>The drill</th></tr>
+            <tr><td class="no">6.1</td><td class="mech"><strong>Match, then slightly escalate</strong></td><td class="how">Matching proves it was noticed without overcommitting.</td></tr>
+            <tr><td class="no">6.2</td><td class="mech"><strong>Don't flinch on touch</strong></td><td class="how">Same reset. Going rigid reads as rejection even when it's only surprise.</td></tr>
+            <tr><td class="no">6.3</td><td class="mech"><strong>De-escalate gracefully on disinterest</strong></td><td class="how">Information to act on, not a failure to fix.</td></tr>
+            <tr><td class="no">6.4</td><td class="mech"><strong>Test ambiguity cheaply</strong></td><td class="how">A small escalation of your own tells you more than guessing does.</td></tr>
+          </table>
+        </div>
+
+        <p class="tier-head">Tier 7 · Conviction &amp; authority</p>
+        <div class="drill-scroll">
+          <table class="drills">
+            <tr><th>No.</th><th>Mechanic</th><th>The drill</th></tr>
+            <tr><td class="no">7.1</td><td class="mech"><strong>Cut every hedge</strong></td><td class="how">Delete "I think," "kind of," "maybe," "hopefully," "sort of," "probably." The largest single lever here.</td></tr>
+            <tr><td class="no">7.2</td><td class="mech"><strong>State outcomes as fact</strong></td><td class="how">"I'm going to Europe next year," not "I'm hoping to." Casually, not loudly.</td></tr>
+            <tr><td class="no">7.3</td><td class="mech"><strong>Acknowledge specifically, then counter</strong></td><td class="how">Restate their actual point in your own words first. Concedes nothing, drops the temperature.</td></tr>
+            <tr><td class="no">7.4</td><td class="mech"><strong>Never raise volume in disagreement</strong></td><td class="how">Go slightly quieter instead. Volume escalation is the loss of frame made audible.</td></tr>
+            <tr><td class="no">7.5</td><td class="mech"><strong>Disagree with the idea, not the person</strong></td><td class="how">Leaves them free to change position without losing face.</td></tr>
+            <tr><td class="no">7.6</td><td class="mech"><strong>Hold your own tempo</strong></td><td class="how">Don't match an urgent talker's speed. Being unhurriable is the mechanic, not the byproduct.</td></tr>
+            <tr><td class="no">7.7</td><td class="mech"><strong>Answer, then stop</strong></td><td class="how">Over-explaining is how certainty leaks out of an otherwise good answer.</td></tr>
+          </table>
+        </div>
+
+        <h3>The order to run them in</h3>
+        <p>Twelve weeks, sequenced so each one makes the next easier rather than competing with it.</p>
+        <ol class="sequence">
+          <li><strong>0.1</strong> — cut filler <span class="why">· most visible, already confirmed live</span></li>
+          <li><strong>0.2</strong> — stop minimizing</li>
+          <li><strong>7.1</strong> — cut hedges <span class="why">· same underlying tell as 0.2, so they reinforce</span></li>
+          <li><strong>2.3</strong> — half-beat pause <span class="why">· makes 0.1 and 7.1 far easier; filler is what fills the gap</span></li>
+          <li><strong>3.6</strong> — eye contact through the end of the sentence</li>
+          <li><strong>2.2</strong> — kill uptalk</li>
+          <li><strong>3.7</strong> — stillness</li>
+          <li><strong>4.2</strong> — smile with the eyes</li>
+          <li><strong>5.3</strong> — genuine follow-up questions</li>
+          <li><strong>7.3</strong> — acknowledge before countering</li>
+          <li><strong>7.6</strong> — hold your own tempo</li>
+          <li><strong>5.9</strong> — direct escalation</li>
+        </ol>
+        <p>Then start again from the top. The early mechanics will have decayed, and the later ones land more easily on a second pass.</p>
+
+        <div class="callout">
+          <span class="label">What mechanics cannot do</span>
+          <p style="margin:0;">Delivery is roughly a fifth of this. The rest is having something worth saying — which comes from a life worth talking about and genuine curiosity about the person in front of you. Travel, languages, boxing, the business: that is the raw material, and <a href="#stories">Chapter X</a> is where it gets sharpened. Drilling mechanics over an empty story bank produces a man who is polished and hollow, and people read that instantly.</p>
+        </div>
+      </section>
+
       <section class="chapter" id="grows">
-        <div class="chapter-eyebrow"><span class="chapter-no">Chapter X</span></div>
+        <div class="chapter-eyebrow"><span class="chapter-no">Chapter XII</span></div>
         <h2>How This Guide Grows</h2>
         <p class="dek">This isn't a static document.</p>
         <p>Every time a real situation gets debriefed, a story gets tightened, or a hypothetical gets asked through the <code>/monte-cristo</code> skill, whatever's missing here gets added — a new entry in the Situation Library or Story Library, a sharper point in an existing chapter, sometimes a whole new chapter if a new pattern shows up often enough. The source of truth lives in <code>projects/monte-cristo/curriculum/</code>; this page is the readable, always-current copy of it.</p>
@@ -907,7 +1171,7 @@
 
   <footer>
     <span>The Gentleman's Guide &middot; Monte Cristo Project</span>
-    <span>Last updated 3 August 2026</span>
+    <span>Last updated 9 September 2026</span>
   </footer>
 
 </div>
