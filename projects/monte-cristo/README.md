@@ -43,6 +43,14 @@ The Count speaks his responses aloud (ElevenLabs TTS) rather than just printing 
 - Same presence and composure carries into client meetings and networking for the AI consulting business
 - Confidence compounds — every situation debriefed makes the next one easier
 
+## The Actual Goal (not "get the number")
+
+Added 2026-09-09, after James asked directly what the point of any of this is if not always escalating toward a number. The answer: the number was never the goal. It's the natural endpoint of one specific branch of the conversation ladder (`curriculum/conversation-and-wit.md`) — mutual romantic interest, direct statement, ask. Most conversations won't go there and don't need to.
+
+The actual goal is broader and simpler: become someone who is comfortable initiating with anyone, about anything, regardless of outcome. That's the same skill in a client meeting, meeting a mate's new partner, or a stranger at a bar — this project was never really about dating specifically, see the project description above. A conversation that goes nowhere except being a good two-minute exchange is still a full, successful rep.
+
+This isn't just philosophy — it's functionally necessary. Treating every interaction as an attempt to extract a number quietly reintroduces outcome pressure, and outcome pressure is exactly what spikes the freeze response (`curriculum/breathing-and-nerves.md` — lowering the stakes on purpose is already the prescribed fix for nerves). Do it for the conversation. The number, when it happens, is a bonus — not the metric being optimized.
+
 ## Next Steps
 - Run a debrief on the train incident itself as the first real test case
 - Set up ElevenLabs (API key + voice ID) so the Count can actually speak — see `.env.example`

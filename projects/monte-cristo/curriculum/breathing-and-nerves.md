@@ -27,7 +27,7 @@ The order matters: breath → body → words. Trying to think of the right thing
 ## Pre-Loading Composure (before you're in a situation)
 
 - **Box breathing** (4 in, 4 hold, 4 out, 4 hold) for 60 seconds before any environment with social stakes — a party, a networking event, walking somewhere you might run into people. Lowers baseline arousal so a sudden opportunity doesn't spike as hard.
-- **Lower the stakes on purpose** — decide in advance that the goal of any single interaction is "be present for 10 seconds," not "win." Removing the outcome pressure is what keeps the nervous system from treating it as threat.
+- **Lower the stakes on purpose** — decide in advance that the goal of any single interaction is "be present for 10 seconds," not "win." Removing the outcome pressure is what keeps the nervous system from treating it as threat. See `README.md` — "The Actual Goal" — for why this isn't just a nerves trick: treating every conversation as an attempt to get a number is what reintroduces the outcome pressure this bullet is trying to remove.
 
 ## The Second Window (the freeze can compound)
 
