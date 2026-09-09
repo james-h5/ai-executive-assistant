@@ -12,12 +12,15 @@ description: What to talk about, storytelling, banter, listening, escalating a c
 - The goal of an opener is not to be clever — it's to be low-pressure enough that responding is easy. Wit comes later, once there's a real exchange going.
 
 ### Opener Examples by Setting
-- **Party, mutual friend around:** "How do you know [host]?" — always available, always answerable, opens into shared context immediately.
+- **Nightclub / loud venue:** "Genuine question — is it possible to get a drink at this bar without losing ten minutes of your life?" / "Is it just me or has this DJ played the same three songs twice already?" / "Please tell me you know a faster way to the bathroom than this line." — has to be said close and unhurried to be heard, which itself reads as composed rather than shouted.
+- **Party, mutual friend around:** "How do you know [host]?" — always available, always answerable, opens into shared context immediately. Also works: "Please tell me there's more of these, I've had four and I'm not stopping" (see Worked Example below) or "I feel like the only person here who doesn't know anyone — save me."
+- **Walking around (street, campus, park):** No default shared context exists here the way it does in a queue or a party, so the opener needs something genuinely shared in the moment — a landmark, a dog, the weather, an event both of you can see. "Sorry, quick one — is this actually the way to [landmark]?" or "Is it just me or did the weather just turn apocalyptic?" If nothing's actually shared, this is an eye-contact-and-smile moment, not a words moment — see the train script in `social-scripts.md` and `body-language.md`.
 - **Queue / checkout / waiting room:** "This queue is somehow never moving" or "Please tell me you know if this line is for the right counter" — shared frustration is an easy, low-risk bond.
 - **Gym:** "Is this machine actually this hard or am I just having a bad day?" — self-deprecating, invites a real answer, not a compliment.
 - **Elevator / hallway / passing moment:** doesn't need words — see `body-language.md` and `facial-expressions-and-presence.md`. Held eye contact plus a genuine smile is a complete opener on its own; a line only follows if there's a natural window (same floor, waiting for the same thing).
 - **Networking event:** "What's the most interesting thing you've come across here so far?" — better than "what do you do," which reads as transactional before any rapport exists.
-- **Class / lecture / uni:** "Are we actually meant to have read chapter 4 or is that just me panicking?" — shared stakes, easy to answer, low pressure.
+- **Class / lecture / uni:** "Are we actually meant to have read chapter 4 or is that just me panicking?" / "Is this seat taken, or is it reserved for someone more punctual than me?" / "Did you get literally anything from that last slide?" — shared stakes, easy to answer, low pressure.
+- **Eating / café / food court:** "Okay I need a second opinion — is this actually good or am I just starving?" / "What'd you get? I'm having a crisis about what to order." / "Is that as good as it looks? I'm two seconds from ordering the same thing." — food itself is the shared context, no compliment required.
 
 ## What to Talk About
 - Start light and specific, not broad and abstract — specific is easier to respond to ("what's the best thing you've eaten this week" beats "what do you like to do for fun").
@@ -40,6 +43,11 @@ See `story-bank.md` for James's own stories tightened this same way — it grows
 ## Banter and Playfulness
 - Banter = light, friendly challenge, not insult. A gentle tease ("you say that like it's a good thing") keeps things fun without risk.
 - Callback humor — referencing something said a few minutes earlier — reads as attentive and clever without needing to be quick-witted in the moment.
+
+### Trait Compliments (Beat Appearance Compliments)
+- A compliment on appearance ("you're pretty," "nice dress") signals romantic intent immediately and puts the other person on guard — same reason it's banned as an opener.
+- A compliment on a trait or behavior, pulled from something they *just* said or did, does the opposite: it can only have been said to them, right now, about that thing — which reads as earned and personal instead of generic.
+- Stack it with a callback for maximum effect: reflect their own words back as a trait. Example — she says "this is taking forever" about a slow bar; he replies "good name for someone with a strategy-defeating amount of patience." The compliment (patience) is manufactured entirely from what she just said, thirty seconds after she said it. That's the mechanism — not cleverness, just genuine attention paid back.
 
 **Example exchanges:**
 - Them: "I'm actually really good at parallel parking." → You: "That's a very specific thing to be proud of. I respect it."
