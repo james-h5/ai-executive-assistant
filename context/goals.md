@@ -10,20 +10,21 @@ quarter: Q3 2026
 
 ## Q3 2026 (July — September)
 
-### Hard Targets
-- [ ] Possible boxing fight — end of July 2026
-- [ ] Golden Gloves boxing fight — end of August 2026
+*As of 2026-09-09: business and trading targets below are paused, not dropped — no bandwidth for the business right now and trading is too expensive to keep funding. Current focus is working/saving for a Europe trip, language learning, and friends/social life — see `context/current-priorities.md`.*
 
-### Building Toward (target: end of 2026)
-- [ ] Sign first AI consulting client
+### Paused
+- [ ] Possible boxing fight — no fight currently on the calendar, not in prep
+- [ ] Golden Gloves boxing fight — not in prep
+- [ ] Sign first AI consulting client (target was end of 2026)
 - [ ] Get first trading payout from funded account
-
-### $500/week (target: ~2026-10-18, 3 months out)
-- [ ] Hit $500/week from trading + consulting combined — pursued via direct outreach (Brisbane trades) + Fiverr/Upwork freelance platforms in parallel. See `projects/landing-first-client/freelance-platforms-strategy.md`
+- [ ] Hit $500/week from trading + consulting combined (target was ~2026-10-18)
 
 ### No Hard Deadline
 - [ ] Reach $10k/month from location-independent income (AI consulting + trading)
 - [ ] Pay off HECS debt
+
+### Active Now
+- [ ] Save up for Europe trip (via bartending/tutoring income)
 
 ## Longer-Term Bucket List
 - Get a pilot's license

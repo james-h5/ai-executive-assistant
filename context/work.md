@@ -9,16 +9,16 @@ description: Income streams, business status, tools, and professional context
 
 | Stream | Status | Est. Weekly Income |
 |---|---|---|
-| Bartending | Active | ~$500 |
+| Bartending | Active — priority income source right now (saving for Europe) | ~$500 |
 | Tutoring (maths/science) | Active | ~$110 |
-| Futures trading | Building — no payout yet | — |
+| Futures trading | Paused — too expensive to keep funding right now | — |
 | S&P 500 | Passive investment | — |
 | XRP | Speculative hold | — |
-| AI consulting | Pre-launch | — |
+| AI consulting | Paused — can't focus on it at the moment | — |
 | Freelance (Fiverr/Upwork) | Pre-launch | — |
 
 ## AI Consulting Business
-- **Status:** Pre-launch. Foundation decisions locked; building demo and outreach materials.
+- **Status:** Paused (as of 2026-09-09). Foundation decisions locked and demo/outreach materials exist from earlier work, but not being actively worked on right now — no bandwidth.
 - **Goal:** Sign first client by end of 2026
 - **Niche:** Local trade businesses in Brisbane (electricians, plumbers, HVAC)
 - **First Offer:** AI Lead Response + Follow-Up System — auto-responds to new enquiries within 60 seconds, qualifies the lead, books/notifies the owner. Built with Claude + trigger.dev.

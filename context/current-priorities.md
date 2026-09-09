@@ -1,22 +1,27 @@
 ---
 type: context
 description: What James is focused on right now, in priority order — update whenever focus shifts
-last_updated: 2026-07-08
+last_updated: 2026-09-09
 ---
 
 # Current Priorities
 
-*Last updated: 2026-07-08*
+*Last updated: 2026-09-09*
 
-Uni break is over — Semester 2 2026 rebalance. See `context/academic-record.md` for unit load (60cp, same overload level as his best-performing semester — but this semester's results aren't in yet, so it's not confirmed twice).
+Rebalance — business, trading, and fight prep are all paused for now. See `context/academic-record.md` for Sem 2 unit load and `context/work.md` for income-stream status.
 
 ## Right Now (in order)
-1. **Semester 2 study load** — EFB210, EFB222, EGB202, MZB221 + two QUT You units. Watch EGB202/MZB221 pre-req status (both enrolled as "(P)" pending Sem 1 results). Use AI systems to make uni more efficient, not a time sink.
-2. **Boxing** — possible fight end of July; Golden Gloves end of August
-3. **Build AI consulting foundations** — portfolio, business processes, client pipeline (lower intensity than break period, keep moving)
-4. **Futures trading** — consistent practice, working toward first payout
+1. **Semester 2 study load** — EGB242, EFB222, EGB202, MZB221 + two QUT You units. Use AI systems to make uni more efficient, not a time sink.
+2. **Working + saving for Europe trip** — bartending/tutoring income going toward this
+3. **Language learning** — keep up conversational practice (Spanish → Italian → French → Portuguese → German rotation)
+4. **Friends / social life** — going out more frequently, deliberate priority right now, not just filler
+
+## Paused (not active right now)
+- **Boxing** — not currently prepping for a fight. No fight on the calendar right now (previously eyed end-of-July/Golden-Gloves-August window, didn't happen — revisit if a fight comes up)
+- **AI consulting business** — can't focus on it at the moment. Foundations built, on hold rather than moving
+- **Futures trading** — paused, too expensive to keep funding right now
 
 *Note: AI OS / Executive Assistant is in good shape — update it as needed, not a priority.*
 
 ## Next Review
-Revisit this file after Sem 2 census date (14-Aug-2026) or if focus shifts sooner.
+Revisit if focus shifts, funds free up for trading, or bandwidth opens up for the business again.
