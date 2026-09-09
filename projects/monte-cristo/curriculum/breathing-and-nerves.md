@@ -37,6 +37,14 @@ It isn't finished. A parting remark from a stranger — "bye," a laugh, any ackn
 
 **Practical rule:** any signal, first or second, gets the same in-the-moment reset. Don't let "I already missed it" become the reason to miss the next one too. The recovery line doesn't need to be smooth — turning back and saying "that's not fair, you can't say that and just let me leave" is enough. Imperfect and late beats composed and silent.
 
+## The Belief That Manufactures the Stakes
+
+Surfaced 2026-09-09: the freeze isn't only physiological — sometimes it's downstream of a specific false belief that inflates the stakes before the body ever reacts. Named example: "saying something to a stranger in public feels like disrupting the world." That's not a description of reality — talking to a stranger is one of the most ordinary things that happens between people, constantly. The belief itself is what tells the nervous system "this is a threat," which is what spikes cortisol per the mechanism above. Fix the appraisal and there's less to regulate physically in the first place.
+
+**In-the-moment correction:** one true sentence to fire against the false one, e.g. "people talk to strangers in public all day, I'm not interrupting anything, I'm just one more person in the room." Not hype — a factual correction of a wrong read on reality.
+
+**Reality check that exposes the story:** think of every time a stranger has spoken to *you*. It has essentially never registered as a disruption — good, bad, or forgettable, it was just a small normal moment. What's feared as disruptive to others has almost certainly been done *to* James without him experiencing it that way, which proves the belief is false rather than cautious.
+
 ## Why This Beats "Just Have More Confidence"
 
 Confidence is downstream of a regulated nervous system, not the other way round. Trying to will yourself into confidence while the body is still in threat-state doesn't work — it's fighting biology with willpower. Regulate the body first (breath, posture, movement), and the words/confidence follow far more easily.
