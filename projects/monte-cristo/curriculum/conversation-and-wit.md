@@ -58,6 +58,12 @@ See `story-bank.md` for James's own stories tightened this same way — it grows
 - The most underrated social skill. Genuine, specific follow-up questions read as more charismatic than a great opener. People remember how a conversation made them feel, not the cleverness of the lines used.
 - Don't plan the next thing to say while they're still talking — actually listen, then respond to what was actually said.
 
+## The Casanova Principle: Broad Warmth, Narrow Depth
+Surfaced 2026-09-10 discussing what actually made historical Casanova effective (not the mythologized "pickup lines" — most of what circulates as his quotes is apocryphal; his own memoir is a self-authored legend, not a transcript). Two distinct layers, not one:
+- **Baseline — broadly warm, cheap, to everyone in the room.** Easy courtesy, a genuine greeting, approachable resting expression (`facial-expressions-and-presence.md`). Costs nothing, keeps the room reading you as warm rather than aloof or calculating.
+- **Depth — narrow, deliberate, reserved.** The full-attention version — total presence, real curiosity, the sense of being the only person in the room — goes only to whoever actually signals it's worth escalating for, per `reading-signals.md`'s match-then-escalate logic. Not handed out by default to everyone who gets the baseline courtesy.
+- **Why the split matters:** depth given to everyone stops registering as depth — same failure mode as a generic compliment ("Trait Compliments" above). The contrast between the baseline most people get and the real version a few people get is what makes the real version land as genuine rather than performed. Don't spend full presence everywhere; reserve it for who actually earns the escalation.
+
 ## Escalating a Conversation
 - Escalation = moving from surface-level exchange toward more personal, more playful, or (romantically) more direct — done gradually and by reading their response, not all at once.
 - A simple escalation ladder: situational small talk → genuine curiosity/follow-up → light banter/teasing → personal question or direct statement of interest.
