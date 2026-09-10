@@ -69,6 +69,14 @@ Surfaced 2026-09-10 discussing what actually made historical Casanova effective 
 - A simple escalation ladder: situational small talk → genuine curiosity/follow-up → light banter/teasing → personal question or direct statement of interest.
 - If going for a number/follow-up: be direct rather than vague. "I'd like to keep talking to you, can I get your number" beats a hinting, indirect exit.
 
+### Going Deep: Desires, Wants, What Actually Matters to Them
+Surfaced 2026-09-10, discussing how Casanova moved conversations from surface into genuinely personal territory. Three things, in order:
+1. **Sequencing — earn it, don't front-load it.** "What do you actually want?" as an opener reads as intense or invasive, not intimate. It only lands once real rapport exists — often well into a conversation, sometimes a later one. Deep is the destination of the ladder above, not a shortcut past it.
+2. **Reciprocal vulnerability is the actual lever.** People rarely answer a deep question cold. Share something genuinely personal first — a real want, a loss, a risk taken — and it invites the same back. This is the "trade information, don't interrogate" principle above, applied at the deep end of the ladder instead of the shallow end.
+3. **Range lets the conversation actually go deep, not just personal-sounding.** Having real things to say on whatever they raise (see `story-bank.md`) is what lets a conversation deepen through genuine exchange rather than through a better question technique.
+
+**Shape of a late-stage exchange, once rapport is real:** "Can I say something? Most people I meet, I never get past what they do for work. You're not boring me, which is rare." (low-stakes reciprocal vulnerability) → "What's something you actually want that you don't tell people?" (the desire question — only now, not before).
+
 ## Worked Example: Full Conversation
 Setting: a house party, mutual friend hosting. You don't know anyone else. Someone's standing near the drinks table for a moment, alone.
 
