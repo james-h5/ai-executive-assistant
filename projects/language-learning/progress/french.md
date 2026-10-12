@@ -12,7 +12,9 @@ description:
 
 This asymmetry is fine and doesn't need correcting — French already gets more listening hours in the plan because that's its bottleneck. Just don't let the Spanish head start pull hours away from French; French is the one with further to travel.
 
-🔴 **Week 1 is the pronunciation boot camp** — nasal vowels, liaison, elision, the French `r`. Before Language Transfer, before anything. Skipping it costs months later.
+## Status (updated 2026-10-12)
+- Pronunciation boot camp: done (week 1, Sept)
+- **Language Transfer — Introduction to French: complete (all 40 lessons)** — right on the plan's ~10 Oct target
 
 ## Sessions
 - Total: 0
@@ -24,8 +26,16 @@ This asymmetry is fine and doesn't need correcting — French already gets more 
 ## Vocab & Phrases Taught
 (none yet — Anki count becomes the real measure from Sept 2026)
 
-## Next Recommended Action
-Pronunciation boot camp, day 1 of 5. Then Language Transfer — Introduction to French, lesson 1.
+## Next Recommended Action (updated 2026-10-12)
+LT is done — move to the October stack:
+1. **Assimil — French With Ease**, lesson 1, ~20 min/day
+2. **Kwiziq French** — take the placement test this week, then 15 kwizzes/day
+3. **French Comprehensible Input (Lucas)** — A1-labelled videos, 25 min/day
+4. **Full-speed ear training** — 10–15 min/day of Easy French (natives talking to *each other*, not CI). Understanding little of it is normal.
+5. **Dictation** — 2×/week, 10 min
+6. Keep Anki FR at 15 new/day · keep *Journal en français facile* daily if it's running
+
+**Not yet** — first conversation session is deliberately **week 9 (~mid-Nov)**, not this month. The pronunciation foundation needs to be load-bearing before speaking starts.
 
 ## Field test results
 Run quarterly per `b1-sprint/checkpoints.md` §2. Record pass/fail per test.

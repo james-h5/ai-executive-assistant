@@ -39,8 +39,17 @@ The same rule applies to everything else: review belongs in stacked hours, new g
 ## Vocab & Phrases Taught
 (none logged — Anki count becomes the real measure from Sept 2026)
 
-## Next Recommended Action
-Run the 20-minute diagnostic above, then continue Language Transfer from wherever it lands you.
+## Next Recommended Action (updated 2026-10-12)
+~60–65 of 90 Language Transfer lessons done (25–30 remaining as of 12 Oct). At ~2/day that's done around 26–28 Oct — slightly behind the ~20 Oct target, not a concern yet.
+
+1. **Finish Language Transfer** — 2/day until done
+2. **Then:** Dreaming Spanish shifts Superbeginner → Beginner tier, 25 min/day
+3. **Coffee Break Spanish** S1, 3 eps/week
+4. **Reading starts:** *Short Stories in Spanish for Beginners* (Olly Richards), 1 story/week
+5. **Full-speed ear training** — 10–15 min/day of Easy Spanish / natives talking to each other
+6. Keep Anki ES at 15 new/day
+
+🔴 **Check:** the plan's first conversation session was scheduled for **week 5 (~5 Oct)** — a week ago. If that hasn't happened yet, book it this week rather than waiting for LT to finish.
 
 ## Field test results
 Run quarterly per `b1-sprint/checkpoints.md` §2. Record pass/fail per test.
