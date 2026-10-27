@@ -118,3 +118,9 @@ Total: 60 Sheffield credits (2 Sheffield credits = 1 ECTS per the catalogue) —
 1. Confirm the QUT-Sheffield exchange is genuinely coded as "university wide" (VISU02/VIST53 application) rather than subject-level — worth a direct confirmation email even though the mixed-subject requirement makes this the near-certain outcome
 2. Verify the 60 Sheffield credit / 48 QUT cp conversion holds for this specific 4-module mix (10+10+20+20 = 60)
 3. Confirm James's QUT background (EGB242 completion) is accepted as sufficient "documented background" for the Level 3 modules (ELE307, MGT321, MGT3009) — should be routine but worth having in writing
+
+## 2026-10-27: Units 7 and 8 added (EGH448, EGH444)
+Added to HiQ so the plan maps 8 QUT units (96cp, a full-time year), not 6. The study plan is a menu of options for faculty, so this doesn't change the 120-credit Option A enrolment yet. Balancing the final enrolment comes after approval.
+- **EGH448 Power Electronics → ELE336 Power Electronics** (Spring, 10cr): strong. Power devices, circuit analysis, ac/dc power converters.
+- **EGH444 Digital Signals and Image Processing → ELE346 Digital Signal Processing** (Spring, 10cr): strong. Sampling, digital filter design, intro to digital image processing. (ELE333's page 404s; ELE346 is the live listing.)
+- Prereq note: EGH448 needs EGB348 and EGH444 needs EGB342, and both are being done concurrently (year-long ELE345/ELE342). Both new modules are Spring, so the Autumn half comes first. Faculty may still query it.

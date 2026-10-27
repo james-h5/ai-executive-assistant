@@ -53,3 +53,8 @@ Added 2026-10-27 to replace Aston. Spain isn't England, so UC3M can go in any pr
 Pass 1 is done. Course lists and languages were checked against UC3M's own programme pages, and the main courses' contents against their official sheets. UC3M is confirmed as a current QUT partner (James, 2026-10-27). What's still missing is confirmation from UC3M's incoming exchange office of which courses exchange students can actually take.
 
 Course sheet URL pattern (for the application upload): `https://aplicaciones.uc3m.es/cpa/generaFicha?est=<degree>&plan=<plan>&asig=<course code>&idioma=2`. Degree/plan codes: IEAE est=223 plan=444 · EPE est=222 plan=598 (new) / 443 (2019) · TTE est=252 plan=568 (new) / 445 (2019).
+
+## 2026-10-27: Units 7 and 8 added (EGH448, EGH444)
+Added so the study plan covers 8 QUT units (96cp = full-time for 2 semesters) instead of 6.
+- **EGH448 Power Electronics → 14033 Power Electronics** (IEAE Y3 S2, English): strong match. Covers power devices (diode, MOSFET, IGBT), DC-DC conversion, rectifiers/inverters. Its EGB348 prereq is covered by Analog Electronics in S1, so the sequence works.
+- **EGH444 Digital Signals and Image Processing → 20575 Machine Learning for Signal and Data Processing** (TTE Y3 S1, English): **loose match.** It's estimation, classification and ML only, with no filtering or image processing. UC3M's image courses are Spanish-only. This is the weakest line on the UC3M plan.

@@ -39,6 +39,7 @@ A semester exchange at a QUT UK partner university during 2027 Semester 2 (Sept 
 - **Leading pick: UC3M.** It has English-taught undergrad engineering. Most German/French EE bachelor's modules are taught in the local language.
 - **UC3M study plan done (Pass 1):** see `study-plans/uc3m.md`. 10 English-taught courses (60 ECTS) cover all 6 units. EGB342, EGB345 and EGB348 are strong. EGB341 is moderate. EGB241's machines half is at risk because UC3M's English machines groups are being phased out.
 - **HiQ application updated 2026-10-27:** Sheffield #1, UC3M #2, Strathclyde #3. All 18 UC3M courses are on the study plan with course-sheet outline URLs. The motivation essay was rewritten to replace the Aston paragraph with UC3M and re-uploaded (old version in `archives/uk-exchange-2027/`). The final Review → submit is James's to do.
+- **8-unit fix (2026-10-27):** added EGH448 Power Electronics + EGH444 Digital Signals and Image Processing to all 3 study plans in HiQ, so the year maps 96cp (full-time), not 72cp. Matches: Sheffield ELE336/ELE346 (both strong), UC3M 14033 (strong) / 20575 (loose), Strathclyde EE466/EE469 (Level 4, access unconfirmed). **Knock-on:** `context/degree-plan.md` still has EGH444/EGH448 in Year 4 S2 / Year 5 S1. If approved, those slots free up and the finish date could move earlier. Replan once faculty approval comes back.
 - **Confirmed by James (2026-10-27):** UC3M is a QUT partner. James can update the submitted application directly, so no exchange-office sign-off is needed for the swap.
 
 ## Next Steps

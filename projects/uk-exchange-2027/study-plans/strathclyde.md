@@ -34,3 +34,8 @@ Worth asking Strathclyde's exchange team (`incoming.exchanges@strath.ac.uk` — 
 ## Status
 
 Lower priority than Sheffield/Aston — QUT only assesses 1st/2nd preference study plans before nomination; Strathclyde's plan only gets assessed if both fall through. This list exists mainly to satisfy the application's "at least one unit" requirement, but ended up being a genuinely strong option — arguably the cleanest EGB241 solution of the three universities researched.
+
+## 2026-10-27: Units 7 and 8 added (EGH448, EGH444)
+- **EGH448 → EE466** Power Electronics, Machines and Applications (Level 4, Full Year, 20cr): good. Power electronic circuits, drives, EV applications.
+- **EGH444 → EE469** Digital Signal Processing Principles (Level 4, Full Year, 20cr): good on DSP (MATLAB/Simulink), with no image-processing component.
+- Both are **Level 4**, so the same open question applies: are Level 4 classes open to exchange students?
