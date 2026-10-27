@@ -50,6 +50,6 @@ Added 2026-10-27 to replace Aston. Spain isn't England, so UC3M can go in any pr
 5. **Language of the application itself.** UC3M degree students need B2 English. Exchange students taking English groups should need no Spanish, but check UC3M's incoming exchange requirements.
 
 ## Status
-Pass 1 is done. Course lists and languages were checked against UC3M's own programme pages, and the main courses' contents against their official sheets. What's still missing is confirmation from UC3M's incoming exchange office of which courses exchange students can actually take, and UC3M being confirmed as a current QUT partner in HiQ.
+Pass 1 is done. Course lists and languages were checked against UC3M's own programme pages, and the main courses' contents against their official sheets. UC3M is confirmed as a current QUT partner (James, 2026-10-27). What's still missing is confirmation from UC3M's incoming exchange office of which courses exchange students can actually take.
 
 Course sheet URL pattern (for the application upload): `https://aplicaciones.uc3m.es/cpa/generaFicha?est=<degree>&plan=<plan>&asig=<course code>&idioma=2`. Degree/plan codes: IEAE est=223 plan=444 · EPE est=222 plan=598 (new) / 443 (2019) · TTE est=252 plan=568 (new) / 445 (2019).
