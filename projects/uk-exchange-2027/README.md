@@ -38,6 +38,7 @@ A semester exchange at a QUT UK partner university during 2027 Semester 2 (Sept 
 - QUT partners per search (UC3M confirmed by James; others not verified): **Germany:** KIT, Karlsruhe UAS, RWTH Aachen, TU Berlin, TUM, Stuttgart · **France:** Arts et Métiers, IMT Atlantique, Toulouse INP, ENAC, ISAE-SUPAERO, Grenoble Alpes · **Spain:** UC3M (Madrid), Navarra
 - **Leading pick: UC3M.** It has English-taught undergrad engineering. Most German/French EE bachelor's modules are taught in the local language.
 - **UC3M study plan done (Pass 1):** see `study-plans/uc3m.md`. 10 English-taught courses (60 ECTS) cover all 6 units. EGB342, EGB345 and EGB348 are strong. EGB341 is moderate. EGB241's machines half is at risk because UC3M's English machines groups are being phased out.
+- **HiQ application updated 2026-10-27:** Sheffield #1, UC3M #2, Strathclyde #3. All 18 UC3M courses are on the study plan with course-sheet outline URLs. The motivation essay was rewritten to replace the Aston paragraph with UC3M and re-uploaded (old version in `archives/uk-exchange-2027/`). The final Review → submit is James's to do.
 - **Confirmed by James (2026-10-27):** UC3M is a QUT partner. James can update the submitted application directly, so no exchange-office sign-off is needed for the swap.
 
 ## Next Steps
