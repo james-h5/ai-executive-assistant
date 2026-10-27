@@ -37,6 +37,7 @@ A semester exchange at a QUT UK partner university during 2027 Semester 2 (Sept 
 - Strathclyde stays at #2 or #3. The other slot goes to a European partner (Germany/Spain/France). Non-England partners can sit in any slot.
 - QUT partners per search (QUT's page 403s, so not verified): **Germany:** KIT, Karlsruhe UAS, RWTH Aachen, TU Berlin, TUM, Stuttgart · **France:** Arts et Métiers, IMT Atlantique, Toulouse INP, ENAC, ISAE-SUPAERO, Grenoble Alpes · **Spain:** UC3M (Madrid), Navarra
 - **Leading pick: UC3M.** It has English-taught undergrad engineering. Most German/French EE bachelor's modules are taught in the local language.
+- **UC3M study plan done (Pass 1):** see `study-plans/uc3m.md`. 10 English-taught courses (60 ECTS) cover all 6 units. EGB342, EGB345 and EGB348 are strong. EGB341 is moderate. EGB241's machines half is at risk because UC3M's English machines groups are being phased out.
 - **Open:** the application was submitted 2026-08-27, so swapping a preference has to go through the exchange office. Confirm they'll accept the change and when it's due.
 
 ## Next Steps
