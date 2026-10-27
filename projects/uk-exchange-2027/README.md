@@ -25,12 +25,19 @@ A semester exchange at a QUT UK partner university during 2027 Semester 2 (Sept 
 - [university-shortlist.md](university-shortlist.md) — eligibility screen of all 22 UK partner unis against James's GPA/degree/undergrad status (full list — kept in case a 4th/5th preference is ever needed)
 - [degree-plan-notes.md](degree-plan-notes.md) — how the exchange load reconciles with the standard QUT degree plan, including the worked Sheffield reshuffle example
 - [qut-unit-content.md](qut-unit-content.md) — content baseline for the 9 QUT units in play (5 fixed 2027 S2 + 4 swappable), used to judge host-university matches
-- `study-plans/` — **Sheffield** (1st preference, verified), **Aston** (2nd preference), **Strathclyde** (3rd preference — Scotland isn't "England" under QUT's 1st/2nd-preference-only rule for USA/England), **Birmingham** (earlier backup, superseded), plus `candidates-summary.md` (older comparison table, predates the engineering-only pivot)
+- `study-plans/` — **Sheffield** (1st preference, verified), ~~Aston~~ (dropped 2026-10-27, archived), **Strathclyde** (2nd or 3rd preference — Scotland isn't "England" under QUT's 1st/2nd-preference-only rule for USA/England), **Birmingham** (earlier backup, superseded), plus `candidates-summary.md` (older comparison table, predates the engineering-only pivot)
 - [office-meeting-talking-points.md](office-meeting-talking-points.md) — prep notes for the Study Abroad and Exchange Office meeting, built up topic by topic; also feeds the formal Motivation Statement
 - [study-plans/sheffield-exhaustive-matches.md](study-plans/sheffield-exhaustive-matches.md) — exhaustive, inclusive list of every Sheffield module (Engineering/Economics/Management, any semester) relating to James's 10 candidate QUT units — a brainstorm feeding into `study-plans/sheffield.md`, not a replacement for it. Surfaced two modules the earlier Autumn-only pass missed: MGT375 (Financial Derivatives — a real EFB344 match) and MGT230 (a second Corporate Finance match), both Spring-only.
 
 ## Status update (2026-08-27)
 **Application fully submitted** — Sheffield (1st), Aston (2nd), Strathclyde (3rd), all with study plans, outline links, and the motivation essay attached. Now waiting on QUT's nomination outcome and faculty assessment of the Sheffield/Aston study plans. Next real decision point is whatever comes back from that review.
+
+## Status update (2026-10-27) — Aston dropped
+- **Decided:** Aston removed entirely. Study plan moved to `archives/uk-exchange-2027/aston.md`.
+- Strathclyde stays at #2 or #3. The other slot goes to a European partner (Germany/Spain/France). Non-England partners can sit in any slot.
+- QUT partners per search (QUT's page 403s, so not verified): **Germany:** KIT, Karlsruhe UAS, RWTH Aachen, TU Berlin, TUM, Stuttgart · **France:** Arts et Métiers, IMT Atlantique, Toulouse INP, ENAC, ISAE-SUPAERO, Grenoble Alpes · **Spain:** UC3M (Madrid), Navarra
+- **Leading pick: UC3M.** It has English-taught undergrad engineering. Most German/French EE bachelor's modules are taught in the local language.
+- **Open:** the application was submitted 2026-08-27, so swapping a preference has to go through the exchange office. Confirm they'll accept the change and when it's due.
 
 ## Next Steps
 - **2026-08-27: Decided — full year, not a single semester** (reverses the 2026-08-03 semester decision, see `decisions/log.md`). **2026-08-27: Also decided — engineering only (subject-exchange), not mixed.** `study-plans/sheffield.md` Option A is now the active plan: all 6 engineering QUT units matched via a clean 120-credit year (ELE209, ELE345, ELE327, ELE342, ELE343, ELE339). Option B (mixed) and the old single-semester lineup are both kept for reference only.
